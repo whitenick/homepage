@@ -26,78 +26,9 @@ export const About = (props) => {
     return (
         <Container>
             <Grid container spacing={2} className='about-page'>
-                <Grid item md={12} className='profile-box'>
+                <Grid item md={4} className='profile-box'>
                     <Paper className='profile-paper'>
-                        <form className={classes.container} noValidate>
-                            <div>
-                                <TextField
-                                required
-                                id="filled-required"
-                                label="Required"
-                                defaultValue="Hello World"
-                                className={classes.textField}
-                                margin="normal"
-                                variant="filled"
-                                />
-                                <TextField
-                                disabled
-                                id="filled-disabled"
-                                label="Disabled"
-                                defaultValue="Hello World"
-                                className={classes.textField}
-                                margin="normal"
-                                variant="filled"
-                                />
-                                <TextField
-                                id="filled-password-input"
-                                label="Password"
-                                className={classes.textField}
-                                type="password"
-                                autoComplete="current-password"
-                                margin="normal"
-                                variant="filled"
-                                />
-                                <TextField
-                                id="filled-read-only-input"
-                                label="Read Only"
-                                defaultValue="Hello World"
-                                className={classes.textField}
-                                margin="normal"
-                                InputProps={{
-                                    readOnly: true,
-                                }}
-                                variant="filled"
-                                />
-                                <TextField
-                                id="filled-number"
-                                label="Number"
-                                type="number"
-                                className={classes.textField}
-                                InputLabelProps={{
-                                    shrink: true,
-                                }}
-                                margin="normal"
-                                variant="filled"
-                                />
-                                <TextField
-                                id="filled-search"
-                                label="Search field"
-                                type="search"
-                                className={classes.textField}
-                                margin="normal"
-                                variant="filled"
-                                />
-                                <TextField
-                                id="filled-helperText"
-                                label="Helper text"
-                                defaultValue="Default Value"
-                                className={classes.textField}
-                                helperText="Some important text"
-                                margin="normal"
-                                variant="filled"
-                                />
-                            </div>
-                        </form>
+                        
                     </Paper>
                 </Grid>
             </Grid>

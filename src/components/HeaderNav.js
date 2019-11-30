@@ -168,8 +168,9 @@ export const HeaderNav = () => {
                                     >
                                         <Tab label="About" className={classes.tab}/>
                                         <Tab label="Projects" className={classes.tab}/>
-                                        <Tab label="Options" className={classes.tab}/>
-                                        <Tab label="School" className={classes.tab}/>
+                                        <Tab label="Trading" className={classes.tab}/>
+                                        <Tab label="Health" className={classes.tab}/>
+                                        <Tab label="Posts" className={classes.tab}/>
                                     </Tabs>
                                     </ThemeProvider>
                                 <TabPanel value={value} index={0} url='about'/>

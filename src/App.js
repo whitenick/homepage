@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.scss';
 import Project from './components/Projects/Project';
 import About from './components/About/About';
+import Options from './components/Options/Options';
 import { 
   BrowserRouter as Router,
   Switch,
@@ -33,6 +34,9 @@ function App() {
           </Route>
           <Route path="/about">
             <About />
+          </Route>
+          <Route path="/options">
+            <Options />
           </Route>
         </Switch>
       </Router>
