@@ -1,0 +1,14 @@
+.about-page {
+    height: 400px;
+
+    .profile-box {
+        height: 100%;
+
+        .profile-paper {
+            height: 100%;
+            width: 100%;
+            overflow: auto;
+            opacity: 0.9;
+        }
+    }
+}
