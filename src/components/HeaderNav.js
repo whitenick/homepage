@@ -55,7 +55,8 @@ const useStyles = makeStyles(theme => ({
   nav: {
       flexGrow: 1,
       backgroundColor: '#52616b',
-      opacity: 0.9
+      opacity: 0.9,
+      overflow: 'auto'
   },
   tab: {
       color: '#1e2022'
