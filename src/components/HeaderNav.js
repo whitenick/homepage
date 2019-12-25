@@ -45,8 +45,7 @@ const useStyles = makeStyles(theme => ({
   title: {
       flexGrow: 1,
       textAlign: 'left', 
-      paddingTop: '2rem',
-      fontFamily: 'fantasy'
+      paddingTop: '2rem'
   },
   headerButtons: {
       flexGrow: 1,
@@ -92,7 +91,7 @@ export const HeaderNav = () => {
             }
         },
         typography: {
-            fontFamily: 'Raleway'
+            fontFamily: 'Courier New'
         }
     })
     const classes = useStyles(theme);
@@ -169,7 +168,7 @@ export const HeaderNav = () => {
                                     >
                                         <Tab label="About" className={classes.tab}/>
                                         <Tab label="Projects" className={classes.tab}/>
-                                        <Tab label="Trading" className={classes.tab}/>
+                                        <Tab label="Analytics" className={classes.tab}/>
                                         <Tab label="Health" className={classes.tab}/>
                                         <Tab label="Posts" className={classes.tab}/>
                                     </Tabs>
@@ -177,7 +176,7 @@ export const HeaderNav = () => {
                                 <TabPanel value={value} index={0} url='about'/>
                                 <TabPanel value={value} index={1} url='projects'/>
                                 <TabPanel value={value} index={2} url='options'/>
-                                <TabPanel value={value} index={3} url='school'/>
+                                <TabPanel value={value} index={3} url='health'/>
                             </Paper>
                         </Grid>
                     </Grid>

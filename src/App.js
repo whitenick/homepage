@@ -4,6 +4,7 @@ import './App.scss';
 import Project from './components/Projects/Project';
 import About from './components/About/About';
 import Options from './components/Options/Options';
+import Health from './components/Health/Health';
 import { 
   BrowserRouter as Router,
   Switch,
@@ -37,6 +38,9 @@ function App() {
           </Route>
           <Route path="/options">
             <Options />
+          </Route>
+          <Route path="/health">
+            <Health />
           </Route>
         </Switch>
       </Router>
