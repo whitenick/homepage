@@ -142,18 +142,6 @@ export const HeaderNav = () => {
                                 <IconButton color="inherit" onClick={() => handleMenuClick()}>
                                     <MoreIcon />
                                 </IconButton>
-                                <Menu
-                                    className=""
-                                    id="simple-menu"
-                                    anchorEl={anchorEl}
-                                    keepMounted
-                                    open={Boolean(anchorEl)}
-                                    onClose={handleClose}
-                                >
-                                    <MenuItem onClick={handleClose}>Profile</MenuItem>
-                                    <MenuItem onClick={handleClose}>My account</MenuItem>
-                                    <MenuItem onClick={handleClose}>Logout</MenuItem>
-                                </Menu> 
                             </div>
                         </Grid>
                         <Grid item xs={12}>
