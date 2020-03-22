@@ -100,10 +100,6 @@ export const HeaderNav = () => {
     const [newPath, setNewPath] = React.useState(null);
 
     const handleNavChange = (event, newValue) => {
-        // if (newValue !== value) {
-        //     setRedirect(true);
-        //     setValue(value);
-        // }
         setValue(newValue);
     };
 
@@ -157,7 +153,7 @@ export const HeaderNav = () => {
                                         <Tab label="About" className={classes.tab}/>
                                         <Tab label="Projects" className={classes.tab}/>
                                         <Tab label="Analytics" className={classes.tab}/>
-                                        <Tab label="Health" className={classes.tab}/>
+                                        <Tab label="Allergy Scan" className={classes.tab}/>
                                         <Tab label="Posts" className={classes.tab}/>
                                     </Tabs>
                                     </ThemeProvider>
