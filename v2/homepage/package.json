@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "styles": "npx tailwindcss -i ./pages/index.css -o ./pages/tw.css --watch",
-    "lint": "next lint"
+    "lint": "next lint",
+    "export": "next export"
   },
   "dependencies": {
     "next": "12.3.1",
