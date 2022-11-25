@@ -16,7 +16,9 @@ module.exports = {
         'jim-pam': ['jim-pam'],
         'little-spark': ['little-spark'],
         'boom-roasted': ['boom-roasted'],
-        'marion': ['marion']
+        'marion': ['marion'],
+        'raleway': ['Ubuntu'],
+        'inconsolata': ['Inconsolata']
       }
     },
     colors: {
@@ -34,6 +36,7 @@ module.exports = {
       "beige": "#E3E7D3",
       "Gold-Crayola": "#F2C57C",
       "Jet":"#353535","White":"#ffffff","Light-Gray":"#d2d7df","Gray-Gray":"#bdbbb0",
+      "dark-green": '#8A897C',
       "Battleship-Grey":"#818479","Cambridge-Blue":"#b5cbb7","Tea-Green":"#d2e4c4","Pale-Spring-Bud":"#e4e9b2",
       "Snow": "#F7F0F0",
       "cultured-white": "#F9F9F9"

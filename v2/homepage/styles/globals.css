@@ -1,4 +1,7 @@
-html,
+html {
+  background-color: #f5f1ed;
+  font-family: Inconsolata;
+},
 body {
   padding: 0;
   margin: 0;
