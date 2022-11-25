@@ -1,7 +1,9 @@
 html {
   background-color: #f5f1ed;
   font-family: Inconsolata;
-},
+  color: #353535;
+} 
+
 body {
   padding: 0;
   margin: 0;
