@@ -7,13 +7,13 @@ import { PageWrapper } from "../shared/page-wrapper";
 
 const Home : React.FunctionComponent<any> = () => {
     return (
-        <PageWrapper>
+        <PageWrapper title={"Nick White - About"}>
             <Header />
             <div className="py-6">
                 <span className="text-3xl">Hello, and welcome to my website.</span>
                 <br/>
                 <br/> 
-                <span className="text-xl !leading-10">I am a software engineer by trade. My main interests revolve around technology, but my mind wanders. Here you will find my current projects, recent interests, and random thoughts.</span> 
+                <span className="text-xl !leading-10">I am a software engineer by trade, but my mind wanders. My main interests revolve around technology, space, and the outdoors. This site will serve as my playground. Here you can find my current experiments and random thoughts.</span> 
             </div>
         </PageWrapper>
     )
