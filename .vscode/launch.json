@@ -7,22 +7,23 @@
     {
         "name": "Launch via NPM",
         "request": "launch",
+        "cwd": "${workspaceFolder/v2/homepage}",
         "runtimeArgs": [
-            "run-script",
-            "start"
+            "run",
+            "dev"
         ],
         "runtimeExecutable": "npm",
         "skipFiles": [
             "<node_internals>/**"
         ],
-        "type": "pwa-node"
+        "type": "node"
     },
         {
             "type": "chrome",
             "request": "launch",
             "name": "Launch Chrome against localhost",
             "url": "http://localhost:3000",
-            "webRoot": "${workspaceFolder}"
+            "webRoot": "${workspaceFolder/v2/homepage}"
         }
     ]
 }
