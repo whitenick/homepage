@@ -91,7 +91,7 @@ export const HeaderNav = () => {
             }
         },
         typography: {
-            fontFamily: 'Courier New'
+            fontFamily: 'Avenir'
         }
     })
     const classes = useStyles(theme);
@@ -120,14 +120,15 @@ export const HeaderNav = () => {
             <AppBar position="static" className={classes.headerAppBar}>
                 <Toolbar className={classes.toolbar + ' header-nav'}>
                     <Grid container spacing={4}>
-                        <Grid item xs={6}>
+                        <Grid item xs={4} />
+                        <Grid item xs={4} style={{ textAlign: 'right' }}>
                             <ThemeProvider theme={theme}>
-                                <Typography className={classes.title} variant="h2">
+                                <Typography className={classes.title} variant="h2" style={{ textAlign: 'center' }}>
                                     Nick White
                                 </Typography>
                             </ThemeProvider>
                         </Grid>
-                        <Grid item xs={6}>
+                        <Grid item xs={4}>
                             <div className={classes.headerButtons}>
                                 <IconButton color="inherit">
                                     <GitHubIcon />
@@ -150,6 +151,7 @@ export const HeaderNav = () => {
                                         textColor="primary"
                                         centered
                                     >
+                                        <Tab label="Home" className={classes.tab} />
                                         <Tab label="About" className={classes.tab}/>
                                         <Tab label="Projects" className={classes.tab}/>
                                         <Tab label="Analytics" className={classes.tab}/>
@@ -157,10 +159,11 @@ export const HeaderNav = () => {
                                         <Tab label="Posts" className={classes.tab}/>
                                     </Tabs>
                                     </ThemeProvider>
-                                <TabPanel value={value} index={0} url='about'/>
-                                <TabPanel value={value} index={1} url='projects'/>
-                                <TabPanel value={value} index={2} url='options'/>
-                                <TabPanel value={value} index={3} url='health'/>
+                                <TabPanel value={value} index={0} url=''/>
+                                <TabPanel value={value} index={1} url='about'/>
+                                <TabPanel value={value} index={2} url='projects'/>
+                                <TabPanel value={value} index={3} url='options'/>
+                                <TabPanel value={value} index={4} url='health' />
                             </Paper>
                         </Grid>
                     </Grid>
