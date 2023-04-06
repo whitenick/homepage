@@ -18,7 +18,8 @@ module.exports = {
         'boom-roasted': ['boom-roasted'],
         'marion': ['marion'],
         'raleway': ['Ubuntu'],
-        'inconsolata': ['Inconsolata']
+        'inconsolata': ['Inconsolata'],
+        'montserrat': ['Montserrat']
       }
     },
     colors: {
