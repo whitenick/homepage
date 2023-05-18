@@ -24,6 +24,7 @@ function App() {
     <div className="App">
       <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
       <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+      <script async defer src="https://static.cdn.prismic.io/prismic.js?new=true&repo=nickwhite"></script>
       <CssBaseline />
       <Router>
         <HeaderNav />
