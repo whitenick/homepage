@@ -10,6 +10,14 @@ const nextConfig = {
         permanent: true
       }
     ]
+  },
+  async rewrites () {
+    return [
+      {
+        source: "/",
+        destination: "/app"
+      }
+    ]
   }
 }
 
