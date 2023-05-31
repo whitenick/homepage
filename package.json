@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev & npm run styles",
-    "build": "npm i --legacy-peer-deps && npx tailwindcss -i ./pages/index.css -o ./pages/tw.css && next build",
+    "build": "npm i --legacy-peer-deps && npx tailwindcss -i ./pages/index.css -o ./pages/tw.css && next build --legacy-peer-deps",
     "start": "next start",
     "start:prod": "next build && NODE_ENV=production next start",
     "styles": "npx tailwindcss -i ./pages/index.css -o ./pages/tw.css --watch",
@@ -18,7 +18,7 @@
     "@types/react": "^18.2.7",
     "next": "12.3.1",
     "postcss": "^8.4.24",
-    "react": "18.2.0",
+    "react": "^16.14.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.6.0",
     "react-typed": "^1.2.0",
