@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev & npm run styles",
-    "build": "npm i --legacy-peer-deps && npx tailwindcss -i ./pages/index.css -o ./pages/tw.css && next build --legacy-peer-deps",
+    "build": "npm i && npx tailwindcss -i ./pages/index.css -o ./pages/tw.css && next build",
     "start": "next start",
     "start:prod": "next build && NODE_ENV=production next start",
     "styles": "npx tailwindcss -i ./pages/index.css -o ./pages/tw.css --watch",
