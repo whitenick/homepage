@@ -2,7 +2,7 @@ import * as React from 'react';
 import { FiGithub, FiLinkedin } from 'react-icons/fi';
 import Home from '../../components/home';
 import { NavBar, NavBarVertical } from '../../components/shared/nav-bar';
-import ReactTyped from 'react-typed';
+import TypedDiv from '../../modules/typed';
 
 const HomePage: React.FunctionComponent<any> = () => {
     return (
@@ -36,7 +36,7 @@ const HomePage: React.FunctionComponent<any> = () => {
                 }
             ]} />
             <div className="flex items-center text-center px-[20%] py-32">
-                <ReactTyped style={{ alignItems: 'center', justifyContent: 'center' }} strings={["Hey! I'm glad you came."]} typeSpeed={100} className="text-6xl font-montserrat text-Jet" />
+                <TypedDiv style={{ alignItems: 'center', justifyContent: 'center' }} strings={["Hey! I'm glad you came."]} className="text-6xl font-montserrat text-Jet" />
             </div>
         </div>
     )
