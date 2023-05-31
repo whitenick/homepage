@@ -35,8 +35,8 @@ const HomePage: React.FunctionComponent<any> = () => {
                     route: '/app/posts'
                 }
             ]} />
-            <div className="flex items-center text-center">
-                <ReactTyped style={{ alignItems: 'center', justifyContent: 'center' }} strings={["Hey! Welcome! I'm glad you came."]} typeSpeed={100} className="text-6xl font-montserrat text-Jet" />
+            <div className="flex items-center text-center px-[20%] py-32">
+                <ReactTyped style={{ alignItems: 'center', justifyContent: 'center' }} strings={["Hey! I'm glad you came."]} typeSpeed={100} className="text-6xl font-montserrat text-Jet" />
             </div>
         </div>
     )
