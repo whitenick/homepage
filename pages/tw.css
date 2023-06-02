@@ -602,6 +602,10 @@ a {
   position: fixed;
 }
 
+.absolute {
+  position: absolute;
+}
+
 .bottom-0 {
   bottom: 0px;
 }
@@ -616,6 +620,30 @@ a {
 
 .top-0 {
   top: 0px;
+}
+
+.top-10 {
+  top: 2.5rem;
+}
+
+.top-20 {
+  top: 5rem;
+}
+
+.top-32 {
+  top: 8rem;
+}
+
+.top-36 {
+  top: 9rem;
+}
+
+.top-40 {
+  top: 10rem;
+}
+
+.top-44 {
+  top: 11rem;
 }
 
 .col-span-3 {
@@ -646,6 +674,26 @@ a {
   height: 50%;
 }
 
+.h-full {
+  height: 100%;
+}
+
+.h-\[100\%\] {
+  height: 100%;
+}
+
+.h-\[20\%\] {
+  height: 20%;
+}
+
+.h-\[30\%\] {
+  height: 30%;
+}
+
+.h-\[35\%\] {
+  height: 35%;
+}
+
 .w-60 {
   width: 15rem;
 }
@@ -654,12 +702,12 @@ a {
   width: 100%;
 }
 
-.w-full {
-  width: 100%;
-}
-
 .w-\[100vw\] {
   width: 100vw;
+}
+
+.w-full {
+  width: 100%;
 }
 
 .auto-cols-auto {
