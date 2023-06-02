@@ -1,6 +1,6 @@
 import { FiExternalLink, FiGithub } from "react-icons/fi";
-import { Header } from "../shared/header"
-import { PageWrapper, PageWrapperWithHeader } from "../shared/page-wrapper";
+import { Header } from "../../components/layout/header"
+import { PageWrapper, PageWrapperWithHeader } from "../../components/layout/page-wrapper";
 
 const Project: React.FunctionComponent<{
     title: string

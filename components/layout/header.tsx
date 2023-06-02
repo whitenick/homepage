@@ -1,4 +1,4 @@
-import { NavBar } from "./nav-bar";
+import { NavBar } from "../navbar/nav-bar";
 import { FiGithub, FiLinkedin } from "react-icons/fi";
 
 export const Header : React.FunctionComponent<any> = () => {

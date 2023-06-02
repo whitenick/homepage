@@ -1,5 +1,5 @@
-import { Header } from "../shared/header"
-import { PageWrapper, PageWrapperWithHeader } from "../shared/page-wrapper"
+import { Header } from "../../components/layout/header"
+import { PageWrapper, PageWrapperWithHeader } from "../../components/layout/page-wrapper"
 
 export const PostsList : React.FunctionComponent<any> = (props) => {
     return (

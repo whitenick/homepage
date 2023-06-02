@@ -1,4 +1,4 @@
-import ProjectsPage from "../../../components/projects/projects-list";
+import ProjectsPage from "../../../modules/projects/projects-list";
 
 const Page = () => {
     return (

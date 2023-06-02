@@ -1,9 +1,9 @@
-import { PostsList } from "../../../modules/posts/posts-list"
+import SpacePage from "../../../modules/space";
 
 const Page = () => {
     return (
         <>
-            <PostsList/>
+            <SpacePage/>
         </>
     )
 }
