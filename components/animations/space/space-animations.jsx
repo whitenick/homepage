@@ -40,7 +40,9 @@ const UFO = (props) => {
 
         ref?.current?.rotation?.set(0, Math.sin(0 + state.clock.elapsedTime / 10) * Math.PI, 0)
 
-        // if (data.y > height * (index === 0 ? 4 : 1)) data.y = -(height * (index === 0 ? 4 : 1))
+        // ref?.current?.position?.set(data.x, data.y += , 0)
+
+        // if (data.y > height) data.y = -(height)
     });
 
     return (

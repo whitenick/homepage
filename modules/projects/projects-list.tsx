@@ -45,24 +45,29 @@ const ProjectsPage: React.FunctionComponent = () => {
         <PageWrapperWithHeader>
             <div className="flex flex-col items-center gap-y-4 px-4">
                 <Project
+                    title={"This Homepage"}
+                    githubLink="https://github.com/whitenick/homepage"
+                    externalLink="nickwhite.us"
+                />
+                <Project
                     title={"The Very Tiny Teacher"}
                     githubLink=""
                     externalLink="https://theverytinyteacher.com"
                 />
                 <Project
                     title={"Itch"}
-                    githubLink=""
-                    externalLink="https://theverytinyteacher.com"
+                    githubLink="https://github.com/whitenick/itchy"
+                    externalLink="https://github.com/whitenick/itchy"
                 />
                 <Project
                     title={"NHL Predictions"}
-                    githubLink=""
-                    externalLink="https://theverytinyteacher.com"
+                    githubLink="https://github.com/whitenick/NHL-Predictions"
+                    externalLink="https://github.com/whitenick/NHL-Predictions"
                 />
                 <Project
                     title={"Cashflow"}
-                    githubLink=""
-                    externalLink="https://theverytinyteacher.com"
+                    githubLink="https://github.com/whitenick/cashflow"
+                    externalLink="https://github.com/whitenick/cashflow"
                 />
             </div>
         </PageWrapperWithHeader>
