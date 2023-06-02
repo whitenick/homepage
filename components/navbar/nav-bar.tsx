@@ -20,10 +20,6 @@ export const DefaultNavBar = () => {
                         route: '/app/projects'
                     },
                     {
-                        name: 'Posts',
-                        route: '/app/posts'
-                    },
-                    {
                         name: 'Space',
                         route: '/app/space'
                     }
@@ -49,10 +45,6 @@ export const UFONavBar = () => {
                     {
                         name: 'Projects',
                         route: '/app/projects'
-                    },
-                    {
-                        name: 'Posts',
-                        route: '/app/posts'
                     },
                     {
                         name: 'Space',
