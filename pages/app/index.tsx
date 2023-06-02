@@ -3,12 +3,12 @@ import { FiGithub, FiLinkedin } from 'react-icons/fi';
 import Home from '../../modules/home';
 import { NavBar, NavBarVertical } from '../../components/navbar/nav-bar';
 import TypedDiv from '../../components/typed';
-import { SpacePageWrapper } from '../../components/layout/page-wrapper';
+import { PageWrapperWithHeader, SpacePageWrapper } from '../../components/layout/page-wrapper';
 
 const HomePage: React.FunctionComponent<any> = () => {
     return (
         // <Home/>
-        <SpacePageWrapper>
+        <PageWrapperWithHeader>
             {/* <div className={"grid grid-flow-col auto-cols-auto w-[100%]"}>
                 <div className="text-6xl font-montserrat text-Jet">
                     Nick White
@@ -39,7 +39,7 @@ const HomePage: React.FunctionComponent<any> = () => {
             <div className="flex items-center justify-center px-[20%] py-32">
                 <TypedDiv style={{ alignItems: 'center', justifyContent: 'center' }} strings={["Hey! I'm glad you came."]} className="text-6xl font-montserrat text-Jet" />
             </div>
-        </SpacePageWrapper>
+        </PageWrapperWithHeader>
     )
 }
 

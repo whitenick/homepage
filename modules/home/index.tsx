@@ -7,7 +7,7 @@ import { PageWrapper, PageWrapperWithHeader, SpacePageWrapper } from "../../comp
 
 const Home : React.FunctionComponent<any> = () => {
     return (
-        <SpacePageWrapper title={"Nick White - About"}>
+        <PageWrapperWithHeader title={"Nick White - About"}>
             {/* <Header /> */}
             <div className="p-6">
                 <span className="text-3xl">Hello, and welcome.</span>
@@ -15,7 +15,7 @@ const Home : React.FunctionComponent<any> = () => {
                 <br/> 
                 <span className="text-xl !leading-10 font-montserrat">I am a software engineer by trade, but my mind wanders. My main interests revolve around tech, business, space, and the outdoors. This site will serve as my playground. Here you can find my current experiments and random thoughts.</span> 
             </div>
-        </SpacePageWrapper>
+        </PageWrapperWithHeader>
     )
 }
 

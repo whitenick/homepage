@@ -91,8 +91,8 @@ const Stars = (props) => {
         <group rotation={[2, 0, -Math.PI / 0.1]}>
             {/* <StarCluster /> */}
             <Points ref={ref} positions={sphere} stride={3} frustrumCulled={false} {...props}>
-                <color attach="color" args={["#fff1cc"]} />
-                <PointMaterial transparent color="#fff1cc" size={0.005} sizeAttenuation={true} depthWrite={false} />
+                {/* <color attach="color" args={["#fff1cc"]} /> */}
+                <PointMaterial color="#fff1cc" size={0.005} sizeAttenuation={true} depthWrite={false} />
             </Points>
         </group>
     )
