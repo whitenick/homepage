@@ -4,16 +4,49 @@ import * as NavigationMenu from "@radix-ui/react-navigation-menu";
 import * as Tabs from "@radix-ui/react-tabs";
 import { Header } from "../../components/layout/header";
 import { PageWrapper, PageWrapperWithHeader, SpacePageWrapper } from "../../components/layout/page-wrapper";
+import TypedDiv from "../../components/typed";
 
 const Home : React.FunctionComponent<any> = () => {
     return (
-        <PageWrapperWithHeader title={"Nick White - About"}>
-            {/* <Header /> */}
-            <div className="p-6">
-                <span className="text-3xl">Hello, and welcome.</span>
-                <br/>
-                <br/> 
-                <span className="text-xl !leading-10 font-montserrat">I am a software engineer by trade, but my mind wanders. My main interests revolve around tech, business, space, and the outdoors. This site will serve as my playground. Here you can find my current experiments and random thoughts.</span> 
+        // <PageWrapperWithHeader title={"Nick White - About"}>
+        //     {/* <Header /> */}
+        //     <div className="p-6">
+        //         <span className="text-3xl">Hello, and welcome.</span>
+        //         <br/>
+        //         <br/> 
+        //         <span className="text-xl !leading-10 font-montserrat">I am a software engineer by trade, but my mind wanders. My main interests revolve around tech, business, space, and the outdoors. This site will serve as my playground. Here you can find my current experiments and random thoughts.</span> 
+        //     </div>
+        // </PageWrapperWithHeader>
+        <PageWrapperWithHeader>
+            {/* <div className={"grid grid-flow-col auto-cols-auto w-[100%]"}>
+                <div className="text-6xl font-montserrat text-Jet">
+                    Nick White
+                </div>
+                <div className="flex justify-end gap-x-2">
+                    <a href="https://github.com/whitenick" target="_blank" className="grid justify-end p-2" title="Github">
+                        <FiLinkedin href="https://github.com/whitenick"/>
+                    </a>
+                    <a href="https://github.com/whitenick" target="_blank" className="grid justify-end p-2" title="Github">
+                        <FiGithub href="https://github.com/whitenick"/>
+                    </a>
+                </div>
+            </div> */}
+            {/* <NavBar items={[
+                {
+                    name: 'About',
+                    route: '/app'
+                },
+                {
+                    name: 'Projects',
+                    route: '/app/projects'
+                },
+                {
+                    name: 'Posts',
+                    route: '/app/posts'
+                }
+            ]} /> */}
+            <div className="flex items-center justify-center px-[20%] py-32">
+                <TypedDiv style={{ alignItems: 'center', justifyContent: 'center' }} strings={["Hey! I'm glad you came."]} className="text-6xl font-montserrat text-Jet" />
             </div>
         </PageWrapperWithHeader>
     )

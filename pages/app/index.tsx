@@ -7,39 +7,9 @@ import { PageWrapperWithHeader, SpacePageWrapper } from '../../components/layout
 
 const HomePage: React.FunctionComponent<any> = () => {
     return (
-        // <Home/>
-        <PageWrapperWithHeader>
-            {/* <div className={"grid grid-flow-col auto-cols-auto w-[100%]"}>
-                <div className="text-6xl font-montserrat text-Jet">
-                    Nick White
-                </div>
-                <div className="flex justify-end gap-x-2">
-                    <a href="https://github.com/whitenick" target="_blank" className="grid justify-end p-2" title="Github">
-                        <FiLinkedin href="https://github.com/whitenick"/>
-                    </a>
-                    <a href="https://github.com/whitenick" target="_blank" className="grid justify-end p-2" title="Github">
-                        <FiGithub href="https://github.com/whitenick"/>
-                    </a>
-                </div>
-            </div> */}
-            {/* <NavBar items={[
-                {
-                    name: 'About',
-                    route: '/app'
-                },
-                {
-                    name: 'Projects',
-                    route: '/app/projects'
-                },
-                {
-                    name: 'Posts',
-                    route: '/app/posts'
-                }
-            ]} /> */}
-            <div className="flex items-center justify-center px-[20%] py-32">
-                <TypedDiv style={{ alignItems: 'center', justifyContent: 'center' }} strings={["Hey! I'm glad you came."]} className="text-6xl font-montserrat text-Jet" />
-            </div>
-        </PageWrapperWithHeader>
+        <>
+            <Home/>
+        </>
     )
 }
 
