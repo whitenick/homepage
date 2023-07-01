@@ -25,7 +25,7 @@ const UFO = (props) => {
 
     const { width, height } = viewport.getCurrentViewport(camera, [0, 0, 1]);
 
-    const { nodes, materials } = useGLTF("/bob_lazar_ufo (1).glb");
+    const result = useGLTF("/bob_lazar_ufo (1).glb");
 
     const [data] = useState({
         y: THREE.MathUtils.randFloatSpread(height * 2),
@@ -38,7 +38,7 @@ const UFO = (props) => {
     useFrame((state, dt) => {
         // if (dt < 0.1) ref?.current?.position?.set(index === 0 ? 0 : data.x * width, (data.y += dt * speed), -z)
 
-        ref?.current?.rotation?.set(0, Math.sin(0 + state.clock.elapsedTime / 10) * Math.PI, 0)
+       (ref)?.current?.rotation?.set(0, Math.sin(0 + state.clock.elapsedTime / 10) * Math.PI, 0)
 
         // ref?.current?.position?.set(data.x, data.y += , 0)
 
@@ -52,16 +52,14 @@ const UFO = (props) => {
                     <mesh
                         castShadow
                         receiveShadow
-                        geometry={nodes.defaultMaterial.geometry}
-                        material={materials.material}
+                        geometry={result?.nodes.defaultMaterial.geometry}
+                        material={result?.materials.material}
                     />
                 </group>
             </group>
         </group>
     )
 }
-
-useGLTF.preload("/bob_lazar_ufo (1).glb");
 
 export const SpaceCanvas = () => {
     const [hasMounted, setHasMounted] = useState(false);
@@ -73,7 +71,7 @@ export const SpaceCanvas = () => {
                 <directionalLight />
                 <Stars />
                 <StarCluster />
-                <Environment preset="sunset" />
+                <Environment preset="sunset"/>
             </Canvas>
         </>
     )
@@ -85,7 +83,7 @@ const Stars = (props) => {
 
     useFrame((state, delta) => {
         // ref.current.rotation.x += delta / 10
-        ref.current.rotation.y += delta / 15
+        (ref.current).rotation.y += delta / 15
         // ref.current.rotation.z += delta / 20
     });
 
@@ -100,13 +98,13 @@ const Stars = (props) => {
 }
 
 const StarCluster = (props) => {
-    const { nodes, materials } = useGLTF("/need_some_space.glb");
+    const result = useGLTF("/need_some_space.glb");
     return (
         <group {...props} dispose={null}>
             <group rotation={[-Math.PI / 2, 0, 0]} scale={.01}>
                 <points
-                    geometry={nodes.Object_2.geometry}
-                    material={materials["Scene_-_Root"]}
+                    geometry={result?.nodes.Object_2.geometry}
+                    material={result?.materials["Scene_-_Root"]}
                 />
             </group>
         </group>
@@ -114,3 +112,4 @@ const StarCluster = (props) => {
 }
 
 useGLTF.preload("/need_some_space.glb");
+useGLTF.preload("/bob_lazar_ufo (1).glb");

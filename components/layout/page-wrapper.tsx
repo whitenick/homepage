@@ -25,18 +25,14 @@ export const PageWrapperWithHeader: React.FunctionComponent<{
     )
 }
 
-export const SpacePageWrapper: React.FunctionComponent<{
+export const ThreeJSPageWrapper: React.FunctionComponent<{
     title?: string,
     className?: string,
     children?: any
 }> = (props) => {
     return (
         <div className={"h-[100vh] w-[100vw]"}>
-            <SpaceCanvas />
-            <div className="fixed top-0 left-0 right-0 bottom-0 justify-center items-center">
-                <UFONavBar />
-                {props.children}
-            </div>
+            { props.children }
         </div>
     )
 }

@@ -7,7 +7,7 @@
     {
         "name": "Launch via NPM",
         "request": "launch",
-        "cwd": "${workspaceFolder/v2/homepage}",
+        "cwd": "${workspaceFolder}",
         "runtimeArgs": [
             "run",
             "dev"
