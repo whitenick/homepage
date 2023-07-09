@@ -5,7 +5,7 @@ import { SpaceCanvas } from "../animations/space/space-animations"
 
 export const PageWrapper: React.FunctionComponent<any> = (props) => {
     return (
-        <div className="h-full">
+        <div className="h-[100vh]">
             <title>{props.title}</title>
             {props.children}
         </div>
@@ -31,7 +31,7 @@ export const ThreeJSPageWrapper: React.FunctionComponent<{
     children?: any
 }> = (props) => {
     return (
-        <div className={"h-[100vh] w-[100vw]"}>
+        <div className={"h-[100%] w-[100%]"}>
             { props.children }
         </div>
     )

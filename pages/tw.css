@@ -662,6 +662,10 @@ a {
   height: 100%;
 }
 
+.h-\[100\%\] {
+  height: 100%;
+}
+
 .w-60 {
   width: 15rem;
 }
@@ -676,6 +680,14 @@ a {
 
 .w-full {
   width: 100%;
+}
+
+.w-\[100\] {
+  width: 100;
+}
+
+.resize {
+  resize: both;
 }
 
 .auto-cols-auto {

@@ -10,20 +10,7 @@ export const DefaultNavBar = () => {
     return (
         <>
             <NavBar
-                items={[
-                    {
-                        name: 'About',
-                        route: '/app'
-                    },
-                    {
-                        name: 'Projects',
-                        route: '/app/projects'
-                    },
-                    {
-                        name: 'Space',
-                        route: '/app/space'
-                    }
-                ]}
+                items={DefaultNavBarOptions}
             />
         </>
     )
@@ -37,24 +24,31 @@ export const UFONavBar = () => {
             </div>
             <NavBar
                 className='absolute top-44 left-0 right-0 bottom-0 '
-                items={[
-                    {
-                        name: 'About',
-                        route: '/app'
-                    },
-                    {
-                        name: 'Projects',
-                        route: '/app/projects'
-                    },
-                    {
-                        name: 'Space',
-                        route: '/app/space'
-                    }
-                ]}
+                items={DefaultNavBarOptions}
             />
         </>
     )
 }
+
+export const DefaultNavBarOptions = [
+    {
+        name: 'About',
+        route: '/app'
+    },
+    {
+        name: 'Projects',
+        route: '/app/projects'
+    },
+    {
+        name: 'Space',
+        route: '/app/space'
+    }, 
+    {
+        name: 'Games',
+        route: '/app/games/noise-meter'
+    }
+
+]
 
 export const NavBar: React.FunctionComponent<{
     items: { name: string, route: string }[],
