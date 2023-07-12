@@ -3,7 +3,7 @@ import { DesktopWrapper } from "../../components/layout/desktop-wrapper";
 import * as NavigationMenu from "@radix-ui/react-navigation-menu";
 import * as Tabs from "@radix-ui/react-tabs";
 import { Header } from "../../components/layout/header";
-import { PageWrapper, PageWrapperWithHeader, SpacePageWrapper } from "../../components/layout/page-wrapper";
+import { PageWrapper, PageWrapperWithHeader } from "../../components/layout/page-wrapper";
 import TypedDiv from "../../components/typed";
 
 const Home : React.FunctionComponent<any> = () => {
