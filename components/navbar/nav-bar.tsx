@@ -45,7 +45,7 @@ export const DefaultNavBarOptions = [
     }, 
     {
         name: 'Games',
-        route: '/app/games/noise-meter'
+        route: '/app/games'
     }
 
 ]

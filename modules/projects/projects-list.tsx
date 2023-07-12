@@ -9,8 +9,8 @@ const Project: React.FunctionComponent<{
 }> = (props) => {
     return (
         <div className="grid auto-rows-auto shadow rounded p-4 bg-Snow gap-y-2 w-full">
-            <div className="grid grid-cols-2 pb-4">
-                <div className="text-xl">
+            <div className="grid grid-cols-2 items-center justify-center">
+                <div className="text-xl font-inconsolata justify-center">
                     {props.title}
                 </div>
                 <div className="flex justify-end gap-x-4">
