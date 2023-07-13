@@ -5,6 +5,7 @@ import * as Tabs from "@radix-ui/react-tabs";
 import { Header } from "../../components/layout/header";
 import { PageWrapper, PageWrapperWithHeader } from "../../components/layout/page-wrapper";
 import TypedDiv from "../../components/typed";
+import { UFONavBar } from "../../components/navbar/nav-bar";
 
 const Home : React.FunctionComponent<any> = () => {
     return (
@@ -17,7 +18,7 @@ const Home : React.FunctionComponent<any> = () => {
         //         <span className="text-xl !leading-10 font-montserrat">I am a software engineer by trade, but my mind wanders. My main interests revolve around tech, business, space, and the outdoors. This site will serve as my playground. Here you can find my current experiments and random thoughts.</span> 
         //     </div>
         // </PageWrapperWithHeader>
-        <PageWrapperWithHeader>
+        <PageWrapper>
             {/* <div className={"grid grid-flow-col auto-cols-auto w-[100%]"}>
                 <div className="text-6xl font-montserrat text-Jet">
                     Nick White
@@ -45,10 +46,11 @@ const Home : React.FunctionComponent<any> = () => {
                     route: '/app/posts'
                 }
             ]} /> */}
+            <UFONavBar />
             <div className="flex items-center justify-center px-[20%] py-32">
                 <TypedDiv style={{ alignItems: 'center', justifyContent: 'center' }} strings={["Hey! I'm glad you came."]} className="text-6xl font-montserrat text-Jet" />
             </div>
-        </PageWrapperWithHeader>
+        </PageWrapper>
     )
 }
 

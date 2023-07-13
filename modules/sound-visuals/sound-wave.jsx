@@ -92,12 +92,13 @@ const SoundWave = () => {
 
   return (
     <ThreeJSPageWrapper>
-      <div className="absolute bottom-0 z-1000">
-        <a href="https://codepen.io/soju22/pen/PLeLwo">
-          <div className="text-xl italic text-Light-Gray">
-            Inspired by Kevin Levron 
-          </div>
-        </a>
+      <div className="absolute right-5 z-1000">
+        <div className="text-xl italic text-Light-Gray">
+          Adapted from 
+          <button href="https://codepen.io/soju22/pen/PLeLwo" target="_blank">
+            Kevin Levron
+          </button>
+        </div>
       </div>
       <Canvas style={{}} camera={{ position: [cameraState.position.x, cameraState.position.y, cameraState.position.z], fov: 90 }}>
         <Suspense fallback={null}>
