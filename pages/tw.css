@@ -626,6 +626,10 @@ a {
   top: 11rem;
 }
 
+.z-0 {
+  z-index: 0;
+}
+
 .col-span-3 {
   grid-column: span 3 / span 3;
 }
@@ -908,6 +912,10 @@ a {
   font-weight: 600;
 }
 
+.italic {
+  font-style: italic;
+}
+
 .\!leading-10 {
   line-height: 2.5rem !important;
 }
@@ -935,6 +943,15 @@ a {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-inherit {
+  color: inherit;
+}
+
+.text-Light-Gray {
+  --tw-text-opacity: 1;
+  color: rgb(210 215 223 / var(--tw-text-opacity));
 }
 
 .shadow {

@@ -92,7 +92,14 @@ const SoundWave = () => {
 
   return (
     <ThreeJSPageWrapper>
-      <Canvas style={{}} camera={{ position: [cameraState.position.x, cameraState.position.y, cameraState.position.z], fov: 100 }}>
+      <div className="absolute bottom-0 z-1000">
+        <a href="https://codepen.io/soju22/pen/PLeLwo">
+          <div className="text-xl italic text-Light-Gray">
+            Inspired by Kevin Levron 
+          </div>
+        </a>
+      </div>
+      <Canvas style={{}} camera={{ position: [cameraState.position.x, cameraState.position.y, cameraState.position.z], fov: 90 }}>
         <Suspense fallback={null}>
           <PlaneAnimation />
         </Suspense>
