@@ -2,7 +2,7 @@ import { Canvas } from "@react-three/fiber";
 import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import { Vector2 } from "three";
-import { ThreeJSPageWrapper } from "../../components/layout/page-wrapper";
+import { ThreeJSWrapper } from "../../components/layout/page-wrapper";
 
 // #ifdef GL_ES
 // precision mediump float;
@@ -263,11 +263,11 @@ const WaterWave = () => {
     });
 
     return (
-        <ThreeJSPageWrapper>
+        <ThreeJSWrapper>
             <Canvas onCreated={state => state.gl.setClearColor("white")} camera={{ position: [cameraState.position.x, cameraState.position.y, cameraState.position.z], fov: 75 }}>
                 <WaterAnimation />
             </Canvas>
-        </ThreeJSPageWrapper>
+        </ThreeJSWrapper>
     )
 }
 

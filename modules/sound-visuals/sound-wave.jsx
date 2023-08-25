@@ -1,5 +1,5 @@
 import * as THREE from "three";
-import { PageWrapperWithHeader, ThreeJSPageWrapper } from "../../components/layout/page-wrapper";
+import { PageWrapperWithHeader, ThreeJSWrapper } from "../../components/layout/page-wrapper";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { Environment } from "@react-three/drei";
 import { Suspense, useEffect, useRef, useState } from "react";
@@ -91,7 +91,7 @@ const SoundWave = () => {
   }, []);
 
   return (
-    <ThreeJSPageWrapper>
+    <ThreeJSWrapper>
       <div className="absolute right-5 z-1000">
         <div className="text-xl italic text-Light-Gray">
           Adapted from 
@@ -105,7 +105,7 @@ const SoundWave = () => {
           <PlaneAnimation />
         </Suspense>
       </Canvas>
-    </ThreeJSPageWrapper>
+    </ThreeJSWrapper>
   )
 }
 

@@ -1,7 +1,7 @@
 import { Header } from "./header"
 import { DefaultNavBar, NavBar, UFONavBar } from "../navbar/nav-bar"
 import cx from "classnames"
-import { SpaceCanvas } from "../animations/space/space-animations"
+import { SpaceCanvas } from "../../modules/games/animation/space-animations"
 
 export const PageWrapper: React.FunctionComponent<any> = (props) => {
     return (
@@ -25,7 +25,7 @@ export const PageWrapperWithHeader: React.FunctionComponent<{
     )
 }
 
-export const ThreeJSPageWrapper: React.FunctionComponent<{
+export const ThreeJSWrapper: React.FunctionComponent<{
     title?: string,
     className?: string,
     children?: any

@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useMemo } from 'react';
 import { FiLinkedin, FiGithub } from 'react-icons/fi';
-import { UFOCanvas } from '../animations/space/space-animations';
+import { UFOCanvas } from '../../modules/games/animation/space-animations';
 import cx from "classnames";
 
 export const DefaultNavBar = () => {

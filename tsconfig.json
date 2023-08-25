@@ -23,7 +23,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "components/posts", "modules/space/index.tsx", "modules/space/components/space-page-wrapper.tsx", "modules/sound-visuals/sound-wave.jsx", "components/animations/space/space-animations.jsx"  ],
+, "components/posts", "modules/space/index.tsx", "modules/space/components/space-page-wrapper.tsx", "modules/sound-visuals/sound-wave.jsx", "modules/games/animation/space-animations.jsx", "modules/games/animation/bouncing-lemon.tsx"  ],
   "exclude": [
     "node_modules"
   ]
