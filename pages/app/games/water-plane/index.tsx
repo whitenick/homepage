@@ -1,5 +1,5 @@
 import { PageWrapper } from "../../../../components/layout/page-wrapper";
-import WaterWave from "../../../../modules/sound-visuals/water-wave";
+import WaterWave from "../../../../modules/games/animation/water-wave";
 
 const Page = () => {
     return (

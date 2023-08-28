@@ -1,5 +1,5 @@
 import * as THREE from "three";
-import { PageWrapperWithHeader, ThreeJSWrapper } from "../../components/layout/page-wrapper";
+import { ThreeJSWrapper } from "../../components/layout/page-wrapper";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { Environment } from "@react-three/drei";
 import { Suspense, useEffect, useRef, useState } from "react";
@@ -14,10 +14,10 @@ const conf = {
   zCoef: 5,
   lightIntensity: 0.9,
   ambientColor: 0x000000,
-  light1Color: 0x0E09DC,
-  light2Color: 0x1CD1E1,
-  light3Color: 0x18C02C,
-  light4Color: 0xee3bcf
+  light1Color: 0x0E09DF,
+  light2Color: 0x1CD1EE,
+  light3Color: 0x18C02E,
+  light4Color: 0xee3bc5
 };
 
 const Plane = props => {
@@ -41,7 +41,7 @@ const Plane = props => {
   return (
     <mesh ref={props.mesh} {...props} scale={5}>
       <planeGeometry attach="geometry" args={[100, 100, 500, 500]} />
-      <meshLambertMaterial attach="material" color={0xffffff} side={THREE.DoubleSide} />
+      <meshLambertMaterial attach="material" color={0xfad107} side={THREE.DoubleSide} />
     </mesh>
   )
 }
@@ -231,10 +231,10 @@ const PlaneAnimation = (props) => {
   return (
     <>
       <Plane mesh={plane} position={[planeState.position.x, planeState.position.y, planeState.position.z]} rotation={[planeState.rotation.x, planeState.rotation.y, planeState.rotation.z]} />
-      <PointLightColor position={[0, 10, 30]} color={0x0E09DC} intensity={0.9} distance={500} />
-      <PointLightColor position={[0, -10, -30]} color={0x1CD1E1} intensity={0.9} distance={500} />
-      <PointLightColor position={[30, 10, 0]} color={0x18C02C} intensity={0.9} distance={500} />
-      <PointLightColor position={[-30, 10, 0]} color={0xee3bcf} intensity={0.9} distance={500} />
+      <PointLightColor position={[0, 10, 30]} color={0xfad107} intensity={0.9} distance={500} />
+      <PointLightColor position={[0, -10, -30]} color={0xfad107} intensity={0.9} distance={500} />
+      <PointLightColor position={[30, 10, 0]} color={0xfad107} intensity={0.9} distance={500} />
+      <PointLightColor position={[-30, 10, 0]} color={0xfad107} intensity={0.9} distance={500} />
     </>
   );
 }

@@ -1,5 +1,6 @@
+import { useGLTF } from "@react-three/drei"
 import { PageWrapperWithHeader } from "../../../../components/layout/page-wrapper"
-import BouncingLemon from "../../../../modules/games/animation/bouncing-lemon"
+import { BouncingLemon } from "../../../../modules/animations/bouncing-lemon"
 
 const Page = () => {
     return (

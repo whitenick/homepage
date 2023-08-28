@@ -1,4 +1,4 @@
-import { SpaceCanvas, UFOCanvas } from "../../games/animation/space-animations"
+import { SpaceCanvas, UFOCanvas } from "../../animations/space-animations"
 import { ThreeJSWrapper } from "../../../components/layout/page-wrapper"
 import { UFONavBar } from "../../../components/navbar/nav-bar"
 

@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useMemo } from 'react';
 import { FiLinkedin, FiGithub } from 'react-icons/fi';
-import { UFOCanvas } from '../../modules/games/animation/space-animations';
+import { UFOCanvas } from '../../modules/animations/space-animations';
 import cx from "classnames";
 
 export const DefaultNavBar = () => {
@@ -32,19 +32,19 @@ export const UFONavBar = () => {
 
 export const DefaultNavBarOptions = [
     {
-        name: 'About',
+        name: 'about',
         route: '/app'
     },
     {
-        name: 'Projects',
+        name: 'projects',
         route: '/app/projects'
     },
     {
-        name: 'Space',
+        name: 'space',
         route: '/app/space'
     }, 
     {
-        name: 'Animations',
+        name: 'animations',
         route: '/app/games'
     }
 
@@ -79,7 +79,7 @@ export const NavBar: React.FunctionComponent<{
                 <NavigationMenu.List className="grid grid-rows-1 grid-flow-col justify-center gap-4">
                     {props.items?.length > 0 && props.items?.map(item => {
                         return (
-                            <Link href={item.route ?? ""}>
+                            <Link key={"key_" + item?.name} href={item.route ?? ""}>
                                 <NavigationMenu.Item className={`${path.toLowerCase() === item.route?.toLowerCase() ? "border-b border-Jet text-Jet" : "text-gray-500"} hover:border-b hover:cursor-pointer font-mono p-4`}>
                                     {item?.name}
                                 </NavigationMenu.Item>

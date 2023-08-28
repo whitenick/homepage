@@ -1,5 +1,5 @@
 import { PageWrapperWithHeader } from "../../../../components/layout/page-wrapper";
-import SoundWave from "../../../../modules/sound-visuals/sound-wave";
+import SoundWave from "../../../../modules/animations/sound-wave";
 
 const Page = () => {
     return (

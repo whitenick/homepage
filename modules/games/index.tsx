@@ -13,7 +13,7 @@ const GamesPage = () => {
                     <Card.Container>
                         <Card.Left>
                             <div className="flex justify-start items-center text-xl font-inconsolata">
-                                Sound Blob
+                                sound blob
                             </div>
                         </Card.Left>
                         <Card.Right className="justify-end">
@@ -27,7 +27,21 @@ const GamesPage = () => {
                     <Card.Container>
                         <Card.Left>
                             <div className="flex justify-start items-center text-xl font-inconsolata">
-                                Bouncing Lemon
+                                falling lemons
+                            </div>
+                        </Card.Left>
+                        <Card.Right className="justify-end">
+                            <div className="flex justify-end items-center">
+                                <FiExternalLink />
+                            </div>
+                        </Card.Right>
+                    </Card.Container>
+                </button>
+                <button onClick={() => router.push("/app/games/gravity") } className="hover:shadow">
+                    <Card.Container>
+                        <Card.Left>
+                            <div className="flex justify-start items-center text-xl font-inconsolata">
+                                gravity (w/ lemons)
                             </div>
                         </Card.Left>
                         <Card.Right className="justify-end">

@@ -2,9 +2,6 @@ import * as THREE from "three";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { Points, PointMaterial, useGLTF, useAnimations, Environment } from "@react-three/drei"
 import { useRef, useState, useEffect } from "react";
-// import dynamic from 'next/dynamic';
-// const random = dynamic(() => import('maath/random/dist/maath-random.esm'), { ssr: false });
-// import 'maath/random/dist/maath-random.esm';
 import * as random from 'maath/random/';
 
 
