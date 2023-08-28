@@ -272,3 +272,11 @@
 // }
 
 // export default WaterWave;
+
+const WaterWave = () => {
+    return (
+        <></>
+    )
+};
+
+export default WaterWave;
