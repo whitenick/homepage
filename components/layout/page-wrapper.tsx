@@ -1,7 +1,4 @@
-import { Header } from "./header"
 import { DefaultNavBar, NavBar, UFONavBar } from "../navbar/nav-bar"
-import cx from "classnames"
-import { SpaceCanvas } from "../../modules/games/animation/space-animations"
 
 export const PageWrapper: React.FunctionComponent<any> = (props) => {
     return (
