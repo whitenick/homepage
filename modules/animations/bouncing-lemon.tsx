@@ -18,7 +18,7 @@ const conf = {
 };
 
 const OtherLemon = (props) => {
-    const { nodes, materials }: any = useGLTF("http://localhost:3000/lemon (2).glb");
+    const { nodes, materials }: any = useGLTF("/lemon (2).glb");
 
     return (
         <group {...props} dispose={null}>
@@ -41,7 +41,7 @@ const OtherLemon = (props) => {
 export const Lemon = (props: {
     [key: string]: any
 }) => {
-    const { nodes, materials }: any = useGLTF('http://localhost:3000/lemon_real.glb');
+    const { nodes, materials }: any = useGLTF('/lemon_real.glb');
     const lemonRef = useRef();
 
     return (
@@ -81,7 +81,7 @@ const FallingLemon = (props) => {
         delta: Math.max(Math.random() * 15, 1) % 15
     })
     const planeMesh: any = useRef();
-    const { nodes, materials }: any = useGLTF('http://localhost:3000/lemon_real.glb');
+    const { nodes, materials }: any = useGLTF('/lemon_real.glb');
     console.log(lemonPosition.position)
 
     useFrame((state, delta) => {
@@ -149,5 +149,5 @@ export const BouncingLemon = (props) => {
     )
 };
 
-useGLTF.preload("http://localhost:3000/lemon (2).glb");
-useGLTF.preload('http://localhost:3000/lemon_real.glb');
+useGLTF.preload("/lemon (2).glb");
+useGLTF.preload('/lemon_real.glb');
