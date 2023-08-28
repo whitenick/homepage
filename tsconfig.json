@@ -23,7 +23,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "components/posts", "modules/space/index.tsx", "modules/space/components/space-page-wrapper.tsx", "modules/games/animation/sound-wave.jsx", "modules/games/animation/space-animations.jsx", "modules/animations/bouncing-lemon.tsx", "modules/animations/water-wave.jsx"  ],
+, "components/posts", "modules/space/index.tsx", "modules/space/components/space-page-wrapper.tsx", "modules/games/animation/sound-wave.jsx", "modules/games/animation/space-animations.jsx", "modules/animations/bouncing-lemon.tsx", "modules/animations/water-wave.js"  ],
   "exclude": [
     "node_modules"
   ]

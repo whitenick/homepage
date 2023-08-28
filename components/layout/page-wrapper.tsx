@@ -1,4 +1,4 @@
-import { DefaultNavBar, NavBar, UFONavBar } from "../navbar/nav-bar"
+import { DefaultNavBar } from "../navbar/nav-bar"
 
 export const PageWrapper: React.FunctionComponent<any> = (props) => {
     return (
