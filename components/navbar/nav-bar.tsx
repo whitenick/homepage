@@ -5,6 +5,7 @@ import { useMemo } from 'react';
 import { FiLinkedin, FiGithub } from 'react-icons/fi';
 import { UFOCanvas } from '../../modules/animations/space-animations';
 import cx from "classnames";
+import { URLS } from '../utils/urls';
 
 export const DefaultNavBar = () => {
     return (
@@ -63,9 +64,9 @@ export const NavBar: React.FunctionComponent<{
     return (
         <div className={cx("p-1 rounded items-center font-sans py-12", props.className)}>
             <div className={"grid grid-rows-2 justify-center w-[100%]"}>
-                <div className="text-5xl content-center font-lobster text-Jet">
+                <a href={URLS.home} className="text-5xl content-center font-lobster text-Jet">
                     Nick White
-                </div>
+                </a>
                 <div className="flex justify-center items-center gap-x-2">
                     <a href="https://www.linkedin.com/in/nick-white-a4ba63110/" target="_blank" className="justify-end p-2" title="Github">
                         <FiLinkedin />

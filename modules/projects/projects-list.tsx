@@ -1,6 +1,7 @@
 import { FiExternalLink, FiGithub } from "react-icons/fi";
 import { Header } from "../../components/layout/header"
 import { PageWrapper, PageWrapperWithHeader } from "../../components/layout/page-wrapper";
+import { useRouter } from "next/router";
 
 const Project: React.FunctionComponent<{
     title: string
@@ -41,6 +42,8 @@ const Project: React.FunctionComponent<{
 }
 
 const ProjectsPage: React.FunctionComponent = () => {
+    const router = useRouter();
+
     return (
         <PageWrapperWithHeader>
             <div className="flex flex-col items-center gap-y-4 px-4">
@@ -68,6 +71,11 @@ const ProjectsPage: React.FunctionComponent = () => {
                     title={"Cashflow"}
                     githubLink="https://github.com/whitenick/cashflow"
                     externalLink="https://github.com/whitenick/cashflow"
+                />
+                <Project
+                    title={"BeeSee (or something idk)"}
+                    githubLink="https://github.com/whitenick/homepage"
+                    externalLink={router.basePath + "/app/bee-see"}
                 />
             </div>
         </PageWrapperWithHeader>

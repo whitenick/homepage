@@ -706,12 +706,20 @@ a {
   grid-auto-rows: auto;
 }
 
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
 .grid-cols-2 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .grid-cols-4 {
   grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.grid-cols-\[84px_1fr\] {
+  grid-template-columns: 84px 1fr;
 }
 
 .grid-rows-1 {
@@ -748,6 +756,10 @@ a {
 
 .gap-4 {
   gap: 1rem;
+}
+
+.gap-6 {
+  gap: 1.5rem;
 }
 
 .gap-x-2 {

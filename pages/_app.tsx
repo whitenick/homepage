@@ -1,6 +1,29 @@
 import Head from 'next/head';
-import '../styles/globals.css';``
+import '../styles/globals.css'; ``
 import './tw.css';
+import { ChakraProvider, extendTheme } from '@chakra-ui/react';
+import { CacheProvider } from '@chakra-ui/next-js';
+import { Rubik } from 'next/font/google';
+
+// Set theme for Chakra UI
+const colors = {
+  brand: {
+    900: '#1a365d',
+    800: '#153e75',
+    700: '#2a69ac',
+  },
+}
+
+export const theme = extendTheme({
+  colors,
+  fonts: {
+    heading: 'var(--font-rubik)',
+    body: 'var(--font-rubik)',
+  }
+});
+
+// Set font for Rubik
+const rubik = Rubik({ subsets: ['latin'] });
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -20,9 +43,20 @@ function MyApp({ Component, pageProps }) {
           name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=1"
         />
-        <link rel="icon" href="/volcano_mountain_icon_187744.ico" style={{color: "white"}}/>
+        <link rel="icon" href="/volcano_mountain_icon_187744.ico" style={{ color: "white" }} />
       </Head>
-      <Component {...pageProps} />
+      <style jsx global>
+        {`
+        :root {
+          --font-rubik: ${rubik.style.fontFamily};
+        }
+      `}
+      </style>
+      <CacheProvider>
+        <ChakraProvider theme={theme}>
+          <Component {...pageProps} />
+        </ChakraProvider>
+      </CacheProvider>
     </>
   );
 }
