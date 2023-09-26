@@ -1,4 +1,4 @@
-import StudentList from "../../../modules/bee-see/student-list";
+import StudentList from "../../../modules/behavior-buzz/student-list";
 
 const Page = () => {
     return (
