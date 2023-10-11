@@ -30,7 +30,8 @@ import THREE from "three";
 
 class Wave extends React.Component {
     render() {
-        const THREEx = require('threex.terrain');
+        // const THREEx = require('threex.terrain');
+        const THREEx : any = null;
 
         var renderer = new THREE.WebGLRenderer({
             antialias: true
@@ -39,7 +40,7 @@ class Wave extends React.Component {
         renderer.setSize(window.innerWidth, window.innerHeight);
         /* Append to HTML */
         document.body.appendChild(renderer.domElement);
-        var onRenderFcts = [];
+        var onRenderFcts : any[] = [];
         var scene = new THREE.Scene();
         var camera = new THREE.PerspectiveCamera(25, window.innerWidth / window.innerHeight, 0.01, 1000);
         /* Play around with camera positioning */
@@ -57,10 +58,10 @@ class Wave extends React.Component {
             light.position.set(-0.5, -0.5, -2)
             scene.add(light3)
         })()
-        var heightMap = THREEx.Terrain.allocateHeightMap(256, 256)
-        THREEx.Terrain.simplexHeightMap(heightMap)
-        var geometry = THREEx.Terrain.heightMapToPlaneGeometry(heightMap)
-        THREEx.Terrain.heightMapToVertexColor(heightMap, geometry)
+        var heightMap = THREEx?.Terrain.allocateHeightMap(256, 256)
+        THREEx?.Terrain.simplexHeightMap(heightMap)
+        var geometry = THREEx?.Terrain.heightMapToPlaneGeometry(heightMap)
+        THREEx?.Terrain.heightMapToVertexColor(heightMap, geometry)
         /* Wireframe built-in color is white, no need to change that */
         var material = new THREE.MeshBasicMaterial({
             wireframe: true
@@ -80,7 +81,7 @@ class Wave extends React.Component {
         onRenderFcts.push(function () {
             renderer.render(scene, camera);
         })
-        var lastTimeMsec = null
+        var lastTimeMsec : any = null
         requestAnimationFrame(function animate(nowMsec) {
             requestAnimationFrame(animate);
             lastTimeMsec = lastTimeMsec || nowMsec - 1000 / 60
