@@ -42,7 +42,7 @@ export const Lemon = (props: {
     [key: string]: any
 }) => {
     const { nodes, materials }: any = useGLTF('/lemon_real.glb');
-    const lemonRef = useRef();
+    const lemonRef = useRef<any>();
 
     return (
         <>
@@ -119,7 +119,7 @@ const FallingLemon = (props) => {
 }
 
 const lemons = (): any[] => {
-    let lemons = []
+    let lemons : any = []
     for (let i = 0; i < 100; i++) {
         lemons.push(<FallingLemon />)
     }
