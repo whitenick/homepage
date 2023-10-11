@@ -19,7 +19,15 @@ export const theme = extendTheme({
   fonts: {
     heading: 'var(--font-rubik)',
     body: 'var(--font-rubik)',
+  },
+  styles: {
+    global: {
+      body: {
+        bg: "Snow"
+      }
+    }
   }
+  
 });
 
 // Set font for Rubik
@@ -44,6 +52,10 @@ function MyApp({ Component, pageProps }) {
           content="width=device-width, initial-scale=1, maximum-scale=1"
         />
         <link rel="icon" href="/volcano_mountain_icon_187744.ico" style={{ color: "white" }} />
+
+        <script src='https://jeromeetienne.github.io/threex.terrain/examples/vendor/three.js/build/three-min.js'></script>
+        <script src='https://jeromeetienne.github.io/threex.terrain/examples/vendor/three.js/examples/js/SimplexNoise.js'></script>
+        <script src='https://jeromeetienne.github.io/threex.terrain/threex.terrain.js'></script>
       </Head>
       <style jsx global>
         {`

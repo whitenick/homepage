@@ -48,13 +48,13 @@ const StudentListTable = async () => {
 const StudentList = () => {
     let [content, setContent] = useState(null);
 
-    useEffect(() => {
-        let result = async () => {
-            let response = await StudentListTable()
-            setContent(response);
-        };
-        result();
-    }, []);
+    // useEffect(() => {
+    //     let result = async () => {
+    //         let response = await StudentListTable()
+    //         setContent(response);
+    //     };
+    //     result();
+    // }, []);
 
     return (
         <>
@@ -62,7 +62,7 @@ const StudentList = () => {
             <div className="grid grid-cols-[108px_1fr] h-[100vh]">
                 <BeeSeeNav />
                 <div>
-                    {content}
+                    hello
                 </div>
             </div>
         </>

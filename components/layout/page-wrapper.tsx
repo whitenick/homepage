@@ -2,7 +2,7 @@ import { DefaultNavBar } from "../navbar/nav-bar"
 
 export const PageWrapper: React.FunctionComponent<any> = (props) => {
     return (
-        <div className="h-[100vh]">
+        <div {...props} className={props.className + " h-[100vh]"}>
             <title>{props.title}</title>
             {props.children}
         </div>

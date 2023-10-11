@@ -1,11 +1,14 @@
 import * as NavigationMenu from '@radix-ui/react-navigation-menu';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import { FiLinkedin, FiGithub } from 'react-icons/fi';
 import { UFOCanvas } from '../../modules/animations/space-animations';
 import cx from "classnames";
 import { URLS } from '../utils/urls';
+import Slot from '../layout/slots/slot';
+import { getSlotChildren } from '../layout/slots/slot-children';
+import Hamburger from 'hamburger-react';
 
 export const DefaultNavBar = () => {
     return (
@@ -119,4 +122,31 @@ export const NavBarVertical: React.FunctionComponent<{
             </NavigationMenu.Root>
         </div>
     )
+}
+
+const Item = Slot();
+
+const Container= (props: {
+    children: React.ReactNode
+}) => {
+    const [isOpen, setIsOpen] = useState(false);
+    const items = getSlotChildren(props.children, Item);
+
+    return (
+        <div className={"flex flex-col h-full text-gray-500 transition transform ease-in-out " + (isOpen ? "shadow" : null)} >
+            <div className="flex py-4 px-2">
+                `   <div className="flex border rounded-[32px] p-2">
+                    <Hamburger toggled={isOpen} toggle={setIsOpen} />
+                </div>
+            </div>
+            {isOpen ?
+                items : null
+            }
+        </div>
+    )
+}
+
+export const SlideoutNavbar = {
+    Container, 
+    Item
 }

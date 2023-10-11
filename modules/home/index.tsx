@@ -6,6 +6,8 @@ import { Header } from "../../components/layout/header";
 import { PageWrapper, PageWrapperWithHeader } from "../../components/layout/page-wrapper";
 import TypedDiv from "../../components/typed";
 import { UFONavBar } from "../../components/navbar/nav-bar";
+import { useSupabaseClient } from "../../components/supabase/supabase";
+import { useState } from "react";
 
 const Home : React.FunctionComponent<any> = () => {
     return (

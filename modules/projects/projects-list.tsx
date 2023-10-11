@@ -75,7 +75,12 @@ const ProjectsPage: React.FunctionComponent = () => {
                 <Project
                     title={"BeeSee (or something idk)"}
                     githubLink="https://github.com/whitenick/homepage"
-                    externalLink={router.basePath + "/app/bee-see"}
+                    externalLink={router.basePath + "/app/behavior-buzz"}
+                />
+                <Project
+                    title={"BirdTV"}
+                    githubLink="https://github.com/whitenick/homepage"
+                    externalLink={router.basePath + "/app/bird-tv"}
                 />
             </div>
         </PageWrapperWithHeader>

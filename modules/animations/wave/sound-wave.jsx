@@ -1,5 +1,5 @@
 import * as THREE from "three";
-import { ThreeJSWrapper } from "../../components/layout/page-wrapper";
+import { ThreeJSWrapper } from "../../../components/layout/page-wrapper";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { Environment } from "@react-three/drei";
 import { Suspense, useEffect, useRef, useState } from "react";

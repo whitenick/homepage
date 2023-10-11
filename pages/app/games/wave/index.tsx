@@ -1,12 +1,12 @@
 import { PageWrapperWithHeader } from "../../../../components/layout/page-wrapper";
-import SoundWave from "../../../../modules/animations/wave/sound-wave";
+import Wave from "../../../../modules/animations/wave/wave";
 
 const Page = () => {
     return (
         <PageWrapperWithHeader>
-            <SoundWave/>
+            <Wave/>
         </PageWrapperWithHeader>
-    )
-}
+    );
+};
 
 export default Page;
