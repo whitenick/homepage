@@ -32,7 +32,9 @@
     }
 
     h1 {
-        font-family: 'lobster'
+        font-family: 'montserrat';
+        font-size: 40px;
+        color: #515151;
     }
 
     p {

@@ -1,11 +1,7 @@
-import { useState } from "react"
-import { PageWrapper } from "../../../components/layout/page-wrapper"
-import Hamburger from "hamburger-react";
-import { FiExternalLink, FiNavigation } from "react-icons/fi";
+import { PageWrapper } from "../../../components/layout/page-wrapper";
+import { FiExternalLink } from "react-icons/fi";
 import { SlideoutNavbar } from "../../../components/navbar/nav-bar";
 import BirdVideo from "../../../modules/bird-tv/components/bird-video";
-
-
 
 const NavItemList = () => {
     return (
@@ -18,16 +14,16 @@ const NavItemList = () => {
                 <span><FiExternalLink /></span>
             </div>
         </div>
-    )
-}
+    );
+};
 
 const VideoBox = () => {
     return (
         <div className="flex justify-center items-center w-32 h-32 border">
             <span className="">Video Box</span>
         </div>
-    )
-}
+    );
+};
 
 const Page = () => {
     return (
@@ -48,7 +44,7 @@ const Page = () => {
                 </div>
             </div>
         </PageWrapper>
-    )
+    );
 };
 
 export default Page;

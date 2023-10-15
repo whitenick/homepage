@@ -7,7 +7,7 @@ import { UFOCanvas } from '../../modules/animations/space-animations';
 import cx from "classnames";
 import { URLS } from '../utils/urls';
 import Slot from '../layout/slots/slot';
-import { getSlotChildren } from '../layout/slots/slot-children';
+import { getSlotChild, getSlotChildren } from '../layout/slots/slot-children';
 import Hamburger from 'hamburger-react';
 
 export const DefaultNavBar = () => {
@@ -46,7 +46,7 @@ export const DefaultNavBarOptions = [
     {
         name: 'space',
         route: '/app/space'
-    }, 
+    },
     {
         name: 'animations',
         route: '/app/games'
@@ -125,12 +125,14 @@ export const NavBarVertical: React.FunctionComponent<{
 }
 
 const Item = Slot();
+const Footer = Slot();
 
-const Container= (props: {
+const Container = (props: {
     children: React.ReactNode
 }) => {
     const [isOpen, setIsOpen] = useState(false);
     const items = getSlotChildren(props.children, Item);
+    const footer = getSlotChild(props.children, Footer);
 
     return (
         <div className={"flex flex-col h-full text-gray-500 transition transform ease-in-out " + (isOpen ? "shadow" : null)} >
@@ -140,13 +142,19 @@ const Container= (props: {
                 </div>
             </div>
             {isOpen ?
-                items : null
+                <>
+                    {items}
+                    <div className="flex items-end justify-center">
+                        {footer}
+                    </div>
+                </> : null
             }
         </div>
     )
 }
 
 export const SlideoutNavbar = {
-    Container, 
-    Item
+    Container,
+    Item,
+    Footer
 }
