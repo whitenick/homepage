@@ -80,14 +80,14 @@ export const SpaceCanvas = () => {
     useEffect(() => setHasMounted(true), []);
 
     return (
-        <>
+        <div className="absolute h-[100vh] w-[100vw]">
             <Canvas camera={{ position: [0, 0, 1] }}>
                 <directionalLight />
                 <Stars />
                 <StarCluster />
                 <Environment preset="sunset" />
             </Canvas>
-        </>
+        </div>
     )
 }
 

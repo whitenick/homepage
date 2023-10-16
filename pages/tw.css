@@ -692,6 +692,10 @@ a {
   height: 100%;
 }
 
+.h-\[\%\] {
+  height: %;
+}
+
 .w-32 {
   width: 8rem;
 }
