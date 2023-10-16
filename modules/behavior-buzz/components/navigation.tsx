@@ -4,7 +4,7 @@ import { PiStudentThin, PiClipboardThin, PiGearThin } from "react-icons/pi";
 
 const isSelected = (name: string, route: string) => {
     return route.includes(name);
-}
+};
 
 export const BeeSeeNav = () => {
     const router = useRouter();
@@ -23,7 +23,7 @@ export const BeeSeeNav = () => {
                     {/* <Icon as={PiStudentThin}/> */}
                 </div>
             </div>
-            <div className={"flex flex-col items-center justify-end p-2 "}>
+            <div className={"flex flex-col items-center justify-end p-2 "} onClick={() => router.push('/app/behavior-buzz/settings')}>
                 <div className={"flex flex-col items-center hover:bg-gray-100 hover:cursor-pointer p-2 rounded w-full " + (isSelected('settings', router.asPath) ? "bg-gray-100" : null)}>
                     <PiGearThin size={50} color="gray" />
                     <div className="text-gray-500 font-montserrat">Settings</div>

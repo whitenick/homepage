@@ -1,7 +1,7 @@
-import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Box, SkeletonCircle, SkeletonText, Tab, TabList, TabPanel, TabPanels, Tabs } from "@chakra-ui/react";
+import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Box, Card, CardBody, SkeletonCircle, SkeletonText, Tab, TabList, TabPanel, TabPanels, Tabs, Text } from "@chakra-ui/react";
 import { FiPlusCircle } from "react-icons/fi";
 import { useSupabaseClient } from "../../../../components/supabase/supabase";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 
 const useGetBehaviorSettings = async () => {
@@ -9,20 +9,41 @@ const useGetBehaviorSettings = async () => {
     const { data, error } = await client.from('behavior').select();
 
     return !(!!error) ? data : null;
+};
+
+const BehaviorSettingCard = (props: {
+    title: string,
+    description: string,
+    frequency: string,
+}) => {
+    return (
+        <div className="flex w-full">
+            <Card>
+                <CardBody>
+                    <Text>Hello World</Text>
+                </CardBody>
+            </Card>
+        </div>
+    )
 }
 
 const BehaviorTab = () => {
     const [behaviors, setBehaviors] = useState<any[] | null>([]);
-    useGetBehaviorSettings().then((data) => { setBehaviors(data); });
+    
+    useEffect(() => {
+        useGetBehaviorSettings().then((data) => { setBehaviors(data); });
+    }, []);
 
     return (
         <div className="flex flex-col w-full gap-8 p-4">
             <div className="flex w-full">
                 {(!!behaviors && behaviors?.length > 0) ? behaviors?.map((behavior) => {
                     return (
-                        <div>
-                            {behavior?.title}
-                        </div>
+                        <BehaviorSettingCard
+                            title={behavior?.title}
+                            description={behavior?.description}
+                            frequency={behavior?.frequencyMax}
+                        />
                     )
                 }) :
                     <Box padding='6' boxShadow='lg' bg='white' width={'100%'} rounded={'sm'}>

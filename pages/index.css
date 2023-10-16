@@ -32,17 +32,17 @@
     }
 
     h1 {
-        font-family: 'montserrat';
+        font-family: 'monospace';
         font-size: 40px;
         color: #515151;
     }
 
     p {
-        font-family: 'jim-pam'
+        font-family: 'monospace'
     }
 
     div {
-        font-family: 'marion'
+        font-family: 'montserrat'
     }
 
     a {

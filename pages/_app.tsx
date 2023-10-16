@@ -5,6 +5,7 @@ import { ChakraProvider, extendTheme } from '@chakra-ui/react';
 import { CacheProvider } from '@chakra-ui/next-js';
 import { Rubik } from 'next/font/google';
 import { theme } from './theme';
+import { Fonts } from './font';
 
 
 // Set font for Rubik
@@ -43,6 +44,7 @@ function MyApp({ Component, pageProps }) {
       </style>
       <CacheProvider>
         <ChakraProvider theme={theme}>
+          <Fonts />
           <Component {...pageProps} />
         </ChakraProvider>
       </CacheProvider>

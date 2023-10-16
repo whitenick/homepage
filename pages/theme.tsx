@@ -25,8 +25,8 @@ const colors = {
 export const theme = extendTheme({
     colors,
     fonts: {
-        heading: `'Raleway', sans-serif`,
-        body: `'Raleway', sans-serif`,
+        heading: "Open Sans",
+        body: "Raleway",
     },
     styles: {
         global: {
