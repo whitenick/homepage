@@ -50,7 +50,7 @@ const Home : React.FunctionComponent<any> = () => {
             ]} /> */}
             <UFONavBar />
             <div className="flex items-center justify-center px-[20%] py-32">
-                <TypedDiv style={{ alignItems: 'center', justifyContent: 'center', fontFamily: 'monospace' }} strings={["Hey! Welcome."]} className="text-6xl font-montserrat text-Jet" />
+                <TypedDiv style={{ alignItems: 'center', justifyContent: 'center', fontFamily: 'monospace' }} strings={["Hey! Nice to see you."]} className="text-6xl font-montserrat text-Jet" />
             </div>
         </PageWrapper>
     )

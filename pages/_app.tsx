@@ -4,8 +4,8 @@ import './tw.css';
 import { ChakraProvider, extendTheme } from '@chakra-ui/react';
 import { CacheProvider } from '@chakra-ui/next-js';
 import { Rubik } from 'next/font/google';
-import { theme } from './theme';
-import { Fonts } from './font';
+import { theme } from '../components/theme';
+import { Fonts } from '../components/theme/font';
 
 
 // Set font for Rubik

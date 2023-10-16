@@ -1,6 +1,10 @@
 import { useRouter } from "next/router";
 import { FiExternalLink } from "react-icons/fi";
 import { PiStudentThin, PiClipboardThin, PiGearThin } from "react-icons/pi";
+import { PageWrapperWithNavBar } from "../../../components/layout/page-wrapper";
+import Settings from "../pages/settings";
+import { useSupabaseSession } from "../../../components/supabase/supabase";
+import { useEffect } from "react";
 
 const isSelected = (name: string, route: string) => {
     return route.includes(name);
@@ -30,6 +34,32 @@ export const BeeSeeNav = () => {
                 </div>
             </div>
         </div>
+    )
+};
+
+export const DefaultPageWrapper = (props: {
+    children: React.ReactNode
+}) => {
+    const router = useRouter();
+    const session = useSupabaseSession();
+
+    useEffect(() => {
+        if (!(!!session)) {
+            router.push('/app/login')
+        } else {
+            console.log(session);
+        }
+    }, [session]);
+
+    return (
+        <PageWrapperWithNavBar.Container className="bg-inherit">
+            <PageWrapperWithNavBar.NavBar>
+                <BeeSeeNav />
+            </PageWrapperWithNavBar.NavBar>
+            <PageWrapperWithNavBar.PageContent>
+                { props.children }
+            </PageWrapperWithNavBar.PageContent>
+        </PageWrapperWithNavBar.Container>
     )
 }
 

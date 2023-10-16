@@ -1,7 +1,7 @@
 import { createMultiStyleConfigHelpers, extendTheme } from "@chakra-ui/react";
 import { accordionAnatomy } from "@chakra-ui/anatomy";
-import '../styles/globals.css'; 
-import './tw.css';
+// import '../styles/globals.css'; 
+// import './tw.css';
 
 const { definePartsStyle, defineMultiStyleConfig } = createMultiStyleConfigHelpers(accordionAnatomy.keys);
 
@@ -37,3 +37,5 @@ export const theme = extendTheme({
     },
     components: { Accordion: accordionTheme }
 });
+
+export default theme;
