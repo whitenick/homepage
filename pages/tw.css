@@ -696,18 +696,6 @@ a {
   max-height: 100vh;
 }
 
-.max-h-\[90\%\] {
-  max-height: 90%;
-}
-
-.max-h-\[0\%\] {
-  max-height: 0%;
-}
-
-.max-h-\[50\%\] {
-  max-height: 50%;
-}
-
 .w-32 {
   width: 8rem;
 }
@@ -838,28 +826,8 @@ a {
   row-gap: 1rem;
 }
 
-.gap-y-3 {
-  row-gap: 0.75rem;
-}
-
-.overflow-auto {
-  overflow: auto;
-}
-
 .overflow-hidden {
   overflow: hidden;
-}
-
-.overflow-scroll {
-  overflow: scroll;
-}
-
-.overflow-y-auto {
-  overflow-y: auto;
-}
-
-.overflow-y-scroll {
-  overflow-y: scroll;
 }
 
 .rounded {
