@@ -1,5 +1,5 @@
 import { Auth } from "@supabase/auth-ui-react";
-import { useSupabaseClient } from "../../../components/supabase/supabase";
+import { supabase } from "../../../components/supabase/supabase";
 import { useEffect, useState } from "react";
 import { ThemeSupa } from "@supabase/auth-ui-shared";
 import { PageWrapper } from "../../../components/layout/page-wrapper";
@@ -15,16 +15,13 @@ const signIn = async (client) => {
 }
 
 const Page = () => {
-    const client = useSupabaseClient();
     const[user, setUser] = useState<UserResponse | null>(null);
-    client.auth.getUser().then((user) => { setUser(user); })
-    console.log(user);
 
     return (
         <PageWrapper className="flex bg-inherit">
         {!!user?.data?.user?.email ? 
             <div className="border border-rounded shadown-sm p-6">
-                <Auth supabaseClient={client} appearance={{ theme: ThemeSupa }} providers={['google']}  />
+                <Auth supabaseClient={supabase} appearance={{ theme: ThemeSupa }} providers={['google']}  />
             </div> : 
             <StudentList />
         }

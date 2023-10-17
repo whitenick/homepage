@@ -3,13 +3,12 @@
 import { Icon } from "@chakra-ui/react";
 import { PiClipboardBold, PiClipboardThin, PiGearThin, PiStudentThin } from "react-icons/pi";
 import { useEffect, useState } from "react";
-import { useSupabaseClient } from "../../../../components/supabase/supabase";
+import { supabase } from "../../../../components/supabase/supabase";
 import { BeeSeeNav } from "../../components/navigation";
 
 
 const StudentListTable = async () => {
-    const db = useSupabaseClient();
-    const { data, error } = await db.from('students').select();
+    const { data, error } = await supabase.from('students').select();
     let students = data;
 
     console.log(JSON.stringify(students));

@@ -19,8 +19,8 @@ const Container: React.FunctionComponent<any> = (props) => {
     const pageContent = getSlotChild(props.children, PageContent);
 
     return (
-        <PageWrapper title={props.title}>
-            <div className="grid grid-cols-[108px_1fr] h-[100vh]">
+        <PageWrapper title={props.title} {...props}>
+            <div className="grid grid-cols-[108px_1fr] h-[100vh] max-h-[100vh] overflow-hidden">
                 { navbar }
                 { pageContent }
             </div>
@@ -40,7 +40,7 @@ export const PageWrapperWithHeader: React.FunctionComponent<{
     children?: any
 }> = (props) => {
     return (
-        <PageWrapper title={props.title}>
+        <PageWrapper title={props.title} {...props}>
             <DefaultNavBar />
             {props.children}
         </PageWrapper>
