@@ -1,10 +1,11 @@
 import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Box, Card, CardBody, Input, SkeletonCircle, SkeletonText, Tab, TabList, TabPanel, TabPanels, Tabs, Text } from "@chakra-ui/react";
 import { FiPlusCircle, FiSave, FiTrash } from "react-icons/fi";
-import { supabase } from "../../../../components/supabase/supabase";
+import { useSupabaseClient  } from "@supabase/auth-helpers-react";
 import { MouseEvent, useEffect, useState } from "react";
 
 
 const useGetBehaviorSettings = async () => {
+    const supabase = useSupabaseClient();
     const { data, error } = await supabase.from('behavior').select();
 
     return !(!!error) ? data : null;
@@ -52,10 +53,9 @@ const BehaviorCardEditable = (props: {
 };
 
 const BehaviorTab = () => {
+    const supabase = useSupabaseClient();
     const [behaviors, setBehaviors] = useState<any[] | null>([]);
-    useEffect(() => {
-        useGetBehaviorSettings().then((data) => { setBehaviors(data); });
-    }, []);
+    supabase.from('behavior').select().then(({ data, error }) => setBehaviors(data));
     const [createBehavior, setCreateBehavior] = useState<boolean>(false);
     async function saveBehavior(behavior) {
         let { data, error } = await supabase.from('behavior')

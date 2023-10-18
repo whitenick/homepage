@@ -1,10 +1,11 @@
 import { Auth } from "@supabase/auth-ui-react";
 import { PageWrapper } from "../../../components/layout/page-wrapper"
-import { supabase } from "../../../components/supabase/supabase";
 import { ThemeSupa } from "@supabase/auth-ui-shared";
+import { useSupabaseClient } from "@supabase/auth-helpers-react";
 
 const Login = () => {
-
+    const supabase = useSupabaseClient();
+    
     return (
         <PageWrapper>
             <div className="flex justify-center items-center h-full">

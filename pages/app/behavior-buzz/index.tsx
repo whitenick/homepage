@@ -1,10 +1,10 @@
 import { Auth } from "@supabase/auth-ui-react";
-import { supabase } from "../../../components/supabase/supabase";
 import { useEffect, useState } from "react";
 import { ThemeSupa } from "@supabase/auth-ui-shared";
 import { PageWrapper } from "../../../components/layout/page-wrapper";
 import { UserResponse } from "@supabase/supabase-js";
 import StudentList from "../../../modules/behavior-buzz/pages/student-list";
+import { useSupabaseClient } from "@supabase/auth-helpers-react";
 
 const signIn = async (client) => {
     const { data, error } = await client.auth.signInWithOAuth({
@@ -16,7 +16,7 @@ const signIn = async (client) => {
 
 const Page = () => {
     const[user, setUser] = useState<UserResponse | null>(null);
-
+    const supabase = useSupabaseClient();
     return (
         <PageWrapper className="flex bg-inherit">
         {!!user?.data?.user?.email ? 

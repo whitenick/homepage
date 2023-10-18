@@ -1,19 +1,23 @@
 import Head from 'next/head';
-import '../styles/globals.css'; 
+import '../styles/globals.css';
 import './tw.css';
-import { ChakraProvider, extendTheme } from '@chakra-ui/react';
+import { ChakraProvider } from '@chakra-ui/react';
 import { CacheProvider } from '@chakra-ui/next-js';
 import { Rubik } from 'next/font/google';
 import { theme } from '../components/theme';
 import { Fonts } from '../components/theme/font';
 import Script from 'next/script';
-import Document from 'next/document';
+import { createPagesBrowserClient } from '@supabase/auth-helpers-nextjs';
+import { useState } from 'react';
+import { SessionContextProvider } from '@supabase/auth-helpers-react';
 
 
 // Set font for Rubik
 const rubik = Rubik({ subsets: ['latin'] });
 
 function MyApp({ Component, pageProps }) {
+  const [supabaseClient] = useState(() => createPagesBrowserClient());
+  
   return (
     <>
       <Head>
@@ -37,10 +41,10 @@ function MyApp({ Component, pageProps }) {
       href="https://fonts.googleapis.com/css2?family=Inconsolata"
       rel="stylesheet"
       /> */}
-      
-      <Script src='https://jeromeetienne.github.io/threex.terrain/examples/vendor/three.js/build/three-min.js'/>
-      <Script src='https://jeromeetienne.github.io/threex.terrain/examples/vendor/three.js/examples/js/SimplexNoise.js'/>
-      <Script src='https://jeromeetienne.github.io/threex.terrain/threex.terrain.js'/>
+
+      <Script src='https://jeromeetienne.github.io/threex.terrain/examples/vendor/three.js/build/three-min.js' />
+      <Script src='https://jeromeetienne.github.io/threex.terrain/examples/vendor/three.js/examples/js/SimplexNoise.js' />
+      <Script src='https://jeromeetienne.github.io/threex.terrain/threex.terrain.js' />
       <style jsx global>
         {`
         :root {
@@ -48,12 +52,17 @@ function MyApp({ Component, pageProps }) {
         }
       `}
       </style>
-      <CacheProvider>
-        <ChakraProvider theme={theme}>
-          <Fonts />
-          <Component {...pageProps} />
-        </ChakraProvider>
-      </CacheProvider>
+      <SessionContextProvider
+        supabaseClient={supabaseClient}
+        initialSession={pageProps.initialSession}
+      >
+        <CacheProvider>
+          <ChakraProvider theme={theme}>
+            <Fonts />
+            <Component {...pageProps} />
+          </ChakraProvider>
+        </CacheProvider>
+      </SessionContextProvider>
     </>
   );
 }

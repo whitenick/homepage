@@ -23,6 +23,7 @@
     "@react-three/postprocessing": "^2.15.1",
     "@react-three/rapier": "^1.1.1",
     "@supabase/auth-helpers-nextjs": "^0.8.1",
+    "@supabase/auth-helpers-react": "^0.4.2",
     "@supabase/auth-ui-react": "^0.4.5",
     "@supabase/auth-ui-shared": "^0.1.7",
     "@supabase/supabase-js": "^2.38.0",

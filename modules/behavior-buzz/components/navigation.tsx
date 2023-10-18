@@ -3,9 +3,10 @@ import { FiExternalLink } from "react-icons/fi";
 import { PiStudentThin, PiClipboardThin, PiGearThin } from "react-icons/pi";
 import { PageWrapperWithNavBar } from "../../../components/layout/page-wrapper";
 import Settings from "../pages/settings";
-import { supabase, useSupabaseSession } from "../../../components/supabase/supabase";
+import { useSupabaseClient } from "@supabase/auth-helpers-react";
 import { useEffect, useState } from "react";
 import { URLS } from "../../../components/utils/urls";
+import { useUser } from "@supabase/auth-helpers-react";
 
 const isSelected = (name: string, route: string) => {
     return route.includes(name);
@@ -42,22 +43,23 @@ export const DefaultPageWrapper = (props: {
     children: React.ReactNode
 }) => {
     const router = useRouter();
+    const supabase = useSupabaseClient();
     const [session, setSession] = useState<any>(null);
-
+    const user = useUser();
     let getSession = async () => {
         let currentSession = await supabase.auth.getSession();
         setSession(currentSession);
     }
-
     getSession();
 
     useEffect(() => {
-        if (session != null && session?.error === null) {
+        if (user === null && session != null && session?.error === null) {
             if (session?.data?.session === null) {
                 router.push('/app/login');
             }
         }
-    });
+    }, [user, session])
+
     return (
         <PageWrapperWithNavBar.Container className="bg-inherit">
             <PageWrapperWithNavBar.NavBar>

@@ -1,8 +1,9 @@
 import ReactPlayer from "react-player";
-import { supabase } from "../../../components/supabase/supabase";
+import { useSupabaseClient } from "@supabase/auth-helpers-react";
 import { useEffect, useMemo, useState } from "react";
 
 const getVideoData = async (bucketName: string, fileName: string) => {
+    const supabase = useSupabaseClient();
     const { data, error } = await supabase.storage.from(bucketName).createSignedUrl(fileName, 60);
 
     return !(!!error) ? data : null;
