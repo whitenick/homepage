@@ -58,6 +58,7 @@ const BehaviorTab = () => {
     supabase.from('behavior').select().then(({ data, error }) => setBehaviors(data));
     const [createBehavior, setCreateBehavior] = useState<boolean>(false);
     async function saveBehavior(behavior) {
+        if (!(!!behavior)) return;
         let { data, error } = await supabase.from('behavior')
             .insert([
                 {
@@ -66,6 +67,7 @@ const BehaviorTab = () => {
             ])
             .select();  
         setBehaviors([...behaviors as any[], ...data as any[]]);
+        setCreateBehavior(false);
     };
     async function onDelete(behaviorId) {
         const { error } = await supabase.from('behavior')
@@ -80,7 +82,7 @@ const BehaviorTab = () => {
     return (
         <div className="flex flex-col w-full gap-8 p-4">
             <div className="grid gap-y-4 w-full">
-                {(!!behaviors && behaviors?.length > 0) ? behaviors?.map((behavior) => {
+                {(behaviors !== null && behaviors?.length > 0) ? behaviors?.map((behavior) => {
                     return (
                         <BehaviorSettingCard
                             key={behavior?.id}
