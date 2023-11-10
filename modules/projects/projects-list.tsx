@@ -50,12 +50,12 @@ const ProjectsPage: React.FunctionComponent = () => {
                 <Project
                     title={"This Homepage"}
                     githubLink="https://github.com/whitenick/homepage"
-                    externalLink="nickwhite.us"
+                    externalLink="/app"
                 />
                 <Project
                     title={"The Very Tiny Teacher"}
                     githubLink=""
-                    externalLink="https://theverytinyteacher.com"
+                    externalLink="https://www.theverytinyteacher.com"
                 />
                 <Project
                     title={"Itch"}

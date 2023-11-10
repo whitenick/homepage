@@ -1,15 +1,16 @@
-import Head from 'next/head';
-import '../styles/globals.css';
-import './tw.css';
-import { ChakraProvider } from '@chakra-ui/react';
 import { CacheProvider } from '@chakra-ui/next-js';
+import { ChakraProvider } from '@chakra-ui/react';
+import { createPagesBrowserClient } from '@supabase/auth-helpers-nextjs';
+import { SessionContextProvider } from '@supabase/auth-helpers-react';
 import { Rubik } from 'next/font/google';
+import Head from 'next/head';
+import Script from 'next/script';
+import { useState } from 'react';
 import { theme } from '../components/theme';
 import { Fonts } from '../components/theme/font';
-import Script from 'next/script';
-import { createPagesBrowserClient } from '@supabase/auth-helpers-nextjs';
-import { useState } from 'react';
-import { SessionContextProvider } from '@supabase/auth-helpers-react';
+import '../styles/globals.css';
+import './tw.css';
+import { ModalService } from '../components/modal';
 
 
 // Set font for Rubik
@@ -60,6 +61,7 @@ function MyApp({ Component, pageProps }) {
           <ChakraProvider theme={theme}>
             <Fonts />
             <Component {...pageProps} />
+            <ModalService />
           </ChakraProvider>
         </CacheProvider>
       </SessionContextProvider>
