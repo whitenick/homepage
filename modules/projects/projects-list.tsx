@@ -82,6 +82,11 @@ const ProjectsPage: React.FunctionComponent = () => {
                     githubLink="https://github.com/whitenick/homepage"
                     externalLink={router.basePath + "/app/bird-tv"}
                 />
+                <Project 
+                    title={"TaskGraph"}
+                    githubLink="https://tasgraph.io"
+                    externalLink="https://taskgraph.io"
+                />
             </div>
         </PageWrapperWithHeader>
     )

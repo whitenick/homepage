@@ -1,18 +1,13 @@
-import { ThreePanelWrapper } from "../../../../components/layout/three-panel";
+import { TwoPanel } from "../../../../components/layout/two-panel";
 import StudentList from "../../../../modules/behavior-buzz/pages/student-list";
 
 const Page = () => {
     return (
-        <ThreePanelWrapper.Container>
-            <ThreePanelWrapper.LeftPanel>
+        <TwoPanel.Container>
+            <TwoPanel.MainPanel>
                 <StudentList />
-            </ThreePanelWrapper.LeftPanel>
-            <ThreePanelWrapper.RightPanel>
-                <div>
-                    Motherfucker
-                </div>
-            </ThreePanelWrapper.RightPanel>
-        </ThreePanelWrapper.Container>
+            </TwoPanel.MainPanel>
+        </TwoPanel.Container>
     )
 }
 
