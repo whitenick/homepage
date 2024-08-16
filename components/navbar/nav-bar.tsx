@@ -71,11 +71,14 @@ export const NavBar: React.FunctionComponent<{
                     Nick White
                 </a>
                 <div className="flex justify-center items-center gap-x-2">
-                    <a href="https://www.linkedin.com/in/nick-white-a4ba63110/" target="_blank" className="justify-end p-2" title="Github">
+                    <a href="https://www.linkedin.com/in/nick-white-a4ba63110/" target="_blank" className="justify-end p-2" title="LinkedIn">
                         <FiLinkedin />
                     </a>
                     <a href="https://github.com/whitenick" target="_blank" className="p-2" title="Github">
                         <FiGithub />
+                    </a>
+                    <a href="https://buymeacoffee.com/wicknight" target="_blank" className="p-2" title="Github">
+                        <img title="Buy me a coffee!" width="20px" height="20px" src="/coffee-svgrepo-com.svg"/>
                     </a>
                 </div>
             </div>
@@ -137,7 +140,7 @@ const Container = (props: {
     return (
         <div className={"flex flex-col h-full text-gray-500 transition transform ease-in-out " + (isOpen ? "shadow" : null)} >
             <div className="flex py-4 px-2">
-                `   <div className="flex border rounded-[32px] p-2">
+                    <div className="flex border rounded-[32px] p-2">
                     <Hamburger toggled={isOpen} toggle={setIsOpen} />
                 </div>
             </div>
