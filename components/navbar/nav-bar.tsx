@@ -67,7 +67,7 @@ export const NavBar: React.FunctionComponent<{
     return (
         <div className={cx("p-1 rounded items-center font-sans py-12", props.className)}>
             <div className={"grid grid-rows-2 justify-center w-[100%]"}>
-                <a href={URLS.home} className="text-5xl content-center font-lobster text-Jet">
+                <a href={URLS.home} className="text-5xl content-center font-pacifico text-Jet">
                     Nick White
                 </a>
                 <div className="flex justify-center items-center gap-x-2">

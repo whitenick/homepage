@@ -1558,8 +1558,8 @@ a {
   font-family: Inconsolata;
 }
 
-.font-lobster {
-  font-family: Lobster;
+.font-merri {
+  font-family: Merriweather;
 }
 
 .font-mono {
@@ -1572,6 +1572,10 @@ a {
 
 .font-sans {
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.font-pacifico {
+  font-family: Pacifico;
 }
 
 .text-3xl {

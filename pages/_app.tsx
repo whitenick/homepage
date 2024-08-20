@@ -18,7 +18,7 @@ const rubik = Rubik({ subsets: ['latin'] });
 
 function MyApp({ Component, pageProps }) {
   const [supabaseClient] = useState(() => createPagesBrowserClient());
-  
+
   return (
     <>
       <Head>
@@ -37,36 +37,43 @@ function MyApp({ Component, pageProps }) {
           href="https://fonts.googleapis.com/css2?family=Montserrat"
           rel="stylesheet"
         />
+        <link rel="preconnect" href="https://fonts.googleapis.com"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin=''/>
+        <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet"></link>
+        /* Pacifico Text */
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin=''/>
+        <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Pacifico&display=swap" rel="stylesheet"></link>
       </Head>
-      {/* <Document
+          {/* <Document
       href="https://fonts.googleapis.com/css2?family=Inconsolata"
       rel="stylesheet"
       /> */}
 
-      <Script src='https://jeromeetienne.github.io/threex.terrain/examples/vendor/three.js/build/three-min.js' />
-      <Script src='https://jeromeetienne.github.io/threex.terrain/examples/vendor/three.js/examples/js/SimplexNoise.js' />
-      <Script src='https://jeromeetienne.github.io/threex.terrain/threex.terrain.js' />
-      <style jsx global>
-        {`
+          <Script src='https://jeromeetienne.github.io/threex.terrain/examples/vendor/three.js/build/three-min.js' />
+          <Script src='https://jeromeetienne.github.io/threex.terrain/examples/vendor/three.js/examples/js/SimplexNoise.js' />
+          <Script src='https://jeromeetienne.github.io/threex.terrain/threex.terrain.js' />
+          <style jsx global>
+            {`
         :root {
           --font-rubik: ${rubik.style.fontFamily};
         }
       `}
-      </style>
-      <SessionContextProvider
-        supabaseClient={supabaseClient}
-        initialSession={pageProps.initialSession}
-      >
-        <CacheProvider>
-          <ChakraProvider theme={theme}>
-            <Fonts />
-            <Component {...pageProps} />
-            <ModalService />
-          </ChakraProvider>
-        </CacheProvider>
-      </SessionContextProvider>
-    </>
-  );
+          </style>
+          <SessionContextProvider
+            supabaseClient={supabaseClient}
+            initialSession={pageProps.initialSession}
+          >
+            <CacheProvider>
+              <ChakraProvider theme={theme}>
+                <Fonts />
+                <Component {...pageProps} />
+                <ModalService />
+              </ChakraProvider>
+            </CacheProvider>
+          </SessionContextProvider>
+        </>
+        );
 }
 
-export default MyApp;
+        export default MyApp;

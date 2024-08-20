@@ -21,6 +21,8 @@ module.exports = {
         'inconsolata': ['Inconsolata'],
         'montserrat': ['Montserrat'],
         'lobster': ['Lobster'],
+        'merri': ['Merriweather'],
+        'pacifico': ['Pacifico'],
       },
       colors: {
         "pink": "#e3c7b9",
