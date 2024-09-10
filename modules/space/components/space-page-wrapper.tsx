@@ -4,13 +4,21 @@ import { UFONavBar } from "../../../components/navbar/nav-bar"
 
 const SpacePageWrapper = (props) => {
     return (
-        <ThreeJSWrapper>
-            <SpaceCanvas />
-            <div className="fixed top-0 left-0 right-0 bottom-0 justify-center items-center">
-                <UFONavBar />
-                {props.children}
+        <div className="">
+            <div className="h-[100vh]">
+                <div className="w-full h-full">
+                    <SpaceCanvas />
+                </div>
+                <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
+                    <div className="flex flex-col h-full z-100">
+                        <UFONavBar />
+                        <div className="flex overflow-auto">
+                            {props.children}
+                        </div>
+                    </div>
+                </div>
             </div>
-        </ThreeJSWrapper>
+        </div>
     )
 }
 

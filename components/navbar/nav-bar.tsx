@@ -22,15 +22,15 @@ export const DefaultNavBar = () => {
 
 export const UFONavBar = () => {
     return (
-        <>
-            <div className='h-[35%]'>
+        <div className="flex flex-col">
+            <div className='h-[25%]'>
                 <UFOCanvas />
             </div>
             <NavBar
-                className='absolute top-44 left-0 right-0 bottom-0 '
+                className=''
                 items={DefaultNavBarOptions}
             />
-        </>
+        </div>
     )
 }
 
@@ -38,10 +38,6 @@ export const DefaultNavBarOptions = [
     {
         name: 'about',
         route: '/app'
-    },
-    {
-        name: 'projects',
-        route: '/app/projects'
     },
     {
         name: 'space',
@@ -65,7 +61,7 @@ export const NavBar: React.FunctionComponent<{
         return router.asPath;
     }, [router.asPath])
     return (
-        <div className={cx("p-1 rounded items-center font-sans py-12", props.className)}>
+        <div className={cx("p-1 rounded items-center font-sans p-4", props.className)}>
             <div className={"grid grid-rows-2 justify-center w-[100%]"}>
                 <a href={URLS.home} className="text-5xl content-center font-pacifico text-Jet">
                     Nick White

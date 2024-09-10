@@ -23,6 +23,9 @@ module.exports = {
         'lobster': ['Lobster'],
         'merri': ['Merriweather'],
         'pacifico': ['Pacifico'],
+        'arvo': ['Arvo'],
+        'serif-display': ['DM Serif Display'],
+        'bitter': ['Bitter'],
       },
       colors: {
         "pink": "#e3c7b9",

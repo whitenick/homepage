@@ -3,21 +3,31 @@ import { Header } from "../../components/layout/header"
 import { PageWrapper, PageWrapperWithHeader } from "../../components/layout/page-wrapper";
 import { useRouter } from "next/router";
 
-const Project: React.FunctionComponent<{
+export const Project: React.FunctionComponent<{
     title: string
-    githubLink: string
+    description?: string
+    githubLink?: string
     externalLink: string
 }> = (props) => {
     return (
         <div className="grid auto-rows-auto shadow rounded p-4 bg-Snow gap-y-2 w-full">
             <div className="grid grid-cols-2 items-center justify-center">
-                <div className="text-xl font-inconsolata justify-center">
-                    {props.title}
+                <div className="flex flex-col">
+                    <div className="text-xl font-inconsolata justify-center">
+                        {props.title}
+                    </div>
+                    {props.description &&
+                        <div className="flex">
+                            {props.description}
+                        </div>
+                    }
                 </div>
                 <div className="flex justify-end gap-x-4">
-                    <a href={props.githubLink} target="_blank">
-                        <FiGithub />
-                    </a>
+                    {props.githubLink &&
+                        <a href={props.githubLink} target="_blank">
+                            <FiGithub />
+                        </a>
+                    }
                     <a href={props.externalLink} target="_blank">
                         <FiExternalLink />
                     </a>
@@ -82,7 +92,7 @@ const ProjectsPage: React.FunctionComponent = () => {
                     githubLink="https://github.com/whitenick/homepage"
                     externalLink={router.basePath + "/app/bird-tv"}
                 />
-                <Project 
+                <Project
                     title={"TaskGraph"}
                     githubLink="https://tasgraph.io"
                     externalLink="https://taskgraph.io"

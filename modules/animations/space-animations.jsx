@@ -80,11 +80,11 @@ export const SpaceCanvas = () => {
     useEffect(() => setHasMounted(true), []);
 
     return (
-        <div className="absolute h-[100vh] w-[100vw]">
+        <div className="-z-100 h-full pointer-events-none">
             <Canvas camera={{ position: [0, 0, 1] }}>
                 <directionalLight />
                 <Stars />
-                <StarCluster />
+                {/* <StarCluster /> */}
                 <Environment preset="sunset" />
             </Canvas>
         </div>
@@ -93,7 +93,7 @@ export const SpaceCanvas = () => {
 
 const Stars = (props) => {
     const ref = useRef()
-    const [sphere] = useState(() => random?.inSphere(new Float32Array(100000), { radius: 1.5 }))
+    const [sphere] = useState(() => random?.inSphere(new Float32Array(10000), { radius: 1.5 }))
 
     useFrame((state, delta) => {
         // ref.current.rotation.x += delta / 10

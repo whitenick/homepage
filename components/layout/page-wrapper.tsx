@@ -53,8 +53,8 @@ export const ThreeJSWrapper: React.FunctionComponent<{
     children?: any
 }> = (props) => {
     return (
-        <div className={"h-[100%] w-[100%]"}>
+        <>
             { props.children }
-        </div>
+        </>
     )
 }
