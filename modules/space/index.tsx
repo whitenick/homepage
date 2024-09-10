@@ -42,7 +42,7 @@ const SpacePage = () => {
                     />
                     <Project
                         title={"The Very Tiny Teacher"}
-                        description="A teacher's website for her students/parents/colleagues. Links to learning materials and resources."
+                        description="A teacher's website for students/parents/colleagues."
                         // githubLink=""
                         externalLink="https://www.theverytinyteacher.com"
                     />
