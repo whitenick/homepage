@@ -31,7 +31,7 @@ const SpacePage = () => {
                     />
                     <Project
                         title={"Dotta"}
-                        description="Childhood behavior analytics tracking"
+                        description="Behavior analytics tracking"
                         githubLink="https://github.com/whitenick/homepage"
                         externalLink={router.basePath + "/app/behavior-buzz"}
                     />
