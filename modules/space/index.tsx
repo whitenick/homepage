@@ -1,10 +1,4 @@
-import * as THREE from "three";
-import { useState, useRef } from "react";
 import SpacePageWrapper from "./components/space-page-wrapper";
-import TypedDiv from "../../components/typed";
-import { Environment, useGLTF } from "@react-three/drei";
-import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { Card } from "../../components/layout/card";
 import { Project } from "../projects/projects-list";
 import { useRouter } from "next/router";
 
@@ -15,7 +9,7 @@ const SpacePage = () => {
         <SpacePageWrapper>
             <div className="flex flex-col p-4 gap-8">
                 <div className="flex">
-                    <span className="text-lg font-semibold p-2">Welcome to my Project Space. Here, you'll find a collection of my personal work. The applications are various, and completeness questionable. Projects are usually ordered by most active.</span>
+                    <span className="text-lg p-2">Welcome to my Project Space. Here, you'll find a collection of my personal work. The applications are various, and completeness questionable. Projects are usually ordered by most active.</span>
                 </div>
                 <div className="flex flex-col gap-2 w-full">
                     <Project
