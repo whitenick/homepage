@@ -23,12 +23,12 @@ const SpacePage = () => {
                         description="Translation management; A joint project - under TaskGraph"
                         externalLink="https://localyst.app"
                     />
-                    <Project
+                    {/* <Project
                         title={"Dotta"}
                         description="Behavior analytics tracking"
                         githubLink="https://github.com/whitenick/homepage"
                         externalLink={router.basePath + "/app/behavior-buzz"}
-                    />
+                    /> */}
                     <Project
                         title={"This Homepage"}
                         githubLink="https://github.com/whitenick/homepage"
@@ -44,20 +44,20 @@ const SpacePage = () => {
                         title={"Itch"}
                         description="Engine to translate ingredient lists from images of nutrition labels"
                         githubLink="https://github.com/whitenick/itchy"
-                        externalLink="https://github.com/whitenick/itchy"
+                        // externalLink="https://github.com/whitenick/itchy"
                     />
                     <Project
                         title={"NHL Predictions"}
                         description="Over/under predictions on game goal totals"
                         githubLink="https://github.com/whitenick/NHL-Predictions"
-                        externalLink="https://github.com/whitenick/NHL-Predictions"
+                        // externalLink="https://github.com/whitenick/NHL-Predictions"
                     />
-                    <Project
+                    {/* <Project
                         title={"Bird TV"}
                         description={"Bird feeder live cam. Live streaming of a video data feed."}
                         githubLink="https://github.com/whitenick/homepage"
                         externalLink={router.basePath + "/app/bird-tv"}
-                    />
+                    /> */}
                 </div>
             </div>
         </SpacePageWrapper>

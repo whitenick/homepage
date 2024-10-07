@@ -7,7 +7,7 @@ export const Project: React.FunctionComponent<{
     title: string
     description?: string
     githubLink?: string
-    externalLink: string
+    externalLink?: string
 }> = (props) => {
     return (
         <div className="grid auto-rows-auto shadow rounded p-4 bg-Snow gap-y-2 w-full">
@@ -28,9 +28,11 @@ export const Project: React.FunctionComponent<{
                             <FiGithub />
                         </a>
                     }
-                    <a href={props.externalLink} target="_blank">
-                        <FiExternalLink />
-                    </a>
+                    {props.externalLink &&
+                        <a href={props.externalLink} target="_blank">
+                            <FiExternalLink />
+                        </a>
+                    }
                 </div>
             </div>
             {/* <div className="pb-2">
