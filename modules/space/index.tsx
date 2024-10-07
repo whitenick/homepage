@@ -15,12 +15,11 @@ const SpacePage = () => {
                     <Project
                         title={"TaskGraph"}
                         description="A store of knowledge and working group consisting of engineering colleagues"
-                        githubLink="https://tasgraph.io"
                         externalLink="https://taskgraph.io"
                     />
                     <Project
                         title={"Localyst"}
-                        description="Translation management; A joint project - under TaskGraph"
+                        description="Translation management. Localization and internationalization of web applications."
                         externalLink="https://localyst.app"
                     />
                     {/* <Project
