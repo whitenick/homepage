@@ -40,7 +40,7 @@ export const DefaultNavBarOptions = [
         route: '/app'
     },
     {
-        name: 'space',
+        name: 'projects',
         route: '/app/space'
     },
     {

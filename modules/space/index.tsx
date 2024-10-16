@@ -36,7 +36,7 @@ const SpacePage = () => {
                     <Project
                         title={"The Very Tiny Teacher"}
                         description="A teacher's website for students/parents/colleagues."
-                        // githubLink=""
+                        githubLink="https://github.com/whitenick/"
                         externalLink="https://www.theverytinyteacher.com"
                     />
                     <Project
