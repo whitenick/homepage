@@ -9,6 +9,7 @@ const GamesPage = () => {
     return (
         <PageWrapperWithHeader>
             <div className="flex flex-col px-4 gap-y-4">
+                <h3 className="text-3xl font-semibold font-inconsolata py-4">Animations</h3>
                 <button onClick={() => router.push("/app/games/noise-meter") } className="hover:shadow">
                     <Card.Container>
                         <Card.Left>

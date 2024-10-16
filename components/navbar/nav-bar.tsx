@@ -41,10 +41,10 @@ export const DefaultNavBarOptions = [
     },
     {
         name: 'projects',
-        route: '/app/space'
+        route: '/app/projects'
     },
     {
-        name: 'animations',
+        name: 'space',
         route: '/app/games'
     }
 
