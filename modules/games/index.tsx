@@ -42,7 +42,7 @@ const GamesPage = () => {
                     <Card.Container>
                         <Card.Left>
                             <div className="flex justify-start items-center text-xl font-inconsolata">
-                                falling bananas
+                                bananas
                             </div>
                         </Card.Left>
                         <Card.Right className="justify-end">

@@ -91,21 +91,25 @@ const SoundWave = () => {
   }, []);
 
   return (
-    <ThreeJSWrapper>
+    <div>
       <div className="absolute right-5 z-1000">
         <div className="text-xl italic text-Light-Gray">
-          Adapted from 
-          <button href="https://codepen.io/soju22/pen/PLeLwo" target="_blank">
+          Adapted from
+          <a href="https://codepen.io/soju22/pen/PLeLwo" className="px-2 cursor-pointer text-blue-500">
             Kevin Levron
-          </button>
+          </a>
         </div>
       </div>
-      <Canvas style={{}} camera={{ position: [cameraState.position.x, cameraState.position.y, cameraState.position.z], fov: 90 }}>
-        <Suspense fallback={null}>
-          <PlaneAnimation />
-        </Suspense>
-      </Canvas>
-    </ThreeJSWrapper>
+      <div className="h-[100vh]">
+        <ThreeJSWrapper>
+          <Canvas style={{}} camera={{ position: [cameraState.position.x, cameraState.position.y, cameraState.position.z], fov: 90 }}>
+            <Suspense fallback={null}>
+              <PlaneAnimation />
+            </Suspense>
+          </Canvas>
+        </ThreeJSWrapper>
+      </div>
+    </div>
   )
 }
 
@@ -125,7 +129,7 @@ const PlaneAnimation = (props) => {
     width: 0,
     height: 0
   });
-  const[geoArray, setGeoArray] = useState([]);
+  const [geoArray, setGeoArray] = useState([]);
   const plane = useRef();
   const noise4D = createNoise4D();
   useEffect(() => {
@@ -157,9 +161,9 @@ const PlaneAnimation = (props) => {
   }
 
   const updateSize = () => {
-    let width = window.innerWidth; 
+    let width = window.innerWidth;
     let cx = width / 2;
-    let height = window.innerHeight; 
+    let height = window.innerHeight;
     let cy = height / 2;
     if (renderer && camera) {
       renderer.setSize(width, height);
