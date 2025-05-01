@@ -1,5 +1,3 @@
-import { Database } from "../../types/supabase";
-
 const people = [
     {
         name: 'Leslie Alexander',
@@ -56,7 +54,7 @@ const people = [
 ]
 
 const List = (props: {
-    people: [Database["public"]["Tables"]["student"]["Row"] | any] 
+    people: [typeof people | any] 
 }) => {
     return (
         <ul role="list" className="divide-y divide-gray-100">
