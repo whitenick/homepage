@@ -18,6 +18,11 @@ const SpacePage = () => {
                         externalLink="https://taskgraph.io"
                     />
                     <Project
+                        title={"MealMind"}
+                        description="A meal planning application. Chat with LLM. Generate weekly meal plan with ingredients and instructions."
+                        externalLink="https://mlb-4e2.pages.dev/meals/chat"
+                    />
+                    <Project
                         title={"Localyst"}
                         description="Translation management. Localization and internationalization of web applications."
                         externalLink="https://localyst.app"
