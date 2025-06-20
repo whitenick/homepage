@@ -13,14 +13,14 @@ const SpacePage = () => {
                 </div>
                 <div className="flex flex-col gap-2 w-full">
                     <Project
-                        title={"TaskGraph"}
-                        description="A store of knowledge and working group consisting of engineering colleagues"
-                        externalLink="https://taskgraph.io"
-                    />
-                    <Project
                         title={"MealMind"}
                         description="A meal planning application. Chat with LLM. Generate weekly meal plan with ingredients and instructions."
                         externalLink="https://mlb-4e2.pages.dev/meals/chat"
+                    />
+                    <Project
+                        title={"TaskGraph"}
+                        description="A store of knowledge and working group consisting of engineering colleagues"
+                        externalLink="https://taskgraph.io"
                     />
                     <Project
                         title={"Localyst"}
