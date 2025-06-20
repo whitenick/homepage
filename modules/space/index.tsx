@@ -15,7 +15,7 @@ const SpacePage = () => {
                     <Project
                         title={"MealMind"}
                         description="A meal planning application. Chat with LLM. Generate weekly meal plan with ingredients and instructions."
-                        externalLink="https://mlb-4e2.pages.dev/meals/chat"
+                        externalLink="https://mlb-4e2.pages.dev/login"
                     />
                     <Project
                         title={"TaskGraph"}
