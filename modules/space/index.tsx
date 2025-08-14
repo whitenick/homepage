@@ -13,7 +13,7 @@ const SpacePage = () => {
                 </div>
                 <div className="flex flex-col gap-2 w-full">
                     <Project
-                        title={"MealMind"}
+                        title={"DishSync"}
                         description="A meal planning application. Chat with LLM. Generate weekly meal plan with ingredients and instructions."
                         externalLink="https://mlb-4e2.pages.dev/login"
                     />
