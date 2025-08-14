@@ -5,6 +5,10 @@
 /.pnp
 .pnp.js
 /.next
+bun.lockb
+
+# next generated
+next-env.d.ts
 
 # testing
 /coverage
