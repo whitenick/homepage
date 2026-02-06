@@ -1,10 +1,12 @@
-import { Button as ChakraButton } from '@chakra-ui/react';
-const Button = (props: any & { children: React.ReactNode }) => {
+import { Button as ShadcnButton, ButtonProps } from '@/components/ui/button';
+import React from 'react';
+
+const Button = (props: ButtonProps & { children: React.ReactNode }) => {
     return (
-        <ChakraButton {...props}>
-            { props.children }
-        </ChakraButton>
-    )
-}
+        <ShadcnButton {...props}>
+            {props.children}
+        </ShadcnButton>
+    );
+};
 
 export default Button;
