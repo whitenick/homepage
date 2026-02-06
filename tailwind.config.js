@@ -6,7 +6,12 @@ module.exports = {
     "./modules/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-  	height: '(theme) => ({\n      auto: "auto",\n      ...theme("spacing"),\n      full: "100%",\n      screen: "calc(var(--vh) * 100)",\n    })',
+  	height: (theme) => ({
+      auto: "auto",
+      ...theme("spacing"),
+      full: "100%",
+      screen: "calc(var(--vh) * 100)",
+    }),
   	extend: {
   		fontFamily: {
   			'jim-pam': [
