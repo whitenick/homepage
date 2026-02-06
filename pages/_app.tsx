@@ -1,80 +1,67 @@
-import { CacheProvider } from '@chakra-ui/next-js';
 import { ChakraProvider } from '@chakra-ui/react';
 import { createPagesBrowserClient } from '@supabase/auth-helpers-nextjs';
 import { SessionContextProvider } from '@supabase/auth-helpers-react';
-import { Rubik } from 'next/font/google';
+import { Inter } from 'next/font/google';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 import Script from 'next/script';
 import { useState } from 'react';
-import { theme } from '../components/theme';
-import { Fonts } from '../components/theme/font';
+import theme from '../components/theme';
 import '../styles/globals.css';
 import './tw.css';
-import { ModalService } from '../components/modal';
 
-
-// Set font for Rubik
-const rubik = Rubik({ subsets: ['latin'] });
+const inter = Inter({ subsets: ['latin'] });
 
 function MyApp({ Component, pageProps }) {
   const [supabaseClient] = useState(() => createPagesBrowserClient());
+  const router = useRouter();
+  
+  // Use Chakra only for sub-apps (behavior-buzz, etc.) for backwards compatibility
+  const needsChakra = router.pathname.includes('/app/');
 
   return (
     <>
       <Head>
-        <title>Serapio Labs</title>
-        <meta name="description" content="Web application design & engineering. Come check out our current projects!" />
+        <title>Nick White - Software Engineer & Builder</title>
+        <meta name="description" content="Software engineer building products that matter" />
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=1"
         />
-        <link rel="icon" href="./volcano_mountain_icon_187744.ico" style={{ color: "white" }} />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inconsolata"
-          rel="stylesheet"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Montserrat"
-          rel="stylesheet"
-        />
-        <link rel="preconnect" href="https://fonts.googleapis.com"/>
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin=''/>
-        <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet"></link>
-        /* Pacifico Text */
-        <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Pacifico&display=swap" rel="stylesheet"></link>
-        <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"></link>
-        <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet"></link>
-        <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet"/>
+        <link rel="icon" href="./mountain.ico" />
       </Head>
-          {/* <Document
-      href="https://fonts.googleapis.com/css2?family=Inconsolata"
-      rel="stylesheet"
-      /> */}
 
-          <Script src='https://jeromeetienne.github.io/threex.terrain/examples/vendor/three.js/build/three-min.js' />
-          <Script src='https://jeromeetienne.github.io/threex.terrain/examples/vendor/three.js/examples/js/SimplexNoise.js' />
-          <Script src='https://jeromeetienne.github.io/threex.terrain/threex.terrain.js' />
-          <style jsx global>
-            {`
-        :root {
-          --font-rubik: ${rubik.style.fontFamily};
-        }
-      `}
-          </style>
-          <SessionContextProvider
-            supabaseClient={supabaseClient}
-            initialSession={pageProps.initialSession}
-          >
-            <CacheProvider>
-              <ChakraProvider theme={theme}>
-                <Fonts />
-                <Component {...pageProps} />
-                <ModalService />
-              </ChakraProvider>
-            </CacheProvider>
-          </SessionContextProvider>
-        </>
-        );
+      <Script src='https://jeromeetienne.github.io/threex.terrain/examples/vendor/three.js/build/three-min.js' />
+      <Script src='https://jeromeetienne.github.io/threex.terrain/examples/vendor/three.js/examples/js/SimplexNoise.js' />
+      <Script src='https://jeromeetienne.github.io/threex.terrain/threex.terrain.js' />
+      
+      <style jsx global>
+        {`
+          :root {
+            --font-inter: ${inter.style.fontFamily};
+          }
+          body {
+            font-family: var(--font-inter), sans-serif;
+          }
+        `}
+      </style>
+      
+      <SessionContextProvider
+        supabaseClient={supabaseClient}
+        initialSession={pageProps.initialSession}
+      >
+        {needsChakra ? (
+          <ChakraProvider theme={theme}>
+            <Component {...pageProps} />
+          </ChakraProvider>
+        ) : (
+          <div className={inter.className}>
+            <Component {...pageProps} />
+          </div>
+        )}
+      </SessionContextProvider>
+    </>
+  );
 }
 
-        export default MyApp;
+export default MyApp;
