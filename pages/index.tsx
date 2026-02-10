@@ -2,12 +2,46 @@ import Head from 'next/head';
 import Link from 'next/link';
 import AlienSaucer from '@/components/AlienSaucer';
 
+const projects = [
+  {
+    name: 'MealMind',
+    description: 'AI-powered meal planning and nutrition tracking',
+    href: 'https://mealmind.app',
+    featured: true,
+    tags: ['AI', 'Health', 'SaaS']
+  },
+  {
+    name: 'BehaviorBuzz',
+    description: 'Classroom behavior tracking for teachers',
+    href: '/app/behavior-buzz',
+    tags: ['Education', 'Tools']
+  },
+  {
+    name: 'Bird TV',
+    description: 'Live bird feeder camera stream',
+    href: '/app/bird-tv',
+    tags: ['IoT', 'Live']
+  },
+  {
+    name: 'Space Explorer',
+    description: '3D space exploration experience',
+    href: '/app/space',
+    tags: ['3D', 'WebGL']
+  },
+  {
+    name: 'Games',
+    description: 'Collection of browser-based games',
+    href: '/app/games',
+    tags: ['Games', 'Fun']
+  }
+];
+
 export default function Home() {
   return (
-    <div className="bg-adobe-cream text-adobe-darker antialiased">
+    <div className="bg-adobe-cream text-adobe-darker antialiased min-h-screen">
       <Head>
-        <title>Nick White - Design & Animation</title>
-        <meta name="description" content="Creating thoughtful digital experiences with a focus on motion, interaction, and the small details that make interfaces feel alive." />
+        <title>Nick White - Software Engineer & Builder</title>
+        <meta name="description" content="Building products at the intersection of technology and real-world impact." />
         <link rel="icon" href="./mountain.ico" />
         
         {/* Google Fonts: Cormorant Garamond (headlines) & Source Serif 4 (body) */}
@@ -31,7 +65,7 @@ export default function Home() {
           {/* Social Links - warm, rounded */}
           <nav className="flex gap-4">
             <a 
-              href="https://linkedin.com/in/nickwhite" 
+              href="https://www.linkedin.com/in/nick-white-a4ba63110/" 
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-2.5 bg-turquoise text-white rounded-3xl font-body text-sm tracking-wide hover:shadow-warm transition-all duration-300 hover:scale-105"
@@ -47,7 +81,7 @@ export default function Home() {
               GitHub
             </a>
             <a 
-              href="https://buymeacoffee.com/nickwhite" 
+              href="https://buymeacoffee.com/wicknight" 
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-2.5 bg-desert-marigold text-white rounded-3xl font-body text-sm tracking-wide hover:shadow-warm transition-all duration-300 hover:scale-105"
@@ -63,103 +97,117 @@ export default function Home() {
         <div className="bg-white/40 backdrop-blur-sm rounded-3xl px-8 py-4 shadow-warm">
           <ul className="flex justify-center gap-8 md:gap-12 font-headline text-lg">
             <li>
-              <a href="#about" className="text-adobe-darker hover:text-red-clay transition-colors duration-200">
-                About
+              <a href="/app" className="text-adobe-darker hover:text-red-clay transition-colors duration-200">
+                about
               </a>
             </li>
             <li>
-              <a href="#projects" className="text-adobe-darker hover:text-red-clay transition-colors duration-200">
-                Projects
+              <a href="/app/projects" className="text-adobe-darker hover:text-red-clay transition-colors duration-200">
+                projects
               </a>
             </li>
             <li>
-              <a href="#animation" className="text-adobe-darker hover:text-red-clay transition-colors duration-200">
-                Animation
+              <a href="/app/games" className="text-adobe-darker hover:text-red-clay transition-colors duration-200">
+                animation
               </a>
             </li>
           </ul>
         </div>
       </nav>
       
-      {/* Hero Section - 80% whitespace, clean focus */}
+      {/* Hero Section */}
       <main className="container mx-auto px-6 py-20 max-w-3xl">
         
         {/* About Section */}
         <section id="about" className="mb-32">
           <div className="bg-white rounded-3xl p-12 md:p-16 shadow-warm-lg">
             <h2 className="font-headline font-semibold text-4xl md:text-5xl text-red-clay mb-8">
-              Design & Animation
+              Software Engineer & Builder
             </h2>
             <div className="font-body text-lg md:text-xl text-adobe-darker leading-relaxed space-y-6">
               <p>
-                Creating thoughtful digital experiences with a focus on motion, 
-                interaction, and the small details that make interfaces feel alive.
+                Building products at the intersection of technology and real-world impact. 
+                Passionate about AI, education, and creating tools that help people.
               </p>
               <p>
-                I believe great design is like great architecture — it should feel 
-                inevitable, warm, and human.
+                My work spans from AI-powered applications to interactive experiences, 
+                always focused on solving meaningful problems.
               </p>
             </div>
           </div>
         </section>
         
-        {/* Projects Section */}
+        {/* Featured Project */}
         <section id="projects" className="mb-32">
           <h2 className="font-headline font-semibold text-3xl md:text-4xl text-adobe-darker mb-12 text-center">
-            Selected Work
+            Featured Project
           </h2>
           
-          <div className="space-y-8">
-            {/* Project Card Example */}
-            <article className="bg-adobe-light rounded-2xl p-10 hover:shadow-warm transition-shadow duration-300">
-              <h3 className="font-headline font-semibold text-2xl text-red-clay mb-4">
-                Project Name
+          <div className="bg-gradient-to-br from-turquoise/10 to-desert-marigold/10 rounded-3xl p-12 md:p-16 border-2 border-turquoise/20 mb-16">
+            <div className="flex items-start justify-between flex-wrap gap-4 mb-6">
+              <h3 className="font-headline font-semibold text-4xl text-red-clay">
+                {projects[0].name}
               </h3>
-              <p className="font-body text-adobe-darker leading-relaxed mb-6">
-                Brief description of the project, the challenge, and the creative solution. 
-                Focus on craft and thoughtful decision-making.
-              </p>
               <div className="flex gap-3 flex-wrap">
-                <span className="px-4 py-1.5 bg-turquoise/20 text-turquoise rounded-full text-sm font-body">
-                  Design
-                </span>
-                <span className="px-4 py-1.5 bg-desert-marigold/20 text-adobe-darker rounded-full text-sm font-body">
-                  Animation
-                </span>
+                {projects[0].tags.map((tag) => (
+                  <span 
+                    key={tag}
+                    className="px-4 py-1.5 bg-turquoise/20 text-turquoise rounded-full text-sm font-body font-semibold"
+                  >
+                    {tag}
+                  </span>
+                ))}
               </div>
-            </article>
-            
-            {/* Add more project cards as needed */}
-            <article className="bg-white rounded-2xl p-10 hover:shadow-warm transition-shadow duration-300">
-              <h3 className="font-headline font-semibold text-2xl text-red-clay mb-4">
-                Another Project
-              </h3>
-              <p className="font-body text-adobe-darker leading-relaxed mb-6">
-                Each project tells a story. This modular design makes it easy to add 
-                more work as your portfolio grows.
-              </p>
-              <div className="flex gap-3 flex-wrap">
-                <span className="px-4 py-1.5 bg-turquoise/20 text-turquoise rounded-full text-sm font-body">
-                  UI/UX
-                </span>
-              </div>
-            </article>
-          </div>
-        </section>
-        
-        {/* Animation Section */}
-        <section id="animation" className="mb-32">
-          <div className="bg-gradient-to-br from-turquoise/10 to-desert-marigold/10 rounded-3xl p-12 md:p-16 border border-turquoise/20">
-            <h2 className="font-headline font-semibold text-3xl md:text-4xl text-adobe-darker mb-6">
-              Motion & Interaction
-            </h2>
+            </div>
             <p className="font-body text-lg text-adobe-darker leading-relaxed mb-8">
-              Animation isn't decoration — it's communication. It guides attention, 
-              provides feedback, and adds personality to digital experiences.
+              MealMind uses artificial intelligence to create personalized meal plans tailored to your
+              dietary preferences, health goals, and lifestyle. Track nutrition, discover recipes, and
+              maintain a healthy relationship with food.
             </p>
-            <a href="#" className="inline-block px-8 py-3 bg-red-clay text-white rounded-3xl font-body hover:shadow-warm transition-all duration-300 hover:scale-105">
-              View Animation Reel
+            <a 
+              href={projects[0].href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-8 py-3 bg-red-clay text-white rounded-3xl font-body hover:shadow-warm transition-all duration-300 hover:scale-105"
+            >
+              Visit MealMind →
             </a>
+          </div>
+          
+          {/* Other Projects */}
+          <h3 className="font-headline font-semibold text-2xl md:text-3xl text-adobe-darker mb-8 text-center">
+            Other Projects
+          </h3>
+          
+          <div className="space-y-8">
+            {projects.slice(1).map((project) => (
+              <a
+                key={project.name}
+                href={project.href}
+                className="block"
+              >
+                <article className="bg-adobe-light rounded-2xl p-10 hover:shadow-warm transition-shadow duration-300">
+                  <div className="flex items-start justify-between flex-wrap gap-4 mb-4">
+                    <h4 className="font-headline font-semibold text-2xl text-red-clay">
+                      {project.name}
+                    </h4>
+                    <div className="flex gap-3 flex-wrap">
+                      {project.tags.map((tag) => (
+                        <span 
+                          key={tag}
+                          className="px-4 py-1.5 bg-desert-marigold/20 text-adobe-darker rounded-full text-sm font-body"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                  <p className="font-body text-adobe-darker leading-relaxed">
+                    {project.description}
+                  </p>
+                </article>
+              </a>
+            ))}
           </div>
         </section>
         
@@ -169,18 +217,38 @@ export default function Home() {
       <footer className="container mx-auto px-6 py-16 max-w-4xl">
         <div className="text-center">
           <p className="font-body text-adobe-dark mb-4">
-            Let's create something together
+            Let's build something together
           </p>
           <div className="flex justify-center gap-6 mb-8">
             <a 
-              href="mailto:hello@nickwhite.com" 
+              href="https://github.com/whitenick"
+              target="_blank"
+              rel="noopener noreferrer" 
               className="text-turquoise hover:text-red-clay transition-colors duration-200 font-body"
             >
-              hello@nickwhite.com
+              GitHub
+            </a>
+            <span className="text-adobe-dark/40">•</span>
+            <a 
+              href="https://www.linkedin.com/in/nick-white-a4ba63110/"
+              target="_blank"
+              rel="noopener noreferrer" 
+              className="text-turquoise hover:text-red-clay transition-colors duration-200 font-body"
+            >
+              LinkedIn
+            </a>
+            <span className="text-adobe-dark/40">•</span>
+            <a 
+              href="https://buymeacoffee.com/wicknight"
+              target="_blank"
+              rel="noopener noreferrer" 
+              className="text-turquoise hover:text-red-clay transition-colors duration-200 font-body"
+            >
+              Buy Me a Coffee
             </a>
           </div>
           <p className="font-body text-sm text-adobe-dark/60">
-            Designed with warmth in Santa Fe © {new Date().getFullYear()}
+            © {new Date().getFullYear()} Nick White
           </p>
         </div>
       </footer>
