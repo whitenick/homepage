@@ -52,6 +52,15 @@ module.exports = {
   			],
   			bitter: [
   				'Bitter'
+  			],
+  			// Santa Fe Design System
+  			'headline': [
+  				'"Cormorant Garamond"',
+  				'serif'
+  			],
+  			'body': [
+  				'"Source Serif 4"',
+  				'serif'
   			]
   		},
   		colors: {
@@ -79,6 +88,14 @@ module.exports = {
   			'Pale-Spring-Bud': '#e4e9b2',
   			'Snow': '#F7F0F0',
   			'cultured-white': '#F9F9F9',
+  			// Santa Fe Adobe Modern Palette
+  			'adobe-cream': '#F5EBE0',
+  			'adobe-light': '#E8DDD0',
+  			'red-clay': '#C85C3E',
+  			'desert-marigold': '#E8A84D',
+  			'turquoise': '#5B9B9F',
+  			'adobe-dark': '#8B7355',
+  			'adobe-darker': '#5C4F41',
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {
@@ -124,6 +141,10 @@ module.exports = {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
+  		},
+  		boxShadow: {
+  			'warm': '0 4px 20px rgba(200, 92, 62, 0.12)',
+  			'warm-lg': '0 10px 40px rgba(200, 92, 62, 0.15)'
   		}
   	}
   },
