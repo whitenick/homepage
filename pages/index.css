@@ -31,23 +31,7 @@
         src: url("../public/Lobster-Regular.ttf") format("truetype");
     }
 
-    h1 {
-        font-family: 'Droid Serif';
-        font-size: 40px;
-        color: #515151;
-    }
-
-    p {
-        font-family: 'monospace'
-    }
-
-    div {
-        font-family: 'montserrat'
-    }
-
-    a {
-        font-family: 'sans'
-    }
+    /* Legacy font overrides removed - now using Tailwind font-headline/font-body classes */
   :root {
         --background: 0 0% 100%;
         --foreground: 0 0% 3.9%;
