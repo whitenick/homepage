@@ -10,7 +10,11 @@ import theme from '../components/theme';
 import '../styles/globals.css';
 import './tw.css';
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ 
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+});
 const fraunces = Fraunces({ 
   subsets: ['latin'],
   variable: '--font-fraunces',
@@ -61,7 +65,7 @@ function MyApp({ Component, pageProps }) {
             <Component {...pageProps} />
           </ChakraProvider>
         ) : (
-          <div className={`${inter.className} ${fraunces.variable}`}>
+          <div className={`${inter.variable} ${fraunces.variable}`}>
             <Component {...pageProps} />
           </div>
         )}
