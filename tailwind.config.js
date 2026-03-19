@@ -97,7 +97,7 @@ module.exports = {
   			'adobe-light': '#EFEBE6',      // Subtle warm gray
   			'red-clay': '#B85C38',         // Sophisticated burnt sienna
   			'desert-marigold': '#C9A66B',  // Muted gold, less saturated
-  			'turquoise': '#4A7C7C',        // Deeper, muted teal
+  			'dusty-olive': '#7D8E7A',      // Desert brush, earthy green
   			'adobe-dark': '#6B6358',       // Warm charcoal
   			'adobe-darker': '#2D2926',     // Near-black, warm
   			background: 'hsl(var(--background))',

@@ -3,12 +3,12 @@ export default function AlienSaucer() {
     <div className="alien-saucer">
       <svg width="100" height="64" viewBox="0 0 100 64" fill="none" xmlns="http://www.w3.org/2000/svg">
         {/* Main saucer body - refined geometric */}
-        <ellipse cx="50" cy="38" rx="42" ry="10" fill="#4A7C7C" opacity="0.2"/>
-        <ellipse cx="50" cy="36" rx="42" ry="10" fill="#4A7C7C"/>
+        <ellipse cx="50" cy="38" rx="42" ry="10" fill="#7D8E7A" opacity="0.2"/>
+        <ellipse cx="50" cy="36" rx="42" ry="10" fill="#7D8E7A"/>
         
         {/* Dome/cockpit - cleaner shape */}
         <path d="M 30 36 Q 30 20, 50 20 Q 70 20, 70 36" fill="#B85C38"/>
-        <ellipse cx="50" cy="36" rx="20" ry="3" fill="#4A7C7C" opacity="0.4"/>
+        <ellipse cx="50" cy="36" rx="20" ry="3" fill="#7D8E7A" opacity="0.4"/>
         
         {/* Window - simplified */}
         <ellipse cx="50" cy="26" rx="6" ry="5" fill="#C9A66B" opacity="0.6"/>

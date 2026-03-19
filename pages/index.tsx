@@ -68,7 +68,7 @@ export default function Home() {
               href="https://www.linkedin.com/in/nick-white-a4ba63110/" 
               target="_blank"
               rel="noopener noreferrer"
-              className="px-5 py-2 bg-adobe-darker text-white rounded-lg font-body text-sm font-medium tracking-wide hover:bg-turquoise transition-colors duration-200"
+              className="px-5 py-2 bg-adobe-darker text-white rounded-lg font-body text-sm font-medium tracking-wide hover:bg-dusty-olive transition-colors duration-200"
             >
               LinkedIn
             </a>
