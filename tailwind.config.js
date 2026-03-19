@@ -55,15 +55,15 @@ module.exports = {
   			],
   			// High Desert Modern Typography
   			'headline': [
-  				'"Fraunces"',
+  				'var(--font-fraunces)',
   				'serif'
   			],
   			'body': [
-  				'"Inter"',
+  				'var(--font-inter)',
   				'sans-serif'
   			],
   			'display': [
-  				'"Playfair Display"',
+  				'var(--font-fraunces)',
   				'serif'
   			]
   		},

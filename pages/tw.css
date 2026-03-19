@@ -1704,7 +1704,7 @@ body {
 }
 
 .font-headline {
-  font-family: "Fraunces", serif;
+  font-family: var(--font-fraunces), serif;
 }
 
 .font-inconsolata {
