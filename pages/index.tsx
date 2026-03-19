@@ -121,7 +121,7 @@ export default function Home() {
         {/* About Section */}
         <section id="about" className="mb-24">
           <div className="border-l-2 border-red-clay pl-8 md:pl-12">
-            <h2 className="font-display font-semibold text-3xl md:text-4xl text-adobe-darker mb-6 tracking-tight">
+            <h2 className="font-headline font-semibold text-3xl md:text-4xl text-adobe-darker mb-6 tracking-tight">
               Software Engineer & Builder
             </h2>
             <div className="font-body text-base md:text-lg text-adobe-dark leading-relaxed space-y-4 max-w-2xl">
