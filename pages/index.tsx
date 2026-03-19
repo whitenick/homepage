@@ -4,11 +4,11 @@ import AlienSaucer from '@/components/AlienSaucer';
 
 const projects = [
   {
-    name: 'MealMind',
-    description: 'AI-powered meal planning and nutrition tracking',
-    href: 'https://mealmind.app',
+    name: 'DishSync',
+    description: 'AI-powered meal planning for busy families',
+    href: 'https://mlb-4e2.pages.dev/create-account',
     featured: true,
-    tags: ['AI', 'Health', 'SaaS']
+    tags: ['AI', 'Food', 'SaaS']
   },
   {
     name: 'BehaviorBuzz',
@@ -160,9 +160,9 @@ export default function Home() {
               </div>
             </div>
             <p className="font-body text-base text-adobe-dark leading-relaxed mb-6 max-w-2xl">
-              MealMind uses artificial intelligence to create personalized meal plans tailored to your
-              dietary preferences, health goals, and lifestyle. Track nutrition, discover recipes, and
-              maintain a healthy relationship with food.
+              DishSync uses AI to help busy families plan meals, generate shopping lists, and 
+              coordinate cooking schedules. Less stress about "what's for dinner" — more time 
+              enjoying meals together.
             </p>
             <a 
               href={projects[0].href}
@@ -170,7 +170,7 @@ export default function Home() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-5 py-2.5 bg-red-clay text-white rounded-lg font-body text-sm font-medium hover:bg-adobe-darker transition-colors duration-200"
             >
-              Visit MealMind
+              Try DishSync
               <span aria-hidden="true">→</span>
             </a>
           </div>
