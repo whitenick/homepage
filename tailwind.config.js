@@ -55,8 +55,8 @@ module.exports = {
   			],
   			// High Desert Modern Typography
   			'headline': [
-  				'"Space Grotesk"',
-  				'sans-serif'
+  				'"Fraunces"',
+  				'serif'
   			],
   			'body': [
   				'"Inter"',
