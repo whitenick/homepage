@@ -44,10 +44,10 @@ export default function Home() {
         <meta name="description" content="Building products at the intersection of technology and real-world impact." />
         <link rel="icon" href="./mountain.ico" />
         
-        {/* Google Fonts: Cormorant Garamond (headlines) & Source Serif 4 (body) */}
+        {/* Google Fonts: Space Grotesk (headlines), Inter (body), Playfair Display (accent) */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
       </Head>
 
       {/* Header with Alien Saucer */}
@@ -62,13 +62,13 @@ export default function Home() {
             Nick White
           </h1>
           
-          {/* Social Links - warm, rounded */}
-          <nav className="flex gap-4">
+          {/* Social Links - refined, professional */}
+          <nav className="flex gap-3">
             <a 
               href="https://www.linkedin.com/in/nick-white-a4ba63110/" 
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-2.5 bg-turquoise text-white rounded-3xl font-body text-sm tracking-wide hover:shadow-warm transition-all duration-300 hover:scale-105"
+              className="px-5 py-2 bg-adobe-darker text-white rounded-lg font-body text-sm font-medium tracking-wide hover:bg-turquoise transition-colors duration-200"
             >
               LinkedIn
             </a>
@@ -76,7 +76,7 @@ export default function Home() {
               href="https://github.com/whitenick" 
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-2.5 bg-adobe-dark text-white rounded-3xl font-body text-sm tracking-wide hover:shadow-warm transition-all duration-300 hover:scale-105"
+              className="px-5 py-2 border border-adobe-dark text-adobe-darker rounded-lg font-body text-sm font-medium tracking-wide hover:bg-adobe-darker hover:text-white transition-colors duration-200"
             >
               GitHub
             </a>
@@ -84,7 +84,7 @@ export default function Home() {
               href="https://buymeacoffee.com/wicknight" 
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-2.5 bg-desert-marigold text-white rounded-3xl font-body text-sm tracking-wide hover:shadow-warm transition-all duration-300 hover:scale-105"
+              className="px-5 py-2 border border-adobe-dark text-adobe-darker rounded-lg font-body text-sm font-medium tracking-wide hover:bg-desert-marigold hover:border-desert-marigold hover:text-white transition-colors duration-200"
             >
               Coffee
             </a>
@@ -92,23 +92,23 @@ export default function Home() {
         </div>
       </header>
       
-      {/* Navigation - intimate courtyard style */}
-      <nav className="container mx-auto px-6 py-6 max-w-4xl">
-        <div className="bg-white/40 backdrop-blur-sm rounded-3xl px-8 py-4 shadow-warm">
-          <ul className="flex justify-center gap-8 md:gap-12 font-headline text-lg">
+      {/* Navigation - clean, professional */}
+      <nav className="container mx-auto px-6 py-4 max-w-4xl">
+        <div className="border-b border-adobe-light pb-4">
+          <ul className="flex justify-center gap-10 md:gap-14 font-body text-sm font-medium uppercase tracking-widest">
             <li>
-              <a href="/app" className="text-adobe-darker hover:text-red-clay transition-colors duration-200">
-                about
+              <a href="/app" className="text-adobe-dark hover:text-red-clay transition-colors duration-200">
+                About
               </a>
             </li>
             <li>
-              <a href="/app/projects" className="text-adobe-darker hover:text-red-clay transition-colors duration-200">
-                projects
+              <a href="/app/projects" className="text-adobe-dark hover:text-red-clay transition-colors duration-200">
+                Projects
               </a>
             </li>
             <li>
-              <a href="/app/games" className="text-adobe-darker hover:text-red-clay transition-colors duration-200">
-                animation
+              <a href="/app/games" className="text-adobe-dark hover:text-red-clay transition-colors duration-200">
+                Lab
               </a>
             </li>
           </ul>
@@ -119,12 +119,12 @@ export default function Home() {
       <main className="container mx-auto px-6 py-20 max-w-3xl">
         
         {/* About Section */}
-        <section id="about" className="mb-32">
-          <div className="bg-white rounded-3xl p-12 md:p-16 shadow-warm-lg">
-            <h2 className="font-headline font-semibold text-4xl md:text-5xl text-red-clay mb-8">
+        <section id="about" className="mb-24">
+          <div className="border-l-2 border-red-clay pl-8 md:pl-12">
+            <h2 className="font-display font-semibold text-3xl md:text-4xl text-adobe-darker mb-6 tracking-tight">
               Software Engineer & Builder
             </h2>
-            <div className="font-body text-lg md:text-xl text-adobe-darker leading-relaxed space-y-6">
+            <div className="font-body text-base md:text-lg text-adobe-dark leading-relaxed space-y-4 max-w-2xl">
               <p>
                 Building products at the intersection of technology and real-world impact. 
                 Passionate about AI, education, and creating tools that help people.
@@ -138,28 +138,28 @@ export default function Home() {
         </section>
         
         {/* Featured Project */}
-        <section id="projects" className="mb-32">
-          <h2 className="font-headline font-semibold text-3xl md:text-4xl text-adobe-darker mb-12 text-center">
+        <section id="projects" className="mb-24">
+          <p className="font-body text-sm font-medium uppercase tracking-widest text-adobe-dark mb-4">
             Featured Project
-          </h2>
+          </p>
           
-          <div className="bg-gradient-to-br from-turquoise/10 to-desert-marigold/10 rounded-3xl p-12 md:p-16 border-2 border-turquoise/20 mb-16">
-            <div className="flex items-start justify-between flex-wrap gap-4 mb-6">
-              <h3 className="font-headline font-semibold text-4xl text-red-clay">
+          <div className="bg-white rounded-xl p-8 md:p-12 shadow-warm mb-12">
+            <div className="flex items-start justify-between flex-wrap gap-4 mb-4">
+              <h3 className="font-headline font-bold text-2xl md:text-3xl text-adobe-darker">
                 {projects[0].name}
               </h3>
-              <div className="flex gap-3 flex-wrap">
+              <div className="flex gap-2 flex-wrap">
                 {projects[0].tags.map((tag) => (
                   <span 
                     key={tag}
-                    className="px-4 py-1.5 bg-turquoise/20 text-turquoise rounded-full text-sm font-body font-semibold"
+                    className="px-3 py-1 bg-adobe-light text-adobe-dark rounded text-xs font-body font-medium uppercase tracking-wide"
                   >
                     {tag}
                   </span>
                 ))}
               </div>
             </div>
-            <p className="font-body text-lg text-adobe-darker leading-relaxed mb-8">
+            <p className="font-body text-base text-adobe-dark leading-relaxed mb-6 max-w-2xl">
               MealMind uses artificial intelligence to create personalized meal plans tailored to your
               dietary preferences, health goals, and lifestyle. Track nutrition, discover recipes, and
               maintain a healthy relationship with food.
@@ -168,43 +168,45 @@ export default function Home() {
               href={projects[0].href}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-8 py-3 bg-red-clay text-white rounded-3xl font-body hover:shadow-warm transition-all duration-300 hover:scale-105"
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-red-clay text-white rounded-lg font-body text-sm font-medium hover:bg-adobe-darker transition-colors duration-200"
             >
-              Visit MealMind →
+              Visit MealMind
+              <span aria-hidden="true">→</span>
             </a>
           </div>
           
           {/* Other Projects */}
-          <h3 className="font-headline font-semibold text-2xl md:text-3xl text-adobe-darker mb-8 text-center">
+          <p className="font-body text-sm font-medium uppercase tracking-widest text-adobe-dark mb-6">
             Other Projects
-          </h3>
+          </p>
           
-          <div className="space-y-8">
+          <div className="grid gap-4">
             {projects.slice(1).map((project) => (
               <a
                 key={project.name}
                 href={project.href}
-                className="block"
+                className="group block"
               >
-                <article className="bg-adobe-light rounded-2xl p-10 hover:shadow-warm transition-shadow duration-300">
-                  <div className="flex items-start justify-between flex-wrap gap-4 mb-4">
-                    <h4 className="font-headline font-semibold text-2xl text-red-clay">
+                <article className="flex items-center justify-between p-5 border border-adobe-light rounded-lg hover:border-adobe-dark hover:shadow-subtle transition-all duration-200">
+                  <div className="flex items-center gap-4">
+                    <h4 className="font-headline font-semibold text-lg text-adobe-darker group-hover:text-red-clay transition-colors">
                       {project.name}
                     </h4>
-                    <div className="flex gap-3 flex-wrap">
-                      {project.tags.map((tag) => (
-                        <span 
-                          key={tag}
-                          className="px-4 py-1.5 bg-desert-marigold/20 text-adobe-darker rounded-full text-sm font-body"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
+                    <span className="hidden sm:block text-adobe-dark/60">—</span>
+                    <p className="hidden sm:block font-body text-sm text-adobe-dark">
+                      {project.description}
+                    </p>
                   </div>
-                  <p className="font-body text-adobe-darker leading-relaxed">
-                    {project.description}
-                  </p>
+                  <div className="flex gap-2">
+                    {project.tags.slice(0, 2).map((tag) => (
+                      <span 
+                        key={tag}
+                        className="px-2 py-0.5 bg-adobe-light text-adobe-dark rounded text-xs font-body"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </article>
               </a>
             ))}
@@ -213,43 +215,38 @@ export default function Home() {
         
       </main>
       
-      {/* Footer - Simple & Warm */}
-      <footer className="container mx-auto px-6 py-16 max-w-4xl">
-        <div className="text-center">
-          <p className="font-body text-adobe-dark mb-4">
-            Let's build something together
+      {/* Footer - Minimal */}
+      <footer className="container mx-auto px-6 py-20 max-w-4xl border-t border-adobe-light">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+          <p className="font-body text-sm text-adobe-dark">
+            © {new Date().getFullYear()} Nick White
           </p>
-          <div className="flex justify-center gap-6 mb-8">
+          <div className="flex gap-8">
             <a 
               href="https://github.com/whitenick"
               target="_blank"
               rel="noopener noreferrer" 
-              className="text-turquoise hover:text-red-clay transition-colors duration-200 font-body"
+              className="text-adobe-dark hover:text-adobe-darker transition-colors duration-200 font-body text-sm"
             >
               GitHub
             </a>
-            <span className="text-adobe-dark/40">•</span>
             <a 
               href="https://www.linkedin.com/in/nick-white-a4ba63110/"
               target="_blank"
               rel="noopener noreferrer" 
-              className="text-turquoise hover:text-red-clay transition-colors duration-200 font-body"
+              className="text-adobe-dark hover:text-adobe-darker transition-colors duration-200 font-body text-sm"
             >
               LinkedIn
             </a>
-            <span className="text-adobe-dark/40">•</span>
             <a 
               href="https://buymeacoffee.com/wicknight"
               target="_blank"
               rel="noopener noreferrer" 
-              className="text-turquoise hover:text-red-clay transition-colors duration-200 font-body"
+              className="text-adobe-dark hover:text-adobe-darker transition-colors duration-200 font-body text-sm"
             >
-              Buy Me a Coffee
+              Coffee
             </a>
           </div>
-          <p className="font-body text-sm text-adobe-dark/60">
-            © {new Date().getFullYear()} Nick White
-          </p>
         </div>
       </footer>
     </div>

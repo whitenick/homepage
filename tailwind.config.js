@@ -53,13 +53,17 @@ module.exports = {
   			bitter: [
   				'Bitter'
   			],
-  			// Santa Fe Design System
+  			// High Desert Modern Typography
   			'headline': [
-  				'"Cormorant Garamond"',
-  				'serif'
+  				'"Space Grotesk"',
+  				'sans-serif'
   			],
   			'body': [
-  				'"Source Serif 4"',
+  				'"Inter"',
+  				'sans-serif'
+  			],
+  			'display': [
+  				'"Playfair Display"',
   				'serif'
   			]
   		},
@@ -88,14 +92,14 @@ module.exports = {
   			'Pale-Spring-Bud': '#e4e9b2',
   			'Snow': '#F7F0F0',
   			'cultured-white': '#F9F9F9',
-  			// Santa Fe Adobe Modern Palette
-  			'adobe-cream': '#F5EBE0',
-  			'adobe-light': '#E8DDD0',
-  			'red-clay': '#C85C3E',
-  			'desert-marigold': '#E8A84D',
-  			'turquoise': '#5B9B9F',
-  			'adobe-dark': '#8B7355',
-  			'adobe-darker': '#5C4F41',
+  			// High Desert Modern Palette (refined)
+  			'adobe-cream': '#F9F7F4',      // Warmer white, less peachy
+  			'adobe-light': '#EFEBE6',      // Subtle warm gray
+  			'red-clay': '#B85C38',         // Sophisticated burnt sienna
+  			'desert-marigold': '#C9A66B',  // Muted gold, less saturated
+  			'turquoise': '#4A7C7C',        // Deeper, muted teal
+  			'adobe-dark': '#6B6358',       // Warm charcoal
+  			'adobe-darker': '#2D2926',     // Near-black, warm
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {
@@ -143,8 +147,9 @@ module.exports = {
   			sm: 'calc(var(--radius) - 4px)'
   		},
   		boxShadow: {
-  			'warm': '0 4px 20px rgba(200, 92, 62, 0.12)',
-  			'warm-lg': '0 10px 40px rgba(200, 92, 62, 0.15)'
+  			'warm': '0 4px 24px rgba(45, 41, 38, 0.08)',
+  			'warm-lg': '0 12px 48px rgba(45, 41, 38, 0.12)',
+  			'subtle': '0 1px 3px rgba(45, 41, 38, 0.06)'
   		}
   	}
   },

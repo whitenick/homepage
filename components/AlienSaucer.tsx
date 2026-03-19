@@ -1,36 +1,31 @@
 export default function AlienSaucer() {
   return (
     <div className="alien-saucer">
-      <svg width="120" height="80" viewBox="0 0 120 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-        {/* Main saucer body - folk art pottery style */}
-        <ellipse cx="60" cy="45" rx="50" ry="12" fill="#5B9B9F" opacity="0.3"/>
-        <ellipse cx="60" cy="42" rx="50" ry="12" fill="#5B9B9F"/>
+      <svg width="100" height="64" viewBox="0 0 100 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+        {/* Main saucer body - refined geometric */}
+        <ellipse cx="50" cy="38" rx="42" ry="10" fill="#4A7C7C" opacity="0.2"/>
+        <ellipse cx="50" cy="36" rx="42" ry="10" fill="#4A7C7C"/>
         
-        {/* Dome/cockpit - organic rounded shape */}
-        <path d="M 35 42 Q 35 25, 60 25 Q 85 25, 85 42" fill="#C85C3E"/>
-        <ellipse cx="60" cy="42" rx="25" ry="4" fill="#5B9B9F" opacity="0.5"/>
+        {/* Dome/cockpit - cleaner shape */}
+        <path d="M 30 36 Q 30 20, 50 20 Q 70 20, 70 36" fill="#B85C38"/>
+        <ellipse cx="50" cy="36" rx="20" ry="3" fill="#4A7C7C" opacity="0.4"/>
         
-        {/* Window */}
-        <ellipse cx="60" cy="32" rx="8" ry="6" fill="#E8A84D" opacity="0.7"/>
+        {/* Window - simplified */}
+        <ellipse cx="50" cy="26" rx="6" ry="5" fill="#C9A66B" opacity="0.6"/>
         
-        {/* Folk art details - simple dots */}
-        <circle cx="40" cy="42" r="2" fill="#E8A84D" opacity="0.8"/>
-        <circle cx="50" cy="42" r="2" fill="#E8A84D" opacity="0.8"/>
-        <circle cx="70" cy="42" r="2" fill="#E8A84D" opacity="0.8"/>
-        <circle cx="80" cy="42" r="2" fill="#E8A84D" opacity="0.8"/>
-        
-        {/* Light beam suggestion - subtle */}
-        <path d="M 55 54 L 45 75 L 75 75 L 65 54 Z" fill="#E8A84D" opacity="0.15"/>
+        {/* Minimal accent line */}
+        <line x1="20" y1="36" x2="80" y2="36" stroke="#C9A66B" strokeWidth="1" opacity="0.3"/>
       </svg>
       
       <style jsx>{`
-        @keyframes float {
+        @keyframes drift {
           0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-8px); }
+          50% { transform: translateY(-4px); }
         }
         
         .alien-saucer {
-          animation: float 4s ease-in-out infinite;
+          animation: drift 6s ease-in-out infinite;
+          opacity: 0.85;
         }
       `}</style>
     </div>
