@@ -1,122 +1,193 @@
-import { useState } from 'react';
-import Head from 'next/head';
-import Link from 'next/link';
-import AlienSaucer from '@/components/AlienSaucer';
+import Head from "next/head";
+import { IBM_Plex_Sans } from "next/font/google";
+import Link from "next/link";
+import AlienSaucer from "@/components/AlienSaucer";
+import "../styles/v2.css";
+
+const ibmPlexSans = IBM_Plex_Sans({
+    subsets: ["latin"],
+    weight: ["300", "400", "500", "600"],
+    variable: "--font-ibm-plex",
+    display: "swap",
+});
 
 export default function About() {
-  const [menuOpen, setMenuOpen] = useState(false);
+    return (
+        <div className="bg-[#F9F7F4] text-[#2D2926] antialiased v2-grain min-h-screen">
+            <style jsx global>{`
+                :root {
+                    --font-ibm-plex: ${ibmPlexSans.style.fontFamily};
+                }
+                body {
+                    font-family: var(--font-ibm-plex), sans-serif;
+                }
+                h1,
+                h2,
+                h3,
+                .hd {
+                    font-family: var(--font-fraunces), serif;
+                }
+            `}</style>
 
-  return (
-    <div className="bg-adobe-cream text-adobe-darker antialiased min-h-screen">
-      <Head>
-        <title>About — Nick White</title>
-        <meta name="description" content="Engineering manager based in Austin, TX" />
-        <link rel="icon" href="./mountain.ico" />
-      </Head>
+            <div className={`${ibmPlexSans.variable}`}>
+                <section className="relative v2-page-gradient">
+                    {/* Hero banner (smaller — about half viewport) */}
+                    <div className="relative h-[50vh] flex items-center overflow-hidden">
+                        <div className="absolute inset-0 v2-desert-gradient"></div>
+                        <div className="v2-mesa"></div>
 
-      <div className="max-w-lg mx-auto px-6 py-24 md:py-32">
-        
-        {/* Top row: UFO left, menu toggle right */}
-        <div className="flex items-start justify-between mb-10">
-          <Link href="/" className="opacity-80">
-            <AlienSaucer />
-          </Link>
-          
-          <button 
-            onClick={() => setMenuOpen(!menuOpen)}
-            className="text-sm text-adobe-dark hover:text-adobe-darker transition-colors flex items-center gap-1"
-          >
-            <span>Menu</span>
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5">
-              <path d="M3 4.5L6 7.5L9 4.5"/>
-            </svg>
-          </button>
+                        {/* UFO (top-left) */}
+                        <div
+                            className="absolute top-10 left-6 md:left-10 v2-ufo opacity-50"
+                            aria-hidden="true"
+                        >
+                            <Link href="/">
+                                <AlienSaucer />
+                            </Link>
+                        </div>
+
+                        {/* Index (top-right) */}
+                        <div className="absolute top-10 right-6 md:right-10">
+                            <details className="group text-xs">
+                                <summary className="list-none cursor-pointer uppercase tracking-[0.15em] text-[#2D2926]/40 hover:text-[#2D2926] transition-colors flex items-center gap-2">
+                                    <span className="w-4 h-px bg-[#2D2926]/30 group-open:w-6 group-open:bg-[#B85C38] transition-all"></span>
+                                    Index
+                                </summary>
+                                <div className="flex gap-6 text-xs mt-4 pt-4 border-t border-[#E8E6E1]">
+                                    <span className="text-[#2D2926] tracking-wide">
+                                        About
+                                    </span>
+                                    <a
+                                        href="/blog"
+                                        className="text-[#2D2926]/50 hover:text-[#B85C38] transition-colors tracking-wide"
+                                    >
+                                        Blog
+                                    </a>
+                                    <a
+                                        href="/app"
+                                        className="text-[#2D2926]/50 hover:text-[#B85C38] transition-colors tracking-wide"
+                                    >
+                                        Lab
+                                    </a>
+                                </div>
+                            </details>
+                        </div>
+
+                        {/* Page title */}
+                        <div className="relative w-full px-8 lg:px-16">
+                            <div className="max-w-3xl">
+                                <Link href="/" className="inline-block mb-2">
+                                    <h1 className="hd text-5xl md:text-6xl leading-[0.95] text-[#2D2926] hover:text-[#B85C38] transition-colors">
+                                        About
+                                        <span
+                                            className="inline-block text-[0.4em] md:text-[0.35em] align-middle ml-2 opacity-60"
+                                            aria-hidden="true"
+                                        >
+                                            🏜️
+                                        </span>
+                                    </h1>
+                                </Link>
+                                <p className="text-xs uppercase tracking-[0.2em] text-[#7D8E7A]">
+                                    Austin, TX
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Content */}
+                    <div className="w-full px-8 lg:px-16 py-20 md:py-28">
+                        <div className="max-w-3xl">
+                            <div className="space-y-6 text-[#2D2926]/65 leading-relaxed max-w-xl">
+                                <p>
+                                    I&apos;m an engineering manager based in
+                                    Austin, TX. By day I lead teams building
+                                    software; nights and weekends I tinker on
+                                    side projects at the intersection of
+                                    technology and everyday life.
+                                </p>
+                                <p>
+                                    When I&apos;m not at a keyboard, you&apos;ll
+                                    find me hiking desert trails, cooking for
+                                    family, or chasing my kid around the
+                                    backyard.
+                                </p>
+                            </div>
+
+                            <div className="v2-divider my-12"></div>
+
+                            <div className="space-y-4 max-w-sm">
+                                <div className="flex justify-between text-sm">
+                                    <span className="text-[#2D2926]/40">
+                                        Location
+                                    </span>
+                                    <span className="text-[#2D2926]">
+                                        Austin, TX
+                                    </span>
+                                </div>
+                                <div className="flex justify-between text-sm">
+                                    <span className="text-[#2D2926]/40">
+                                        Work
+                                    </span>
+                                    <span className="text-[#2D2926]">
+                                        Engineering Manager
+                                    </span>
+                                </div>
+                                <div className="flex justify-between text-sm">
+                                    <span className="text-[#2D2926]/40">
+                                        Side projects
+                                    </span>
+                                    <span className="text-[#2D2926]">
+                                        Serapio Labs
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div className="v2-divider my-12"></div>
+
+                            <p className="text-xs uppercase tracking-[0.12em] text-[#2D2926]/40 mb-4">
+                                Get in touch
+                            </p>
+                            <div className="flex gap-6 text-sm">
+                                <a
+                                    href="mailto:nick@serapiolabs.com"
+                                    className="text-[#2D2926]/50 hover:text-[#B85C38] transition-colors"
+                                >
+                                    Email
+                                </a>
+                                <a
+                                    href="https://www.linkedin.com/in/nick-white-a4ba63110/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-[#2D2926]/50 hover:text-[#B85C38] transition-colors"
+                                >
+                                    LinkedIn
+                                </a>
+                                <a
+                                    href="https://github.com/whitenick"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-[#2D2926]/50 hover:text-[#B85C38] transition-colors"
+                                >
+                                    GitHub
+                                </a>
+                            </div>
+
+                            <div className="v2-divider mt-20 mb-6"></div>
+
+                            <div className="flex items-center justify-between">
+                                <p className="text-xs text-[#2D2926]/25 tracking-wide">
+                                    © 2026 · Austin, TX
+                                </p>
+                                <div className="flex gap-2">
+                                    <span className="w-2 h-2 rounded-full bg-[#B85C38]/40"></span>
+                                    <span className="w-2 h-2 rounded-full bg-[#C9A66B]/40"></span>
+                                    <span className="w-2 h-2 rounded-full bg-[#7D8E7A]/40"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
         </div>
-        
-        {/* Expandable pages menu */}
-        {menuOpen && (
-          <div className="flex gap-6 text-sm mb-10 pb-6 border-b border-adobe-light">
-            <span className="text-adobe-darker">About</span>
-            <Link href="/blog" className="text-adobe-dark hover:text-adobe-darker transition-colors">
-              Blog
-            </Link>
-            <Link href="/app" className="text-adobe-dark hover:text-adobe-darker transition-colors">
-              Old Homepage
-            </Link>
-          </div>
-        )}
-
-        {/* Name + page indicator */}
-        <Link href="/" className="block mb-3">
-          <h1 className="font-headline text-4xl md:text-5xl font-medium tracking-tight text-adobe-darker hover:text-red-clay transition-colors">
-            Nick White
-          </h1>
-        </Link>
-        <p className="text-adobe-dark text-lg mb-12">About</p>
-
-        {/* Bio */}
-        <div className="space-y-6 text-adobe-dark leading-relaxed mb-12">
-          <p>
-            I&apos;m an engineering manager based in Austin, TX. By day I lead teams building software; 
-            nights and weekends I tinker on side projects at the intersection of technology and everyday life.
-          </p>
-          <p>
-            When I&apos;m not at a keyboard, you&apos;ll find me hiking desert trails, cooking for family, 
-            or chasing my kid around the backyard.
-          </p>
-        </div>
-
-        {/* Details */}
-        <div className="border-t border-adobe-light pt-8 space-y-4">
-          <div className="flex justify-between text-sm">
-            <span className="text-adobe-dark">Location</span>
-            <span className="text-adobe-darker">Austin, TX</span>
-          </div>
-          <div className="flex justify-between text-sm">
-            <span className="text-adobe-dark">Work</span>
-            <span className="text-adobe-darker">Engineering Manager</span>
-          </div>
-          <div className="flex justify-between text-sm">
-            <span className="text-adobe-dark">Side projects</span>
-            <span className="text-adobe-darker">Serapio Labs</span>
-          </div>
-        </div>
-
-        {/* Contact */}
-        <div className="mt-12 pt-8 border-t border-adobe-light">
-          <p className="text-sm text-adobe-dark mb-4">Get in touch</p>
-          <div className="flex gap-6 text-sm">
-            <a 
-              href="mailto:nick@serapiolabs.com"
-              className="text-adobe-dark hover:text-red-clay transition-colors"
-            >
-              Email
-            </a>
-            <a 
-              href="https://www.linkedin.com/in/nick-white-a4ba63110/" 
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-adobe-dark hover:text-red-clay transition-colors"
-            >
-              LinkedIn
-            </a>
-            <a 
-              href="https://github.com/whitenick" 
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-adobe-dark hover:text-red-clay transition-colors"
-            >
-              GitHub
-            </a>
-          </div>
-        </div>
-
-        {/* Footer */}
-        <div className="mt-20 pt-8 border-t border-adobe-light">
-          <p className="text-sm text-adobe-dark/60">© 2026 · Austin, TX</p>
-        </div>
-
-      </div>
-    </div>
-  );
+    );
 }
