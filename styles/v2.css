@@ -1,0 +1,135 @@
+/* Mesa Brutalist v2 Design System — Concrete Grain & Landscape Utilities */
+
+/* Concrete grain texture overlay */
+.v2-grain::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.3;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+  pointer-events: none;
+}
+
+/* Desert gradient wash */
+.v2-desert-gradient {
+  background: linear-gradient(
+    165deg,
+    rgba(185, 92, 56, 0.08) 0%,
+    rgba(201, 166, 107, 0.12) 50%,
+    rgba(125, 142, 122, 0.08) 100%
+  );
+}
+
+/* Full-page gradient stitch */
+.v2-page-gradient {
+  background: linear-gradient(
+    180deg,
+    rgba(185, 92, 56, 0.04) 0%,
+    transparent 15%,
+    transparent 85%,
+    rgba(125, 142, 122, 0.04) 100%
+  );
+}
+
+/* Mesa / plateau landscape */
+.v2-mesa {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 280px;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(125, 142, 122, 0.06) 30%,
+    rgba(201, 166, 107, 0.1) 55%,
+    rgba(185, 92, 56, 0.06) 80%,
+    rgba(45, 41, 38, 0.03) 100%
+  );
+  clip-path: polygon(
+    0% 100%,
+    0% 75%,
+    8% 65%,
+    15% 60%,
+    22% 68%,
+    30% 52%,
+    40% 48%,
+    48% 55%,
+    55% 50%,
+    65% 42%,
+    72% 48%,
+    80% 38%,
+    88% 44%,
+    95% 35%,
+    100% 42%,
+    100% 100%
+  );
+}
+
+/* UFO drift animation */
+@keyframes v2-drift {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  25%      { transform: translateY(-4px) rotate(1deg); }
+  75%      { transform: translateY(2px) rotate(-1deg); }
+}
+.v2-ufo {
+  animation: v2-drift 7s ease-in-out infinite;
+}
+
+/* Gradient divider */
+.v2-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    #b85c38 20%,
+    #c9a66b 50%,
+    #7d8e7a 80%,
+    transparent 100%
+  );
+  opacity: 0.25;
+}
+
+/* Accent bar */
+.v2-accent-bar {
+  width: 48px;
+  height: 3px;
+  background: #b85c38;
+}
+
+/* Concrete card */
+.v2-card {
+  border: 1px solid #e8e6e1;
+  transition: border-color 0.25s ease, transform 0.3s ease;
+}
+.v2-card:hover {
+  border-color: #b85c38;
+  transform: translateY(-2px);
+}
+
+/* Tag pills */
+.v2-tag {
+  display: inline-block;
+  padding: 2px 10px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  background: rgba(125, 142, 122, 0.08);
+  color: #7d8e7a;
+  border-radius: 2px;
+}
+.v2-tag-red {
+  background: rgba(184, 92, 56, 0.08);
+  color: #b85c38;
+}
+
+/* Responsive mesa height */
+@media (max-height: 700px) {
+  .v2-mesa {
+    height: 180px;
+  }
+}

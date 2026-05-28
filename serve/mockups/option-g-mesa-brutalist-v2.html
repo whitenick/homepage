@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Nick White — Option G v2: Mesa Brutalist</title>
+
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap"
+            rel="stylesheet"
+        />
+
+        <script src="https://cdn.tailwindcss.com"></script>
+
+        <style>
+            * {
+                font-family: inherit;
+            }
+            body {
+                font-family: "IBM Plex Sans", sans-serif !important;
+            }
+            h1,
+            h2,
+            h3,
+            .hd {
+                font-family: "Fraunces", serif !important;
+                font-weight: 400 !important;
+            }
+
+            .grain::before {
+                content: "";
+                position: fixed;
+                inset: 0;
+                z-index: -1;
+                opacity: 0.3;
+                background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+                background-repeat: repeat;
+                background-size: 256px 256px;
+                pointer-events: none;
+            }
+
+            .desert-gradient-1 {
+                background: linear-gradient(
+                    165deg,
+                    rgba(185, 92, 56, 0.08) 0%,
+                    rgba(201, 166, 107, 0.12) 50%,
+                    rgba(125, 142, 122, 0.08) 100%
+                );
+            }
+            .page-gradient {
+                background: linear-gradient(
+                    180deg,
+                    rgba(185, 92, 56, 0.04) 0%,
+                    transparent 15%,
+                    transparent 85%,
+                    rgba(125, 142, 122, 0.04) 100%
+                );
+            }
+
+            .mesa-shape {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 280px;
+                background: linear-gradient(
+                    180deg,
+                    transparent 0%,
+                    rgba(125, 142, 122, 0.06) 30%,
+                    rgba(201, 166, 107, 0.1) 55%,
+                    rgba(185, 92, 56, 0.06) 80%,
+                    rgba(45, 41, 38, 0.03) 100%
+                );
+                clip-path: polygon(
+                    0% 100%,
+                    0% 75%,
+                    8% 65%,
+                    15% 60%,
+                    22% 68%,
+                    30% 52%,
+                    40% 48%,
+                    48% 55%,
+                    55% 50%,
+                    65% 42%,
+                    72% 48%,
+                    80% 38%,
+                    88% 44%,
+                    95% 35%,
+                    100% 42%,
+                    100% 100%
+                );
+            }
+
+            @keyframes drift {
+                0%,
+                100% {
+                    transform: translateY(0px) rotate(0deg);
+                }
+                25% {
+                    transform: translateY(-4px) rotate(1deg);
+                }
+                75% {
+                    transform: translateY(2px) rotate(-1deg);
+                }
+            }
+            .ufo-float {
+                animation: drift 7s ease-in-out infinite;
+            }
+
+            .block-divider {
+                width: 100%;
+                height: 1px;
+                background: linear-gradient(
+                    90deg,
+                    transparent 0%,
+                    #b85c38 20%,
+                    #c9a66b 50%,
+                    #7d8e7a 80%,
+                    transparent 100%
+                );
+                opacity: 0.25;
+            }
+            .accent-bar {
+                width: 48px;
+                height: 3px;
+                background: #b85c38;
+            }
+
+            .card-concrete {
+                border: 1px solid #e8e6e1;
+                transition:
+                    border-color 0.25s ease,
+                    transform 0.3s ease;
+            }
+            .card-concrete:hover {
+                border-color: #b85c38;
+                transform: translateY(-2px);
+            }
+
+            .shadow-cool {
+                box-shadow:
+                    0 4px 32px -8px rgba(45, 41, 38, 0.06),
+                    0 2px 8px -4px rgba(125, 142, 122, 0.08);
+            }
+            .shadow-cool-lg {
+                box-shadow:
+                    0 12px 48px -12px rgba(45, 41, 38, 0.1),
+                    0 4px 16px -8px rgba(125, 142, 122, 0.12);
+            }
+
+            .tag {
+                display: inline-block;
+                padding: 2px 10px;
+                font-size: 0.75rem;
+                font-weight: 500;
+                letter-spacing: 0.02em;
+                background: rgba(125, 142, 122, 0.08);
+                color: #7d8e7a;
+                border-radius: 2px;
+            }
+            .tag-red {
+                background: rgba(184, 92, 56, 0.08);
+                color: #b85c38;
+            }
+        </style>
+    </head>
+    <body class="bg-[#F9F7F4] text-[#2D2926] antialiased grain min-h-screen">
+        <section class="relative page-gradient">
+            <!-- ── HERO (full-screen) ── -->
+            <div
+                class="relative min-h-screen flex items-center overflow-hidden"
+            >
+                <div class="absolute inset-0 desert-gradient-1"></div>
+                <div class="mesa-shape"></div>
+
+                <!-- UFO (top-left) -->
+                <div
+                    class="absolute top-10 left-6 md:left-10 ufo-float opacity-50"
+                    aria-hidden="true"
+                >
+                    <svg
+                        width="72"
+                        height="46"
+                        viewBox="0 0 100 64"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <ellipse
+                            cx="50"
+                            cy="38"
+                            rx="42"
+                            ry="10"
+                            fill="#7D8E7A"
+                            opacity="0.15"
+                        />
+                        <ellipse
+                            cx="50"
+                            cy="36"
+                            rx="42"
+                            ry="10"
+                            fill="#7D8E7A"
+                        />
+                        <path
+                            d="M 30 36 Q 30 20, 50 20 Q 70 20, 70 36"
+                            fill="#B85C38"
+                        />
+                        <ellipse
+                            cx="50"
+                            cy="36"
+                            rx="20"
+                            ry="3"
+                            fill="#7D8E7A"
+                            opacity="0.3"
+                        />
+                        <ellipse
+                            cx="50"
+                            cy="26"
+                            rx="6"
+                            ry="5"
+                            fill="#C9A66B"
+                            opacity="0.5"
+                        />
+                        <line
+                            x1="20"
+                            y1="36"
+                            x2="80"
+                            y2="36"
+                            stroke="#C9A66B"
+                            stroke-width="1"
+                            opacity="0.25"
+                        />
+                    </svg>
+                </div>
+
+                <!-- Index (top-right) -->
+                <div class="absolute top-10 right-6 md:right-10">
+                    <details class="group text-xs">
+                        <summary
+                            class="list-none cursor-pointer uppercase tracking-[0.15em] text-[#2D2926]/40 hover:text-[#2D2926] transition-colors flex items-center gap-2"
+                        >
+                            <span
+                                class="w-4 h-px bg-[#2D2926]/30 group-open:w-6 group-open:bg-[#B85C38] transition-all"
+                            ></span>
+                            Index
+                        </summary>
+                        <div
+                            class="flex gap-6 text-xs mt-4 pt-4 border-t border-[#E8E6E1]"
+                        >
+                            <a
+                                href="#"
+                                class="text-[#2D2926]/50 hover:text-[#B85C38] transition-colors tracking-wide"
+                                >About</a
+                            >
+                            <a
+                                href="#"
+                                class="text-[#2D2926]/50 hover:text-[#B85C38] transition-colors tracking-wide"
+                                >Blog</a
+                            >
+                            <a
+                                href="#"
+                                class="text-[#2D2926]/50 hover:text-[#B85C38] transition-colors tracking-wide"
+                                >Lab</a
+                            >
+                        </div>
+                    </details>
+                </div>
+
+                <!-- Hero text (wide wrapper, constrained inner column) -->
+                <div class="relative w-full px-8 lg:px-16">
+                    <div class="max-w-3xl">
+                        <p
+                            class="text-xs uppercase tracking-[0.2em] text-[#7D8E7A] mb-6"
+                        >
+                            Software Engineer &amp; Builder
+                        </p>
+
+                        <h1
+                            class="hd text-6xl md:text-7xl leading-[0.95] text-[#2D2926] mb-3"
+                        >
+                            Nick<br />White
+                            <span
+                                class="inline-block text-[0.4em] md:text-[0.35em] align-middle ml-2 opacity-60"
+                                aria-hidden="true"
+                                >🏜️</span
+                            >
+                        </h1>
+                        <div class="accent-bar mb-8"></div>
+
+                        <p
+                            class="text-base text-[#2D2926]/55 font-light leading-relaxed max-w-lg mb-8"
+                        >
+                            Building products at the intersection of technology
+                            and real-world impact. Passionate about AI,
+                            education, and creating tools that help people.
+                        </p>
+
+                        <div
+                            class="flex gap-8 text-xs uppercase tracking-[0.12em]"
+                        >
+                            <a
+                                href="https://github.com/whitenick"
+                                target="_blank"
+                                class="text-[#2D2926]/40 hover:text-[#B85C38] transition-colors"
+                                >GitHub</a
+                            >
+                            <a
+                                href="https://www.linkedin.com/in/nick-white-a4ba63110/"
+                                target="_blank"
+                                class="text-[#2D2926]/40 hover:text-[#B85C38] transition-colors"
+                                >LinkedIn</a
+                            >
+                            <a
+                                href="mailto:nick@serapiolabs.com"
+                                class="text-[#2D2926]/40 hover:text-[#B85C38] transition-colors"
+                                >Email</a
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ── PROJECTS (same wide wrapper, same inner column) ── -->
+            <div class="w-full px-8 lg:px-16 py-28 md:py-36">
+                <div class="max-w-3xl">
+                    <h2
+                        class="hd text-xs uppercase tracking-[0.2em] text-[#7D8E7A] mb-8"
+                    >
+                        Projects
+                    </h2>
+
+                    <!-- Featured: DishSync -->
+                    <a
+                        href="https://mlb-4e2.pages.dev/create-account"
+                        target="_blank"
+                        class="card-concrete block rounded-sm px-6 py-6 mb-6 shadow-cool hover:shadow-cool-lg transition-all"
+                    >
+                        <div class="flex items-center justify-between mb-2">
+                            <h3 class="hd text-2xl text-[#2D2926]">DishSync</h3>
+                            <span class="text-[#2D2926]/30 text-sm">→</span>
+                        </div>
+                        <p class="text-sm text-[#2D2926]/50 mb-3">
+                            AI-powered meal planning and nutrition tracking
+                        </p>
+                        <div class="flex gap-2">
+                            <span class="tag tag-red">AI</span>
+                            <span class="tag">Health</span>
+                            <span class="tag">SaaS</span>
+                        </div>
+                    </a>
+
+                    <!-- Remaining -->
+                    <div class="space-y-1">
+                        <a
+                            href="/app/behavior-buzz"
+                            class="flex items-center justify-between py-3 px-2 rounded-sm hover:bg-[rgba(184,92,56,0.03)] transition-colors group"
+                        >
+                            <div>
+                                <span
+                                    class="text-sm font-medium group-hover:text-[#B85C38] transition-colors"
+                                    >BehaviorBuzz</span
+                                >
+                                <p class="text-xs text-[#2D2926]/40">
+                                    Classroom behavior tracking for teachers
+                                </p>
+                            </div>
+                            <span
+                                class="text-[#2D2926]/20 group-hover:text-[#B85C38] text-xs transition-colors"
+                                >→</span
+                            >
+                        </a>
+
+                        <a
+                            href="/app/bird-tv"
+                            class="flex items-center justify-between py-3 px-2 rounded-sm hover:bg-[rgba(184,92,56,0.03)] transition-colors group"
+                        >
+                            <div>
+                                <span
+                                    class="text-sm font-medium group-hover:text-[#7D8E7A] transition-colors"
+                                    >Bird TV</span
+                                >
+                                <p class="text-xs text-[#2D2926]/40">
+                                    Live bird feeder camera stream
+                                </p>
+                            </div>
+                            <span
+                                class="text-[#2D2926]/20 group-hover:text-[#7D8E7A] text-xs transition-colors"
+                                >→</span
+                            >
+                        </a>
+
+                        <a
+                            href="/app/space"
+                            class="flex items-center justify-between py-3 px-2 rounded-sm hover:bg-[rgba(184,92,56,0.03)] transition-colors group"
+                        >
+                            <div>
+                                <span
+                                    class="text-sm font-medium group-hover:text-[#C9A66B] transition-colors"
+                                    >Space Explorer</span
+                                >
+                                <p class="text-xs text-[#2D2926]/40">
+                                    3D space exploration experience
+                                </p>
+                            </div>
+                            <span
+                                class="text-[#2D2926]/20 group-hover:text-[#C9A66B] text-xs transition-colors"
+                                >→</span
+                            >
+                        </a>
+
+                        <a
+                            href="/app/games"
+                            class="flex items-center justify-between py-3 px-2 rounded-sm hover:bg-[rgba(184,92,56,0.03)] transition-colors group"
+                        >
+                            <div>
+                                <span
+                                    class="text-sm font-medium group-hover:text-[#B85C38] transition-colors"
+                                    >Games</span
+                                >
+                                <p class="text-xs text-[#2D2926]/40">
+                                    Collection of browser-based games
+                                </p>
+                            </div>
+                            <span
+                                class="text-[#2D2926]/20 group-hover:text-[#B85C38] text-xs transition-colors"
+                                >→</span
+                            >
+                        </a>
+                    </div>
+
+                    <!-- Footer -->
+                    <div class="block-divider mt-20 mb-6"></div>
+                    <div class="flex items-center justify-between">
+                        <p class="text-xs text-[#2D2926]/25 tracking-wide">
+                            © 2026 · Austin, TX
+                        </p>
+                        <div class="flex gap-2">
+                            <span
+                                class="w-2 h-2 rounded-full bg-[#B85C38]/40"
+                            ></span>
+                            <span
+                                class="w-2 h-2 rounded-full bg-[#C9A66B]/40"
+                            ></span>
+                            <span
+                                class="w-2 h-2 rounded-full bg-[#7D8E7A]/40"
+                            ></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>

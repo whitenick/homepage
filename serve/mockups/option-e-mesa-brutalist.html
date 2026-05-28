@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nick White — Option E: Mesa Brutalist</title>
+
+  <!-- Google Fonts: DM Serif Display for heft, Inter for body -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'adobe-cream':  '#F9F7F4',
+            'red-clay':     '#B85C38',
+            'desert-gold':  '#C9A66B',
+            'dusty-olive':  '#7D8E7A',
+            'adobe-darker': '#2D2926',
+            'concrete':     '#E8E6E1',
+          },
+          fontFamily: {
+            'display': ["'DM Serif Display'", 'serif'],
+            'sans':    ['Inter', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    h1, h2, h3 { font-family: 'DM Serif Display', serif; }
+
+    /* --- Concrete grain (from Option C) --- */
+    .grain::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      opacity: 0.30;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 256px 256px;
+      pointer-events: none;
+    }
+
+    /* --- Desert gradient backgrounds (from Option B) --- */
+    .desert-gradient-1 {
+      background: linear-gradient(165deg,
+        rgba(185, 92, 56, 0.08) 0%,
+        rgba(201, 166, 107, 0.12) 50%,
+        rgba(125, 142, 122, 0.08) 100%
+      );
+    }
+
+    .desert-gradient-2 {
+      background: linear-gradient(75deg,
+        rgba(125, 142, 122, 0.15) 0%,
+        rgba(201, 166, 107, 0.08) 100%
+      );
+    }
+
+    /* --- Mesa / plateau shape (from Option B, refined) --- */
+    .mesa-shape {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 280px;
+      background: linear-gradient(180deg,
+        transparent 0%,
+        rgba(125, 142, 122, 0.06) 30%,
+        rgba(201, 166, 107, 0.10) 55%,
+        rgba(185, 92, 56, 0.06) 80%,
+        rgba(45, 41, 38, 0.03) 100%
+      );
+      clip-path: polygon(
+        0% 100%,
+        0% 75%,
+        8%  65%,
+        15% 60%,
+        22% 68%,
+        30% 52%,
+        40% 48%,
+        48% 55%,
+        55% 50%,
+        65% 42%,
+        72% 48%,
+        80% 38%,
+        88% 44%,
+        95% 35%,
+        100% 42%,
+        100% 100%
+      );
+    }
+
+    /* --- UFO animation (from Option C's variant) --- */
+    @keyframes drift {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      25%      { transform: translateY(-4px) rotate(1deg); }
+      75%      { transform: translateY(2px) rotate(-1deg); }
+    }
+    .ufo-float { animation: drift 7s ease-in-out infinite; }
+
+    /* --- Block accent divider (from Option C) --- */
+    .block-divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent 0%, #B85C38 20%, #C9A66B 50%, #7D8E7A 80%, transparent 100%);
+      opacity: 0.25;
+    }
+
+    /* --- Heavy geometric accent bar (from Option C) --- */
+    .accent-bar {
+      width: 48px;
+      height: 3px;
+      background: #B85C38;
+    }
+
+    /* --- Card with concrete-like border (from Option C) --- */
+    .card-concrete {
+      border: 1px solid #E8E6E1;
+      transition: border-color 0.25s ease, transform 0.3s ease;
+    }
+    .card-concrete:hover {
+      border-color: #B85C38;
+      transform: translateY(-2px);
+    }
+
+    /* --- Cool/warm shadow (from Option C) --- */
+    .shadow-cool {
+      box-shadow: 0 4px 32px -8px rgba(45, 41, 38, 0.06), 0 2px 8px -4px rgba(125, 142, 122, 0.08);
+    }
+    .shadow-cool-lg {
+      box-shadow: 0 12px 48px -12px rgba(45, 41, 38, 0.10), 0 4px 16px -8px rgba(125, 142, 122, 0.12);
+    }
+
+    /* --- Tag pills (from Option C) --- */
+    .tag {
+      display: inline-block;
+      padding: 2px 10px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      background: rgba(125, 142, 122, 0.08);
+      color: #7D8E7A;
+      border-radius: 2px;
+    }
+    .tag-red {
+      background: rgba(184, 92, 56, 0.08);
+      color: #B85C38;
+    }
+
+    /* --- Fixed nav bar (from Option B) --- */
+    .nav-glass {
+      background: rgba(249, 247, 244, 0.80);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+  </style>
+</head>
+
+<body class="bg-adobe-cream text-adobe-darker antialiased grain min-h-screen">
+
+  <!-- ========== NAV BAR (Option B fixed top bar, Option C styling) ========== -->
+  <nav class="fixed top-0 left-0 right-0 z-50 nav-glass border-b border-adobe-darker/5">
+    <div class="max-w-2xl mx-auto px-6 py-5 flex items-center justify-between">
+      <span class="text-xs uppercase tracking-[0.15em] text-adobe-darker/30">NW</span>
+      <div class="flex gap-8 text-xs uppercase tracking-[0.10em]">
+        <a href="#work" class="text-adobe-darker/40 hover:text-red-clay transition-colors">Work</a>
+        <details class="group inline-block relative">
+          <summary class="list-none cursor-pointer text-adobe-darker/40 hover:text-red-clay transition-colors">More</summary>
+          <div class="absolute right-0 mt-3 w-32 bg-white border border-concrete rounded-sm shadow-cool py-2 text-xs">
+            <a href="#" class="block px-4 py-2 text-adobe-darker/50 hover:text-red-clay hover:bg-adobe-cream transition-colors">About</a>
+            <a href="#" class="block px-4 py-2 text-adobe-darker/50 hover:text-red-clay hover:bg-adobe-cream transition-colors">Blog</a>
+            <a href="#" class="block px-4 py-2 text-adobe-darker/50 hover:text-red-clay hover:bg-adobe-cream transition-colors">Lab</a>
+          </div>
+        </details>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== HERO SECTION ========== -->
+  <section class="relative min-h-screen flex items-center overflow-hidden">
+    <!-- Desert gradient at top (Option B) -->
+    <div class="absolute inset-0 desert-gradient-1"></div>
+
+    <!-- Mesa plateau shape at bottom (Option B) -->
+    <div class="mesa-shape"></div>
+
+    <!-- UFO floating in upper right (Option C treatment) -->
+    <div class="absolute top-28 right-10 md:right-16 ufo-float opacity-50">
+      <svg width="80" height="52" viewBox="0 0 100 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="50" cy="38" rx="42" ry="10" fill="#7D8E7A" opacity="0.15"/>
+        <ellipse cx="50" cy="36" rx="42" ry="10" fill="#7D8E7A"/>
+        <path d="M 30 36 Q 30 20, 50 20 Q 70 20, 70 36" fill="#B85C38"/>
+        <ellipse cx="50" cy="36" rx="20" ry="3" fill="#7D8E7A" opacity="0.3"/>
+        <ellipse cx="50" cy="26" rx="6" ry="5" fill="#C9A66B" opacity="0.5"/>
+        <line x1="20" y1="36" x2="80" y2="36" stroke="#C9A66B" stroke-width="1" opacity="0.25"/>
+      </svg>
+    </div>
+
+    <!-- Hero content -->
+    <div class="relative max-w-2xl mx-auto px-6 py-32 w-full">
+      <div class="max-w-lg">
+        <!-- Eyebrow -->
+        <p class="text-xs uppercase tracking-[0.2em] text-dusty-olive mb-6">Software Engineer &amp; Builder</p>
+
+        <!-- Name — heavy serif -->
+        <h1 class="font-display text-6xl md:text-7xl leading-[0.92] text-adobe-darker mb-3">
+          Nick<br>White
+        </h1>
+        <div class="accent-bar mb-8"></div>
+
+        <!-- Tagline -->
+        <p class="text-base text-adobe-darker/55 font-light leading-relaxed max-w-sm mb-8">
+          Building products at the intersection of technology and real-world impact. Passionate about AI, education, and creating tools that help people.
+        </p>
+
+        <!-- Social links -->
+        <div class="flex gap-8 text-xs uppercase tracking-[0.12em]">
+          <a href="https://github.com/whitenick" target="_blank" class="text-adobe-darker/40 hover:text-red-clay transition-colors">GitHub</a>
+          <a href="https://www.linkedin.com/in/nick-white-a4ba63110/" target="_blank" class="text-adobe-darker/40 hover:text-red-clay transition-colors">LinkedIn</a>
+          <a href="mailto:nick@serapiolabs.com" class="text-adobe-darker/40 hover:text-red-clay transition-colors">Email</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROJECTS SECTION ========== -->
+  <section id="work" class="relative bg-adobe-cream">
+    <div class="max-w-2xl mx-auto px-6 py-24 md:py-32">
+
+      <!-- Section heading -->
+      <h2 class="text-xs uppercase tracking-[0.2em] text-dusty-olive mb-3">Projects</h2>
+      <div class="block-divider mb-12"></div>
+
+      <!-- Featured: DishSync (card) -->
+      <a href="https://mlb-4e2.pages.dev/create-account" target="_blank"
+         class="card-concrete block rounded-sm px-6 py-6 mb-6 shadow-cool hover:shadow-cool-lg transition-all">
+        <div class="flex items-center justify-between mb-2">
+          <h3 class="font-display text-2xl text-adobe-darker">DishSync</h3>
+          <span class="text-adobe-darker/30 text-sm">→</span>
+        </div>
+        <p class="text-sm text-adobe-darker/50 mb-3">AI-powered meal planning and nutrition tracking</p>
+        <div class="flex gap-2">
+          <span class="tag tag-red">AI</span>
+          <span class="tag">Health</span>
+          <span class="tag">SaaS</span>
+        </div>
+      </a>
+
+      <!-- Remaining projects: compact list -->
+      <div class="space-y-2">
+        <a href="/app/behavior-buzz"
+           class="flex items-center justify-between py-3 px-2 rounded-sm hover:bg-[rgba(184,92,56,0.03)] transition-colors group">
+          <div>
+            <span class="text-sm font-medium group-hover:text-red-clay transition-colors">BehaviorBuzz</span>
+            <p class="text-xs text-adobe-darker/40">Classroom behavior tracking for teachers</p>
+          </div>
+          <div class="flex gap-2 items-center">
+            <span class="tag">Education</span>
+            <span class="text-adobe-darker/20 group-hover:text-red-clay text-xs transition-colors">→</span>
+          </div>
+        </a>
+
+        <a href="/app/bird-tv"
+           class="flex items-center justify-between py-3 px-2 rounded-sm hover:bg-[rgba(184,92,56,0.03)] transition-colors group">
+          <div>
+            <span class="text-sm font-medium group-hover:text-dusty-olive transition-colors">Bird TV</span>
+            <p class="text-xs text-adobe-darker/40">Live bird feeder camera stream</p>
+          </div>
+          <div class="flex gap-2 items-center">
+            <span class="tag">IoT</span>
+            <span class="text-adobe-darker/20 group-hover:text-dusty-olive text-xs transition-colors">→</span>
+          </div>
+        </a>
+
+        <a href="/app/space"
+           class="flex items-center justify-between py-3 px-2 rounded-sm hover:bg-[rgba(184,92,56,0.03)] transition-colors group">
+          <div>
+            <span class="text-sm font-medium group-hover:text-desert-gold transition-colors">Space Explorer</span>
+            <p class="text-xs text-adobe-darker/40">3D space exploration experience</p>
+          </div>
+          <div class="flex gap-2 items-center">
+            <span class="tag">3D</span>
+            <span class="text-adobe-darker/20 group-hover:text-desert-gold text-xs transition-colors">→</span>
+          </div>
+        </a>
+
+        <a href="/app/games"
+           class="flex items-center justify-between py-3 px-2 rounded-sm hover:bg-[rgba(184,92,56,0.03)] transition-colors group">
+          <div>
+            <span class="text-sm font-medium group-hover:text-red-clay transition-colors">Games</span>
+            <p class="text-xs text-adobe-darker/40">Collection of browser-based games</p>
+          </div>
+          <div class="flex gap-2 items-center">
+            <span class="tag">Fun</span>
+            <span class="text-adobe-darker/20 group-hover:text-red-clay text-xs transition-colors">→</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Divider before footer -->
+      <div class="block-divider mt-20 mb-6"></div>
+
+      <!-- Footer -->
+      <div class="flex items-center justify-between">
+        <p class="text-xs text-adobe-darker/25 tracking-wide">© 2026 · Austin, TX</p>
+        <div class="flex gap-2">
+          <span class="w-2 h-2 rounded-full bg-red-clay/40"></span>
+          <span class="w-2 h-2 rounded-full bg-desert-gold/40"></span>
+          <span class="w-2 h-2 rounded-full bg-dusty-olive/40"></span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>

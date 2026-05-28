@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nick White — Option C: Brutalist Desert</title>
+
+  <!-- Google Fonts: heavier serif + geometric sans with character -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'adobe-cream':  '#F9F7F4',
+            'red-clay':     '#B85C38',
+            'desert-gold':  '#C9A66B',
+            'dusty-olive':  '#7D8E7A',
+            'adobe-darker': '#2D2926',
+            'concrete':     '#E8E6E1',
+            'concrete-dark':'#C5C2BB',
+          },
+          fontFamily: {
+            'display': ["'DM Serif Display'", 'serif'],
+            'sans':    ['Inter', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    h1, h2, h3 { font-family: 'DM Serif Display', serif; }
+
+    /* --- Concrete grain texture overlay --- */
+    .grain::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      opacity: 0.35;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 256px 256px;
+      pointer-events: none;
+    }
+
+    /* --- UFO animation --- */
+    @keyframes drift {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      25%      { transform: translateY(-4px) rotate(1deg); }
+      75%      { transform: translateY(2px) rotate(-1deg); }
+    }
+    .ufo-float { animation: drift 7s ease-in-out infinite; }
+
+    /* --- Block accent divider --- */
+    .block-divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent 0%, #B85C38 20%, #C9A66B 50%, #7D8E7A 80%, transparent 100%);
+      opacity: 0.25;
+    }
+
+    /* --- Heavy geometric accent bar --- */
+    .accent-bar {
+      width: 48px;
+      height: 3px;
+      background: #B85C38;
+    }
+
+    /* --- Card with concrete-like border --- */
+    .card-concrete {
+      border: 1px solid #E8E6E1;
+      transition: border-color 0.25s ease, transform 0.3s ease;
+    }
+    .card-concrete:hover {
+      border-color: #B85C38;
+      transform: translateY(-2px);
+    }
+
+    /* --- Cool/warm shadow --- */
+    .shadow-cool {
+      box-shadow: 0 4px 32px -8px rgba(45, 41, 38, 0.06), 0 2px 8px -4px rgba(125, 142, 122, 0.08);
+    }
+    .shadow-cool-lg {
+      box-shadow: 0 12px 48px -12px rgba(45, 41, 38, 0.10), 0 4px 16px -8px rgba(125, 142, 122, 0.12);
+    }
+
+    /* --- Tag pills --- */
+    .tag {
+      display: inline-block;
+      padding: 2px 10px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      background: rgba(125, 142, 122, 0.08);
+      color: #7D8E7A;
+      border-radius: 2px;
+    }
+    .tag-red {
+      background: rgba(184, 92, 56, 0.08);
+      color: #B85C38;
+    }
+  </style>
+</head>
+
+<body class="bg-adobe-cream text-adobe-darker antialiased grain min-h-screen">
+
+  <!-- =============================== -->
+  <!-- LAYOUT: single column, generous -->
+  <!-- =============================== -->
+  <div class="max-w-xl mx-auto px-6 py-28 md:py-36">
+
+    <!-- ========== TOP ROW ========== -->
+    <div class="flex items-start justify-between mb-12">
+      <!-- UFO, smaller -->
+      <div class="ufo-float opacity-60">
+        <svg width="72" height="46" viewBox="0 0 100 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="50" cy="38" rx="42" ry="10" fill="#7D8E7A" opacity="0.15"/>
+          <ellipse cx="50" cy="36" rx="42" ry="10" fill="#7D8E7A"/>
+          <path d="M 30 36 Q 30 20, 50 20 Q 70 20, 70 36" fill="#B85C38"/>
+          <ellipse cx="50" cy="36" rx="20" ry="3" fill="#7D8E7A" opacity="0.3"/>
+          <ellipse cx="50" cy="26" rx="6" ry="5" fill="#C9A66B" opacity="0.5"/>
+          <line x1="20" y1="36" x2="80" y2="36" stroke="#C9A66B" stroke-width="1" opacity="0.25"/>
+        </svg>
+      </div>
+      <!-- Menu, but styled as small caps with an accent bar -->
+      <details class="group text-xs">
+        <summary class="list-none cursor-pointer uppercase tracking-[0.15em] text-adobe-darker/40 hover:text-adobe-darker transition-colors flex items-center gap-2">
+          <span class="w-4 h-px bg-adobe-darker/30 group-open:w-6 group-open:bg-red-clay transition-all"></span>
+          Index
+        </summary>
+        <div class="flex gap-6 text-xs mt-4 pt-4 border-t border-concrete">
+          <a href="#" class="text-adobe-darker/50 hover:text-red-clay transition-colors tracking-wide">About</a>
+          <a href="#" class="text-adobe-darker/50 hover:text-red-clay transition-colors tracking-wide">Blog</a>
+          <a href="#" class="text-adobe-darker/50 hover:text-red-clay transition-colors tracking-wide">Lab</a>
+        </div>
+      </details>
+    </div>
+
+    <!-- ========== HERO ========== -->
+    <!-- Heavy serif name, much bigger presence -->
+    <h1 class="font-display text-6xl md:text-7xl leading-[0.92] text-adobe-darker mb-3">
+      Nick<br>White
+    </h1>
+    <div class="accent-bar mb-8"></div>
+
+    <!-- Tagline: short, weights -->
+    <p class="text-base text-adobe-darker/60 font-light leading-relaxed max-w-sm mb-6">
+      Software engineer &amp; builder — making things at the intersection of technology and everyday life.
+    </p>
+
+    <!-- Contact row: tighter -->
+    <div class="flex gap-6 text-xs uppercase tracking-[0.12em] mb-16">
+      <a href="https://github.com/whitenick" target="_blank" class="text-adobe-darker/40 hover:text-red-clay transition-colors">GitHub</a>
+      <a href="https://www.linkedin.com/in/nick-white-a4ba63110/" target="_blank" class="text-adobe-darker/40 hover:text-red-clay transition-colors">LinkedIn</a>
+      <a href="mailto:nick@serapiolabs.com" class="text-adobe-darker/40 hover:text-red-clay transition-colors">Email</a>
+    </div>
+
+    <!-- ========== DIVIDER ========== -->
+    <div class="block-divider mb-16"></div>
+
+    <!-- ========== WORK / PROJECTS ========== -->
+    <h2 class="text-xs uppercase tracking-[0.2em] text-dusty-olive mb-8">Projects</h2>
+
+    <!-- Featured Project: DishSync (larger card treatment) -->
+    <a href="https://mlb-4e2.pages.dev/create-account" target="_blank"
+       class="card-concrete block rounded-sm px-6 py-6 mb-5 shadow-cool hover:shadow-cool-lg transition-all">
+      <div class="flex items-center justify-between mb-2">
+        <h3 class="font-display text-2xl text-adobe-darker">DishSync</h3>
+        <span class="text-adobe-darker/30 group-hover:text-red-clay text-sm">→</span>
+      </div>
+      <p class="text-sm text-adobe-darker/50 mb-3">AI meal planning for families</p>
+      <div class="flex gap-2">
+        <span class="tag tag-red">AI</span>
+        <span class="tag">Health</span>
+      </div>
+    </a>
+
+    <!-- Remaining projects: more compact list -->
+    <div class="space-y-3">
+      <a href="https://whitenick.github.io/recipes/" target="_blank"
+         class="flex items-center justify-between py-3 border-b border-concrete/60 group">
+        <div>
+          <span class="text-sm font-medium group-hover:text-dusty-olive transition-colors">Nick's Kitchen</span>
+          <p class="text-xs text-adobe-darker/40">Recipe collection &amp; meal ideas</p>
+        </div>
+        <span class="text-adobe-darker/20 group-hover:text-dusty-olive text-xs transition-colors">→</span>
+      </a>
+
+      <div class="flex items-center justify-between py-3 border-b border-concrete/60 opacity-40 pointer-events-none">
+        <div>
+          <span class="text-sm font-medium">Serapio Labs</span>
+          <p class="text-xs text-adobe-darker/40">Product studio</p>
+        </div>
+        <span class="text-xs text-adobe-darker/30">soon</span>
+      </div>
+
+      <a href="/app/games"
+         class="flex items-center justify-between py-3 border-b border-concrete/60 group">
+        <div>
+          <span class="text-sm font-medium group-hover:text-desert-gold transition-colors">Lab</span>
+          <p class="text-xs text-adobe-darker/40">Experiments &amp; side projects</p>
+        </div>
+        <span class="text-adobe-darker/20 group-hover:text-desert-gold text-xs transition-colors">→</span>
+      </a>
+    </div>
+
+    <!-- ========== FOOTER ========== -->
+    <div class="mt-20 pt-6 border-t border-concrete">
+      <p class="text-xs text-adobe-darker/25 tracking-wide">© 2026 · Austin, TX</p>
+    </div>
+
+  </div>
+</body>
+</html>

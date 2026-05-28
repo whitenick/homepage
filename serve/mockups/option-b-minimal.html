@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nick White — Option B: Minimal Modern Desert</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'adobe-cream': '#F9F7F4',
+            'red-clay': '#B85C38',
+            'desert-marigold': '#C9A66B',
+            'dusty-olive': '#7D8E7A',
+            'adobe-darker': '#2D2926',
+          },
+          fontFamily: {
+            'fraunces': ['Fraunces', 'serif'],
+            'inter': ['Inter', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    
+    h1, h2, h3, h4 {
+      font-family: 'Fraunces', serif;
+    }
+    
+    /* UFO Animation */
+    @keyframes drift {
+      0%, 100% { transform: translateY(0px) translateX(0px); }
+      50% { transform: translateY(-6px) translateX(3px); }
+    }
+    
+    .ufo-float {
+      animation: drift 8s ease-in-out infinite;
+      opacity: 0.7;
+    }
+    
+    /* Abstract Desert Gradients */
+    .desert-gradient-1 {
+      background: linear-gradient(165deg, 
+        rgba(185, 92, 56, 0.08) 0%, 
+        rgba(201, 166, 107, 0.12) 50%,
+        rgba(125, 142, 122, 0.08) 100%
+      );
+    }
+    
+    .desert-gradient-2 {
+      background: linear-gradient(75deg, 
+        rgba(125, 142, 122, 0.15) 0%, 
+        rgba(201, 166, 107, 0.08) 100%
+      );
+    }
+    
+    /* Geometric Desert Shapes */
+    .mesa-shape {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 200px;
+      background: linear-gradient(180deg, 
+        transparent 0%, 
+        rgba(125, 142, 122, 0.06) 40%,
+        rgba(201, 166, 107, 0.08) 70%,
+        rgba(185, 92, 56, 0.04) 100%
+      );
+      clip-path: polygon(
+        0% 100%, 
+        0% 75%, 
+        15% 60%, 
+        25% 65%, 
+        40% 50%, 
+        55% 55%, 
+        70% 45%, 
+        85% 60%, 
+        100% 55%, 
+        100% 100%
+      );
+    }
+    
+    /* Modern Card Hover States */
+    .modern-card {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .modern-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px -8px rgba(185, 92, 56, 0.15);
+    }
+    
+    /* Button Variants */
+    .btn-primary {
+      transition: all 0.2s ease;
+      border: 1px solid rgba(185, 92, 56, 0.3);
+    }
+    
+    .btn-primary:hover {
+      transform: translateX(4px);
+      border-color: #B85C38;
+      background: rgba(185, 92, 56, 0.08);
+    }
+    
+    .btn-ghost {
+      transition: all 0.2s ease;
+      border: 1px solid transparent;
+    }
+    
+    .btn-ghost:hover {
+      border-color: rgba(125, 142, 122, 0.3);
+      background: rgba(125, 142, 122, 0.05);
+    }
+    
+    /* Asymmetric Grid Elements */
+    .offset-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 4rem;
+    }
+    
+    @media (max-width: 1024px) {
+      .offset-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-adobe-cream text-adobe-darker antialiased">
+  
+  <!-- Navigation — Minimal Top Bar -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-adobe-cream/80 backdrop-blur-md border-b border-adobe-darker/5">
+    <div class="max-w-[1440px] mx-auto px-8 lg:px-16 py-6 flex items-center justify-between">
+      <div class="text-sm font-medium tracking-wide text-adobe-darker/60">NW</div>
+      <div class="flex gap-8 text-sm">
+        <a href="#work" class="text-adobe-darker/60 hover:text-red-clay transition-colors">Work</a>
+        <a href="#about" class="text-adobe-darker/60 hover:text-red-clay transition-colors">About</a>
+        <a href="#contact" class="text-adobe-darker/60 hover:text-red-clay transition-colors">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section — Understated & Breathing -->
+  <section class="relative min-h-screen flex items-center overflow-hidden pt-24">
+    <!-- Abstract Desert Background -->
+    <div class="absolute inset-0 desert-gradient-1"></div>
+    <div class="mesa-shape"></div>
+    
+    <!-- UFO — Floating in Upper Right -->
+    <div class="absolute top-32 right-24 ufo-float opacity-60 hidden lg:block">
+      <svg width="120" height="77" viewBox="0 0 100 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="50" cy="38" rx="42" ry="10" fill="#7D8E7A" opacity="0.2"/>
+        <ellipse cx="50" cy="36" rx="42" ry="10" fill="#7D8E7A"/>
+        <path d="M 30 36 Q 30 20, 50 20 Q 70 20, 70 36" fill="#B85C38"/>
+        <ellipse cx="50" cy="36" rx="20" ry="3" fill="#7D8E7A" opacity="0.4"/>
+        <ellipse cx="50" cy="26" rx="6" ry="5" fill="#C9A66B" opacity="0.6"/>
+        <line x1="20" y1="36" x2="80" y2="36" stroke="#C9A66B" stroke-width="1" opacity="0.3"/>
+      </svg>
+    </div>
+    
+    <div class="relative max-w-[1440px] mx-auto px-8 lg:px-16 py-32">
+      <div class="max-w-3xl">
+        <!-- Small Eyebrow Text -->
+        <p class="text-sm font-medium tracking-widest text-dusty-olive uppercase mb-8">Designer / Developer</p>
+        
+        <!-- Large Title — Left Aligned, Lots of Space -->
+        <h1 class="text-7xl lg:text-8xl font-light text-adobe-darker leading-[0.95] mb-12">
+          Nick<br/>White
+        </h1>
+        
+        <!-- Minimal Description -->
+        <p class="text-xl text-adobe-darker/60 font-light leading-relaxed max-w-xl mb-16">
+          Building digital experiences with careful attention to craft and detail. Currently exploring the intersection of design and code.
+        </p>
+        
+        <!-- CTA Buttons — New Style -->
+        <div class="flex gap-4">
+          <a href="#work" class="btn-primary px-8 py-4 text-sm font-medium text-adobe-darker inline-block rounded-sm">
+            View Work →
+          </a>
+          <a href="#contact" class="btn-ghost px-8 py-4 text-sm font-medium text-adobe-darker inline-block rounded-sm">
+            Get in Touch
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Work Section — Asymmetric Grid -->
+  <section id="work" class="relative py-32 bg-adobe-cream">
+    <div class="max-w-[1440px] mx-auto px-8 lg:px-16">
+      
+      <!-- Section Header — Offset -->
+      <div class="mb-20 flex justify-between items-end border-b border-adobe-darker/10 pb-8">
+        <h2 class="text-5xl font-light text-adobe-darker">Selected Work</h2>
+        <p class="text-sm text-adobe-darker/50 font-medium">2024–2026</p>
+      </div>
+      
+      <!-- Asymmetric Grid Layout -->
+      <div class="offset-grid">
+        
+        <!-- Large Featured Project -->
+        <div class="modern-card bg-white border border-adobe-darker/10 rounded-sm overflow-hidden group cursor-pointer">
+          <div class="aspect-[16/10] bg-gradient-to-br from-dusty-olive/20 to-desert-marigold/20 relative">
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="text-6xl opacity-20">🏜️</div>
+            </div>
+          </div>
+          <div class="p-10">
+            <div class="flex items-center gap-3 mb-4">
+              <span class="text-xs font-medium tracking-wider text-red-clay uppercase">Web Design</span>
+              <span class="text-adobe-darker/20">•</span>
+              <span class="text-xs font-medium tracking-wider text-adobe-darker/40 uppercase">2026</span>
+            </div>
+            <h3 class="text-3xl font-light mb-4 text-adobe-darker group-hover:text-red-clay transition-colors">
+              Desert Reserve Brand
+            </h3>
+            <p class="text-adobe-darker/60 leading-relaxed mb-6">
+              A complete digital identity for a luxury desert resort. Focus on minimal elegance and environmental storytelling.
+            </p>
+            <div class="flex gap-2 flex-wrap">
+              <span class="text-xs px-3 py-1 bg-dusty-olive/10 text-dusty-olive rounded-full">Branding</span>
+              <span class="text-xs px-3 py-1 bg-dusty-olive/10 text-dusty-olive rounded-full">Web</span>
+              <span class="text-xs px-3 py-1 bg-dusty-olive/10 text-dusty-olive rounded-full">UX</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Sidebar Stack — Smaller Projects -->
+        <div class="space-y-6">
+          
+          <div class="modern-card bg-white border border-adobe-darker/10 rounded-sm p-8 cursor-pointer">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="text-xs font-medium tracking-wider text-desert-marigold uppercase">Development</span>
+            </div>
+            <h3 class="text-xl font-light mb-3 text-adobe-darker">SaaS Dashboard</h3>
+            <p class="text-sm text-adobe-darker/60 leading-relaxed">
+              Clean, data-focused interface for analytics platform.
+            </p>
+          </div>
+          
+          <div class="modern-card bg-white border border-adobe-darker/10 rounded-sm p-8 cursor-pointer">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="text-xs font-medium tracking-wider text-dusty-olive uppercase">Mobile</span>
+            </div>
+            <h3 class="text-xl font-light mb-3 text-adobe-darker">Fitness App Redesign</h3>
+            <p class="text-sm text-adobe-darker/60 leading-relaxed">
+              Simplified workout tracking with focus on clarity.
+            </p>
+          </div>
+          
+          <div class="modern-card bg-white border border-adobe-darker/10 rounded-sm p-8 cursor-pointer">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="text-xs font-medium tracking-wider text-red-clay uppercase">Branding</span>
+            </div>
+            <h3 class="text-xl font-light mb-3 text-adobe-darker">Local Coffee Co.</h3>
+            <p class="text-sm text-adobe-darker/60 leading-relaxed">
+              Identity system for artisan coffee roaster.
+            </p>
+          </div>
+          
+        </div>
+        
+      </div>
+      
+      <!-- More Projects — Horizontal Scroll -->
+      <div class="mt-20 pt-20 border-t border-adobe-darker/10">
+        <h3 class="text-2xl font-light mb-10 text-adobe-darker">More Projects</h3>
+        <div class="flex gap-6 overflow-x-auto pb-6 -mx-8 px-8">
+          
+          <div class="modern-card min-w-[320px] bg-white border border-adobe-darker/10 rounded-sm p-6 cursor-pointer">
+            <div class="aspect-[4/3] bg-gradient-to-br from-red-clay/10 to-desert-marigold/10 rounded-sm mb-4"></div>
+            <h4 class="text-lg font-light mb-2">Portfolio Redesign</h4>
+            <p class="text-sm text-adobe-darker/50">Photography showcase</p>
+          </div>
+          
+          <div class="modern-card min-w-[320px] bg-white border border-adobe-darker/10 rounded-sm p-6 cursor-pointer">
+            <div class="aspect-[4/3] bg-gradient-to-br from-dusty-olive/10 to-desert-marigold/10 rounded-sm mb-4"></div>
+            <h4 class="text-lg font-light mb-2">E-commerce Store</h4>
+            <p class="text-sm text-adobe-darker/50">Sustainable goods</p>
+          </div>
+          
+          <div class="modern-card min-w-[320px] bg-white border border-adobe-darker/10 rounded-sm p-6 cursor-pointer">
+            <div class="aspect-[4/3] bg-gradient-to-br from-desert-marigold/10 to-red-clay/10 rounded-sm mb-4"></div>
+            <h4 class="text-lg font-light mb-2">Blog Platform</h4>
+            <p class="text-sm text-adobe-darker/50">Minimal CMS</p>
+          </div>
+          
+          <div class="modern-card min-w-[320px] bg-white border border-adobe-darker/10 rounded-sm p-6 cursor-pointer">
+            <div class="aspect-[4/3] bg-gradient-to-br from-dusty-olive/10 to-red-clay/10 rounded-sm mb-4"></div>
+            <h4 class="text-lg font-light mb-2">Agency Website</h4>
+            <p class="text-sm text-adobe-darker/50">Creative studio</p>
+          </div>
+          
+        </div>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- About Section — Split Layout -->
+  <section id="about" class="relative py-32 bg-white">
+    <div class="max-w-[1440px] mx-auto px-8 lg:px-16">
+      
+      <div class="grid lg:grid-cols-2 gap-20 items-start">
+        
+        <!-- Left — Bio -->
+        <div>
+          <h2 class="text-5xl font-light text-adobe-darker mb-12">About</h2>
+          <div class="prose prose-lg max-w-none">
+            <p class="text-xl text-adobe-darker/80 leading-relaxed mb-6 font-light">
+              I'm a designer and developer based in the Southwest, working at the intersection of visual design and technical implementation.
+            </p>
+            <p class="text-adobe-darker/60 leading-relaxed mb-6">
+              My approach centers on clarity, restraint, and attention to craft. I believe the best digital experiences are those that feel effortless—where the design dissolves into utility.
+            </p>
+            <p class="text-adobe-darker/60 leading-relaxed">
+              When I'm not designing, you'll find me exploring desert trails, experimenting with photography, or tinkering with side projects.
+            </p>
+          </div>
+        </div>
+        
+        <!-- Right — Skills/Tools -->
+        <div class="space-y-12">
+          
+          <div>
+            <h3 class="text-sm font-medium tracking-widest text-dusty-olive uppercase mb-6">Capabilities</h3>
+            <div class="grid grid-cols-2 gap-4">
+              <div class="p-6 border border-adobe-darker/10 rounded-sm">
+                <div class="text-2xl mb-2">✏️</div>
+                <div class="text-sm font-medium text-adobe-darker">Design</div>
+              </div>
+              <div class="p-6 border border-adobe-darker/10 rounded-sm">
+                <div class="text-2xl mb-2">⚡</div>
+                <div class="text-sm font-medium text-adobe-darker">Development</div>
+              </div>
+              <div class="p-6 border border-adobe-darker/10 rounded-sm">
+                <div class="text-2xl mb-2">🎨</div>
+                <div class="text-sm font-medium text-adobe-darker">Branding</div>
+              </div>
+              <div class="p-6 border border-adobe-darker/10 rounded-sm">
+                <div class="text-2xl mb-2">📐</div>
+                <div class="text-sm font-medium text-adobe-darker">UX Strategy</div>
+              </div>
+            </div>
+          </div>
+          
+          <div>
+            <h3 class="text-sm font-medium tracking-widest text-dusty-olive uppercase mb-6">Tools</h3>
+            <div class="flex flex-wrap gap-3">
+              <span class="px-4 py-2 bg-adobe-cream text-adobe-darker/70 text-sm rounded-sm border border-adobe-darker/10">Figma</span>
+              <span class="px-4 py-2 bg-adobe-cream text-adobe-darker/70 text-sm rounded-sm border border-adobe-darker/10">React</span>
+              <span class="px-4 py-2 bg-adobe-cream text-adobe-darker/70 text-sm rounded-sm border border-adobe-darker/10">Next.js</span>
+              <span class="px-4 py-2 bg-adobe-cream text-adobe-darker/70 text-sm rounded-sm border border-adobe-darker/10">Tailwind</span>
+              <span class="px-4 py-2 bg-adobe-cream text-adobe-darker/70 text-sm rounded-sm border border-adobe-darker/10">TypeScript</span>
+              <span class="px-4 py-2 bg-adobe-cream text-adobe-darker/70 text-sm rounded-sm border border-adobe-darker/10">Framer</span>
+            </div>
+          </div>
+          
+        </div>
+        
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- Contact Section — Minimal Footer -->
+  <section id="contact" class="relative py-32 bg-adobe-cream border-t border-adobe-darker/10">
+    <!-- Subtle Desert Gradient -->
+    <div class="absolute inset-0 desert-gradient-2 opacity-50"></div>
+    
+    <div class="relative max-w-[1440px] mx-auto px-8 lg:px-16">
+      
+      <div class="max-w-2xl mx-auto text-center">
+        <h2 class="text-5xl lg:text-6xl font-light text-adobe-darker mb-8">Let's Work Together</h2>
+        <p class="text-xl text-adobe-darker/60 mb-12 font-light">
+          Available for select projects. Reach out to discuss yours.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+          <a href="mailto:hello@nickwhite.us" class="btn-primary px-10 py-5 text-base font-medium text-adobe-darker inline-block rounded-sm">
+            hello@nickwhite.us
+          </a>
+          <a href="https://twitter.com/nickwhite" class="btn-ghost px-10 py-5 text-base font-medium text-adobe-darker inline-block rounded-sm">
+            Twitter
+          </a>
+        </div>
+        
+        <!-- Footer Links -->
+        <div class="pt-12 border-t border-adobe-darker/10 flex flex-col sm:flex-row justify-between items-center gap-6 text-sm text-adobe-darker/40">
+          <div>© 2026 Nick White</div>
+          <div class="flex gap-8">
+            <a href="#" class="hover:text-red-clay transition-colors">LinkedIn</a>
+            <a href="#" class="hover:text-red-clay transition-colors">GitHub</a>
+            <a href="#" class="hover:text-red-clay transition-colors">Dribbble</a>
+          </div>
+        </div>
+        
+      </div>
+      
+    </div>
+  </section>
+
+</body>
+</html>

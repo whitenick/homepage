@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nick White — Option D: Warm Monolith</title>
+
+  <!-- Google Fonts: Fraunces (our actual headline font) kept, Inter body -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'adobe-cream':  '#F9F7F4',
+            'red-clay':     '#B85C38',
+            'desert-gold':  '#C9A66B',
+            'dusty-olive':  '#7D8E7A',
+            'adobe-darker': '#2D2926',
+            'slate-warm':   '#5C5A56',
+            'concrete':     '#E8E6E1',
+          },
+          fontFamily: {
+            'display': ['Fraunces', 'serif'],
+            'sans':    ['Inter', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #F9F7F4;
+      color: #2D2926;
+    }
+    h1, h2, h3 { font-family: 'Fraunces', serif; }
+
+    /* ---- Subtle woven ceramic texture ---- */
+    .texture-bg {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      opacity: 0.18;
+      background-image:
+        repeating-linear-gradient(
+          0deg,
+          transparent,
+          transparent 40px,
+          rgba(184, 92, 56, 0.04) 40px,
+          rgba(184, 92, 56, 0.04) 41px
+        ),
+        repeating-linear-gradient(
+          90deg,
+          transparent,
+          transparent 40px,
+          rgba(201, 166, 107, 0.04) 40px,
+          rgba(201, 166, 107, 0.04) 41px
+        );
+      pointer-events: none;
+    }
+
+    /* ---- UFO, smaller, bottom right in the left panel ---- */
+    @keyframes hover {
+      0%, 100% { transform: translateY(0); }
+      50%      { transform: translateY(-5px); }
+    }
+    .ufo-hover { animation: hover 6s ease-in-out infinite; }
+
+    /* ---- Left panel background block ---- */
+    .panel-left {
+      background: linear-gradient(135deg, #F5F1EC 0%, #F9F7F4 40%, rgba(184, 92, 56, 0.03) 100%);
+    }
+
+    /* ---- Project card ---- */
+    .proj-card {
+      border-bottom: 1px solid #E8E6E1;
+      transition: all 0.25s ease;
+    }
+    .proj-card:last-child { border-bottom: none; }
+    .proj-card:hover {
+      padding-left: 8px;
+      border-bottom-color: #B85C38;
+    }
+
+    /* ---- Accent dot ---- */
+    .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .dot-red   { background: #B85C38; }
+    .dot-gold  { background: #C9A66B; }
+    .dot-olive { background: #7D8E7A; }
+
+    /* ---- Secondary nav in right panel ---- */
+    .nav-link {
+      position: relative;
+      padding-left: 16px;
+      transition: color 0.2s ease;
+    }
+    .nav-link::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: rgba(45, 41, 38, 0.15);
+      transition: all 0.2s ease;
+    }
+    .nav-link:hover::before {
+      background: #B85C38;
+      width: 8px;
+      height: 8px;
+    }
+
+    /* ---- Tag chips recycled from Option C ---- */
+    .tag {
+      display: inline-block;
+      padding: 2px 10px;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      background: rgba(125, 142, 122, 0.08);
+      color: #7D8E7A;
+      border-radius: 2px;
+    }
+    .tag-red {
+      background: rgba(184, 92, 56, 0.08);
+      color: #B85C38;
+    }
+  </style>
+</head>
+
+<body class="antialiased">
+
+  <!-- ===================== FULL PAGE GRID ===================== -->
+  <div class="texture-bg"></div>
+
+  <!-- Two-column layout: fixed left panel, scrollable right content -->
+  <div class="min-h-screen grid grid-cols-1 lg:grid-cols-[420px_1fr]">
+
+    <!-- ===================== LEFT PANEL — STATIONARY IDENTITY ===================== -->
+    <div class="panel-left flex flex-col justify-between px-8 lg:px-12 py-12 lg:py-16 sticky top-0 h-screen">
+
+      <!-- Identity block -->
+      <div>
+        <!-- UFO in upper left corner -->
+        <div class="ufo-hover mb-12">
+          <svg width="56" height="36" viewBox="0 0 100 64" fill="none" xmlns="http://www.w3.org/2000/svg" class="opacity-40">
+            <ellipse cx="50" cy="38" rx="42" ry="10" fill="#7D8E7A" opacity="0.2"/>
+            <ellipse cx="50" cy="36" rx="42" ry="10" fill="#7D8E7A"/>
+            <path d="M 30 36 Q 30 20, 50 20 Q 70 20, 70 36" fill="#B85C38"/>
+            <ellipse cx="50" cy="36" rx="20" ry="3" fill="#7D8E7A" opacity="0.3"/>
+            <ellipse cx="50" cy="26" rx="6" ry="5" fill="#C9A66B" opacity="0.5"/>
+          </svg>
+        </div>
+
+        <!-- Name - BIG -->
+        <h1 class="font-display text-5xl lg:text-6xl leading-[0.92] text-adobe-darker mb-6">
+          Nick<br>White
+        </h1>
+
+        <!-- Role line -->
+        <div class="flex items-center gap-3 mb-8">
+          <span class="dot-red"></span>
+          <span class="text-xs uppercase tracking-[0.15em] text-adobe-darker/40">Engineer · Builder</span>
+        </div>
+
+        <!-- Bio -->
+        <p class="text-sm text-adobe-darker/55 leading-relaxed max-w-xs mb-10">
+          Building products at the intersection of technology and real-world impact. Passionate about AI, education, and creating tools that help people.
+        </p>
+
+        <!-- Social links as a compact column -->
+        <div class="space-y-3 text-sm mb-16">
+          <a href="https://github.com/whitenick" target="_blank"
+             class="nav-link text-adobe-darker/45 hover:text-adobe-darker transition-colors block">
+            GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/nick-white-a4ba63110/" target="_blank"
+             class="nav-link text-adobe-darker/45 hover:text-adobe-darker transition-colors block">
+            LinkedIn
+          </a>
+          <a href="mailto:nick@serapiolabs.com"
+             class="nav-link text-adobe-darker/45 hover:text-adobe-darker transition-colors block">
+            Email
+          </a>
+        </div>
+      </div>
+
+      <!-- Footer pinned to bottom of left panel -->
+      <div>
+        <div class="w-8 h-px bg-concrete mb-4"></div>
+        <p class="text-[10px] uppercase tracking-[0.2em] text-adobe-darker/20">Austin, TX · 2026</p>
+      </div>
+    </div>
+
+    <!-- ===================== RIGHT PANEL — SCROLLABLE CONTENT ===================== -->
+    <div class="px-8 lg:px-16 py-12 lg:py-16">
+
+      <!-- Inline right-aligned nav -->
+      <div class="flex items-center justify-end gap-8 text-xs uppercase tracking-[0.12em] mb-16">
+        <a href="#" class="text-adobe-darker/40 hover:text-red-clay transition-colors">About</a>
+        <a href="#" class="text-adobe-darker/40 hover:text-red-clay transition-colors">Blog</a>
+        <a href="#" class="text-adobe-darker/40 hover:text-red-clay transition-colors">Lab</a>
+        <span class="w-4 h-px bg-adobe-darker/20 inline-block"></span>
+      </div>
+
+      <!-- Projects heading -->
+      <h2 class="font-display text-3xl text-adobe-darker mb-2">Projects</h2>
+      <p class="text-xs text-adobe-darker/30 uppercase tracking-[0.12em] mb-10">Selected work</p>
+
+      <!-- Project list — all cards, DishSync gets the featured top spot -->
+      <div class="rounded-sm border border-concrete bg-white/30 divide-y divide-concrete">
+
+        <!-- 1. DishSync — Featured -->
+        <a href="https://mlb-4e2.pages.dev/create-account" target="_blank"
+           class="proj-card block px-6 py-6">
+          <div class="flex items-start justify-between mb-2">
+            <div>
+              <h3 class="font-display text-xl text-adobe-darker mb-1">DishSync</h3>
+              <p class="text-sm text-adobe-darker/50">AI-powered meal planning and nutrition tracking</p>
+            </div>
+            <span class="text-red-clay text-sm opacity-60">↗</span>
+          </div>
+          <div class="flex gap-2 mt-3">
+            <span class="tag tag-red">AI</span>
+            <span class="tag">Health</span>
+            <span class="tag">SaaS</span>
+          </div>
+        </a>
+
+        <!-- 2. BehaviorBuzz -->
+        <a href="/app/behavior-buzz"
+           class="proj-card block px-6 py-5">
+          <div class="flex items-center justify-between">
+            <div>
+              <h3 class="font-display text-lg text-adobe-darker mb-0.5">BehaviorBuzz</h3>
+              <p class="text-sm text-adobe-darker/50">Classroom behavior tracking for teachers</p>
+            </div>
+            <span class="text-adobe-darker/20 text-sm">↗</span>
+          </div>
+          <div class="flex gap-2 mt-2">
+            <span class="tag">Education</span>
+            <span class="tag">Tools</span>
+          </div>
+        </a>
+
+        <!-- 3. Bird TV -->
+        <a href="/app/bird-tv"
+           class="proj-card block px-6 py-5">
+          <div class="flex items-center justify-between">
+            <div>
+              <h3 class="font-display text-lg text-adobe-darker mb-0.5">Bird TV</h3>
+              <p class="text-sm text-adobe-darker/50">Live bird feeder camera stream</p>
+            </div>
+            <span class="text-adobe-darker/20 text-sm">↗</span>
+          </div>
+          <div class="flex gap-2 mt-2">
+            <span class="tag">IoT</span>
+            <span class="tag">Live</span>
+          </div>
+        </a>
+
+        <!-- 4. Space Explorer -->
+        <a href="/app/space"
+           class="proj-card block px-6 py-5">
+          <div class="flex items-center justify-between">
+            <div>
+              <h3 class="font-display text-lg text-adobe-darker mb-0.5">Space Explorer</h3>
+              <p class="text-sm text-adobe-darker/50">3D space exploration experience</p>
+            </div>
+            <span class="text-adobe-darker/20 text-sm">↗</span>
+          </div>
+          <div class="flex gap-2 mt-2">
+            <span class="tag">3D</span>
+            <span class="tag">WebGL</span>
+          </div>
+        </a>
+
+        <!-- 5. Games -->
+        <a href="/app/games"
+           class="proj-card block px-6 py-5">
+          <div class="flex items-center justify-between">
+            <div>
+              <h3 class="font-display text-lg text-adobe-darker mb-0.5">Games</h3>
+              <p class="text-sm text-adobe-darker/50">Collection of browser-based games</p>
+            </div>
+            <span class="text-adobe-darker/20 text-sm">↗</span>
+          </div>
+          <div class="flex gap-2 mt-2">
+            <span class="tag">Games</span>
+            <span class="tag">Fun</span>
+          </div>
+        </a>
+
+      </div>
+
+      <!-- Bottom spacer with subtle accent dots -->
+      <div class="flex items-center gap-3 mt-16">
+        <span class="dot dot-red"></span>
+        <span class="dot dot-gold"></span>
+        <span class="dot dot-olive"></span>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>
