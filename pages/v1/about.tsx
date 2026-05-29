@@ -93,7 +93,7 @@ export default function About() {
               Email
             </a>
             <a 
-              href="https://www.linkedin.com/in/nick-white-a4ba63110/" 
+              href="https://www.linkedin.com/in/nicholas-white-a4ba63110/" 
               target="_blank"
               rel="noopener noreferrer"
               className="text-adobe-dark hover:text-red-clay transition-colors"

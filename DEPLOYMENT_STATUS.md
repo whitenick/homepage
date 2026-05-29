@@ -16,7 +16,7 @@ The previous deployment applied the Santa Fe design mockup with **placeholder co
   - Space Explorer - 3D space exploration
   - Games - Browser-based games collection
 - ✅ **Correct Social Links**:
-  - LinkedIn: https://www.linkedin.com/in/nick-white-a4ba63110/
+  - LinkedIn: https://www.linkedin.com/in/nicholas-white-a4ba63110/
   - GitHub: https://github.com/whitenick
   - Buy Me a Coffee: https://buymeacoffee.com/wicknight
 - ✅ **Working Navigation**: Links to `/app`, `/app/projects`, `/app/games`

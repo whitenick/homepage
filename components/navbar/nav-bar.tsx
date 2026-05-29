@@ -67,7 +67,7 @@ export const NavBar: React.FunctionComponent<{
                     Nick White
                 </a>
                 <div className="flex justify-center items-center gap-x-2">
-                    <a href="https://www.linkedin.com/in/nick-white-a4ba63110/" target="_blank" className="justify-end p-2" title="LinkedIn">
+                    <a href="https://www.linkedin.com/in/nicholas-white-a4ba63110/" target="_blank" className="justify-end p-2" title="LinkedIn">
                         <FiLinkedin />
                     </a>
                     <a href="https://github.com/whitenick" target="_blank" className="p-2" title="Github">

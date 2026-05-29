@@ -43,7 +43,7 @@ Your previous deployment applied the Santa Fe design mockup with **placeholder c
    - Tags: Games, Fun
 
 ### Correct Social Links
-- ✅ LinkedIn: https://www.linkedin.com/in/nick-white-a4ba63110/
+- ✅ LinkedIn: https://www.linkedin.com/in/nicholas-white-a4ba63110/
 - ✅ GitHub: https://github.com/whitenick
 - ✅ Buy Me a Coffee: https://buymeacoffee.com/wicknight
 

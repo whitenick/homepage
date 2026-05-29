@@ -155,7 +155,7 @@ export default function About() {
                                     Email
                                 </a>
                                 <a
-                                    href="https://www.linkedin.com/in/nick-white-a4ba63110/"
+                                    href="https://www.linkedin.com/in/nicholas-white-a4ba63110/"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="text-[#2D2926]/50 hover:text-[#B85C38] transition-colors"
