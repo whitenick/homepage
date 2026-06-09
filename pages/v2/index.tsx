@@ -89,20 +89,11 @@ export default function Index() {
                                 Nick
                                 <br />
                                 White
-                                <span
-                                    className="inline-block text-[0.4em] md:text-[0.35em] align-middle ml-2 opacity-60"
-                                    aria-hidden="true"
-                                >
-                                    🏜️
-                                </span>
                             </h1>
                             <div className="v2-accent-bar mb-8"></div>
 
                             <p className="text-base text-[#2D2926]/55 font-light leading-relaxed max-w-lg mb-8">
-                                Building products at the intersection of
-                                technology and real-life impact. Passionate
-                                about AI, self-learning, and creating tools that
-                                help others in daily life.
+                                Building.
                             </p>
 
                             <div className="flex gap-8 text-xs uppercase tracking-[0.12em]">
