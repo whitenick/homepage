@@ -1,0 +1,88 @@
+[
+  {
+    "id": "19e40a49f49b2356",
+    "company": "Duet",
+    "role": "Technical Lead",
+    "recruiter": "Jas Singh",
+    "recruiterEmail": "j.singh@recruit-with-rockstar.com",
+    "agency": "Rockstar Recruiting",
+    "date": "2026-05-19",
+    "status": "needs-reply",
+    "followUps": 0,
+    "snippet": "Retained search for a Technical Lead at Duet. Your founding experience caught their attention."
+  },
+  {
+    "id": "19e02f4ce8f99ef9",
+    "company": "Dispatch",
+    "role": "Senior Engineering Manager",
+    "recruiter": "Jack Luby",
+    "recruiterEmail": "jack.luby@formativesp.com",
+    "agency": "Formative Search Partners",
+    "date": "2026-05-07",
+    "status": "needs-reply",
+    "followUps": 2,
+    "snippet": "Strategic search for a Senior Engineering Manager at Dispatch (dispatch.io).",
+    "comp": "$215K–$240K base"
+  },
+  {
+    "id": "19e0fb8269567f69",
+    "company": "Courted",
+    "role": "Hands-on Eng Leader",
+    "recruiter": "Ash",
+    "recruiterEmail": "ash@fifthglass.com",
+    "agency": "Fifth Glass",
+    "date": "2026-05-10",
+    "status": "closed",
+    "followUps": 3,
+    "snippet": "Engineering leadership hire directly with the CTO at Courted. NYC-based, hybrid, small team.",
+    "notes": "Recruiter closed the loop 5/18 — reach out to re-open if interested."
+  },
+  {
+    "id": "19d9b5f41913c38e",
+    "company": "Mason AI",
+    "role": "AI Engineer (Founding)",
+    "recruiter": "Matt Singer",
+    "recruiterEmail": "matt.singer@clearmatchtalentpartners.com",
+    "agency": "ClearMatch Talent",
+    "date": "2026-04-17",
+    "status": "needs-reply",
+    "followUps": 0,
+    "snippet": "Mason is building AI employees for enterprise real estate development. Founding engineer role."
+  },
+  {
+    "id": "19cd899c9a0ee7bd",
+    "company": "Mantel",
+    "role": "Engineering Lead",
+    "recruiter": "Jordan M",
+    "recruiterEmail": "jordan@startmantel.com",
+    "agency": "Mantel (Direct)",
+    "date": "2026-03-10",
+    "status": "needs-reply",
+    "followUps": 1,
+    "snippet": "Your trajectory from Founding Engineer to Engineering Manager at Flo Recruit maps closely to what we're building at Mantel, tackling a $500B industry."
+  },
+  {
+    "id": "19cd86c11657cf48",
+    "company": "Aligned Marketplace",
+    "role": "Senior Software Engineer",
+    "recruiter": "Sam K",
+    "recruiterEmail": "sam@hialigned.com",
+    "agency": "Hi Aligned",
+    "date": "2026-03-10",
+    "status": "needs-reply",
+    "followUps": 2,
+    "snippet": "High ownership health tech role. End-to-end ownership experience is exactly what they're looking for."
+  },
+  {
+    "id": "19de7cc55cfe8818",
+    "company": "General Outreach",
+    "role": "TBD",
+    "recruiter": "Tatiana",
+    "recruiterEmail": "tatiana@niahrecruiting.com",
+    "agency": "NIAH Recruiting",
+    "date": "2026-05-02",
+    "status": "pending",
+    "followUps": 0,
+    "snippet": "Checking in to see if now is a better time to explore new opportunities."
+  }
+]

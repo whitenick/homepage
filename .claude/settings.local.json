@@ -1,8 +1,17 @@
 {
   "permissions": {
     "allow": [
-      "Bash(cp:*)",
-      "Bash(npm run dev:*)"
+      "Bash(git -C /Users/nickwhite/Development/homepage checkout next-env.d.ts)",
+      "Bash(git -C /Users/nickwhite/Development/homepage pull origin master)",
+      "Bash(npx tsc *)",
+      "Bash(npm install *)",
+      "Bash(git -C /Users/nickwhite/Development/homepage commit -m ' *)",
+      "mcp__714c551e-970e-4f29-a8ed-444f87cd085e__search_threads",
+      "Bash(git -C /Users/nickwhite/Development/homepage add scripts/ .github/ package.json package-lock.json)",
+      "Bash(git -C /Users/nickwhite/Development/homepage diff --cached --stat)",
+      "Bash(git -C /Users/nickwhite/Development/homepage push origin master)",
+      "Bash(git -C /Users/nickwhite/Development/homepage add scripts/ package.json package-lock.json)",
+      "Bash(git -C /Users/nickwhite/Development/homepage status --short)"
     ]
   }
 }
