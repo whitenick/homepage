@@ -70,7 +70,7 @@ export default function Index() {
                                     Blog
                                 </a>
                                 <a
-                                    href="/app"
+                                    href="/app/recruiting"
                                     className="text-[#2D2926]/50 hover:text-[#B85C38] transition-colors tracking-wide"
                                 >
                                     Lab
