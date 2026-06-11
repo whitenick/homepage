@@ -88,7 +88,7 @@ export default function Blog() {
                                     </h1>
                                 </Link>
                                 <p className="text-xs uppercase tracking-[0.2em] text-[#7D8E7A]">
-                                    Thoughts &amp; updates &amp; LLM Threads
+                                    Thoughts &amp; (LLM) Threads
                                 </p>
                             </div>
                         </div>
