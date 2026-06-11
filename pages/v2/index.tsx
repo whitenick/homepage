@@ -76,7 +76,6 @@ export default function Index() {
                                     Lab
                                 </a>
                             </div>
-                            </div>
                         </details>
                     </div>
 

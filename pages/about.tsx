@@ -70,7 +70,6 @@ export default function About() {
                                         Lab
                                     </a>
                                 </div>
-                                </div>
                             </details>
                         </div>
 
