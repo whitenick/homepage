@@ -1,9 +1,9 @@
 import { GetServerSideProps } from 'next';
 import path from 'path';
 import fs from 'fs';
-import { Auth } from '@supabase/auth-ui-react';
-import { ThemeSupa } from '@supabase/auth-ui-shared';
 import { useSession, useSupabaseClient } from '@supabase/auth-helpers-react';
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 import { PageWrapper } from '../../../components/layout/page-wrapper';
 import RecruitingTracker from '../../../modules/recruiting';
 import type { Opportunity } from '../../../modules/recruiting';
@@ -15,26 +15,15 @@ interface Props {
 const RecruitingPage = ({ opportunities }: Props) => {
   const session = useSession();
   const supabase = useSupabaseClient();
+  const router = useRouter();
 
-  if (!session) {
-    return (
-      <PageWrapper title="Recruiting — Nick White">
-        <div className="flex flex-col items-center justify-center h-screen bg-gray-50">
-          <div className="mb-6 text-center">
-            <h1 className="text-2xl font-semibold text-gray-800">Protected Page</h1>
-            <p className="text-sm text-gray-500 mt-1">Sign in to view recruiting opportunities</p>
-          </div>
-          <div className="border border-gray-200 rounded-xl shadow-sm p-6 bg-white w-full max-w-sm">
-            <Auth
-              supabaseClient={supabase}
-              appearance={{ theme: ThemeSupa }}
-              providers={['google']}
-            />
-          </div>
-        </div>
-      </PageWrapper>
-    );
-  }
+  useEffect(() => {
+    if (session === null) {
+      router.replace('/app/login?next=/app/recruiting');
+    }
+  }, [session, router]);
+
+  if (!session) return null;
 
   return (
     <PageWrapper title="Recruiting — Nick White">
