@@ -11,7 +11,10 @@
       "Bash(git -C /Users/nickwhite/Development/homepage diff --cached --stat)",
       "Bash(git -C /Users/nickwhite/Development/homepage push origin master)",
       "Bash(git -C /Users/nickwhite/Development/homepage add scripts/ package.json package-lock.json)",
-      "Bash(git -C /Users/nickwhite/Development/homepage status --short)"
+      "Bash(git -C /Users/nickwhite/Development/homepage status --short)",
+      "Bash(find /Users/nickwhite/Development -maxdepth 2 -name \"*.tsx\" -path \"*/login*\" -o -maxdepth 2 -name \"*.tsx\" -path \"*/sign*\" 2>/dev/null | grep -i dish)",
+      "Bash(ls /Users/nickwhite/Development/)",
+      "Bash(find /Users/nickwhite -maxdepth 5 -type d -iname \"*dish*\" 2>/dev/null)"
     ]
   }
 }
