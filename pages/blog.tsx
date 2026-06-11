@@ -69,6 +69,29 @@ export default function Blog() {
                                     >
                                         Lab
                                     </a>
+                                    <details className="group/repos relative">
+                                        <summary className="list-none cursor-pointer text-[#2D2926]/50 hover:text-[#B85C38] transition-colors tracking-wide">
+                                            REPOS
+                                        </summary>
+                                        <div className="absolute left-0 top-full mt-2 flex flex-col gap-2 bg-[#F9F7F4] border border-[#E8E6E1] rounded-sm px-4 py-3 shadow-cool min-w-[100px]">
+                                            <a
+                                                href="https://github.com/whitenick"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="text-[#2D2926]/50 hover:text-[#B85C38] transition-colors tracking-wide whitespace-nowrap"
+                                            >
+                                                GITHUB
+                                            </a>
+                                            <a
+                                                href="https://gitlab.com/whitenick"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="text-[#2D2926]/50 hover:text-[#B85C38] transition-colors tracking-wide whitespace-nowrap"
+                                            >
+                                                GITLAB
+                                            </a>
+                                        </div>
+                                    </details>
                                 </div>
                             </details>
                         </div>
@@ -107,11 +130,21 @@ export default function Blog() {
                                         Jun 2026
                                     </span>
                                     <span className="flex-1">
-                                        <span className="block text-xl font-medium text-[#2D2926] group-hover:text-[#B85C38] transition-colors leading-snug" style={{ fontFamily: "var(--font-fraunces), serif" }}>
+                                        <span
+                                            className="block text-xl font-medium text-[#2D2926] group-hover:text-[#B85C38] transition-colors leading-snug"
+                                            style={{
+                                                fontFamily:
+                                                    "var(--font-fraunces), serif",
+                                            }}
+                                        >
                                             Why the traveler comes home younger
                                         </span>
                                         <span className="block text-sm text-[#2D2926]/50 mt-1.5">
-                                            A ground-up visual explainer of time dilation, the light clock, the twin paradox, and why GPS depends on relativity every second of every day.
+                                            A ground-up visual explainer of time
+                                            dilation, the light clock, the twin
+                                            paradox, and why GPS depends on
+                                            relativity every second of every
+                                            day.
                                         </span>
                                     </span>
                                     <span className="text-xs font-mono tracking-widest text-[#B85C38] shrink-0 opacity-0 group-hover:opacity-100 transition-opacity">
