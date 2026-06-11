@@ -69,29 +69,6 @@ export default function Blog() {
                                     >
                                         Lab
                                     </a>
-                                    <details className="group/repos relative">
-                                        <summary className="list-none cursor-pointer text-[#2D2926]/50 hover:text-[#B85C38] transition-colors tracking-wide">
-                                            REPOS
-                                        </summary>
-                                        <div className="absolute left-0 top-full mt-2 flex flex-col gap-2 bg-[#F9F7F4] border border-[#E8E6E1] rounded-sm px-4 py-3 shadow-cool min-w-[100px]">
-                                            <a
-                                                href="https://github.com/whitenick"
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="text-[#2D2926]/50 hover:text-[#B85C38] transition-colors tracking-wide whitespace-nowrap"
-                                            >
-                                                GITHUB
-                                            </a>
-                                            <a
-                                                href="https://gitlab.com/whitenick"
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="text-[#2D2926]/50 hover:text-[#B85C38] transition-colors tracking-wide whitespace-nowrap"
-                                            >
-                                                GITLAB
-                                            </a>
-                                        </div>
-                                    </details>
                                 </div>
                             </details>
                         </div>
@@ -140,7 +117,11 @@ export default function Blog() {
                                             Self-hosting is back. AI is why.
                                         </span>
                                         <span className="block text-sm text-[#2D2926]/50 mt-1.5">
-                                            Managed platforms were a deal — pay more, get back hours of your life. That deal is breaking down. A case for moving everything onto a $10/mo Hetzner box.
+                                            Managed platforms were a deal — pay
+                                            more, get back hours of your life.
+                                            That deal is breaking down. A case
+                                            for moving everything onto a $10/mo
+                                            Hetzner box.
                                         </span>
                                     </span>
                                     <span className="text-xs font-mono tracking-widest text-[#B85C38] shrink-0 opacity-0 group-hover:opacity-100 transition-opacity">
