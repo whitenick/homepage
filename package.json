@@ -13,8 +13,7 @@
     "start:prod": "next build && NODE_ENV=production next start",
     "styles": "npx tailwindcss -i ./pages/index.css -o ./pages/tw.css --watch",
     "lint": "next lint",
-    "export": "next export",
-    "sync-recruiting": "tsx scripts/sync-recruiting.ts"
+    "export": "next export"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.104.1",
@@ -45,7 +44,6 @@
     "clsx": "^2.1.1",
     "framer-motion": "^10.18.0",
     "geist": "^1.5.1",
-    "googleapis": "^173.0.0",
     "hamburger-react": "^2.5.0",
     "lucide-react": "^0.563.0",
     "maath": "^0.6.0",
