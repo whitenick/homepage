@@ -323,9 +323,12 @@ export default function SelfHosting() {
 
                     <div className="sh-callout">
                         A $6/mo Hetzner CAX11 ARM box — the cheapest they sell — has 2 vCPUs,
-                        4 GB RAM, and 40 GB SSD. It runs Postgres, Nginx, n8n, a Go API, and
-                        still has headroom. The equivalent across managed services
-                        is <em>$80–120/mo and climbing</em>.
+                        4 GB RAM, and 40 GB SSD. It runs Postgres, Caddy, n8n, and multiple
+                        Go services. The equivalent across managed services
+                        is <em>$80–120/mo and climbing</em>.{" "}
+                        The production machine that actually runs Serapio Labs is a CX42-class
+                        with 4 vCPUs, 15 GB RAM, and a 200 GB volume — still{" "}
+                        <em>$24–32/mo</em>, still a fraction of managed.
                     </div>
 
                     <p className="sh-p">
@@ -351,10 +354,10 @@ export default function SelfHosting() {
                     </p>
                     <p className="sh-p">
                         AI changes this in a specific and underrated way: it doesn&apos;t make
-                        you a sysadmin, it makes it so you don&apos;t need to be one. Nginx
-                        reverse proxy config with SPA fallback and API proxying? One prompt.
-                        systemd service with proper security hardening, restart policy, and an
-                        environment file? One prompt. Certbot setup, ufw rules, migration
+                        you a sysadmin, it makes it so you don&apos;t need to be one. Caddy
+                        reverse proxy with automatic TLS, SPA fallback, and API proxying? One prompt.
+                        Docker Compose with proper networking, restart policy, and environment
+                        variables? One prompt. ufw rules, migration
                         tooling — all of it is one conversation away and immediately correct
                         for your exact setup.
                     </p>
@@ -376,31 +379,46 @@ export default function SelfHosting() {
                     {/* §03 */}
                     <h2 className="sh-h2">
                         <span className="sh-secnum">03 / What it actually looks like</span>
-                        One box, everything on it
+                        One box, pragmatic stack
                     </h2>
                     <p className="sh-p">
-                        For Serapio Labs the stack is simple and deliberately boring. A single
-                        Hetzner VPS runs everything: Postgres on its default port, Nginx as
-                        the reverse proxy and TLS terminator, each app as a systemd service
-                        talking to the DB over localhost. Tailscale handles private networking
-                        between machines. Cloudflare sits in front for DDoS protection and
-                        caching when needed, but it&apos;s a one-checkbox upgrade, not a
-                        prerequisite.
+                        For Serapio Labs the stack is deliberately boring — but the boring
+                        choices are the ones that survive contact with reality. A single
+                        Hetzner VPS runs the core: Postgres 17 on port 5433 for separation,
+                        <strong> Caddy</strong> as the reverse proxy with built-in automatic
+                        TLS (no Certbot, no renewal cron), service containers where they
+                        make sense (Open WebUI, Qdrant vector memory) and systemd binaries
+                        where they don&apos;t. Tailscale is the backbone, not a footnote.
+                        Cloudflare sits in front for DDoS protection and caching, but it&apos;s
+                        a one-checkbox upgrade, not a prerequisite.
                     </p>
 
                     <div className="sh-stack">
                         <span>Internet</span>{" → "}Cloudflare (optional edge layer){"\n"}
-                        {"  → "}Nginx · TLS via Let&apos;s Encrypt{"\n"}
+                        {"  → "}Caddy · auto-TLS (built-in Let&apos;s Encrypt){"\n"}
                         {"      ├── "}yourapp.serapiolabs.com <span>→</span> React static build{"\n"}
-                        {"      └── "}/api/* <span>→</span> Go binary · port 8080 (localhost only){"\n"}
-                        {"                  └── "}Postgres · port 5432 (localhost only)
+                        {"      ├── "}/api/* <span>→</span> Go binary · systemd unit{"\n"}
+                        {"      ├── "}open-webui <span>→</span> Docker · Coolify deploy{"\n"}
+                        {"      ├── "}qdrant <span>→</span> Docker · Coolify deploy{"\n"}
+                        {"      └── "}Postgres 17 · port 5433 (tuned for 15GB RAM)
                     </div>
 
                     <p className="sh-p">
-                        Deployment is a Makefile target: cross-compile the Go binary for Linux,
-                        rsync the React build, restart the systemd service. No registry, no
-                        container orchestration, no YAML sprawl. It&apos;s genuinely less moving
-                        parts than a Vercel + Supabase + Railway setup, not more.
+                        Deployment is a mix: <strong>Coolify</strong> handles the containerized
+                        services (Open WebUI, Qdrant, LiteLLM), systemd handles the compiled
+                        Go binaries. The choice isn&apos;t ideological — Postgres as a container
+                        adds complexity you don&apos;t need, but managing Qdrant and Open WebUI
+                        as raw processes would be genuinely harder. Use what fits.
+                    </p>
+
+                    <p className="sh-p">
+                        <strong>And then there&apos;s TARS.</strong> The distributed LLM
+                        inference cluster running at tars.serapiolabs.com. The Hetzner VPS
+                        hosts the control plane — Caddy, Open WebUI, Qdrant vector memory,
+                        and a CPU-bound Ollama instance running qwen2.5:7b. A Windows PC with
+                        an RTX 3060 12GB acts as the GPU worker, serving qwen2.5:14b over
+                        Tailscale. It&apos;s the same thesis pushed further: one compute layer
+                        that works, distributed only where the bottleneck demands it.
                     </p>
 
                     <table className="sh-table">
@@ -414,17 +432,22 @@ export default function SelfHosting() {
                         <tbody>
                             <tr>
                                 <td>Compute</td>
-                                <td>Hetzner VPS (existing)</td>
+                                <td>Hetzner CX42 (production)</td>
+                                <td className="accent">~$24–32/mo</td>
+                            </tr>
+                            <tr>
+                                <td>Entry compute</td>
+                                <td>Hetzner CAX11 (starting)</td>
                                 <td className="accent">~$6–12/mo</td>
                             </tr>
                             <tr>
                                 <td>Database</td>
-                                <td>Postgres on same box</td>
+                                <td>Postgres 17 on same box</td>
                                 <td className="mono">$0</td>
                             </tr>
                             <tr>
-                                <td>TLS</td>
-                                <td>Let&apos;s Encrypt + Certbot</td>
+                                <td>Reverse proxy + TLS</td>
+                                <td>Caddy (auto-cert, no maintenance)</td>
                                 <td className="mono">$0</td>
                             </tr>
                             <tr>
@@ -433,13 +456,13 @@ export default function SelfHosting() {
                                 <td className="mono">$0</td>
                             </tr>
                             <tr>
-                                <td>Frontend hosting</td>
-                                <td>Nginx static files</td>
+                                <td>Deployment</td>
+                                <td>Coolify (containers) + systemd (binaries)</td>
                                 <td className="mono">$0</td>
                             </tr>
                             <tr>
-                                <td>Process management</td>
-                                <td>systemd</td>
+                                <td>LLM inference</td>
+                                <td>Ollama (CPU on VPS, GPU via Tailscale)</td>
                                 <td className="mono">$0</td>
                             </tr>
                         </tbody>
@@ -463,7 +486,7 @@ export default function SelfHosting() {
                                 <li>AI has made ops maintenance tractable for non-sysadmins</li>
                                 <li>No per-seat, per-project, or per-connection pricing surprises</li>
                                 <li>Stack is yours — no vendor lock-in, no deprecation notices</li>
-                                <li>Everything on one box is genuinely simpler than microservices spread across four platforms</li>
+                                <li>Bottlenecks reveal themselves naturally — you know what to fix or outsource next</li>
                             </ul>
                         </div>
                         <div className="sh-card">
@@ -489,17 +512,43 @@ export default function SelfHosting() {
 
                     {/* §05 */}
                     <h2 className="sh-h2">
-                        <span className="sh-secnum">05 / The point</span>
+                        <span className="sh-secnum">05 / The temporal factor</span>
+                        Self-host to find PMF, graduate when you find it
                     </h2>
+                    <p className="sh-p">
+                        This is the frame the managed platforms don&apos;t want you to see:
+                        self-hosting isn&apos;t a permanent architectural choice — it&apos;s a
+                        <strong> temporal one</strong>. You self-host during the exploration
+                        phase, when unknowns outnumber users and every bottleneck is a discovery
+                        signal.
+                    </p>
+
+                    <p className="sh-p">
+                        The architecture tells you what breaks first. If it&apos;s compute, you
+                        scale up on Hetzner or add a GPU node (like TARS did). If it&apos;s
+                        concurrency, you graduate to managed. If it&apos;s team collaboration,
+                        you pay for the seats. Each bottleneck reveals the next investment
+                        with surgical precision — no over-engineering, no guesswork.
+                    </p>
+
+                    <p className="sh-p">
+                        This approach also keeps your software <strong>loosely coupled by
+                        accident</strong>. Because the natural next step when any piece outgrows
+                        Hetzner is to extract it into a commercial-grade managed service. You
+                        never design for extraction — it happens because the architecture was
+                        simple enough to understand in the first place.
+                    </p>
+
                     <p className="sh-closer">
                         Managed platforms solved a real problem when the alternative was painful.
                         AI has made the alternative <em>not painful</em>. The platforms haven&apos;t
                         noticed yet — their pricing still assumes you&apos;re paying for relief
-                        from a burden that mostly doesn&apos;t exist anymore.
+                        from a burden that mostly doesn&apos;t exist anymore. Self-host to find
+                        PMF. Graduate when you find it.
                     </p>
 
                     <footer className="sh-footer">
-                        Serapio Labs · Hetzner + Nginx + Go + Postgres
+                        Serapio Labs · Hetzner + Caddy + Coolify + Go + Postgres
                         <div style={{ marginTop: 20 }}>
                             <Link href="/blog" style={{ color: "var(--accent)", textDecoration: "none" }}>
                                 ← Back to Blog
