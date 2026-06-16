@@ -84,5 +84,68 @@
     "status": "pending",
     "followUps": 0,
     "snippet": "Checking in to see if now is a better time to explore new opportunities."
+  },
+  {
+    "id": "19eb1dde16420b49",
+    "company": "EDO",
+    "role": "Backend Engineering Manager",
+    "recruiter": "Chad Rusk",
+    "recruiterEmail": "chad@putnamrecruiting.com",
+    "agency": "Putnam Recruiting Group",
+    "date": "2026-06-10",
+    "status": "needs-reply",
+    "followUps": 0,
+    "snippet": "Profitable data analytics company EDO seeks a hands-on Backend Engineering Manager for a Ruby on Rails codebase; hybrid NYC 2-3 days/week.",
+    "comp": "$190K–$230K base + bonus + equity"
+  },
+  {
+    "id": "19e179cad87afb98",
+    "company": "Arch",
+    "role": "Engineering Manager",
+    "recruiter": "Clint",
+    "recruiterEmail": "clint@ignitedsearchnj.com",
+    "agency": "Ignited Search NJ",
+    "date": "2026-05-11",
+    "status": "needs-reply",
+    "followUps": 2,
+    "snippet": "Engineering Manager at Arch (arch.com), building the operating system for private investments; leads a full-stack team.",
+    "comp": "$200K–$300K"
+  },
+  {
+    "id": "19da781d58db0161",
+    "company": "Fractional AI",
+    "role": "AI Software Engineer",
+    "recruiter": "Mia Zeng",
+    "recruiterEmail": "mia@fractional.ai",
+    "agency": "Direct",
+    "date": "2026-04-19",
+    "status": "needs-reply",
+    "followUps": 2,
+    "snippet": "Fractional AI builds bespoke Gen AI software for enterprise clients (Zapier, Airbyte); AI Software Engineer role, 4 days/week in-person in SF or NYC."
+  },
+  {
+    "id": "19d2531c866c7099",
+    "company": "January",
+    "role": "Engineering Manager",
+    "recruiter": "Michael Tannenbaum",
+    "recruiterEmail": "michael.tannenbaum@january.com",
+    "agency": "Direct",
+    "date": "2026-03-25",
+    "status": "needs-reply",
+    "followUps": 0,
+    "snippet": "Engineering Manager opportunity at January; recruiter following up from prior outreach about the role."
+  },
+  {
+    "id": "19c6655625f2bc99",
+    "company": "Squad",
+    "role": "Product Engineer",
+    "recruiter": "Jake Bradshaw",
+    "recruiterEmail": "jake@cryptac.io",
+    "agency": "Cryptac",
+    "date": "2026-02-16",
+    "status": "needs-reply",
+    "followUps": 1,
+    "snippet": "Product Engineer at Squad, an AI-first recruiting startup (10x growth, $5M raised); TypeScript/React, direct founder collaboration, building the recruiter dashboard.",
+    "comp": "$170K–$220K + equity"
   }
 ]
