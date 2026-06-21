@@ -117,11 +117,10 @@ export default function Blog() {
                                             The server still whispers
                                         </span>
                                         <span className="block text-sm text-[#2D2926]/50 mt-1.5">
-                                            Before AI, building tech felt like cyberpunk.
-                                            SSH into a bare-metal box, wiring Caddy to
-                                            Postgres, a NAS in the closet. That edge
-                                            isn&apos;t nostalgia — it&apos;s where new
-                                            ideas still prosper.
+                                            The cool thing about building tech was always
+                                            the hardware. Rack, cables, GPU heat at 2am.
+                                            Software is free. The iron is the commitment.
+                                            That&apos;s the edge that hasn&apos;t moved.
                                         </span>
                                     </span>
                                     <span className="text-xs font-mono tracking-widest text-[#B85C38] shrink-0 opacity-0 group-hover:opacity-100 transition-opacity">

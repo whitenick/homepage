@@ -17,10 +17,10 @@ export default function RebelInfrastructure() {
     return (
         <>
             <Head>
-                <title>Rebel Infrastructure — Nick White</title>
+                <title>The server still whispers — Nick White</title>
                 <meta
                     name="description"
-                    content="Before the cloud became a mall, building tech felt like cyberpunk. Bare metal, SSH, your own rack in a datacenter. That edge is still alive — and it&apos;s where the real innovation still happens."
+                    content="The cool thing about building tech was always the hardware. The rack, the cables, the heat coming off a GPU. Software is free. The iron is the commitment. Before AI, after AI — that hasn&apos;t changed."
                 />
                 <link rel="icon" href="/mountain.ico" />
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -287,340 +287,332 @@ export default function RebelInfrastructure() {
 
                 <div className="sh-wrap">
                     <header className="sh-header">
-                        <p className="sh-kicker">Infrastructure · Ethos</p>
+                        <p className="sh-kicker">Hardware · Cyberpunk · DIY</p>
                         <h1 className="sh-h1">
                             The server still whispers<br />
                             <em>and you should listen</em>
                         </h1>
                         <p className="sh-lede">
-                            Before AI, before the cloud was a mall, building tech felt
-                            like cyberpunk. SSH&apos;ing into a bare-metal box in a
-                            datacenter. Wiring Caddy to Postgres on a machine you provisioned
-                            yourself. A NAS in the closet running your own media, your own
-                            backups, your own VPN into your own mesh. That feeling isn&apos;t
-                            nostalgia — it&apos;s a signal. The edge that was cool then is
-                            still the edge now. Maybe more than ever.
+                            The cool thing about building tech was never the code. It was
+                            the hardware. Racking a server in your closet. Running cable
+                            through the basement. A GPU that hums when it&apos;s working.
+                            The blinking LEDs of a switch at 2am. That&apos;s the cyberpunk
+                            — not the abstraction, but the <strong>physical commitment</strong>.
+                            Software is free. The iron is the line you draw. Before AI,
+                            after AI, that hasn&apos;t changed.
                         </p>
                         <p className="sh-date">June 2026</p>
                     </header>
 
                     {/* §01 */}
                     <h2 className="sh-h2">
-                        <span className="sh-secnum">01 / The feeling that&apos;s hard to name</span>
-                        Cyberpunk was never the aesthetic
+                        <span className="sh-secnum">01 / This is what was actually cool</span>
                     </h2>
                     <p className="sh-p">
-                        There was a moment — maybe 2008 through 2016, maybe it started
-                        earlier and has no clean edge — when building your own infrastructure
-                        carried a charge that was almost aesthetic. You SSH&apos;d into a
-                        rented server in some nondescript datacenter and you <strong>owned</strong>
-                        that machine. No dashboard. No abstraction. Just you, a shell,
-                        and whatever you chose to put on that bare-metal heart. It felt like
-                        hacking the world because in a small way, it was.
+                        What was cool about building tech — before AI, before the cloud
+                        became a mall, before every protocol was a subscription — was
+                        <strong> having a bunch of physical hardware to hook up</strong>.
                     </p>
 
                     <p className="sh-p">
-                        The cyberpunk novels got the <strong>feeling</strong> right even when
-                        they got the technology wrong. The core of that genre was never neon
-                        streets and chrome implants. It was the idea that
-                        <strong> owning the infrastructure was an act of rebellion</strong>.
-                        The megacorp owned the grid, but you built your own node. The system
-                        wanted passive consumers, but you built a server. That distinction
-                        mattered. It still does.
+                        Not the architecture diagram. Not the perfectly abstracted API layer.
+                        The <strong>iron</strong>. Racking a server, running cables through
+                        a drop ceiling, crimping your own Ethernet ends, feeling the heat
+                        come off a GPU when it&apos;s actually working. A switch with blinking
+                        LEDs that tells you which ports have traffic. A NAS that clicks when
+                        it spins up. The hum of a 40mm fan at 3am when you&apos;re debugging
+                        why the connection dropped.
+                    </p>
+
+                    <p className="sh-p">
+                        This is not nostalgia. This is the thing itself. The physical
+                        commitment is what made it feel real. You couldn&apos;t swipe a
+                        credit card and magically have infrastructure. You had to
+                        <strong> buy the box, rack it, wire it, power it</strong>. That
+                        cost was the price of entry, and it meant something. It meant you
+                        were <em>in</em> it.
                     </p>
 
                     <div className="sh-callout">
-                        The feeling of wiring a machine to the internet and having it
-                        respond to you — not through a dashboard, not through a vendor
-                        portal, but <em>because you decided what runs on it</em> — is
-                        the same feeling that made the web interesting in the first place.
-                        It is the feeling of <strong>agency</strong>.
+                        Software is expression. Hardware is commitment. The software tells
+                        you what someone wanted to build. The hardware tells you they
+                        actually built it.
                     </div>
 
                     <p className="sh-p">
-                        This is not nostalgia for a golden age. It is noticing that something
-                        real has been systematically removed from the experience of building
-                        tech — and that removal was sold to us as progress.
+                        The cyberpunk novels understood this better than any of them.
+                        Case jacking into the matrix wasn&apos;t the point. The point was
+                        the deck on the table, the cables, the physical world that connected
+                        to the digital one. The fiction got the <strong>feeling</strong>
+                        right: that owning the iron was an act of rebellion. The megacorp
+                        owned the grid. You owned that box. That distinction never stopped
+                        mattering. It just got harder to find.
                     </p>
 
                     {/* §02 */}
                     <h2 className="sh-h2">
-                        <span className="sh-secnum">02 / The SaaS deal</span>
-                        You gave up agency for convenience
+                        <span className="sh-secnum">02 / Capex is commitment, opex is rent</span>
+                        The SaaS model inverted everything
                     </h2>
                     <p className="sh-p">
-                        Nobody forced anyone onto managed platforms. The trade was real and
-                        it was often good. You bypassed sysadmin work that felt like drudgery
-                        — nginx configs, yum updates, Postgres WAL tuning, TLS renewal cron
-                        jobs, iptables rules that you copy-pasted from a half-remembered blog
-                        post. In exchange you paid a premium, and for most builders that was a
-                        clear win.
+                        Think about what the SaaS model did. It inverted the cost structure
+                        completely. Suddenly the <strong>hardware disappeared</strong> and
+                        the <strong>software became the expensive part</strong>. You paid
+                        $0 upfront and $200/mo in subscriptions. No capex, just opex. No
+                        rack, just receipts. No cables, just a login page.
                     </p>
 
                     <p className="sh-p">
-                        But the trade wasn&apos;t neutral. Every SaaS subscription you signed
-                        up for was a small transfer of <strong>control</strong>. You stopped
-                        knowing how your database was tuned. You stopped knowing how your
-                        authentication flowed. You stopped knowing what happened to your data
-                        after it left your network. Each transfer felt trivial. Collectively
-                        they rewired the relationship between builder and infrastructure.
-                    </p>
-
-                    <p className="sh-strong">
-                        The act of building shifted from construction to assembly. From
-                        engineering to procurement.
+                        This was sold as liberation from complexity. And in some ways it was.
+                        But it also removed the <strong>point of commitment</strong>. When
+                        you buy a server, you&apos;re making a statement: I&apos;m going to
+                        do something with this. When you subscribe to a service, you&apos;re
+                        making a different one: I&apos;ll pay until I stop needing it. One
+                        is ownership. The other is temporary access.
                     </p>
 
                     <p className="sh-p">
-                        That shift had consequences beyond cost. It changed who gets to call
-                        themselves a builder. When infrastructure is a credit card swipe, the
-                        bar is lowered — but the ceiling is too. The people who understand how
-                        things actually work, who can reach past the dashboard into the machine
-                        itself, became a smaller and smaller minority. The knowledge became
-                        specialized, then rare, then almost folkloric.
+                        The cyberpunk move is the opposite: <strong>hardware heavy,
+                        software light</strong>. Spend the money once on iron, then let
+                        the software be free. The cost is concentrated at the moment of
+                        acquisition — that&apos;s the real commitment, the line you draw.
+                        After that, the marginal cost of doing anything interesting
+                        approaches zero. Your NAS, your GPU, your switch in the closet —
+                        they sit there and they work until they don&apos;t, and when they
+                        don&apos;t you know why.
                     </p>
 
                     <div className="sh-callout">
-                        The most radical thing you can do in 2026 is own your stack.
-                        Not because it&apos;s cheaper — though it often is — but because
-                        <em>knowing</em> how your system works is a kind of power that
-                        subscription models are designed to make you forget you ever had.
+                        The subscription model made software the rent and hardware invisible.
+                        That was efficient. It was also empty. The thing that made building
+                        feel real was the weight of the box in your hands.
                     </div>
+
+                    <p className="sh-p">
+                        You can&apos;t hold a serverless function. You can&apos;t hear
+                        a managed database spin up. You can&apos;t feel the heat from a
+                        cloud subscription. Those things might be cheaper, faster, more
+                        reliable — but they are <strong>not cool</strong>. And cool is not
+                        a frivolous category. Cool is what makes people want to build things
+                        that didn&apos;t exist before.
+                    </p>
 
                     {/* §03 */}
                     <h2 className="sh-h2">
-                        <span className="sh-secnum">03 / The cyberpunk edge was never about tech</span>
-                        It was about who holds the keys
+                        <span className="sh-secnum">03 / The stack you can touch</span>
+                        What the rebel setup looks like in 2026
                     </h2>
                     <p className="sh-p">
-                        What was actually cool about building pre-SaaS was not the technology.
-                        It was the <strong>relationship to power</strong>. You decided where
-                        your data lived. You chose the database. You wrote the migration scripts.
-                        You knew, because you had to know, the exact path from a user&apos;s
-                        request to the disk sector that stored their data. That knowledge was
-                        not abstract — it was lived.
+                        So what does this look like in practice? A rack. A closet. A desk
+                        with a tower under it that is louder than it should be. A switch
+                        with more ports than you need, because you&apos;re going to add
+                        more. A NAS with drives that you chose and installed yourself. A
+                        GPU that&apos;s way overkill for what you&apos;re doing, but you
+                        wanted to see how fast it could go.
                     </p>
 
                     <p className="sh-p">
-                        When you SSH into a box and run <code>htop</code>, you see your
-                        machine breathing. Memory pressure, swap activity, load averages —
-                        these are not dashboard abstractions. They are the actual behavior of
-                        silicon responding to your code. That direct relationship between
-                        intent and infrastructure is what the SaaS model dissolves.
+                        The software on top is free. Linux, Postgres, Caddy, Tailscale,
+                        Docker, Ollama, n8n, Qdrant — every piece of the stack costs $0.
+                        You might spend on a domain name and electricity. That&apos;s it.
+                        The hardware is the only investment, and it&apos;s a one-time
+                        investment in <strong>your own capability</strong>.
                     </p>
 
+                    <div className="sh-pros-cons">
+                        <div className="sh-card">
+                            <div className="sh-card-label for">The rebel stack</div>
+                            <ul>
+                                <li><strong>Hardware:</strong> Buy once, own forever</li>
+                                <li><strong>Software:</strong> Free. All of it.</li>
+                                <li><strong>Cost:</strong> Concentrated upfront, near-zero marginal</li>
+                                <li><strong>Repair:</strong> You. Your hands. Your multimeter.</li>
+                                <li><strong>Cool factor:</strong> High. Rack, cables, LEDs, heat.</li>
+                            </ul>
+                        </div>
+                        <div className="sh-card">
+                            <div className="sh-card-label against">The SaaS stack</div>
+                            <ul>
+                                <li><strong>Hardware:</strong> You never see it</li>
+                                <li><strong>Software:</strong> $200/mo in subscriptions</li>
+                                <li><strong>Cost:</strong> Zero upfront, endless opex</li>
+                                <li><strong>Repair:</strong> Ticket. Wait. Hope.</li>
+                                <li><strong>Cool factor:</strong> Low. You have nothing to touch.</li>
+                            </ul>
+                        </div>
+                    </div>
+
                     <p className="sh-p">
-                        The cyberpunk ethos was never about having the newest hardware. It was
-                        about <strong>knowing the system well enough to bend it</strong>.
-                        That same ethos lives today in anyone who runs their own Postgres
-                        instead of clicking &ldquo;create database&rdquo;. Anyone who wires
-                        Tailscale into their home network instead of paying for a VPN
-                        subscription. Anyone who runs Ollama on their own GPU instead of
-                        paying per-token for an API. These are not technical decisions — they
-                        are <strong>political</strong> ones. They say: I hold my own keys.
+                        And here is the part that matters: the people running their own
+                        hardware are the ones finding the next thing. The RTX 3060 in a
+                        bedroom running Ollama is where the local-first AI projects happen.
+                        The NAS in the closet is where the self-hosted media, the private
+                        backups, the knowledge graphs live. The switch with the blinking
+                        ports is where you learn how networking actually works — not as
+                        an abstraction, but as cable lengths and firewall rules that you
+                        wrote yourself.
                     </p>
 
                     {/* §04 */}
                     <h2 className="sh-h2">
-                        <span className="sh-secnum">04 / The AI surprise</span>
-                        It doesn&apos;t kill the edge — it sharpens it
+                        <span className="sh-secnum">04 / What AI changed</span>
+                        Nothing. That&apos;s the point.
                     </h2>
                     <p className="sh-p">
-                        A reasonable person might ask: if AI can now write your nginx config,
-                        debug your Postgres connection pool, and generate your Docker Compose
-                        file in a single prompt — doesn&apos;t that remove the last reason to
-                        touch bare metal? Hasn&apos;t the operating system been abstracted into
-                        irrelevance?
+                        AI didn&apos;t change any of this. It made the operational layer
+                        easier — AI writes your Dockerfile, debugs your Postgres pool,
+                        generates your Caddy config. The ops friction that made SaaS look
+                        attractive has mostly collapsed. The only question left is whether
+                        you want to <strong>own the iron or rent the abstraction</strong>.
                     </p>
 
                     <p className="sh-p">
-                        The exact opposite is happening. AI makes the operational layer
-                        <strong> cheap enough to ignore</strong> — and when ops friction
-                        disappears, the remaining barrier is purely one of
-                        <strong> will</strong>. If you want to own your stack, the cost of
-                        that ownership has never been lower. AI writes your Caddyfile, debugs
-                        your Docker network, tunes your Postgres, and walks you through your
-                        firewall rules at 2am. The ops tax that made SaaS look attractive is
-                        mostly gone.
+                        The most interesting projects in the AI ecosystem right now —
+                        local-first LLMs, custom RAG pipelines, personal knowledge graphs,
+                        privacy-preserving inference — all require the kind of hardware
+                        that managed platforms don&apos;t serve well. They need a GPU you
+                        control. They need a NAS you own. They need a machine you can
+                        physically reach. The people building those things are the same
+                        people who were racking servers ten years ago. The edge hasn&apos;t
+                        moved. It&apos;s just gotten quieter.
                     </p>
 
                     <div className="sh-callout">
-                        Before AI, the choice was between paying money or paying time. AI
-                        collapsed the time cost. The only question left is: <em>do you want
-                        to own your stack or rent it?</em>
+                        AI didn&apos;t make hardware irrelevant. It made the software part
+                        free. The hardware part — the commitment, the weight, the heat,
+                        the hum — that&apos;s still the line you draw. <em>That&apos;s</em>
+                        what&apos;s cool.
                     </div>
 
+                    {/* §05 */}
+                    <h2 className="sh-h2">
+                        <span className="sh-secnum">05 / The cost of being a cyberpunk</span>
+                        Hardware is expensive. Software is free.
+                    </h2>
                     <p className="sh-p">
-                        The builders who <strong>still</strong> run their own infrastructure
-                        in 2026 are not Luddites. They are the ones who understand that the
-                        deepest insights come from living inside the system, not on top of it.
-                        They use AI to move faster — not to outsource understanding. That
-                        distinction matters.
+                        Let&apos;s be honest: the barrier to this life is not skill. It&apos;s
+                        money. You can have more technical ability than anyone in the room,
+                        but if you can&apos;t afford the hardware, you are stuck renting.
+                        The GPU. The NAS. The switch. The rack. The cables. The UPS. It adds
+                        up, and it adds up fast.
                     </p>
 
                     <p className="sh-p">
-                        And something interesting is happening on the edges. The most
-                        interesting projects in the AI ecosystem — local-first LLMs,
-                        custom RAG pipelines, personal knowledge graphs, privacy-preserving
-                        inference — all require infrastructure that the managed market
-                        doesn&apos;t serve well. They require bare metal (or near enough).
-                        They require you to own the machine. The cyberpunk edge has found
-                        a new reason to exist.
+                        That&apos;s the trade. You <strong>spend once</strong> on iron and
+                        then the software is yours — free, unencumbered, unsubscriptioned.
+                        Every project after the first one costs you nothing in platform fees.
+                        Your database is Postgres on your box. Your queue is NATS on your
+                        NAS. Your inference runs on your GPU, one electricity bill, no
+                        per-token metering. The upfront cost stings. The marginal cost of
+                        creation after that is effectively zero.
+                    </p>
+
+                    <p className="sh-p">
+                        Compare that to the SaaS path. You pay nothing up front and you
+                        <strong> never stop paying</strong>. The subscriptions accumulate.
+                        The bills creep. You optimize by reducing usage — which means
+                        reducing what you build. The SaaS model has a built-in tax on
+                        creation. The hardware model has a sunk cost that only gets cheaper
+                        the more you use it.
                     </p>
 
                     <table className="sh-table">
                         <thead>
                             <tr>
                                 <th>Category</th>
-                                <th>SaaS version</th>
-                                <th>Rebel version</th>
+                                <th>SaaS path (monthly)</th>
+                                <th>Rebel path (one-time)</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td>LLM inference</td>
-                                <td>OpenAI / Anthropic API</td>
-                                <td className="accent">Ollama on your own GPU</td>
+                                <td>$20–200 / mo (API tokens)</td>
+                                <td className="accent">~$800 GPU, free software</td>
                             </tr>
                             <tr>
                                 <td>Database</td>
-                                <td>Supabase / Neon</td>
-                                <td className="accent">Postgres on a Hetzner box</td>
+                                <td>$25 / mo (Neon, Supabase)</td>
+                                <td className="accent">$0. Postgres is free.</td>
                             </tr>
                             <tr>
-                                <td>Reverse proxy</td>
-                                <td>Vercel / Cloudflare Workers</td>
-                                <td className="accent">Caddy + auto-TLS by hand</td>
-                            </tr>
-                            <tr>
-                                <td>Media storage</td>
-                                <td>S3 bucket (per-request billing)</td>
-                                <td className="accent">NAS in the closet</td>
-                            </tr>
-                            <tr>
-                                <td>Network</td>
-                                <td>VPN subscription</td>
-                                <td className="accent">Tailscale mesh + WireGuard</td>
+                                <td>File storage</td>
+                                <td>$24 / mo (iCloud, Google One)</td>
+                                <td className="accent">~$400 NAS, free software</td>
                             </tr>
                             <tr>
                                 <td>Automation</td>
-                                <td>Zapier / Make</td>
-                                <td className="accent">n8n on your own infra</td>
+                                <td>$30 / mo (Zapier, Make)</td>
+                                <td className="accent">$0. n8n is free.</td>
+                            </tr>
+                            <tr>
+                                <td>Hosting</td>
+                                <td>$20 / mo (Vercel, Heroku)</td>
+                                <td className="accent">~$6 / mo Hetzner or your own rack</td>
+                            </tr>
+                            <tr>
+                                <td>Network</td>
+                                <td>$15 / mo (VPN subscription)</td>
+                                <td className="accent">$0. Tailscale + WireGuard.</td>
                             </tr>
                         </tbody>
                     </table>
 
-                    {/* §05 */}
-                    <h2 className="sh-h2">
-                        <span className="sh-secnum">05 / What it looks like in practice</span>
-                        A $10 box, a Tailscale key, and a philosophy
-                    </h2>
                     <p className="sh-p">
-                        The rebel stack in 2026 is not expensive. It is not hard to set up.
-                        AI has made it boringly easy. What it requires is a decision about
-                        what kind of relationship you want with the systems you build.
+                        The SaaS path is $100–300/mo and you have nothing physical to show
+                        for it. The hardware path is a few thousand dollars once and you own
+                        the entire stack. Over two years the hardware path is cheaper. Over
+                        five years it&apos;s dramatically cheaper. But more importantly,
+                        it&apos;s <strong>yours</strong>. You can touch it. You can hear it.
+                        You can open the case and see what&apos;s inside.
                     </p>
-
-                    <p className="sh-p">
-                        A single Hetzner CAX11 — two vCPUs, 4 GB RAM, 40 GB SSD, $6/mo — is
-                        enough to run Postgres, Caddy, n8n, a Go service, and Ollama on CPU.
-                        Tailscale connects your laptop, your phone, your GPU box at home, and
-                        your VPS into a single mesh. You manage it through an SSH key and a
-                        mental model of the whole system. No dashboard. No surprise bills.
-                        No rate limits.
-                    </p>
-
-                    <div className="sh-stack">
-Your closet NAS <span>───</span> Tailscale <span>───</span> Hetzner VPS ($6/mo){"\n"}
-    {"                         │"}{"\n"}
-    {"    ┌────────────────────┼────────────────────┐"}{"\n"}
-    {"    │                    │                    │"}{"\n"}
-Caddy reverse proxy    Postgres 17          Ollama (CPU){"\n"}
-    {"    │"} (auto-TLS + SPA)    │ (your data)        │ (local models){"\n"}
-    {"    │"}                    │                    │{"\n"}
-n8n automations     Qdrant vectors     RTX 3060 node{"\n"}
-(no Zapier bill)    (private RAG)      (via Tailscale)
-                    </div>
-
-                    <p className="sh-p">
-                        Every piece of that stack is something you understand because you
-                        placed it there. When something breaks — and it will — you know where
-                        to look. When you want to add something new — an LLM agent, a
-                        vector store, a queue — you know where it fits. That knowledge is
-                        not overhead. It is <strong>ownership</strong>.
-                    </p>
-
-                    <p className="sh-p">
-                        And here is the part that the managed platform marketing doesn&apos;t
-                        want you to know: this stack is not just cheaper and more liberating.
-                        It is <strong>where new ideas happen</strong>. The people tinkering
-                        with local RAG pipelines on their own hardware are the ones finding
-                        the next thing. The people tunneling Ollama across a Tailscale mesh
-                        are the ones discovering what &ldquo;agent swarms&rdquo; actually mean
-                        in practice. The people running their own Postgres are the ones who
-                        know what their query planner is doing — and when it should do
-                        something different.
-                    </p>
-
-                    <div className="sh-callout">
-                        Innovation does not happen in dashboards. It happens at the boundary
-                        between what you know and what you can make the machine do. That
-                        boundary is closest to the metal.
-                    </div>
 
                     {/* §06 */}
                     <h2 className="sh-h2">
                         <span className="sh-secnum">06 / The edge you&apos;re looking for</span>
-                        It&apos;s the same one that was always there
+                        It&apos;s a rack. It&apos;s cables. It&apos;s heat.
                     </h2>
                     <p className="sh-p">
-                        I don&apos;t mean this as a prescription. You don&apos;t need to
-                        self-host everything. Some managed services solve real problems —
-                        email delivery, CDN, authentication — and using them is not surrender.
-                        The point is not purity.
+                        I don&apos;t mean this as a prescription. Not everything needs to
+                        be self-hosted. Email delivery, CDN, managed auth — these are real
+                        problems and using them is not surrender. The point is not purity.
                     </p>
 
                     <p className="sh-p">
-                        The point is that <strong>the coolest thing about building tech was
-                        never the technology</strong>. It was the act of making something
-                        yours. Of understanding the system deeply enough to shape it. Of
-                        holding your own keys and knowing where the edges are.
+                        The point is that the coolest thing about building tech was always
+                        the <strong>physical part</strong>. The rack. The cables. The heat
+                        coming off a GPU. The blinking LEDs on a switch at 2am. A NAS in
+                        the closet that clicks when it spins up. A server you can open and
+                        see what&apos;s inside. That&apos;s what made it feel real.
+                        That&apos;s the cyberpunk.
                     </p>
 
                     <p className="sh-p">
-                        SaaS and managed platforms have done enormous good. They&apos;ve let
-                        more people build than ever before. But they have also flattened the
-                        experience of building into something transactional. You sign up. You
-                        swipe. You integrate. You ship. The cyberpunk edge — the feeling of
-                        being inside the machine, of knowing it from the kernel up — is
-                        harder to find.
+                        Software is free. The hardware is the commitment. You pay for iron
+                        once, you own it, and everything you build on top of it costs
+                        you nothing but creativity and time. The subscription model
+                        inverted that — made software the rent, hardware invisible — and
+                        that&apos;s why it feels hollow. You can&apos;t put your hands
+                        on a cloud subscription.
                     </p>
 
                     <p className="sh-p">
-                        But it&apos;s still there. It&apos;s in every person who runs their
-                        own Postgres instead of signing up for another database-as-a-service.
-                        It&apos;s in every person who wires Ollama to a GPU in their bedroom
-                        instead of paying per-token. It&apos;s in the NAS in the closet, the
-                        Tailscale mesh, the handwritten Caddyfile, the n8n instance that
-                        replaced three SaaS subscriptions.
-                    </p>
-
-                    <p className="sh-p">
-                        The edge moves, but it never goes away. Right now it&apos;s in the
-                        gap between what the platforms offer and what you can build yourself.
-                        That gap is where the interesting stuff lives. It always was.
+                        The edge hasn&apos;t moved. It&apos;s still in every person who
+                        buys a GPU instead of paying per-token. It&apos;s in the NAS, the
+                        switch, the rack, the cables you ran through the wall yourself.
+                        It&apos;s in the decision to <strong>own the iron</strong> and
+                        let the software be what it was always meant to be: free.
                     </p>
 
                     <p className="sh-closer">
-                        The cloud, the AI APIs, the managed-everything stack — they are
-                        comfortable. They are the blue pill. The red pill is a single VPS,
-                        a Tailscale key, and the decision to <em>know</em> your system
-                        instead of renting it. The door is still there. You already know
-                        which one leads deeper.
+                        Buy a box. Rack it. Wire it. Make it hum. The rest is just
+                        decisions about what rules to run on your own hardware. That&apos;s
+                        the edge. It was always the edge. It still is.
                     </p>
 
                     <footer className="sh-footer">
-                        Infrastructure · DIY · Cyberpunk
+                        Infrastructure · Hardware · Cyberpunk ·<br />
+                        Thanks to Jobin Murphy for the conversation that became this post.
                         <div style={{ marginTop: 20 }}>
                             <Link href="/blog" style={{ color: "var(--accent)", textDecoration: "none" }}>
                                 ← Back to Blog
