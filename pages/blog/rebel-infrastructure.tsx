@@ -20,7 +20,7 @@ export default function RebelInfrastructure() {
                 <title>The server still whispers — Nick White</title>
                 <meta
                     name="description"
-                    content="The cool thing about building tech was always the hardware. The rack, the cables, the heat coming off a GPU. Software is free. The iron is the commitment. Before AI, after AI — that hasn&apos;t changed."
+                    content="From the Homebrew Computer Club to the NAS in your closet. A short history of why the physical culture of computing — the hardware, the cables, the heat — was always the point."
                 />
                 <link rel="icon" href="/mountain.ico" />
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -287,331 +287,314 @@ export default function RebelInfrastructure() {
 
                 <div className="sh-wrap">
                     <header className="sh-header">
-                        <p className="sh-kicker">Hardware · Cyberpunk · DIY</p>
+                        <p className="sh-kicker">History · Hardware · Cyberpunk</p>
                         <h1 className="sh-h1">
-                            The server still whispers<br />
-                            <em>and you should listen</em>
+                            The server still whispers
                         </h1>
                         <p className="sh-lede">
-                            The cool thing about building tech was never the code. It was
-                            the hardware. Racking a server in your closet. Running cable
-                            through the basement. A GPU that hums when it&apos;s working.
-                            The blinking LEDs of a switch at 2am. That&apos;s the cyberpunk
-                            — not the abstraction, but the <strong>physical commitment</strong>.
-                            Software is free. The iron is the line you draw. Before AI,
-                            after AI, that hasn&apos;t changed.
+                            In March 1975, a group of hobbyists gathered in a garage
+                            in Menlo Park, California, to stare at a machine that did
+                            almost nothing. It had no monitor. No keyboard. No operating
+                            system. It was a bag of chips and a circuit board, and the
+                            people in that room could not stop touching it. Fifty years
+                            later, all the abstraction in the world has not replaced
+                            the feeling of your hands on the hardware.
                         </p>
                         <p className="sh-date">June 2026</p>
                     </header>
 
                     {/* §01 */}
                     <h2 className="sh-h2">
-                        <span className="sh-secnum">01 / This is what was actually cool</span>
+                        <span className="sh-secnum">01 / The Homebrew Computer Club</span>
+                        Before there was software, there was soldering
                     </h2>
                     <p className="sh-p">
-                        What was cool about building tech — before AI, before the cloud
-                        became a mall, before every protocol was a subscription — was
-                        <strong> having a bunch of physical hardware to hook up</strong>.
+                        The Homebrew Computer Club&apos;s first meeting in 1975 was not a
+                        software demo. It was a hardware show-and-tell. People brought
+                        boards they had etched themselves, chips they had scavenged,
+                        power supplies they had salvaged from discarded electronics. The
+                        Altair 8800 — the machine that launched Microsoft — was not a
+                        computer as we understand the word today. It was a box with
+                        toggle switches and blinking lights. To program it, you flipped
+                        switches one bit at a time. The reward was a pattern of LEDs.
                     </p>
 
                     <p className="sh-p">
-                        Not the architecture diagram. Not the perfectly abstracted API layer.
-                        The <strong>iron</strong>. Racking a server, running cables through
-                        a drop ceiling, crimping your own Ethernet ends, feeling the heat
-                        come off a GPU when it&apos;s actually working. A switch with blinking
-                        LEDs that tells you which ports have traffic. A NAS that clicks when
-                        it spins up. The hum of a 40mm fan at 3am when you&apos;re debugging
-                        why the connection dropped.
+                        And this was thrilling. Not because the machine was powerful —
+                        it was barely functional — but because it was
+                        <strong> yours</strong>. You built it. You bought the chips, you
+                        wired the bus, you debugged the timing with a logic probe. The
+                        machine answered only to you because you had assembled it with
+                        your own hands. That feeling — the directness of the relationship
+                        between a person and a machine they built — is the thread that
+                        runs through every era of computing that mattered.
                     </p>
 
                     <p className="sh-p">
-                        This is not nostalgia. This is the thing itself. The physical
-                        commitment is what made it feel real. You couldn&apos;t swipe a
-                        credit card and magically have infrastructure. You had to
-                        <strong> buy the box, rack it, wire it, power it</strong>. That
-                        cost was the price of entry, and it meant something. It meant you
-                        were <em>in</em> it.
+                        This is where the culture started, and it was a culture of
+                        <strong> physical making</strong>. The Homebrew Club produced
+                        Apple, not because Wozniak had a brilliant software insight, but
+                        because he had designed a board so elegant and complete that it
+                        reduced a room of discrete chips to a single PCB. The revelatory
+                        moment was not a new program — it was a new piece of hardware
+                        that made computing affordable enough to put on your desk.
                     </p>
 
                     <div className="sh-callout">
-                        Software is expression. Hardware is commitment. The software tells
-                        you what someone wanted to build. The hardware tells you they
-                        actually built it.
+                        Wozniak didn&apos;t sell software. He sold a board. The first
+                        Apple was not a computer you used — it was a computer you
+                        <em> connected to a TV</em> and <em>typed into yourself</em>.
+                        The hardware was the product. The software was what you brought
+                        to it.
                     </div>
-
-                    <p className="sh-p">
-                        The cyberpunk novels understood this better than any of them.
-                        Case jacking into the matrix wasn&apos;t the point. The point was
-                        the deck on the table, the cables, the physical world that connected
-                        to the digital one. The fiction got the <strong>feeling</strong>
-                        right: that owning the iron was an act of rebellion. The megacorp
-                        owned the grid. You owned that box. That distinction never stopped
-                        mattering. It just got harder to find.
-                    </p>
 
                     {/* §02 */}
                     <h2 className="sh-h2">
-                        <span className="sh-secnum">02 / Capex is commitment, opex is rent</span>
-                        The SaaS model inverted everything
+                        <span className="sh-secnum">02 / The BBS and the bedroom server</span>
+                        The machine in the closet is older than the data center
                     </h2>
                     <p className="sh-p">
-                        Think about what the SaaS model did. It inverted the cost structure
-                        completely. Suddenly the <strong>hardware disappeared</strong> and
-                        the <strong>software became the expensive part</strong>. You paid
-                        $0 upfront and $200/mo in subscriptions. No capex, just opex. No
-                        rack, just receipts. No cables, just a login page.
+                        By the 1980s, the personal computer had become something new: a
+                        node. The BBS era was the first great wave of people running
+                        servers out of their homes. A teenager with a Commodore 64, a
+                        ­300-baud modem, and a second phone line could become an island
+                        of connection. Their machine would ring at all hours. Strangers
+                        would upload files, leave messages, play games. The server
+                        lived in a bedroom, or a basement, or a closet. You could hear
+                        it when it was working — the clicks of the hard drive, the
+                        whine of the fan, the screech of the modem handshake.
                     </p>
 
                     <p className="sh-p">
-                        This was sold as liberation from complexity. And in some ways it was.
-                        But it also removed the <strong>point of commitment</strong>. When
-                        you buy a server, you&apos;re making a statement: I&apos;m going to
-                        do something with this. When you subscribe to a service, you&apos;re
-                        making a different one: I&apos;ll pay until I stop needing it. One
-                        is ownership. The other is temporary access.
+                        This was not professional infrastructure. It was the opposite.
+                        It was a kid who had convinced their parents that the second
+                        phone line was for emergencies. It was a tower under a desk
+                        running 24/7, getting hot, gathering dust, and somehow
+                        connecting a neighborhood of strangers into something real.
+                        The hardware was not abstract. It was a machine in your room
+                        that made the outside world arrive through a wire you had
+                        screwed into the wall jack yourself.
                     </p>
 
                     <p className="sh-p">
-                        The cyberpunk move is the opposite: <strong>hardware heavy,
-                        software light</strong>. Spend the money once on iron, then let
-                        the software be free. The cost is concentrated at the moment of
-                        acquisition — that&apos;s the real commitment, the line you draw.
-                        After that, the marginal cost of doing anything interesting
-                        approaches zero. Your NAS, your GPU, your switch in the closet —
-                        they sit there and they work until they don&apos;t, and when they
-                        don&apos;t you know why.
+                        The warez scene grew out of this same material culture. The
+                        groups that traded cracked software and traded speed runs were
+                        not organized through platforms. They organized through private
+                        BBS nodes, then through FTP servers on rented colocation space,
+                        then through IRC channels on servers that someone was running
+                        out of their apartment. The hardware was always the constraint.
+                        If you wanted to be a &ldquo;top site,&rdquo; you needed a T1
+                        line — which meant you needed money, or access, or both. The
+                        guys with the hardware were the guys who set the rules.
                     </p>
 
                     <div className="sh-callout">
-                        The subscription model made software the rent and hardware invisible.
-                        That was efficient. It was also empty. The thing that made building
-                        feel real was the weight of the box in your hands.
+                        The scene was a perfect expression of the physical layer as
+                        power. You couldn&apos;t download your way into it. You had to
+                        build your way in — find the money for the drive, the bandwidth,
+                        the electricity. The server was not a metaphor. It was a box in
+                        someone&apos;s basement that you could, if you knew the right
+                        people, go and touch.
                     </div>
-
-                    <p className="sh-p">
-                        You can&apos;t hold a serverless function. You can&apos;t hear
-                        a managed database spin up. You can&apos;t feel the heat from a
-                        cloud subscription. Those things might be cheaper, faster, more
-                        reliable — but they are <strong>not cool</strong>. And cool is not
-                        a frivolous category. Cool is what makes people want to build things
-                        that didn&apos;t exist before.
-                    </p>
 
                     {/* §03 */}
                     <h2 className="sh-h2">
-                        <span className="sh-secnum">03 / The stack you can touch</span>
-                        What the rebel setup looks like in 2026
+                        <span className="sh-secnum">03 / Colocation and the first datacenter feeling</span>
+                        Racking your own iron in a building full of other people&apos;s
                     </h2>
                     <p className="sh-p">
-                        So what does this look like in practice? A rack. A closet. A desk
-                        with a tower under it that is louder than it should be. A switch
-                        with more ports than you need, because you&apos;re going to add
-                        more. A NAS with drives that you chose and installed yourself. A
-                        GPU that&apos;s way overkill for what you&apos;re doing, but you
-                        wanted to see how fast it could go.
+                        By the early 2000s, the bedroom server had a bigger sibling:
+                        colocation. You rented a half-rack or a full rack in a building
+                        full of other people&apos;s racks. You drove there with a
+                        server in your passenger seat, signed in at the front desk, and
+                        wheeled your box through a hallway lined with cages. The sound
+                        hit you first — a low roar of thousands of fans. The cold air
+                        hit you second.
                     </p>
 
                     <p className="sh-p">
-                        The software on top is free. Linux, Postgres, Caddy, Tailscale,
-                        Docker, Ollama, n8n, Qdrant — every piece of the stack costs $0.
-                        You might spend on a domain name and electricity. That&apos;s it.
-                        The hardware is the only investment, and it&apos;s a one-time
-                        investment in <strong>your own capability</strong>.
-                    </p>
-
-                    <div className="sh-pros-cons">
-                        <div className="sh-card">
-                            <div className="sh-card-label for">The rebel stack</div>
-                            <ul>
-                                <li><strong>Hardware:</strong> Buy once, own forever</li>
-                                <li><strong>Software:</strong> Free. All of it.</li>
-                                <li><strong>Cost:</strong> Concentrated upfront, near-zero marginal</li>
-                                <li><strong>Repair:</strong> You. Your hands. Your multimeter.</li>
-                                <li><strong>Cool factor:</strong> High. Rack, cables, LEDs, heat.</li>
-                            </ul>
-                        </div>
-                        <div className="sh-card">
-                            <div className="sh-card-label against">The SaaS stack</div>
-                            <ul>
-                                <li><strong>Hardware:</strong> You never see it</li>
-                                <li><strong>Software:</strong> $200/mo in subscriptions</li>
-                                <li><strong>Cost:</strong> Zero upfront, endless opex</li>
-                                <li><strong>Repair:</strong> Ticket. Wait. Hope.</li>
-                                <li><strong>Cool factor:</strong> Low. You have nothing to touch.</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <p className="sh-p">
-                        And here is the part that matters: the people running their own
-                        hardware are the ones finding the next thing. The RTX 3060 in a
-                        bedroom running Ollama is where the local-first AI projects happen.
-                        The NAS in the closet is where the self-hosted media, the private
-                        backups, the knowledge graphs live. The switch with the blinking
-                        ports is where you learn how networking actually works — not as
-                        an abstraction, but as cable lengths and firewall rules that you
-                        wrote yourself.
-                    </p>
-
-                    {/* §04 */}
-                    <h2 className="sh-h2">
-                        <span className="sh-secnum">04 / What AI changed</span>
-                        Nothing. That&apos;s the point.
-                    </h2>
-                    <p className="sh-p">
-                        AI didn&apos;t change any of this. It made the operational layer
-                        easier — AI writes your Dockerfile, debugs your Postgres pool,
-                        generates your Caddy config. The ops friction that made SaaS look
-                        attractive has mostly collapsed. The only question left is whether
-                        you want to <strong>own the iron or rent the abstraction</strong>.
+                        Racking a server in a colo facility is one of the most
+                        underrated experiences in technology. You slide the rails in.
+                        You tighten the screws. You plug in power — redundant, two PSUs.
+                        You plug in Ethernet — also redundant. You cable-manage because
+                        you have standards. And then you step back and look at your
+                        machine, one of hundreds, and you know that it is
+                        <strong> yours</strong>. The blinking light on the front panel
+                        — the one that tells you the drive is active — that light is
+                        responding to code you wrote. That heat coming off the front
+                        grille is your process. Your database. Your users.
                     </p>
 
                     <p className="sh-p">
-                        The most interesting projects in the AI ecosystem right now —
-                        local-first LLMs, custom RAG pipelines, personal knowledge graphs,
-                        privacy-preserving inference — all require the kind of hardware
-                        that managed platforms don&apos;t serve well. They need a GPU you
-                        control. They need a NAS you own. They need a machine you can
-                        physically reach. The people building those things are the same
-                        people who were racking servers ten years ago. The edge hasn&apos;t
-                        moved. It&apos;s just gotten quieter.
+                        This was never a cost-optimal choice. Colocation was not cheaper
+                        than shared hosting. It was not even cheaper than a managed
+                        provider. People did it because they wanted to
+                        <strong> touch their infrastructure</strong>. They wanted to be
+                        in the same room as the machine that served their users. They
+                        wanted the ritual of the drive to the datacenter, the security
+                        badge, the cold aisle, the blinking lights. That ritual was not
+                        overhead. It was the point.
                     </p>
 
                     <div className="sh-callout">
-                        AI didn&apos;t make hardware irrelevant. It made the software part
-                        free. The hardware part — the commitment, the weight, the heat,
-                        the hum — that&apos;s still the line you draw. <em>That&apos;s</em>
-                        what&apos;s cool.
+                        Every datacenter has a moment of silence when the cage door
+                        closes behind you and you hear your own server above the
+                        roar. That sound is not useful. It is not measurable. It is
+                        the <em>art</em> of infrastructure.
                     </div>
+
+                    {/* §04 */}
+                    <h2 className="sh-h2">
+                        <span className="sh-secnum">04 / The abstraction wave</span>
+                        What was gained, and what went quiet
+                    </h2>
+                    <p className="sh-p">
+                        Then the cloud happened, and then SaaS, and then serverless, and
+                        the hardware got quiet. The abstraction layer was so effective
+                        that millions of people built software for years without ever
+                        touching a physical machine. They deployed to platforms that had
+                        no blinking lights. They stored data in systems they had never
+                        seen. They paid subscriptions for services that ran on hardware
+                        someone else had bought, racked, wired, and maintained.
+                    </p>
+
+                    <p className="sh-p">
+                        This was a genuine achievement. Computing became accessible to
+                        people who would never have racked a server. The barrier
+                        dropped from &ldquo;buy a box&rdquo; to &ldquo;swipe a card.&rdquo;
+                        A generation of builders grew up in the abstraction layer, and
+                        they built incredible things. The cloud is not a mistake. It is
+                        a miracle of engineering that made the invisible visible —
+                        except that it also made the hardware invisible, and with it,
+                        something else went away.
+                    </p>
+
+                    <p className="sh-p">
+                        The texture went away. Building became frictionless and
+                        therefore forgettable. You could deploy a full-stack application
+                        without ever knowing what a CPU looked like. You could store
+                        terabytes without ever hearing a hard drive click. You could
+                        ship code without ever being in the same room as the machine
+                        that ran it. The experience of computing became purely cognitive
+                        — a flow of abstractions through a screen. The body was no
+                        longer involved.
+                    </p>
+
+                    <div className="sh-callout">
+                        The homelab community survived the abstraction wave intact
+                        because it was never about efficiency. It was about
+                        <em> having something to hold</em>. A server you can touch is
+                        a different category of thing from a cloud subscription.
+                    </div>
+
+                    <p className="sh-p">
+                        The people who kept building their own hardware during the SaaS
+                        boom were often dismissed as hobbyists, tinkerers, people who
+                        hadn&apos;t gotten the memo about the cloud. But that dismissal
+                        missed the point. They weren&apos;t failing to understand
+                        abstraction. They were preserving something that abstraction
+                        was designed to erase: the direct physical relationship
+                        between builder and machine.
+                    </p>
 
                     {/* §05 */}
                     <h2 className="sh-h2">
-                        <span className="sh-secnum">05 / The cost of being a cyberpunk</span>
-                        Hardware is expensive. Software is free.
+                        <span className="sh-secnum">05 / The homelab renaissance</span>
+                        Why people still buy racks
                     </h2>
                     <p className="sh-p">
-                        Let&apos;s be honest: the barrier to this life is not skill. It&apos;s
-                        money. You can have more technical ability than anyone in the room,
-                        but if you can&apos;t afford the hardware, you are stuck renting.
-                        The GPU. The NAS. The switch. The rack. The cables. The UPS. It adds
-                        up, and it adds up fast.
+                        The homelab community — the people who build servers in their
+                        homes, their closets, their garages — never went away. What
+                        changed is that they stopped being a niche and started being a
+                        signal. In 2026, the homelab is larger than it has ever been,
+                        not despite the cloud but because of it. The easier the cloud
+                        makes pure software, the more the hardware becomes the
+                        differentiator. The more abstraction flattens experience, the
+                        more people seek the texture of something real.
                     </p>
 
                     <p className="sh-p">
-                        That&apos;s the trade. You <strong>spend once</strong> on iron and
-                        then the software is yours — free, unencumbered, unsubscriptioned.
-                        Every project after the first one costs you nothing in platform fees.
-                        Your database is Postgres on your box. Your queue is NATS on your
-                        NAS. Your inference runs on your GPU, one electricity bill, no
-                        per-token metering. The upfront cost stings. The marginal cost of
-                        creation after that is effectively zero.
+                        A homelab is not a rational choice. It is a
+                        <strong> cultural</strong> one. You buy a rack because you want
+                        to own the stack from the metal up. You wire a switch because
+                        you want to understand how the packets actually flow. You
+                        install a GPU because you want to hear it work. The fact that
+                        AI has made the software layer nearly free has only sharpened
+                        this: if the code costs nothing, the <strong>hardware</strong>
+                        is the only commitment that matters. The machine in your closet
+                        is not infrastructure. It is a statement.
                     </p>
 
                     <p className="sh-p">
-                        Compare that to the SaaS path. You pay nothing up front and you
-                        <strong> never stop paying</strong>. The subscriptions accumulate.
-                        The bills creep. You optimize by reducing usage — which means
-                        reducing what you build. The SaaS model has a built-in tax on
-                        creation. The hardware model has a sunk cost that only gets cheaper
-                        the more you use it.
+                        The modern homelab connects directly back to the Homebrew
+                        Computer Club, to the BBS operator, to the colo cage. The
+                        hardware is different but the impulse is identical: I am going
+                        to build my own machine, and it is going to answer only to me.
+                        Fifty years of abstraction have not erased that impulse. They
+                        have only made it more deliberate.
                     </p>
 
-                    <table className="sh-table">
-                        <thead>
-                            <tr>
-                                <th>Category</th>
-                                <th>SaaS path (monthly)</th>
-                                <th>Rebel path (one-time)</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>LLM inference</td>
-                                <td>$20–200 / mo (API tokens)</td>
-                                <td className="accent">~$800 GPU, free software</td>
-                            </tr>
-                            <tr>
-                                <td>Database</td>
-                                <td>$25 / mo (Neon, Supabase)</td>
-                                <td className="accent">$0. Postgres is free.</td>
-                            </tr>
-                            <tr>
-                                <td>File storage</td>
-                                <td>$24 / mo (iCloud, Google One)</td>
-                                <td className="accent">~$400 NAS, free software</td>
-                            </tr>
-                            <tr>
-                                <td>Automation</td>
-                                <td>$30 / mo (Zapier, Make)</td>
-                                <td className="accent">$0. n8n is free.</td>
-                            </tr>
-                            <tr>
-                                <td>Hosting</td>
-                                <td>$20 / mo (Vercel, Heroku)</td>
-                                <td className="accent">~$6 / mo Hetzner or your own rack</td>
-                            </tr>
-                            <tr>
-                                <td>Network</td>
-                                <td>$15 / mo (VPN subscription)</td>
-                                <td className="accent">$0. Tailscale + WireGuard.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <p className="sh-p">
-                        The SaaS path is $100–300/mo and you have nothing physical to show
-                        for it. The hardware path is a few thousand dollars once and you own
-                        the entire stack. Over two years the hardware path is cheaper. Over
-                        five years it&apos;s dramatically cheaper. But more importantly,
-                        it&apos;s <strong>yours</strong>. You can touch it. You can hear it.
-                        You can open the case and see what&apos;s inside.
-                    </p>
+                    <div className="sh-callout">
+                        The people building homelabs today are preserving a tradition
+                        that predates the commercial internet. They are the direct
+                        descendants of the hobbyists in that Menlo Park garage. The
+                        components have changed. The feeling hasn&apos;t.
+                    </div>
 
                     {/* §06 */}
                     <h2 className="sh-h2">
-                        <span className="sh-secnum">06 / The edge you&apos;re looking for</span>
-                        It&apos;s a rack. It&apos;s cables. It&apos;s heat.
+                        <span className="sh-secnum">06 / The server still whispers</span>
+                        The feeling you can&apos;t abstract
                     </h2>
                     <p className="sh-p">
-                        I don&apos;t mean this as a prescription. Not everything needs to
-                        be self-hosted. Email delivery, CDN, managed auth — these are real
-                        problems and using them is not surrender. The point is not purity.
+                        I mentioned earlier that in March 1975, a group of strangers
+                        gathered in a garage to stare at a machine that did almost
+                        nothing. What I didn&apos;t say is what they did with the rest
+                        of the evening: they talked, they argued, they showed each other
+                        what they had built. The machine was a catalyst. The real
+                        meeting was the people, and the things they brought to show.
                     </p>
 
                     <p className="sh-p">
-                        The point is that the coolest thing about building tech was always
-                        the <strong>physical part</strong>. The rack. The cables. The heat
-                        coming off a GPU. The blinking LEDs on a switch at 2am. A NAS in
-                        the closet that clicks when it spins up. A server you can open and
-                        see what&apos;s inside. That&apos;s what made it feel real.
-                        That&apos;s the cyberpunk.
+                        That pattern repeats every time someone racks a server, crimps
+                        a cable, or installs a drive in their NAS. The hardware is an
+                        invitation. It says: I built this. I understand it. If you want
+                        to talk about it, I can show you.
                     </p>
 
                     <p className="sh-p">
-                        Software is free. The hardware is the commitment. You pay for iron
-                        once, you own it, and everything you build on top of it costs
-                        you nothing but creativity and time. The subscription model
-                        inverted that — made software the rent, hardware invisible — and
-                        that&apos;s why it feels hollow. You can&apos;t put your hands
-                        on a cloud subscription.
+                        The cloud gave us efficiency, scale, and access. It took away
+                        the weight, the noise, and the heat. For most people, that
+                        trade was worth it. But something was lost, and pretending
+                        otherwise is how you end up with a generation of engineers who
+                        can deploy anything and understand nothing — who can spin up a
+                        cluster but have never been in the same room as one.
                     </p>
 
                     <p className="sh-p">
-                        The edge hasn&apos;t moved. It&apos;s still in every person who
-                        buys a GPU instead of paying per-token. It&apos;s in the NAS, the
-                        switch, the rack, the cables you ran through the wall yourself.
-                        It&apos;s in the decision to <strong>own the iron</strong> and
-                        let the software be what it was always meant to be: free.
+                        The server in your closet is not a productivity optimization.
+                        It is not a cost savings. It is a connection to the culture
+                        that made computing interesting in the first place — the
+                        culture of people who built their own machines and showed them
+                        to each other. That culture did not end with the Homebrew
+                        Computer Club. It did not end with the BBS. It is still alive
+                        in every person who buys a switch, racks a server, and feels
+                        the heat come off the front grille.
                     </p>
 
                     <p className="sh-closer">
-                        Buy a box. Rack it. Wire it. Make it hum. The rest is just
-                        decisions about what rules to run on your own hardware. That&apos;s
-                        the edge. It was always the edge. It still is.
+                        There is a room in Menlo Park, California, that no longer
+                        exists as a garage. But the feeling that started there — the
+                        feeling of building your own machine, of being physically
+                        connected to the system you control — is still here. You can
+                        find it in any closet, any basement, any desk with a tower
+                        under it that is louder than it should be. The hardware is the
+                        history. The cables are the continuity. The server still
+                        whispers.
                     </p>
 
                     <footer className="sh-footer">
-                        Infrastructure · Hardware · Cyberpunk ·<br />
+                        History · Hardware · Homelab · Cyberpunk ·<br />
                         Thanks to Jobin Murphy for the conversation that became this post.
                         <div style={{ marginTop: 20 }}>
                             <Link href="/blog" style={{ color: "var(--accent)", textDecoration: "none" }}>
