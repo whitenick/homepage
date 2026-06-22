@@ -147,5 +147,31 @@
     "followUps": 1,
     "snippet": "Product Engineer at Squad, an AI-first recruiting startup (10x growth, $5M raised); TypeScript/React, direct founder collaboration, building the recruiter dashboard.",
     "comp": "$170K–$220K + equity"
+  },
+  {
+    "id": "19dbfb0c23fd7713",
+    "company": "Clarium",
+    "role": "Engineering Manager",
+    "recruiter": "Shelley",
+    "recruiterEmail": "shelley@growthmode.partners",
+    "agency": "Growth Mode Partners",
+    "date": "2026-04-24",
+    "status": "needs-reply",
+    "followUps": 1,
+    "snippet": "Engineering Manager at Clarium Health; Nick met with hiring manager Avishkar Autar and followed up expressing genuine excitement about the role.",
+    "notes": "Nick sent enthusiastic follow-up to Shelley on May 20 after a strong intro call with Avishkar Autar — awaiting recruiter response."
+  },
+  {
+    "id": "19db0b40cb7881e6",
+    "company": "Middesk",
+    "role": "Engineering Manager, Entity Management",
+    "recruiter": "Tommy Lee",
+    "recruiterEmail": "tommy@fusetalent.io",
+    "agency": "Fuse Talent",
+    "date": "2026-04-21",
+    "status": "needs-reply",
+    "followUps": 3,
+    "snippet": "Engineering Manager, Entity Management at Middesk (business identity verification); intro screen and team assessment stages completed.",
+    "notes": "Process advanced significantly — intro screen with Middesk (Apr 30) and team assessment (May 7, 20) with bryn@middesk.com."
   }
 ]
