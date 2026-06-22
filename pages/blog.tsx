@@ -117,10 +117,9 @@ export default function Blog() {
                                             The server still whispers
                                         </span>
                                         <span className="block text-sm text-[#2D2926]/50 mt-1.5">
-                                            The cool thing about building tech was always
-                                            the hardware. Rack, cables, GPU heat at 2am.
-                                            Software is free. The iron is the commitment.
-                                            That&apos;s the edge that hasn&apos;t moved.
+                                            SaaS charged rent on complexity. AI just
+                                            made it free. Owning your own stack is no
+                                            longer a hobby — it is a political act.
                                         </span>
                                     </span>
                                     <span className="text-xs font-mono tracking-widest text-[#B85C38] shrink-0 opacity-0 group-hover:opacity-100 transition-opacity">

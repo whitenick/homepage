@@ -20,7 +20,7 @@ export default function RebelInfrastructure() {
                 <title>The server still whispers — Nick White</title>
                 <meta
                     name="description"
-                    content="From the Homebrew Computer Club to the NAS in your closet. A short history of why the physical culture of computing — the hardware, the cables, the heat — was always the point."
+                    content="SaaS charged rent on complexity. AI just made it free. Self-hosting isn't just cheaper — it's a political act."
                 />
                 <link rel="icon" href="/mountain.ico" />
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -287,18 +287,14 @@ export default function RebelInfrastructure() {
 
                 <div className="sh-wrap">
                     <header className="sh-header">
-                        <p className="sh-kicker">History · Hardware · Cyberpunk</p>
+                        <p className="sh-kicker">Infrastructure · Politics · AI</p>
                         <h1 className="sh-h1">
                             The server still whispers
                         </h1>
                         <p className="sh-lede">
-                            In March 1975, a group of hobbyists gathered in a garage
-                            in Menlo Park, California, to stare at a machine that did
-                            almost nothing. It had no monitor. No keyboard. No operating
-                            system. It was a bag of chips and a circuit board, and the
-                            people in that room could not stop touching it. Fifty years
-                            later, all the abstraction in the world has not replaced
-                            the feeling of your hands on the hardware.
+                            SaaS charged rent on complexity. AI just made it free.
+                            Owning your own stack is no longer a hobby — it is a
+                            political act.
                         </p>
                         <p className="sh-date">June 2026</p>
                     </header>
@@ -357,7 +353,7 @@ export default function RebelInfrastructure() {
                         By the 1980s, the personal computer had become something new: a
                         node. The BBS era was the first great wave of people running
                         servers out of their homes. A teenager with a Commodore 64, a
-                        ­300-baud modem, and a second phone line could become an island
+                        300-baud modem, and a second phone line could become an island
                         of connection. Their machine would ring at all hours. Strangers
                         would upload files, leave messages, play games. The server
                         lived in a bedroom, or a basement, or a closet. You could hear
@@ -445,105 +441,206 @@ export default function RebelInfrastructure() {
 
                     {/* §04 */}
                     <h2 className="sh-h2">
-                        <span className="sh-secnum">04 / The abstraction wave</span>
-                        What was gained, and what went quiet
+                        <span className="sh-secnum">04 / The SaaS deal</span>
+                        Complexity was the moat. Subscription was the toll.
                     </h2>
                     <p className="sh-p">
-                        Then the cloud happened, and then SaaS, and then serverless, and
-                        the hardware got quiet. The abstraction layer was so effective
-                        that millions of people built software for years without ever
-                        touching a physical machine. They deployed to platforms that had
-                        no blinking lights. They stored data in systems they had never
-                        seen. They paid subscriptions for services that ran on hardware
-                        someone else had bought, racked, wired, and maintained.
+                        Somewhere in the migration from colo to cloud, the relationship
+                        flipped. The cloud sold itself as efficiency — no more
+                        provisioning hardware, no more patching OSes, no more worrying
+                        about power and cooling. But the real product was
+                        <strong> complexity rent</strong>. The unspoken premise was:
+                        <em>you can&apos;t do this yourself, so pay us.</em>
                     </p>
 
                     <p className="sh-p">
-                        This was a genuine achievement. Computing became accessible to
-                        people who would never have racked a server. The barrier
-                        dropped from &ldquo;buy a box&rdquo; to &ldquo;swipe a card.&rdquo;
-                        A generation of builders grew up in the abstraction layer, and
-                        they built incredible things. The cloud is not a mistake. It is
-                        a miracle of engineering that made the invisible visible —
-                        except that it also made the hardware invisible, and with it,
-                        something else went away.
+                        The SaaS model took that premise and industrialized it. Deep
+                        knowledge was scarce. Postgres administration was a skill. TLS
+                        configuration was a skill. Load balancing, reverse proxying,
+                        storage replication — every layer of the stack was a frontier
+                        that required months or years to cross. The people who had
+                        crossed it charged a toll. Monthly. Per seat. Per request. Per
+                        GB. And because the alternative was doing it yourself — which
+                        was genuinely hard — you paid.
                     </p>
 
                     <p className="sh-p">
-                        The texture went away. Building became frictionless and
-                        therefore forgettable. You could deploy a full-stack application
-                        without ever knowing what a CPU looked like. You could store
-                        terabytes without ever hearing a hard drive click. You could
-                        ship code without ever being in the same room as the machine
-                        that ran it. The experience of computing became purely cognitive
-                        — a flow of abstractions through a screen. The body was no
-                        longer involved.
+                        This was not a conspiracy. It was a natural consequence of
+                        complexity. But it produced a structural outcome that nobody
+                        talked about: <strong>the tenant relationship.</strong> Every
+                        subscription you paid meant someone else owned the keys. Someone
+                        else stored your data. Someone else decided what the next
+                        version would cost. You were a renter in your own stack.
+                    </p>
+
+                    <p className="sh-p">
+                        And because the complexity was real, the rent felt fair. For a
+                        long time, it was.
                     </p>
 
                     <div className="sh-callout">
-                        The homelab community survived the abstraction wave intact
-                        because it was never about efficiency. It was about
-                        <em> having something to hold</em>. A server you can touch is
-                        a different category of thing from a cloud subscription.
+                        The subscription economy doesn&apos;t just take your money. It
+                        shapes your behavior. When every tool is a monthly payment, you
+                        stop asking <em>&ldquo;Do I need this?&rdquo;</em> — you just
+                        let the auto-pay run. The cost becomes invisible. That&apos;s
+                        the real lock-in, not the API key.
                     </div>
-
-                    <p className="sh-p">
-                        The people who kept building their own hardware during the SaaS
-                        boom were often dismissed as hobbyists, tinkerers, people who
-                        hadn&apos;t gotten the memo about the cloud. But that dismissal
-                        missed the point. They weren&apos;t failing to understand
-                        abstraction. They were preserving something that abstraction
-                        was designed to erase: the direct physical relationship
-                        between builder and machine.
-                    </p>
 
                     {/* §05 */}
                     <h2 className="sh-h2">
-                        <span className="sh-secnum">05 / The homelab renaissance</span>
-                        Why people still buy racks
+                        <span className="sh-secnum">05 / The moat drains</span>
+                        What happens when infrastructure costs a prompt
                     </h2>
                     <p className="sh-p">
-                        The homelab community — the people who build servers in their
-                        homes, their closets, their garages — never went away. What
-                        changed is that they stopped being a niche and started being a
-                        signal. In 2026, the homelab is larger than it has ever been,
-                        not despite the cloud but because of it. The easier the cloud
-                        makes pure software, the more the hardware becomes the
-                        differentiator. The more abstraction flattens experience, the
-                        more people seek the texture of something real.
+                        The premise that held for thirty years — that infrastructure
+                        requires deep, scarce knowledge — has a hole in it now.
                     </p>
 
                     <p className="sh-p">
-                        A homelab is not a rational choice. It is a
-                        <strong> cultural</strong> one. You buy a rack because you want
-                        to own the stack from the metal up. You wire a switch because
-                        you want to understand how the packets actually flow. You
-                        install a GPU because you want to hear it work. The fact that
-                        AI has made the software layer nearly free has only sharpened
-                        this: if the code costs nothing, the <strong>hardware</strong>
-                        is the only commitment that matters. The machine in your closet
-                        is not infrastructure. It is a statement.
+                        A working Postgres config with Caddy reverse proxy, Tailscale
+                        auth, automated backups, and a health-check endpoint used to be
+                        a week of reading and a hundred Stack Overflow tabs. Today it
+                        is a single prompt. AI doesn&apos;t just help with the config
+                        files — it explains the architecture decisions, it handles the
+                        edge cases, it debugs the connection string when something
+                        doesn&apos;t resolve.
                     </p>
 
                     <p className="sh-p">
-                        The modern homelab connects directly back to the Homebrew
-                        Computer Club, to the BBS operator, to the colo cage. The
-                        hardware is different but the impulse is identical: I am going
-                        to build my own machine, and it is going to answer only to me.
-                        Fifty years of abstraction have not erased that impulse. They
-                        have only made it more deliberate.
+                        This changes the economics fundamentally. The barrier to running
+                        your own infrastructure was never the cost of the hardware —
+                        a Hetzner AX102 is $38/month and is more machine than most
+                        teams of ten would need. The barrier was the
+                        <strong> knowledge</strong>. The barrier was knowing how to
+                        wire the thing together well enough to trust it with your data.
+                    </p>
+
+                    <p className="sh-p">
+                        That barrier is gone. Or, more precisely, it has been reduced
+                        to a vanishing thin layer: you still need to want to learn.
+                        But the gulf between wanting and doing collapsed the day models
+                        could generate, explain, and debug a full infrastructure stack
+                        in natural language.
                     </p>
 
                     <div className="sh-callout">
-                        The people building homelabs today are preserving a tradition
-                        that predates the commercial internet. They are the direct
-                        descendants of the hobbyists in that Menlo Park garage. The
-                        components have changed. The feeling hasn&apos;t.
+                        If I can prompt a working Postgres config with Caddy reverse
+                        proxy and Tailscale auth in thirty seconds, what exactly am I
+                        paying the SaaS company for? Convenience? Convenience is now a
+                        prompt. Support? The model knows the docs. Reliability? My
+                        Hetzner box doesn&apos;t have a quarterly price hike baked
+                        into its roadmap.
                     </div>
+
+                    <p className="sh-p">
+                        The question is not <em>can I run it myself</em> anymore. The
+                        question is <em>why wouldn&apos;t I?</em> And the only honest
+                        answer is: <em>because I don&apos;t want to.</em> Which is fine.
+                        But it&apos;s no longer <em>because I can&apos;t.</em> That
+                        change is tectonic.
+                    </p>
 
                     {/* §06 */}
                     <h2 className="sh-h2">
-                        <span className="sh-secnum">06 / The server still whispers</span>
+                        <span className="sh-secnum">06 / The political act</span>
+                        Owning the keys when subscriptions are the only game
+                    </h2>
+                    <p className="sh-p">
+                        Subscription costs are not stable. They ratchet up. Every
+                        platform that started at $10/user/month has a trajectory toward
+                        $30, $50, $100 — or toward enshittification that makes the
+                        price irrelevant because the service is no longer worth
+                        paying for. Technology is being abstracted into layers that
+                        only the highest bidders can access at full quality.
+                    </p>
+
+                    <p className="sh-p">
+                        The unspoken end state of the subscription economy is a
+                        tiered-access world: fast inference for the people who pay
+                        $200/month, good-enough inference for the people who pay
+                        $20/month, and a wall for everyone else. Not because the
+                        hardware requires that tiering — inference costs are dropping
+                        every quarter — but because the pricing model was designed
+                        around extracting rent, not around enabling access.
+                    </p>
+
+                    <p className="sh-p">
+                        This is where owning your stack becomes a political act, not
+                        just a cost optimization. When you run all of your open-source
+                        tools on a single server that costs less than the sum of the
+                        subscriptions it replaces, you are making a statement:
+                    </p>
+
+                    <div className="sh-callout">
+                        <em>&ldquo;It&apos;s not so complicated for me to do this
+                        myself. I&apos;d rather keep the money and the keys.&rdquo;</em>
+                    </div>
+
+                    <p className="sh-p">
+                        That server is not infrastructure. It is a counterweight.
+                        Every subscription you cancel is a unit of lock-in you claw
+                        back. Every tool you run yourself is a relationship with the
+                        technology that is direct, owned, and fixed-cost. Your
+                        hardware bill is flat — a number you chose, once, upfront. It
+                        does not scale with your usage. It does not re-price at
+                        renewal. It is <strong>yours</strong>.
+                    </p>
+
+                    <table className="sh-table">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>SaaS model</th>
+                                <th>Self-hosted</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td className="mono">Cost structure</td>
+                                <td>Per-seat, per-request, recurring</td>
+                                <td className="accent">Fixed, one-time hardware + power</td>
+                            </tr>
+                            <tr>
+                                <td className="mono">Knowledge barrier</td>
+                                <td>Low (that&apos;s the deal)</td>
+                                <td className="accent">Now low (AI handles the complexity)</td>
+                            </tr>
+                            <tr>
+                                <td className="mono">Who owns the data</td>
+                                <td>The platform</td>
+                                <td className="accent">You</td>
+                            </tr>
+                            <tr>
+                                <td className="mono">Price trajectory</td>
+                                <td>Upward forever</td>
+                                <td className="accent">Flat forever</td>
+                            </tr>
+                            <tr>
+                                <td className="mono">Lock-in</td>
+                                <td>Deep (migration cost + habit)</td>
+                                <td className="accent">None (open standards, open tools)</td>
+                            </tr>
+                            <tr>
+                                <td className="mono">New capability cost</td>
+                                <td>Another subscription</td>
+                                <td className="accent">Free (same server, new service)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p className="sh-p">
+                        The last row is the one that really matters. A SaaS stack that
+                        costs $400/month for ten tools can grow to $800/month without
+                        you noticing. A self-hosted server costs the same in month 1
+                        as it does in month 24. Every new service you add — a knowledge
+                        base, a monitoring dashboard, an inference endpoint — is
+                        marginal cost zero. The server does not care how many things
+                        you run on it.
+                    </p>
+
+                    {/* §07 */}
+                    <h2 className="sh-h2">
+                        <span className="sh-secnum">07 / The server still whispers</span>
                         The feeling you can&apos;t abstract
                     </h2>
                     <p className="sh-p">
@@ -564,38 +661,45 @@ export default function RebelInfrastructure() {
 
                     <p className="sh-p">
                         The cloud gave us efficiency, scale, and access. It took away
-                        the weight, the noise, and the heat. For most people, that
-                        trade was worth it. But something was lost, and pretending
-                        otherwise is how you end up with a generation of engineers who
-                        can deploy anything and understand nothing — who can spin up a
-                        cluster but have never been in the same room as one.
+                        the weight, the noise, and the heat — and with them, the
+                        understanding that technology was something you could
+                        <strong> own</strong>, not just rent. The subscription economy
+                        finished the job by making every tool a recurring payment,
+                        every relationship a tenant agreement.
                     </p>
 
                     <p className="sh-p">
-                        The server in your closet is not a productivity optimization.
-                        It is not a cost savings. It is a connection to the culture
-                        that made computing interesting in the first place — the
-                        culture of people who built their own machines and showed them
-                        to each other. That culture did not end with the Homebrew
-                        Computer Club. It did not end with the BBS. It is still alive
-                        in every person who buys a switch, racks a server, and feels
-                        the heat come off the front grille.
+                        The homelab community — the people who build servers in their
+                        homes, their closets, their garages — preserved that ownership
+                        instinct through thirty years of abstraction. They were never a
+                        niche that missed the memo. They were the people who refused to
+                        become tenants. Today, with AI collapsing the knowledge barrier
+                        that made SaaS necessary, their bet looks less like a hobby and
+                        more like the only honest way to build.
+                    </p>
+
+                    <p className="sh-p">
+                        Software is free now — truly free. The model writes the config.
+                        The model debugs the connection. The model documents the stack.
+                        The only thing you pay for, really, is the iron. The machine
+                        in your closet. The box that answers only to you.
                     </p>
 
                     <p className="sh-closer">
-                        There is a room in Menlo Park, California, that no longer
-                        exists as a garage. But the feeling that started there — the
-                        feeling of building your own machine, of being physically
-                        connected to the system you control — is still here. You can
-                        find it in any closet, any basement, any desk with a tower
-                        under it that is louder than it should be. The hardware is the
-                        history. The cables are the continuity. The server still
-                        whispers.
+                        The SaaS deal was a tax on complexity that no longer exists.
+                        The subscription economy is a structural extraction you are
+                        not required to accept. There is still a room in Menlo Park
+                        that no longer exists as a garage. But the feeling that started
+                        there — the feeling of building your own machine, of being
+                        physically connected to the system you control — is still here.
+                        You can find it in any closet, any basement, any desk with a
+                        tower under it that is louder than it should be. The hardware
+                        is the history. The server still whispers.
                     </p>
 
                     <footer className="sh-footer">
-                        History · Hardware · Homelab · Cyberpunk ·<br />
-                        Thanks to Jobin Murphy for the conversation that became this post.
+                        Infrastructure · Politics · AI · Self-hosting ·<br />
+                        Thanks to Jobin Murphy for the conversation that sharpened this post.
                         <div style={{ marginTop: 20 }}>
                             <Link href="/blog" style={{ color: "var(--accent)", textDecoration: "none" }}>
                                 ← Back to Blog
