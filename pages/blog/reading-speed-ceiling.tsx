@@ -423,7 +423,86 @@ export default function ReadingSpeedCeiling() {
 
                     {/* §04 */}
                     <h2 className="sh-h2">
-                        <span className="sh-secnum">04 / The right metric</span>
+                        <span className="sh-secnum">04 / The economics of wasted throughput</span>
+                        You are paying for text you do not read
+                    </h2>
+                    <p className="sh-p">
+                        There is another layer to this that cuts deeper than UX: <strong>every
+                        token you do not read is compute you paid for and discarded.</strong> API
+                        pricing is per-token on both input and output. If the model generates
+                        3,000 tokens for a response but you absorb the equivalent of 100
+                        tokens&apos; worth of content, the cost structure of that interaction is
+                        catastrophically inverted.
+                    </p>
+                    <p className="sh-p">
+                        Run the numbers. A human reading technical text consumes roughly 3 tokens
+                        per second (12 characters ÷ 4 chars per token). A model generating
+                        at 100 tok/s is producing ~33× what you can absorb. That means <strong>~97%
+                        of output tokens in an interactive session are economically wasted.</strong>
+                        You are paying for a firehose when what you need is a glass.
+                    </p>
+
+                    <table className="sh-table">
+                        <thead>
+                            <tr>
+                                <th>Output rate</th>
+                                <th>Tokens generated in 10s</th>
+                                <th>Tokens you actually read</th>
+                                <th>Waste</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>20 tok/s</td>
+                                <td>200</td>
+                                <td>~30</td>
+                                <td className="accent">85%</td>
+                            </tr>
+                            <tr>
+                                <td>50 tok/s</td>
+                                <td>500</td>
+                                <td>~30</td>
+                                <td className="accent">94%</td>
+                            </tr>
+                            <tr>
+                                <td>100 tok/s</td>
+                                <td>1,000</td>
+                                <td>~30</td>
+                                <td className="accent">97%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p className="sh-p">
+                        The waste grows with throughput, not shrinks. Every millisecond of
+                        inference optimization that pushes token rate higher on the interactive
+                        axis multiplies the economic loss. You are not getting more value — you
+                        are getting more discarded compute. The industry is optimizing the cost
+                        curve in the wrong direction for the interactive use case.
+                    </p>
+                    <p className="sh-p">
+                        This creates an interesting product opportunity that nobody has seized
+                        cleanly: a <strong>human-paced inference tier.</strong> Offer the same
+                        model at a fraction of the per-token cost, contractually throttled to
+                        ~12 char/s output. The provider saves on peak compute (no burst pressure,
+                        easier scheduling), the user pays less for what they actually consume,
+                        and the UX is better. Everyone wins except the benchmark. A slower model
+                        that costs less and feels better is a better product.
+                    </p>
+                    <p className="sh-p">
+                        The counterargument is that fast inference is expensive to build and slow
+                        inference does not cost proportionally less at the infrastructure layer
+                        because the model still needs to attend over the full context. That is
+                        true — but the <em>marginal cost</em> of generating tokens the user never
+                        reads is still real, and it compounds across millions of interactions.
+                        A throttled pipeline lets the provider batch and schedule more efficiently
+                        because the output is predictable instead of bursty. There is real savings
+                        in that, even if it is not a simple linear discount.
+                    </p>
+
+                    {/* §05 */}
+                    <h2 className="sh-h2">
+                        <span className="sh-secnum">05 / The right metric</span>
                         Time to first thought
                     </h2>
                     <p className="sh-p">
@@ -466,9 +545,9 @@ export default function ReadingSpeedCeiling() {
                         shoving text onto your screen faster than you can absorb it.
                     </p>
 
-                    {/* §05 */}
+                    {/* §06 */}
                     <h2 className="sh-h2">
-                        <span className="sh-secnum">05 / When fast actually matters</span>
+                        <span className="sh-secnum">06 / When fast actually matters</span>
                         The two regimes
                     </h2>
                     <p className="sh-p">
@@ -518,9 +597,9 @@ export default function ReadingSpeedCeiling() {
                         tokens.
                     </p>
 
-                    {/* §06 */}
+                    {/* §07 */}
                     <h2 className="sh-h2">
-                        <span className="sh-secnum">06 / What this means for products</span>
+                        <span className="sh-secnum">07 / What this means for products</span>
                         Design for the reader, not the benchmark
                     </h2>
                     <p className="sh-p">
