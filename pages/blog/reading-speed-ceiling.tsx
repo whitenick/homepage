@@ -20,7 +20,7 @@ export default function ReadingSpeedCeiling() {
                 <title>Hold the Firehose — Nick White</title>
                 <meta
                     name="description"
-                    content="LLM providers are racing to push 100+ tokens per second. But you can only read about 12 characters per second. That gap is the core UX problem nobody is talking about."
+                    content="You read at ~3 tokens per second. Your LLM generates at 100. That gap is not a technical challenge to overcome — it is 97 cents of every dollar you spend on inference evaporating into text you will never read."
                 />
                 <link rel="icon" href="/mountain.ico" />
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -292,364 +292,361 @@ export default function ReadingSpeedCeiling() {
 
                 <div className="sh-wrap">
                     <header className="sh-header">
-                        <p className="sh-kicker">AI · UX Constraints</p>
+                        <p className="sh-kicker">AI · Inference Economics</p>
                         <h1 className="sh-h1">Hold the Firehose</h1>
                         <p className="sh-lede">
-                            Every LLM provider is racing to push 100+ tokens per second — faster
-                            inference, speculative decoding, quantized attention, hardware-optimized
-                            kernels. And almost none of it matters for the one use case that defines
-                            the entire product category: you, sitting in front of a screen, trying
-                            to read what the model is telling you.
+                            You read at roughly three tokens per second. Your LLM generates at
+                            one hundred. That gap is not a technical challenge to overcome — it
+                            is 97 cents of every dollar you spend on inference evaporating
+                            into text you will never read.
                         </p>
                         <p className="sh-date">June 2026</p>
                     </header>
 
                     {/* §01 */}
                     <h2 className="sh-h2">
-                        <span className="sh-secnum">01 / The token-rate wars</span>
-                        Speed as a benchmark
+                        <span className="sh-secnum">01 / The math you cannot ignore</span>
+                        The waste ratio
                     </h2>
                     <p className="sh-p">
-                        Look at any LLM leaderboard, any model announcement, any inference
-                        benchmark. The headline number is always tokens per second. GPT-4o
-                        pushes past 100 tok/s in the API. Claude Sonnet 4.6 benchmarks at 120+.
-                        Grok claims 150 on the fastest hardware. DeepSeek R1, even with its
-                        chain-of-thought, reportedly pushes 80+ tok/s on optimized infrastructure.
-                        The race is real and it is well-funded.
+                        Let me start with the number that should bother you more than it does:
+                        <strong> 97% of output tokens in a typical interactive LLM session
+                        are economically discarded.</strong> The model generates them. Your GPU
+                        paid for them. And you never read them.
                     </p>
                     <p className="sh-p">
-                        And it is, for interactive use, largely irrelevant.
+                        This is not a corner case or an edge of the distribution. It is the
+                        default state of every conversation you have with a chatbot, every prompt
+                        you type into an assistant, every code suggestion you accept or reject.
+                        The entire consumer LLM industry is built on a cost model where the vast
+                        majority of what you buy you throw away.
                     </p>
                     <p className="sh-p">
-                        Where token-rate matters is batch processing — summarizing a corpus,
-                        generating code at scale, translating documents, re-ranking search results.
-                        In those scenarios, raw throughput directly reduces wall-clock time and that
-                        translates to real value. But those are headless operations. No human is
-                        reading the output as it streams.
-                    </p>
-
-                    {/* §02 */}
-                    <h2 className="sh-h2">
-                        <span className="sh-secnum">02 / The human bottleneck</span>
-                        You read at ~12 characters per second
-                    </h2>
-                    <p className="sh-p">
-                        Let&apos;s anchor on real numbers. Average adult reading speed in English
-                        is about 200–250 words per minute for comfortable comprehension. For
-                        technical or dense text — which is what you&apos;re typically asking an
-                        LLM to produce — that drops to 180–200 wpm. A typical English token in an
-                        LLM is roughly 3–4 characters. At 200 wpm, you&apos;re consuming about 12–14
-                        characters per second.
-                    </p>
-                    <p className="sh-p">
-                        Now overlay the model. At 100 tokens per second, the LLM is generating
-                        roughly 350–400 characters per second. That is <strong>30x faster</strong>
-                        than you can read it. The gap is not marginal — it is a canyon.
-                    </p>
-
-                    <table className="sh-table">
-                        <thead>
-                            <tr>
-                                <th>Layer</th>
-                                <th>Rate</th>
-                                <th>Relative to reading</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Human reading (dense text)</td>
-                                <td>~12 char/s (~200 wpm)</td>
-                                <td className="mono">1×</td>
-                            </tr>
-                            <tr>
-                                <td>LLM at 20 tok/s</td>
-                                <td>~70–80 char/s</td>
-                                <td className="accent">~6× reading</td>
-                            </tr>
-                            <tr>
-                                <td>LLM at 50 tok/s</td>
-                                <td>~175–200 char/s</td>
-                                <td className="accent">~15× reading</td>
-                            </tr>
-                            <tr>
-                                <td>LLM at 100 tok/s</td>
-                                <td>~350–400 char/s</td>
-                                <td className="accent">~30× reading</td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <p className="sh-p">
-                        Even at a modest 20 tokens per second — a rate that would have been
-                        impressive two years ago — the model still outpaces your reading by a
-                        factor of six. The model has generated the entire response before you
-                        have finished reading the first sentence. Everything after that is
-                        compute surplus.
-                    </p>
-
-                    {/* §03 */}
-                    <h2 className="sh-h2">
-                        <span className="sh-secnum">03 / The invisible UX cost</span>
-                        Why excess speed hurts more than it helps
-                    </h2>
-                    <p className="sh-p">
-                        Streaming text is not neutral. When a response streams faster than you can
-                        read, you are forced into a specific cognitive mode: <strong>scan, don&apos;t
-                        read</strong>. You watch the text accumulate, waiting for it to finish so you
-                        can go back and actually absorb it. This is not an improvement — it is an
-                        extra step.
-                    </p>
-                    <p className="sh-p">
-                        Compare this to reading a static page or a book. You control the pace. You
-                        linger. You re-read. The text does not pull your attention forward. Streaming
-                        at 30× reading speed does exactly that — it creates a subtle urgency to
-                        &ldquo;keep up&rdquo; that is antithetical to comprehension.
-                    </p>
-                    <p className="sh-p">
-                        There is also the visual disruption. At high token rates the text jumps and
-                        reflows constantly. If you are trying to read at the top of the response
-                        while the model is still generating the bottom, every new token shifts the
-                        text. Your place is lost. You scan the same sentence three times because the
-                        line broke differently. This is not a niche complaint — it is the daily
-                        experience of anyone who uses chat interfaces for real work.
-                    </p>
-
-                    <div className="sh-callout">
-                        The speed of delivery should match the speed of consumption, not the
-                        speed of generation. This is basic information physics: the faster a
-                        message arrives, the more it disrupts the receiver&apos;s processing
-                        loop.
-                    </div>
-
-                    {/* §04 */}
-                    <h2 className="sh-h2">
-                        <span className="sh-secnum">04 / The economics of wasted throughput</span>
-                        You are paying for text you do not read
-                    </h2>
-                    <p className="sh-p">
-                        There is another layer to this that cuts deeper than UX: <strong>every
-                        token you do not read is compute you paid for and discarded.</strong> API
-                        pricing is per-token on both input and output. If the model generates
-                        3,000 tokens for a response but you absorb the equivalent of 100
-                        tokens&apos; worth of content, the cost structure of that interaction is
-                        catastrophically inverted.
-                    </p>
-                    <p className="sh-p">
-                        Run the numbers. A human reading technical text consumes roughly 3 tokens
-                        per second (12 characters ÷ 4 chars per token). A model generating
-                        at 100 tok/s is producing ~33× what you can absorb. That means <strong>~97%
-                        of output tokens in an interactive session are economically wasted.</strong>
-                        You are paying for a firehose when what you need is a glass.
+                        The intuition is simple. A human reading dense technical text consumes
+                        roughly 200 words per minute — about 3 tokens per second. A model
+                        generating at 100 tokens per second produces 33× what you can absorb.
+                        The gap is not marginal. It is structural. And it gets worse the faster
+                        the model gets, because your reading speed does not change.
                     </p>
 
                     <table className="sh-table">
                         <thead>
                             <tr>
                                 <th>Output rate</th>
-                                <th>Tokens generated in 10s</th>
-                                <th>Tokens you actually read</th>
-                                <th>Waste</th>
+                                <th>Generated in 10s</th>
+                                <th>You read in 10s</th>
+                                <th>Wasted</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td>20 tok/s</td>
-                                <td>200</td>
+                                <td>200 tokens</td>
                                 <td>~30</td>
                                 <td className="accent">85%</td>
                             </tr>
                             <tr>
                                 <td>50 tok/s</td>
-                                <td>500</td>
+                                <td>500 tokens</td>
                                 <td>~30</td>
                                 <td className="accent">94%</td>
                             </tr>
                             <tr>
                                 <td>100 tok/s</td>
-                                <td>1,000</td>
+                                <td>1,000 tokens</td>
                                 <td>~30</td>
                                 <td className="accent">97%</td>
+                            </tr>
+                            <tr>
+                                <td>150 tok/s</td>
+                                <td>1,500 tokens</td>
+                                <td>~30</td>
+                                <td className="accent">98%</td>
                             </tr>
                         </tbody>
                     </table>
 
                     <p className="sh-p">
-                        The waste grows with throughput, not shrinks. Every millisecond of
-                        inference optimization that pushes token rate higher on the interactive
-                        axis multiplies the economic loss. You are not getting more value — you
-                        are getting more discarded compute. The industry is optimizing the cost
-                        curve in the wrong direction for the interactive use case.
+                        The waste ratio increases with throughput. Every engineering hour spent
+                        squeezing another 10 tok/s out of the inference stack makes the interactive
+                        economics <em>worse</em>, not better. The optimization is running in the
+                        wrong direction. And because the entire industry fetishizes token-rate as
+                        the primary benchmark, nobody stops to ask whether faster output actually
+                        creates value for the person reading it.
+                    </p>
+
+                    {/* §02 */}
+                    <h2 className="sh-h2">
+                        <span className="sh-secnum">02 / The ceiling nobody can move</span>
+                        Why your reading speed is fixed
+                    </h2>
+                    <p className="sh-p">
+                        Average adult reading speed in English is 200–250 words per minute for
+                        comfortable comprehension. For technical or analytical text — which is
+                        mostly what people ask LLMs to produce — that drops to 180–200 wpm.
+                        Call it ~12 characters per second, or roughly 3 tokens per second on
+                        average.
                     </p>
                     <p className="sh-p">
-                        This creates an interesting product opportunity that nobody has seized
-                        cleanly: a <strong>human-paced inference tier.</strong> Offer the same
-                        model at a fraction of the per-token cost, contractually throttled to
-                        ~12 char/s output. The provider saves on peak compute (no burst pressure,
-                        easier scheduling), the user pays less for what they actually consume,
-                        and the UX is better. Everyone wins except the benchmark. A slower model
-                        that costs less and feels better is a better product.
+                        <strong>This is not going to improve.</strong> You cannot train your way
+                        past it in any meaningful way. Speed-reading techniques exist but they
+                        trade comprehension for pace, which defeats the purpose of reading
+                        generated analysis. Your visual system processes around 10–12 fixations
+                        per second. Each fixation captures about 1–2 words. The bandwidth of
+                        human language comprehension is a biological constant, not a software
+                        tweak.
                     </p>
                     <p className="sh-p">
-                        The counterargument is that fast inference is expensive to build and slow
-                        inference does not cost proportionally less at the infrastructure layer
-                        because the model still needs to attend over the full context. That is
-                        true — but the <em>marginal cost</em> of generating tokens the user never
-                        reads is still real, and it compounds across millions of interactions.
-                        A throttled pipeline lets the provider batch and schedule more efficiently
-                        because the output is predictable instead of bursty. There is real savings
-                        in that, even if it is not a simple linear discount.
+                        Every LLM provider pretends this ceiling does not exist. They benchmark
+                        tokens per second as if the human receptor were infinitely fast. It is
+                        the equivalent of building a water main that can deliver 30,000 gallons
+                        per hour to a kitchen sink with a 1-gallon-per-hour faucet. The
+                        infrastructure is not the bottleneck. The tap is. And the tap is you.
                     </p>
+
+                    <div className="sh-callout">
+                        The industry is optimizing throughput on the only axis where the
+                        performance ceiling is fixed — the human reading system. Every token
+                        beyond ~3 per second is compute you paid for and cannot use. The faster
+                        the model, the more money you burn per second of attention.
+                    </div>
+
+                    {/* §03 */}
+                    <h2 className="sh-h2">
+                        <span className="sh-secnum">03 / The cost of speed</span>
+                        What you are actually paying for
+                    </h2>
+                    <p className="sh-p">
+                        API pricing is per-token on both sides of the conversation. When you
+                        prompt a model and it responds at 100 tok/s for 10 seconds, you are
+                        billed for 1,000 output tokens. In those same 10 seconds, you absorbed
+                        roughly 30 of them. You paid for 1,000 and used 30. That 97% waste is
+                        not theoretical — it is a line item.
+                    </p>
+                    <p className="sh-p">
+                        Run this across a team of ten developers using an LLM for an hour a day.
+                        At 50 tok/s average output, each session generates roughly 30,000 output
+                        tokens. The team reads maybe 900 of them per session. The rest are
+                        discarded. Scale that to enterprise usage — thousands of employees,
+                        millions of sessions — and the waste becomes a real line on a real
+                        budget. Companies are doing massive OpenAI bills not because they are
+                        getting massive value per token, but because they are buying tokens at
+                        a rate their people cannot consume.
+                    </p>
+                    <p className="sh-p">
+                        <strong>The provider benefits from this.</strong> A model that generates
+                        100 tok/s burns through API credits faster than one that generates 10.
+                        The per-token price is the same, so faster models are more profitable
+                        per second of wall-clock usage. The incentives are perfectly aligned
+                        for the provider to push throughput as high as possible and perfectly
+                        misaligned for the user to get value from it. The speed race is not
+                        neutral — it is a pricing strategy.
+                    </p>
+                    <p className="sh-p">
+                        The uncomfortable truth: the interactive LLM market functions on a
+                        model where the user pays for compute that serves the benchmark, not
+                        the experience. Providers compete on throughput because throughput is
+                        measurable, impressive, and profitable. They compete on reading-speed
+                        value only when someone forces them to.
+                    </p>
+
+                    {/* §04 */}
+                    <h2 className="sh-h2">
+                        <span className="sh-secnum">04 / The UX cost is downstream</span>
+                        Why the waste also feels bad
+                    </h2>
+                    <p className="sh-p">
+                        The economic waste has a user-facing twin. When text streams faster than
+                        you can read, you do not read faster — you enter a different cognitive
+                        mode entirely: <strong>scan, wait, re-read.</strong> You watch the text
+                        accumulate, holding a placeholder in your mind, waiting for it to stop
+                        so you can go back and actually absorb what was said. Every second of
+                        surplus generation is a second of cognitive overhead.
+                    </p>
+                    <p className="sh-p">
+                        The visual disruption compounds it. At high token rates, the text jumps
+                        and reflows constantly. Your place is lost. You scan the same sentence
+                        three times because the line broke differently. This is not a minor
+                        annoyance — it is a measurable degradation in comprehension that happens
+                        every time you use a chat interface for real work.
+                    </p>
+                    <p className="sh-p">
+                        Compare this to reading a book or a well-designed static page. You control
+                        the pace. You linger. You re-read. The text does not pull your attention
+                        forward. Streaming at 30× reading speed does the opposite — it creates a
+                        subtle urgency to &ldquo;keep up&rdquo; that is antithetical to
+                        understanding. And because you paid for it by the token, there is an
+                        additional psychological friction: <em>I am watching money burn while
+                        I try to finish this paragraph.</em>
+                    </p>
+
+                    <div className="sh-callout">
+                        The UX cost and the economic cost are the same problem seen from
+                        different sides. One is experienced as frustration. The other is
+                        measured in API bills. Both are caused by generating text faster than
+                        the person reading it can keep up.
+                    </div>
 
                     {/* §05 */}
                     <h2 className="sh-h2">
-                        <span className="sh-secnum">05 / The right metric</span>
-                        Time to first thought
-                    </h2>
-                    <p className="sh-p">
-                        If throughput is the wrong optimization target for interactive use, what
-                        is the right one? The answer is <strong>time to first thought</strong> —
-                        the latency between pressing enter and seeing the beginning of a coherent,
-                        useful response.
-                    </p>
-                    <p className="sh-p">
-                        This is fundamentally different from time to first token (TTFT), which is
-                        the industry metric du jour. TTFT measures when <em>any</em> token arrives.
-                        What matters is when the model has formulated enough context that the
-                        response is <em>actionable</em>. A model that streams garbage tokens for 300ms
-                        and then delivers a coherent argument has a great TTFT and terrible UX.
-                    </p>
-                    <p className="sh-p">
-                        The real stack for interactive speed looks like this:
-                    </p>
-
-                    <div className="sh-stack">
-                        {"  1. User presses enter                                  "}
-                        {"     ↓                                                    "}
-                        {"  2. Prefill: model processes prompt (~100–500ms)         "}
-                        {"     ↓                                                    "}
-                        {"  3. First coherent thought emerges (~500–1500ms)         "}
-                        {"     ↓                                                    "}
-                        {"  4. Output at reading speed (~12 char/s)                "}
-                        {"     ↓                                                    "}
-                        {"  5. User finishes reading, naturally pauses              "}
-                        {"     ↓                                                    "}
-                        {"  6. Model pre-computes next section during pause         "}
-                    </div>
-
-                    <p className="sh-p">
-                        Step 3 is the bottleneck that matters. Everything before it is latency to
-                        be minimized. Everything after it is throttled to match the human. The model
-                        can be thinking ahead — pre-computing follow-ups, checking its reasoning,
-                        planning the next section — <strong>while you are still reading the current
-                        one</strong>. That is where speculative compute should be spent, not on
-                        shoving text onto your screen faster than you can absorb it.
-                    </p>
-
-                    {/* §06 */}
-                    <h2 className="sh-h2">
-                        <span className="sh-secnum">06 / When fast actually matters</span>
+                        <span className="sh-secnum">05 / When speed is worth the money</span>
                         The two regimes
                     </h2>
                     <p className="sh-p">
-                        We have been arguing about a specific regime: <strong>interactive text
-                        consumption</strong>. There is a second regime where throughput is genuinely
-                        critical: <strong>batch and agentic processing</strong>.
+                        None of this means fast inference is useless. It means fast inference is
+                        useful in a specific regime — <strong>headless processing</strong> — and
+                        nearly useless in the other — <strong>interactive text consumption</strong>.
+                        The industry conflates them constantly.
                     </p>
 
                     <div className="sh-pros-cons">
                         <div className="sh-card">
                             <p className="sh-card-label for">Interactive (reading)</p>
                             <ul>
-                                <li>User reads output in real time</li>
-                                <li>Throughput cap: ~12–14 char/s</li>
-                                <li>Critical metric: time to first <em>coherent</em> thought</li>
-                                <li>Excess speed degrades UX (reflow, scan pressure)</li>
+                                <li>Human reads output in real time</li>
+                                <li>Throughput cap: ~3 tok/s</li>
+                                <li>97%+ of output tokens are wasted</li>
+                                <li>Critical metric: time to first coherent thought</li>
                                 <li>Model should think ahead during user pause</li>
+                                <li>Throttled delivery saves money and improves UX</li>
                             </ul>
                         </div>
                         <div className="sh-card">
                             <p className="sh-card-label against">Batch / agentic (headless)</p>
                             <ul>
                                 <li>No human in the read loop</li>
-                                <li>Throughput cap: hardware / cost budget</li>
-                                <li>Critical metric: tokens per second, cost per token</li>
-                                <li>Excess speed is pure win</li>
-                                <li>Model should maximize output always</li>
+                                <li>Throughput cap: hardware / budget</li>
+                                <li>100% of output tokens are consumed (by code)</li>
+                                <li>Critical metric: tok/s, cost per token</li>
+                                <li>Excess speed is pure value</li>
+                                <li>Maximum throughput is always correct</li>
                             </ul>
                         </div>
                     </div>
 
                     <p className="sh-p">
-                        The mistake the industry makes is conflating these two regimes. When
-                        OpenAI demos a model generating 100+ tok/s on stage, they are selling
-                        batch-processing performance in an interactive wrapper. The demo looks
-                        impressive because the text appears instantly. But the user watching it
-                        does not read faster as a result. They wait differently — and waiting
-                        while watching text you cannot read is arguably worse than waiting for a
-                        spinner.
+                        When OpenAI demos a model generating 100+ tok/s on stage, they are
+                        selling batch-processing performance in an interactive wrapper. The demo
+                        looks impressive because the text appears instantly. But the person
+                        watching it does not read faster. They pay more per interaction for the
+                        privilege of watching text they cannot read accumulate on a screen.
                     </p>
-
                     <p className="sh-p">
-                        For agentic workflows — where LLMs call tools, write code, analyze data,
-                        and pass results to other LLMs — throughput is everything. A chain of
-                        three reasoning steps at 100 tok/s completes in seconds what would take
-                        a minute at 10 tok/s. That is real. But nobody is reading those intermediate
-                        tokens.
+                        For agentic workflows — where LLMs call tools, analyze data, and pass
+                        results to other LLMs — throughput is everything. A three-step reasoning
+                        chain at 100 tok/s completes in seconds what would take a minute at
+                        10 tok/s. And crucially, <strong>nobody is reading those intermediate
+                        tokens.</strong> Every token is consumed by the next agent in the chain.
+                        The waste ratio is zero. The cost per useful unit of work is optimized
+                        by going faster.
+                    </p>
+                    <p className="sh-p">
+                        The mistake is treating the interactive user the same way. When the
+                        consumer is human, the economics invert. Faster does not mean better.
+                        Faster means more waste.
                     </p>
 
-                    {/* §07 */}
+                    {/* §06 */}
                     <h2 className="sh-h2">
-                        <span className="sh-secnum">07 / What this means for products</span>
-                        Design for the reader, not the benchmark
+                        <span className="sh-secnum">06 / The product that does not exist yet</span>
+                        A human-paced inference tier
                     </h2>
                     <p className="sh-p">
-                        If you are building an LLM product, the choice is not between fast and slow.
-                        It is between <strong>throttled and unthrottled</strong> delivery to the
-                        human channel. Here is what that looks like in practice:
-                    </p>
-
-                    <p className="sh-p">
-                        <strong>Throttle output to reading speed by default.</strong> The model
-                        generates at full speed internally, but the frontend buffers and releases
-                        at ~12–14 char/s. The user sees text appear at a pace they can actually
-                        read. No reflow chaos. No scan pressure.
+                        The natural conclusion of this argument is a product that nobody has
+                        cleanly shipped: a <strong>human-paced inference tier.</strong> The same
+                        model, contractually throttled to ~3 tokens per second output, offered
+                        at a fraction of the per-token cost. You pay for what you actually read.
                     </p>
                     <p className="sh-p">
-                        <strong>Expose a &ldquo;show all&rdquo; button</strong> for users who want
-                        the full response immediately — the batch-mode escape hatch. Power users
-                        who are copy-pasting or scanning structure will use it. Everyone else gets
-                        the gentle flow.
+                        The provider wins because throttled output is predictable output.
+                        Predictable output enables better batching, easier scheduling, and no
+                        burst-pressure on GPU clusters. The marginal cost of serving a
+                        human-paced interaction is lower than a bursty one, even if the model
+                        is the same size. The provider captures that efficiency as margin or
+                        passes it as discount.
                     </p>
                     <p className="sh-p">
-                        <strong>Invest in pre-computation, not throughput.</strong> While the user
-                        reads the first paragraph, the model should be preparing the second.
-                        Speculative decoding should predict what the user will need next, not just
-                        what the model will say next. Think ahead, don&apos;t shout faster.
+                        The user wins because the bill matches the value. Instead of paying for
+                        1,000 tokens and reading 30, they pay for 300 and read 300 — because
+                        the model stops generating when the user pauses, or the frontend buffers
+                        and releases at reading speed. The UX improves because the text stops
+                        jumping. The cost drops because the waste disappears.
                     </p>
                     <p className="sh-p">
-                        <strong>Measure time to completion of user understanding</strong>, not time
-                        to completion of generation. These are different numbers. One captures
-                        whether the user got value. The other captures how fast the GPU ran.
+                        <strong>The counterargument:</strong> slow inference does not cost
+                        proportionally less at the infrastructure layer because the model
+                        still needs to attend over the full context window for each token.
+                        Attention is O(n²) in context length, not in output speed. A throttled
+                        model does not save on KV cache or prompt processing. This is true —
+                        the savings are not linear. <strong>But they are real.</strong> The
+                        marginal GPU time per output token is lower when you are not racing
+                        against a throughput benchmark. You can batch more requests into the
+                        same hardware when none of them demand burst output. The savings come
+                        from utilization, not from cheaper per-token arithmetic.
                     </p>
 
                     <div className="sh-callout">
-                        The industry is optimizing for a metric that saturates at roughly 12
-                        characters per second. Everything beyond that is a flex, not a feature.
-                        The flex matters for benchmarks. The feature matters for people.
+                        The model that wins the interactive race will not be the fastest
+                        generator. It will be the one that offers a pricing model aligned
+                        with how people actually consume text — and lets the benchmarks chase
+                        each other for the batch-processing market.
                     </div>
 
+                    {/* §07 */}
+                    <h2 className="sh-h2">
+                        <span className="sh-secnum">07 / The wrong cost curve</span>
+                        What to optimize instead
+                    </h2>
+                    <p className="sh-p">
+                        If token-rate is the wrong optimization target for interactive use, what
+                        replaces it? Three metrics matter more than throughput:
+                    </p>
+
+                    <p className="sh-p">
+                        <strong>Time to first coherent thought.</strong> The latency between
+                        pressing enter and seeing the beginning of a useful, structured response.
+                        This is different from time to first token (TTFT), which measures when
+                        <em>any</em> token arrives — including garbage, filler, or hedging
+                        phrases. A model that thinks for 800ms and then delivers a sharp,
+                        complete opening sentence is infinitely better than one that streams
+                        empty tokens in 300ms and rambles toward a point. The metric should
+                        measure when the model has <em>decided what to say</em>, not when it
+                        started saying it.
+                    </p>
+                    <p className="sh-p">
+                        <strong>Cost per understood word.</strong> Not cost per token, not cost
+                        per response, but cost per unit of information the user actually absorbs.
+                        This reframes the optimization entirely. A model that generates 3,000
+                        tokens at 100 tok/s for a 30-word answer has a terrible cost-per-understood-word.
+                        A model that generates 500 tokens at 10 tok/s for the same answer is
+                        cheaper and faster from the user&apos;s perspective, even though its
+                        token-rate benchmark is lower.
+                    </p>
+                    <p className="sh-p">
+                        <strong>Time to completion of user understanding.</strong> Not time to
+                        completion of generation. The wall clock from &ldquo;user asks a
+                        question&rdquo; to &ldquo;user fully understands the answer.&rdquo; This
+                        is the only metric that captures whether the interaction actually
+                        succeeded. It accounts for generation time, re-reading, reflow disruption,
+                        and the cognitive cost of scanning ahead. By this measure, a model that
+                        outputs at reading speed and lets the user follow along without
+                        interruption will often beat a faster model whose output the user has to
+                        read twice.
+                    </p>
+
                     <p className="sh-closer">
-                        The reading speed ceiling is not a limitation to overcome — it is the
-                        boundary within which a real product lives. The goal of an LLM interface
-                        is not to generate text as fast as possible. The goal is to make the
-                        user <em>understand</em> as fast as possible. Those are different
-                        problems, and they demand different optimizations. The model that wins
-                        the interactive race will not be the fastest generator. It will be the
-                        one that learns when to wait for you.
+                        The inference industry is optimizing throughput on the axis where the
+                        ceiling is a biological constant and the waste compounds with every
+                        improvement. The race to 200 tok/s does not make interactive AI better.
+                        It makes it cheaper to run benchmarks and more expensive to run
+                        conversations. The true innovation is not a faster model — it is a
+                        pricing model and a delivery mechanism aligned with how people actually
+                        read. A firehose and a glass deliver the same water. The difference is
+                        what you can drink.
                     </p>
 
                     <footer className="sh-footer">
-                        AI · UX Constraints · Human-Computer Interaction
+                        AI · Inference Economics · Human-Computer Interaction
                         <div style={{ marginTop: 20 }}>
                             <Link href="/blog" style={{ color: "var(--accent)", textDecoration: "none" }}>
                                 ← Back to Blog
