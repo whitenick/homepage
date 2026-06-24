@@ -444,17 +444,17 @@ export default function ReadingSpeedCeiling() {
                     </p>
 
                     <div className="sh-stack">
-                        {"  1. User presses enter                                  "}{" "}
-                        {"     ↓                                                    "}{" "}
-                        {"  2. Prefill: model processes prompt (~100–500ms)         "}{" "}
-                        {"     ↓                                                    "}{" "}
-                        {"  3. First coherent thought emerges (~500–1500ms)         "}{" "}
-                        {"     ↓                                                    "}{" "}
-                        {"  4. Output at reading speed (~12 char/s)                "}{" "}
-                        {"     ↓                                                    "}{" "}
-                        {"  5. User finishes reading, naturally pauses              "}{" "}
-                        {"     ↓                                                    "}{" "}
-                        {"  6. Model pre-computes next section during pause         "}{" "}
+                        {"  1. User presses enter                                  "}
+                        {"     ↓                                                    "}
+                        {"  2. Prefill: model processes prompt (~100–500ms)         "}
+                        {"     ↓                                                    "}
+                        {"  3. First coherent thought emerges (~500–1500ms)         "}
+                        {"     ↓                                                    "}
+                        {"  4. Output at reading speed (~12 char/s)                "}
+                        {"     ↓                                                    "}
+                        {"  5. User finishes reading, naturally pauses              "}
+                        {"     ↓                                                    "}
+                        {"  6. Model pre-computes next section during pause         "}
                     </div>
 
                     <p className="sh-p">
