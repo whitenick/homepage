@@ -173,5 +173,17 @@
     "followUps": 3,
     "snippet": "Engineering Manager, Entity Management at Middesk (business identity verification); intro screen and team assessment stages completed.",
     "notes": "Process advanced significantly — intro screen with Middesk (Apr 30) and team assessment (May 7, 20) with bryn@middesk.com."
+  },
+  {
+    "id": "19ef1289dbcd91bd",
+    "company": "Adaptive",
+    "role": "Engineering Manager",
+    "recruiter": "Shirmung",
+    "recruiterEmail": "shirmung@adaptive.build",
+    "agency": "Direct",
+    "date": "2026-06-22",
+    "status": "needs-reply",
+    "followUps": 0,
+    "snippet": "VP of Engineering at Adaptive (Series A, $26M raised from a16z/Emergence) seeks an EM to lead 5–7 engineers building AI-native ERP for the $2T construction industry."
   }
 ]
