@@ -2,6 +2,7 @@ import Head from "next/head";
 import { IBM_Plex_Sans } from "next/font/google";
 import Link from "next/link";
 import AlienSaucer from "@/components/AlienSaucer";
+import { V2IndexNav } from "@/components/navbar/v2-index-nav";
 import "../styles/v2.css";
 
 const ibmPlexSans = IBM_Plex_Sans({
@@ -48,29 +49,7 @@ export default function Blog() {
 
                         {/* Index (top-right) */}
                         <div className="absolute top-10 right-6 md:right-10">
-                            <details className="group text-xs">
-                                <summary className="list-none cursor-pointer uppercase tracking-[0.15em] text-[#2D2926]/40 hover:text-[#2D2926] transition-colors flex items-center gap-2">
-                                    <span className="w-4 h-px bg-[#2D2926]/30 group-open:w-6 group-open:bg-[#B85C38] transition-all"></span>
-                                    Index
-                                </summary>
-                                <div className="flex gap-6 text-xs mt-4 pt-4 border-t border-[#E8E6E1]">
-                                    <a
-                                        href="/about"
-                                        className="text-[#2D2926]/50 hover:text-[#B85C38] transition-colors tracking-wide"
-                                    >
-                                        About
-                                    </a>
-                                    <span className="text-[#2D2926] tracking-wide">
-                                        Blog
-                                    </span>
-                                    <a
-                                        href="/app"
-                                        className="text-[#2D2926]/50 hover:text-[#B85C38] transition-colors tracking-wide"
-                                    >
-                                        Lab
-                                    </a>
-                                </div>
-                            </details>
+                            <V2IndexNav current="Blog" />
                         </div>
 
                         {/* Page title */}
@@ -117,10 +96,11 @@ export default function Blog() {
                                             Hold the Firehose
                                         </span>
                                         <span className="block text-sm text-[#2D2926]/50 mt-1.5">
-                                            LLM output speed is racing past 100 tokens
-                                            per second. You read at 12 characters per
-                                            second. That gap is the core UX problem no
-                                            one is solving.
+                                            LLM output speed is racing past 100
+                                            tokens per second. You read at 12
+                                            characters per second. That gap is
+                                            the core UX problem no one is
+                                            solving.
                                         </span>
                                     </span>
                                     <span className="text-xs font-mono tracking-widest text-[#B85C38] shrink-0 opacity-0 group-hover:opacity-100 transition-opacity">
@@ -145,9 +125,10 @@ export default function Blog() {
                                             The server still whispers
                                         </span>
                                         <span className="block text-sm text-[#2D2926]/50 mt-1.5">
-                                            SaaS charged rent on complexity. AI just
-                                            made it free. Owning your own stack is no
-                                            longer a hobby — it is a political act.
+                                            SaaS charged rent on complexity. AI
+                                            just made it free. Owning your own
+                                            stack is no longer a hobby — it is a
+                                            political act.
                                         </span>
                                     </span>
                                     <span className="text-xs font-mono tracking-widest text-[#B85C38] shrink-0 opacity-0 group-hover:opacity-100 transition-opacity">
@@ -169,12 +150,14 @@ export default function Blog() {
                                                     "var(--font-fraunces), serif",
                                             }}
                                         >
-                                            Why your AI agent needs a second opinion
+                                            Why your AI agent needs a second
+                                            opinion
                                         </span>
                                         <span className="block text-sm text-[#2D2926]/50 mt-1.5">
-                                            The single biggest quality improvement
-                                            I&apos;ve found isn&apos;t better prompting
-                                            or bigger models — it&apos;s having one
+                                            The single biggest quality
+                                            improvement I&apos;ve found
+                                            isn&apos;t better prompting or
+                                            bigger models — it&apos;s having one
                                             AI agent review another&apos;s work.
                                         </span>
                                     </span>

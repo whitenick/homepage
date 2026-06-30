@@ -1,9 +1,9 @@
 import React from "react";
 
 const links = [
-    { name: "About", href: "/v2/about" },
-    { name: "Blog", href: "/v2/blog" },
-    { name: "Lab", href: "https://serapiolabs.com" },
+    { name: "About", href: "/about" },
+    { name: "Blog", href: "/blog" },
+    { name: "Lab", href: "/app" },
 ] as const;
 
 export const V2IndexNav: React.FunctionComponent<{
