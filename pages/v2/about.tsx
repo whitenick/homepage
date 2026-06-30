@@ -2,6 +2,7 @@ import Head from "next/head";
 import { IBM_Plex_Sans } from "next/font/google";
 import Link from "next/link";
 import AlienSaucer from "@/components/AlienSaucer";
+import { V2IndexNav } from "@/components/navbar/v2-index-nav";
 import "../../styles/v2.css";
 
 const ibmPlexSans = IBM_Plex_Sans({
@@ -48,29 +49,7 @@ export default function About() {
 
                         {/* Index (top-right) */}
                         <div className="absolute top-10 right-6 md:right-10">
-                            <details className="group text-xs">
-                                <summary className="list-none cursor-pointer uppercase tracking-[0.15em] text-[#2D2926]/40 hover:text-[#2D2926] transition-colors flex items-center gap-2">
-                                    <span className="w-4 h-px bg-[#2D2926]/30 group-open:w-6 group-open:bg-[#B85C38] transition-all"></span>
-                                    Index
-                                </summary>
-                                <div className="flex gap-6 text-xs mt-4 pt-4 border-t border-[#E8E6E1]">
-                                    <span className="text-[#2D2926] tracking-wide">
-                                        About
-                                    </span>
-                                    <a
-                                        href="/v2/blog"
-                                        className="text-[#2D2926]/50 hover:text-[#B85C38] transition-colors tracking-wide"
-                                    >
-                                        Blog
-                                    </a>
-                                    <a
-                                        href="/app"
-                                        className="text-[#2D2926]/50 hover:text-[#B85C38] transition-colors tracking-wide"
-                                    >
-                                        Lab
-                                    </a>
-                                </div>
-                            </details>
+                            <V2IndexNav current="About" />
                         </div>
 
                         {/* Page title */}
