@@ -3,7 +3,7 @@ import React from "react";
 const links = [
     { name: "About", href: "/v2/about" },
     { name: "Blog", href: "/v2/blog" },
-    { name: "Lab", href: "/app" },
+    { name: "Lab", href: "https://serapiolabs.com" },
 ] as const;
 
 export const V2IndexNav: React.FunctionComponent<{
