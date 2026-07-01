@@ -199,6 +199,25 @@ export default function Index() {
                             </a>
 
                             <a
+                                href="https://whitenick.github.io/recipes"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center justify-between py-3 px-2 rounded-sm hover:bg-[rgba(184,92,56,0.03)] transition-colors group"
+                            >
+                                <div>
+                                    <span className="text-sm font-medium group-hover:text-[#C9A66B] transition-colors">
+                                        Recipes
+                                    </span>
+                                    <p className="text-xs text-[#2D2926]/40">
+                                        Searchable recipe collection and meal inspiration
+                                    </p>
+                                </div>
+                                <span className="text-[#2D2926]/20 group-hover:text-[#C9A66B] text-xs transition-colors">
+                                    →
+                                </span>
+                            </a>
+
+                            <a
                                 href="/app/games"
                                 className="flex items-center justify-between py-3 px-2 rounded-sm hover:bg-[rgba(184,92,56,0.03)] transition-colors group"
                             >
