@@ -148,52 +148,18 @@ export default function Index() {
 
                         <div className="space-y-1">
                             <a
-                                href="/app/behavior-buzz"
+                                href="https://foreclosures.serapiolabs.com"
                                 className="flex items-center justify-between py-3 px-2 rounded-sm hover:bg-[rgba(184,92,56,0.03)] transition-colors group"
                             >
                                 <div>
                                     <span className="text-sm font-medium group-hover:text-[#B85C38] transition-colors">
-                                        BehaviorBuzz
+                                        Foreclosures
                                     </span>
                                     <p className="text-xs text-[#2D2926]/40">
-                                        Classroom behavior tracking for teachers
+                                        Foreclosure market analysis tool.
                                     </p>
                                 </div>
                                 <span className="text-[#2D2926]/20 group-hover:text-[#B85C38] text-xs transition-colors">
-                                    →
-                                </span>
-                            </a>
-
-                            <a
-                                href="/app/bird-tv"
-                                className="flex items-center justify-between py-3 px-2 rounded-sm hover:bg-[rgba(184,92,56,0.03)] transition-colors group"
-                            >
-                                <div>
-                                    <span className="text-sm font-medium group-hover:text-[#7D8E7A] transition-colors">
-                                        Bird TV
-                                    </span>
-                                    <p className="text-xs text-[#2D2926]/40">
-                                        Live bird feeder camera stream
-                                    </p>
-                                </div>
-                                <span className="text-[#2D2926]/20 group-hover:text-[#7D8E7A] text-xs transition-colors">
-                                    →
-                                </span>
-                            </a>
-
-                            <a
-                                href="/app/space"
-                                className="flex items-center justify-between py-3 px-2 rounded-sm hover:bg-[rgba(184,92,56,0.03)] transition-colors group"
-                            >
-                                <div>
-                                    <span className="text-sm font-medium group-hover:text-[#C9A66B] transition-colors">
-                                        Space Explorer
-                                    </span>
-                                    <p className="text-xs text-[#2D2926]/40">
-                                        3D space exploration experience
-                                    </p>
-                                </div>
-                                <span className="text-[#2D2926]/20 group-hover:text-[#C9A66B] text-xs transition-colors">
                                     →
                                 </span>
                             </a>
@@ -223,10 +189,10 @@ export default function Index() {
                             >
                                 <div>
                                     <span className="text-sm font-medium group-hover:text-[#B85C38] transition-colors">
-                                        Games
+                                      Animations
                                     </span>
                                     <p className="text-xs text-[#2D2926]/40">
-                                        Collection of browser-based games
+                                        Collection of browser-based animations (Three.js).
                                     </p>
                                 </div>
                                 <span className="text-[#2D2926]/20 group-hover:text-[#B85C38] text-xs transition-colors">
