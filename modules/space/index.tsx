@@ -34,6 +34,12 @@ const SpacePage = () => {
                         externalLink={router.basePath + "/app/behavior-buzz"}
                     /> */}
                     <Project
+                        title={"Recipes"}
+                        description="A collection of recipes, searchable and beautifully presented."
+                        githubLink="https://github.com/whitenick/recipes"
+                        externalLink="https://whitenick.github.io/recipes"
+                    />
+                    <Project
                         title={"This Homepage"}
                         githubLink="https://github.com/whitenick/homepage"
                         externalLink="/app"
