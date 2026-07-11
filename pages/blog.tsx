@@ -79,6 +79,33 @@ export default function Blog() {
                             {/* Post list */}
                             <div className="space-y-0">
                                 <Link
+                                    href="/blog/before-you-think"
+                                    className="group flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-8 py-7 border-b border-[#E8E6E1] hover:border-[#B85C38] transition-colors"
+                                >
+                                    <span className="text-xs font-mono tracking-[0.12em] text-[#2D2926]/35 shrink-0 mt-0.5 sm:w-24">
+                                        Jul 2026
+                                    </span>
+                                    <span className="flex-1">
+                                        <span
+                                            className="block text-xl font-medium text-[#2D2926] group-hover:text-[#B85C38] transition-colors leading-snug"
+                                            style={{
+                                                fontFamily:
+                                                    "var(--font-fraunces), serif",
+                                            }}
+                                        >
+                                            Before You Think
+                                        </span>
+                                        <span className="block text-sm text-[#2D2926]/50 mt-1.5">
+                                            A conversation about comprehension, consciousness, and
+                                            the moment machines started understanding faster than
+                                            humans. From the N400 window to the prefill phase.
+                                        </span>
+                                    </span>
+                                    <span className="text-xs font-mono tracking-widest text-[#B85C38] shrink-0 opacity-0 group-hover:opacity-100 transition-opacity">
+                                        READ →
+                                    </span>
+                                </Link>
+                                <Link
                                     href="/blog/the-server-still-whispers"
                                     className="group flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-8 py-7 border-b border-[#E8E6E1] hover:border-[#B85C38] transition-colors"
                                 >
@@ -100,35 +127,6 @@ export default function Blog() {
                                             history of infrastructure from toggle switches to
                                             complexity rent, then the practical playbook for
                                             running it yourself on a $10/mo Hetzner box.
-                                        </span>
-                                    </span>
-                                    <span className="text-xs font-mono tracking-widest text-[#B85C38] shrink-0 opacity-0 group-hover:opacity-100 transition-opacity">
-                                        READ →
-                                    </span>
-                                </Link>
-                                <Link
-                                    href="/blog/reading-speed-ceiling"
-                                    className="group flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-8 py-7 border-b border-[#E8E6E1] hover:border-[#B85C38] transition-colors"
-                                >
-                                    <span className="text-xs font-mono tracking-[0.12em] text-[#2D2926]/35 shrink-0 mt-0.5 sm:w-24">
-                                        Jun 2026
-                                    </span>
-                                    <span className="flex-1">
-                                        <span
-                                            className="block text-xl font-medium text-[#2D2926] group-hover:text-[#B85C38] transition-colors leading-snug"
-                                            style={{
-                                                fontFamily:
-                                                    "var(--font-fraunces), serif",
-                                            }}
-                                        >
-                                            Hold the Firehose
-                                        </span>
-                                        <span className="block text-sm text-[#2D2926]/50 mt-1.5">
-                                            LLM output speed is racing past 100
-                                            tokens per second. You read at 12
-                                            characters per second. That gap is
-                                            the core UX problem no one is
-                                            solving.
                                         </span>
                                     </span>
                                     <span className="text-xs font-mono tracking-widest text-[#B85C38] shrink-0 opacity-0 group-hover:opacity-100 transition-opacity">
