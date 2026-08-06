@@ -1,4 +1,4 @@
-import * as NavigationMenu from '@radix-ui/react-navigation-menu';
+import { NavigationMenu } from '@serapiolabs/design-system';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useMemo, useState } from 'react';

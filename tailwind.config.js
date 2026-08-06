@@ -4,6 +4,7 @@ module.exports = {
         "./pages/**/*.{js,ts,jsx,tsx}",
         "./components/**/*.{js,ts,jsx,tsx}",
         "./modules/**/*.{js,ts,jsx,tsx}",
+        "./node_modules/@serapiolabs/design-system/dist/**/*.{js,mjs}",
     ],
     theme: {
         height: (theme) => ({
@@ -123,5 +124,5 @@ module.exports = {
             },
         },
     },
-    plugins: [require("@tailwindcss/forms"), require("tailwindcss-animate")],
+    plugins: [require("@tailwindcss/forms"), require("tailwindcss-animate"), require("@serapiolabs/design-system/tailwind.plugin")],
 };

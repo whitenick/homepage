@@ -1,13 +1,10 @@
-import { ChakraProvider } from '@chakra-ui/react';
+import '@serapiolabs/design-system/dist/tokens.css';
 import { createPagesBrowserClient } from '@supabase/auth-helpers-nextjs';
 import { SessionContextProvider } from '@supabase/auth-helpers-react';
 import { Inter, Fraunces } from 'next/font/google';
 import Head from 'next/head';
-import { useRouter } from 'next/router';
 import Script from 'next/script';
 import { useState } from 'react';
-import theme from '../components/theme';
-import '../styles/globals.css';
 import './tw.css';
 
 const inter = Inter({ 
@@ -23,10 +20,6 @@ const fraunces = Fraunces({
 
 function MyApp({ Component, pageProps }) {
   const [supabaseClient] = useState(() => createPagesBrowserClient());
-  const router = useRouter();
-  
-  // Use Chakra only for sub-apps (behavior-buzz, etc.) for backwards compatibility
-  const needsChakra = router.pathname.includes('/app/');
 
   return (
     <>
@@ -60,15 +53,9 @@ function MyApp({ Component, pageProps }) {
         supabaseClient={supabaseClient}
         initialSession={pageProps.initialSession}
       >
-        {needsChakra ? (
-          <ChakraProvider theme={theme}>
-            <Component {...pageProps} />
-          </ChakraProvider>
-        ) : (
-          <div className={`${inter.variable} ${fraunces.variable}`}>
-            <Component {...pageProps} />
-          </div>
-        )}
+        <div className={`${inter.variable} ${fraunces.variable}`}>
+          <Component {...pageProps} />
+        </div>
       </SessionContextProvider>
     </>
   );

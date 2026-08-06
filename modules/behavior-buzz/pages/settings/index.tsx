@@ -1,7 +1,8 @@
-import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Box, Card, CardBody, Input, SkeletonCircle, SkeletonText, Tab, TabList, TabPanel, TabPanels, Tabs, Text } from "@chakra-ui/react";
+import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Box, Card, CardBody, Input, SkeletonCircle, SkeletonText, Tab, TabList, TabPanel, TabPanels, Tabs, Text, ChakraProvider } from "@chakra-ui/react";
 import { FiPlusCircle, FiSave, FiTrash } from "react-icons/fi";
 import { useSupabaseClient  } from "@supabase/auth-helpers-react";
 import { MouseEvent, useEffect, useState } from "react";
+import { theme } from "../../../../components/theme";
 
 
 const useGetBehaviorSettings = async () => {
@@ -182,4 +183,10 @@ const AccordionSettings = () => {
     );
 };
 
-export default Settings;
+export default function SettingsPage() {
+  return (
+    <ChakraProvider theme={theme}>
+      <Settings />
+    </ChakraProvider>
+  );
+}
