@@ -124,5 +124,5 @@ module.exports = {
             },
         },
     },
-    plugins: [require("@tailwindcss/forms"), require("tailwindcss-animate"), require("@serapiolabs/design-system/tailwind.plugin")],
+    plugins: [require("@tailwindcss/forms"), require("tailwindcss-animate"), (() => { try { return require("@serapiolabs/design-system/tailwind.plugin"); } catch { return null; } })()].filter(Boolean),
 };
