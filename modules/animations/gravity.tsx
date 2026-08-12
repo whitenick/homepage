@@ -24,7 +24,7 @@ const Gravity = (props) => {
             z: 0
         },
     });
-    const lemonRef = useRef();
+    const lemonRef = useRef(null);
 
     return (
         <ThreeJSWrapper>

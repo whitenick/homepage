@@ -42,7 +42,7 @@ export const Lemon = (props: {
     [key: string]: any
 }) => {
     const { nodes, materials }: any = useGLTF('/lemon_real.glb');
-    const lemonRef = useRef<any>();
+    const lemonRef = useRef<any>(null);
 
     return (
         <>
@@ -80,7 +80,7 @@ const FallingLemon = (props) => {
         },
         delta: Math.max(Math.random() * 15, 1) % 15
     })
-    const planeMesh: any = useRef();
+    const planeMesh: any = useRef(null);
     const { nodes, materials }: any = useGLTF('/lemon_real.glb');
     console.log(lemonPosition.position)
 
