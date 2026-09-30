@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { IBM_Plex_Sans } from "next/font/google";
 import AlienSaucer from "@/components/AlienSaucer";
+import PainterlyBackdrop from "@/components/PainterlyBackdrop";
 import { V2IndexNav } from "@/components/navbar/v2-index-nav";
 import { Card, Badge } from '@serapiolabs/design-system';
 import "../styles/v2.css";
@@ -42,6 +43,9 @@ export default function Index() {
             <section className="relative v2-page-gradient">
                 {/* ── HERO ── */}
                 <div className="relative min-h-screen flex items-center overflow-hidden">
+                    <div className="absolute inset-0" aria-hidden="true">
+                        <PainterlyBackdrop />
+                    </div>
                     <div className="absolute inset-0 v2-desert-gradient"></div>
                     <div className="v2-mesa"></div>
 
