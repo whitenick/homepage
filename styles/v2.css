@@ -1,5 +1,9 @@
 /* Mesa Brutalist v2 Design System — Concrete Grain & Landscape Utilities */
 
+:root {
+  --v2-noise: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+}
+
 /* Concrete grain texture overlay */
 .v2-grain::before {
   content: "";
@@ -7,10 +11,72 @@
   inset: 0;
   z-index: -1;
   opacity: 0.3;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+  background-image: var(--v2-noise);
   background-repeat: repeat;
   background-size: 256px 256px;
   pointer-events: none;
+}
+
+/* Grain laid over artwork (hero backdrop) */
+.v2-grain-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  opacity: 0.18;
+  mix-blend-mode: soft-light;
+  background-image: var(--v2-noise);
+  background-repeat: repeat;
+  background-size: 256px 256px;
+  pointer-events: none;
+}
+
+/* Legibility scrim over the hero landscape artwork */
+.v2-hero-scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(4, 9, 24, 0.78) 0%,
+      rgba(4, 9, 24, 0.45) 38%,
+      rgba(4, 9, 24, 0.08) 72%,
+      transparent 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(4, 9, 24, 0.3) 0%,
+      transparent 30%
+    );
+}
+
+@media (max-width: 768px) {
+  .v2-hero-scrim {
+    background: linear-gradient(
+      180deg,
+      rgba(4, 9, 24, 0.62) 0%,
+      rgba(4, 9, 24, 0.35) 45%,
+      rgba(4, 9, 24, 0.52) 100%
+    );
+  }
+}
+
+/* Dusk mist where the hero artwork meets the paper below */
+.v2-hero-fade {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 28vh;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(249, 247, 244, 0) 0%,
+    rgba(249, 247, 244, 0.45) 55%,
+    var(--color-background, #f9f7f4) 100%
+  );
 }
 
 /* Desert gradient wash */
@@ -99,6 +165,9 @@
   width: 48px;
   height: 3px;
   background: #b85c38;
+}
+.v2-accent-bar-light {
+  background: #c9a66b;
 }
 
 /* Concrete card */

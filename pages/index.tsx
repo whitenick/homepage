@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Image from "next/image";
 import { IBM_Plex_Sans } from "next/font/google";
 import AlienSaucer from "@/components/AlienSaucer";
 import { V2IndexNav } from "@/components/navbar/v2-index-nav";
@@ -41,9 +42,21 @@ export default function Index() {
 
             <section className="relative v2-page-gradient">
                 {/* ── HERO ── */}
-                <div className="relative min-h-screen flex items-center overflow-hidden">
-                    <div className="absolute inset-0 v2-desert-gradient"></div>
-                    <div className="v2-mesa"></div>
+                <div className="relative min-h-screen flex items-center overflow-hidden bg-[#0B1B3F]">
+                    {/* Backdrop artwork: multica.ai landing background (github.com/multica-ai/multica),
+                        used under the Multica License (Apache-2.0 + conditions). Swap the file at
+                        public/images/landing-bg.webp to change the scene. */}
+                    <Image
+                        src="/images/landing-bg.webp"
+                        alt=""
+                        fill
+                        preload
+                        sizes="100vw"
+                        className="object-cover object-center"
+                    />
+                    <div className="v2-hero-scrim" aria-hidden="true"></div>
+                    <div className="v2-grain-overlay" aria-hidden="true"></div>
+                    <div className="v2-hero-fade" aria-hidden="true"></div>
 
                     <div
                         className="absolute top-10 left-6 md:left-10 v2-ufo opacity-50"
@@ -52,30 +65,30 @@ export default function Index() {
                         <AlienSaucer />
                     </div>
 
-                    <div className="absolute top-10 right-6 md:right-10">
-                        <V2IndexNav />
+                    <div className="absolute top-10 right-6 md:right-10 z-10">
+                        <V2IndexNav tone="paper" />
                     </div>
 
-                    <div className="relative w-full px-8 lg:px-16">
+                    <div className="relative z-10 w-full px-8 lg:px-16">
                         <div className="max-w-3xl">
-                            <p className="hd text-xs uppercase tracking-[0.2em] text-[var(--color-text-muted)] mb-6">
+                            <p className="hd text-xs uppercase tracking-[0.2em] text-white/70 mb-6">
                                 Software Engineer &amp; Builder
                             </p>
 
-                            <h1 className="hd text-6xl md:text-7xl leading-[0.95] text-[var(--color-text)] mb-3">
+                            <h1 className="hd text-6xl md:text-7xl leading-[0.95] text-white mb-3 [text-shadow:0_2px_28px_rgba(3,8,24,0.55)]">
                                 Nick
                                 <br />
                                 White
                             </h1>
-                            <div className="v2-accent-bar mb-8"></div>
+                            <div className="v2-accent-bar v2-accent-bar-light mb-8"></div>
 
-                            <p className="text-base text-[var(--color-text)]/55 font-light leading-relaxed max-w-lg mb-8">
+                            <p className="text-base text-white/65 font-light leading-relaxed max-w-lg mb-8">
                                 Building.
                             </p>
 
                             <div className="flex gap-8 text-xs uppercase tracking-[0.12em]">
                                 <details className="group/repos relative">
-                                    <summary className="list-none cursor-pointer text-[var(--color-text)]/40 hover:text-[var(--color-accent)] transition-colors">
+                                    <summary className="list-none cursor-pointer text-white/60 hover:text-white transition-colors">
                                         REPOS
                                     </summary>
                                     <div className="absolute left-0 top-full mt-2 flex flex-col gap-2 bg-[var(--color-background)] border border-[var(--color-border)] rounded-sm px-4 py-3 shadow-md min-w-[100px]">
@@ -101,13 +114,13 @@ export default function Index() {
                                     href="https://www.linkedin.com/in/nicholas-white-a4ba63110/"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="text-[var(--color-text)]/40 hover:text-[var(--color-accent)] transition-colors"
+                                    className="text-white/60 hover:text-white transition-colors"
                                 >
                                     LinkedIn
                                 </a>
                                 <a
                                     href="mailto:nick@serapiolabs.com"
-                                    className="text-[var(--color-text)]/40 hover:text-[var(--color-accent)] transition-colors"
+                                    className="text-white/60 hover:text-white transition-colors"
                                 >
                                     Email
                                 </a>
