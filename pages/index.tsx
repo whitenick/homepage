@@ -43,10 +43,11 @@ export default function Index() {
             <section className="relative v2-page-gradient">
                 {/* ── HERO ── */}
                 <div className="relative min-h-screen flex items-center overflow-hidden bg-[#0B1B3F]">
-                    {/* Original dusk-alpine backdrop, drawn for this site (source: assets/hero-dusk.svg).
-                        Inspired by multica.ai's landing mood — our own artwork, not their asset. */}
+                    {/* Backdrop artwork: multica.ai landing background (github.com/multica-ai/multica),
+                        used under the Multica License (Apache-2.0 + conditions). Swap the file at
+                        public/images/landing-bg.webp to change the scene. */}
                     <Image
-                        src="/images/hero-dusk.webp"
+                        src="/images/landing-bg.webp"
                         alt=""
                         fill
                         preload
