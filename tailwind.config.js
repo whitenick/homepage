@@ -5,6 +5,7 @@ module.exports = {
         "./components/**/*.{js,ts,jsx,tsx}",
         "./modules/**/*.{js,ts,jsx,tsx}",
         "./node_modules/@serapiolabs/design-system/dist/**/*.{js,mjs}",
+        "./vendor/serapiolabs-design-system/dist/**/*.{js,mjs}",
     ],
     theme: {
         height: (theme) => ({
@@ -79,26 +80,32 @@ module.exports = {
                     foreground: "hsl(var(--popover-foreground))",
                 },
                 primary: {
-                    DEFAULT: "hsl(var(--primary))",
+                    DEFAULT: "var(--color-primary)",
                     foreground: "hsl(var(--primary-foreground))",
+                    hover: "var(--color-primary-hover)",
+                    active: "var(--color-primary-active)",
                 },
                 secondary: {
-                    DEFAULT: "hsl(var(--secondary))",
+                    DEFAULT: "var(--color-secondary)",
                     foreground: "hsl(var(--secondary-foreground))",
+                    hover: "var(--color-secondary-hover)",
+                    active: "var(--color-secondary-active)",
                 },
                 muted: {
                     DEFAULT: "hsl(var(--muted))",
                     foreground: "hsl(var(--muted-foreground))",
                 },
                 accent: {
-                    DEFAULT: "hsl(var(--accent))",
+                    DEFAULT: "var(--color-accent)",
                     foreground: "hsl(var(--accent-foreground))",
+                    hover: "var(--color-accent-hover)",
+                    active: "var(--color-accent-active)",
                 },
                 destructive: {
                     DEFAULT: "hsl(var(--destructive))",
                     foreground: "hsl(var(--destructive-foreground))",
                 },
-                border: "hsl(var(--border))",
+                border: "var(--color-border)",
                 input: "hsl(var(--input))",
                 ring: "hsl(var(--ring))",
                 chart: {

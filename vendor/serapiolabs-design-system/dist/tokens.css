@@ -1,0 +1,144 @@
+/* ============================================
+   Serapio Labs Design System — Core Tokens
+   Build once, theme infinitely.
+   ============================================ */
+
+:root {
+  /* --- Spacing (8px base) --- */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+  --space-4xl: 96px;
+
+  /* --- Typography Scale (1.25 modular ratio) --- */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.5rem;
+  --text-2xl: 2rem;
+  --text-3xl: 2.5rem;
+  --text-4xl: 3.5rem;
+  --text-5xl: 4.5rem;
+
+  /* --- Font Families (set per theme) --- */
+  --font-headline: 'Newsreader', Georgia, serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* --- Font Weights --- */
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+
+  /* --- Line Heights --- */
+  --leading-tight: 1.1;
+  --leading-snug: 1.3;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.6;
+  --leading-loose: 2.0;
+
+  /* --- Letter Spacing --- */
+  --tracking-tight: -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.05em;
+
+  /* --- Border Radius --- */
+  --radius-none: 0;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 24px;
+  --radius-full: 9999px;
+
+  /* --- Shadows (Elevation) --- */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.10);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+  --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.14);
+  --shadow-2xl: 0 24px 64px rgba(0, 0, 0, 0.16);
+
+  /* --- Animation --- */
+  --duration-instant: 100ms;
+  --duration-fast: 150ms;
+  --duration-base: 200ms;
+  --duration-slow: 300ms;
+  --duration-slower: 500ms;
+
+  --ease-linear: cubic-bezier(0, 0, 1, 1);
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* --- Z-Index --- */
+  --z-base: 0;
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal-backdrop: 1040;
+  --z-modal: 1050;
+  --z-popover: 1060;
+  --z-tooltip: 1070;
+  --z-toast: 1080;
+
+  /* --- Breakpoints (for reference) --- */
+  /* sm: 640px | md: 768px | lg: 1024px | xl: 1280px | 2xl: 1536px */
+
+  /* ============================================
+     THEME COLORS — Override per theme
+     ============================================ */
+
+  /* --- Primary --- */
+  --color-primary: #0A4D68;
+  --color-primary-hover: #083d54;
+  --color-primary-active: #062e40;
+
+  /* --- Secondary --- */
+  --color-secondary: #88B5A3;
+  --color-secondary-hover: #6da38c;
+  --color-secondary-active: #529175;
+
+  /* --- Accent --- */
+  --color-accent: #D17B56;
+  --color-accent-hover: #c0683f;
+  --color-accent-active: #a85532;
+
+  /* --- Neutral --- */
+  --color-background: #F5F1E8;
+  --color-surface: #FFFFFF;
+  --color-border: #D4D0C8;
+  --color-text: #2C3E50;
+  --color-text-secondary: #9FA6A0;
+  --color-text-muted: #B8BDB8;
+
+  /* --- Semantic States --- */
+  --color-success: #6B9F7F;
+  --color-warning: #E8B26C;
+  --color-error: #D17B6C;
+  --color-info: #5B9BD5;
+
+  /* --- Alpha Variants --- */
+  --color-overlay-light: rgba(255, 255, 255, 0.9);
+  --color-overlay-dark: rgba(0, 0, 0, 0.5);
+  --color-shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* --- Dark Mode (toggle via .dark class) --- */
+.dark {
+  --color-background: #1A1D23;
+  --color-surface: #242830;
+  --color-border: #353A45;
+  --color-text: #E8EAED;
+  --color-text-secondary: #9AA0A6;
+  --color-text-muted: #6B7280;
+  --color-overlay-light: rgba(26, 29, 35, 0.9);
+  --color-overlay-dark: rgba(0, 0, 0, 0.7);
+  --color-shadow: rgba(0, 0, 0, 0.3);
+}
