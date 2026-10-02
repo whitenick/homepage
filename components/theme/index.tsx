@@ -13,8 +13,8 @@ const colors = {
 export const theme = extendTheme({
     colors,
     fonts: {
-        heading: "var(--font-inter), Inter, sans-serif",
-        body: "var(--font-inter), Inter, sans-serif",
+        heading: "var(--font-lora), Lora, Georgia, serif",
+        body: "'Monaspace Neon', ui-monospace, monospace",
     },
     styles: {
         global: {

@@ -30,10 +30,10 @@ module.exports = {
                 "serif-display": ["DM Serif Display"],
                 bitter: ["Bitter"],
                 // High Desert Modern Typography
-                headline: ["var(--font-fraunces)", "serif"],
-                body: ["var(--font-inter)", "sans-serif"],
-                display: ["var(--font-fraunces)", "serif"],
-                "v2-heading": ["var(--font-fraunces)", "serif"],
+                headline: ["var(--font-lora)", "Georgia", "serif"],
+                body: ["'Monaspace Neon'", "'MonaspaceNeon'", "ui-monospace", "monospace"],
+                display: ["var(--font-lora)", "Georgia", "serif"],
+                "v2-heading": ["var(--font-lora)", "Georgia", "serif"],
                 "v2-body": ["var(--font-ibm-plex)", "sans-serif"],
             },
             colors: {
