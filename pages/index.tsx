@@ -27,7 +27,7 @@ export default function Index() {
                 h2,
                 h3,
                 .hd {
-                    font-family: var(--font-fraunces), serif;
+                    font-family: var(--font-lora), serif;
                 }
             `}</style>
 

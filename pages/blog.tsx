@@ -26,7 +26,7 @@ export default function Blog() {
                 h2,
                 h3,
                 .hd {
-                    font-family: var(--font-fraunces), serif;
+                    font-family: var(--font-lora), serif;
                 }
             `}</style>
 
@@ -90,7 +90,7 @@ export default function Blog() {
                                             className="block text-xl font-medium text-[#2D2926] group-hover:text-[#B85C38] transition-colors leading-snug"
                                             style={{
                                                 fontFamily:
-                                                    "var(--font-fraunces), serif",
+                                                    "var(--font-lora), serif",
                                             }}
                                         >
                                             Karp's Meaningful Problems
@@ -115,7 +115,7 @@ export default function Blog() {
                                             className="block text-xl font-medium text-[#2D2926] group-hover:text-[#B85C38] transition-colors leading-snug"
                                             style={{
                                                 fontFamily:
-                                                    "var(--font-fraunces), serif",
+                                                    "var(--font-lora), serif",
                                             }}
                                         >
                                             The Geography of Milliseconds
@@ -142,7 +142,7 @@ export default function Blog() {
                                             className="block text-xl font-medium text-[#2D2926] group-hover:text-[#B85C38] transition-colors leading-snug"
                                             style={{
                                                 fontFamily:
-                                                    "var(--font-fraunces), serif",
+                                                    "var(--font-lora), serif",
                                             }}
                                         >
                                             Before You Think
@@ -169,7 +169,7 @@ export default function Blog() {
                                             className="block text-xl font-medium text-[#2D2926] group-hover:text-[#B85C38] transition-colors leading-snug"
                                             style={{
                                                 fontFamily:
-                                                    "var(--font-fraunces), serif",
+                                                    "var(--font-lora), serif",
                                             }}
                                         >
                                             The Server Still Whispers
@@ -197,7 +197,7 @@ export default function Blog() {
                                             className="block text-xl font-medium text-[#2D2926] group-hover:text-[#B85C38] transition-colors leading-snug"
                                             style={{
                                                 fontFamily:
-                                                    "var(--font-fraunces), serif",
+                                                    "var(--font-lora), serif",
                                             }}
                                         >
                                             Why your AI agent needs a second
@@ -227,7 +227,7 @@ export default function Blog() {
                                             className="block text-xl font-medium text-[#2D2926] group-hover:text-[#B85C38] transition-colors leading-snug"
                                             style={{
                                                 fontFamily:
-                                                    "var(--font-fraunces), serif",
+                                                    "var(--font-lora), serif",
                                             }}
                                         >
                                             Why the traveler comes home younger

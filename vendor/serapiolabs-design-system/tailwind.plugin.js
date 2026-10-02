@@ -24,7 +24,7 @@ module.exports = plugin(function ({ addBase, theme }) {
       // --- Typography ---
       fontFamily: {
         headline: ['var(--font-headline)', 'Georgia', 'serif'],
-        body: ['var(--font-body)', 'system-ui', '-apple-system', 'sans-serif'],
+        body: ['var(--font-body)', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace'],
       },
       fontSize: {
         'xs': ['var(--text-xs)', { lineHeight: 'var(--leading-normal)' }],

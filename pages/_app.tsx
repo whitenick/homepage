@@ -1,20 +1,15 @@
 import '@serapiolabs/design-system/dist/tokens.css';
 import { createPagesBrowserClient } from '@supabase/auth-helpers-nextjs';
 import { SessionContextProvider } from '@supabase/auth-helpers-react';
-import { Inter, Fraunces } from 'next/font/google';
+import { Lora } from 'next/font/google';
 import Head from 'next/head';
 import Script from 'next/script';
 import { useState } from 'react';
 import './tw.css';
 
-const inter = Inter({ 
+const lora = Lora({ 
   subsets: ['latin'],
-  variable: '--font-inter',
-  display: 'swap',
-});
-const fraunces = Fraunces({ 
-  subsets: ['latin'],
-  variable: '--font-fraunces',
+  variable: '--font-lora',
   display: 'swap',
 });
 
@@ -39,12 +34,18 @@ function MyApp({ Component, pageProps }) {
       
       <style jsx global>
         {`
+          @font-face {
+            font-family: 'Monaspace Neon';
+            font-style: normal;
+            font-weight: 200 800;
+            font-display: swap;
+            src: url('https://cdn.jsdelivr.net/gh/githubnext/monaspace@main/fonts/Web%20Fonts/Variable%20Web%20Fonts/Monaspace%20Neon/Monaspace%20Neon%20Var.woff2') format('woff2-variations');
+          }
           :root {
-            --font-inter: ${inter.style.fontFamily};
-            --font-fraunces: ${fraunces.style.fontFamily};
+            --font-lora: ${lora.style.fontFamily};
           }
           body {
-            font-family: var(--font-inter), sans-serif;
+            font-family: 'Monaspace Neon', ui-monospace, monospace;
           }
         `}
       </style>
@@ -53,7 +54,7 @@ function MyApp({ Component, pageProps }) {
         supabaseClient={supabaseClient}
         initialSession={pageProps.initialSession}
       >
-        <div className={`${inter.variable} ${fraunces.variable}`}>
+        <div className={`${lora.variable}`}>
           <Component {...pageProps} />
         </div>
       </SessionContextProvider>
